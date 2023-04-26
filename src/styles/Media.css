@@ -1,0 +1,39 @@
+/** Desktop Device = 1200px ***********************************************************************/
+@media only screen and (min-width: 1200px) and (max-width: 10000px) {
+  /** non display **/
+
+	/** display **/
+
+}
+
+/** Tablet Device = 992px ~ 1199px **************************************************************/
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /** non display **/
+
+	/** display **/
+
+}
+
+/** Mobile Device = 768px ~ 991px *****************************************************************/
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /** non display **/
+
+	/** display **/
+
+}
+
+/** Mobile Device = 480px ~ 767px *****************************************************************/
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  /** non display **/
+
+	/** display **/
+
+}
+
+/** Mobile Device = 0px ~ 479px *******************************************************************/
+@media only screen and (min-width: 0px) and (max-width: 479px) {
+	/** non display **/
+
+	/** display **/
+
+}
