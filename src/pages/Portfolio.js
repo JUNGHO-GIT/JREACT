@@ -5,15 +5,21 @@ import Swiper from "swiper";
 import "../App.css";
 
 function Portfolio() {
+
 	useEffect(() => {
+
 		let portfolioContainer = document.querySelector(".portfolio-container");
+
 		if (portfolioContainer) {
+
 			let portfolioIsotope = new Isotope(portfolioContainer, {
 				itemSelector: ".portfolio-item",
 			});
 			let portfolioFilters = document.querySelectorAll("#portfolio-filters li");
+			let allFilter = document.querySelector('#portfolio-filters li[data-filter="*"]');
 
-			portfolioFilters.forEach(function (el) {
+
+			portfolioFilters.forEach(function (el, index) {
 				el.addEventListener("click", function (e) {
 					e.preventDefault();
 					portfolioFilters.forEach(function (el) {
@@ -25,6 +31,18 @@ function Portfolio() {
 						filter: this.getAttribute("data-filter"),
 					});
 				});
+				if (index === 0) {
+					el.classList.add("filter-active");
+					portfolioIsotope.arrange({
+						filter: el.getAttribute("data-filter"),
+					});
+				}
+        if (allFilter) {
+          allFilter.classList.add("filter-active");
+          portfolioIsotope.arrange({
+            filter: allFilter.getAttribute("data-filter"),
+          });
+        }
 			});
 		}
 
@@ -52,24 +70,25 @@ function Portfolio() {
 			<div className="container">
 				<div className="section-title">
 					<h2>Portfolio</h2>
-					<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+					<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex</p>
 				</div>
 				<div className="row">
 					<div className="col-lg-12 d-flex justify-content-center">
 						<ul id="portfolio-filters">
+							<li data-filter="*">All</li>
 							<li data-filter=".filter-app">p1</li>
 							<li data-filter=".filter-card">p2</li>
 							<li data-filter=".filter-web">p3</li>
 						</ul>
 					</div>
 				</div>
-
 				<div className="row portfolio-container">
-					<div className="col-lg-4 col-md-6 portfolio-item filter-app">
+					{/** portfolio 1 **/}
+					<div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 portfolio-item filter-app">
 						<div className="portfolio-wrap">
-							<img src={process.env.PUBLIC_URL + "/images/portfolio/portfolio-1.jpg"} className="img-fluid" alt="image1" />
+							<img src="/images/portfolio/portfolio-1.jpg" className="img-fluid" alt="App 1" />
 							<div className="portfolio-links">
-								<a href="img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1">
+								<a href="/images/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1">
 									<i className="bx bx-plus"></i>
 								</a>
 								<a href="portfolio-details.html" title="More Details">
@@ -79,11 +98,12 @@ function Portfolio() {
 						</div>
 					</div>
 
-					<div className="col-lg-4 col-md-6 portfolio-item filter-card">
+					{/** portfolio 2 **/}
+					<div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 portfolio-item filter-card">
 						<div className="portfolio-wrap">
-							<img src={process.env.PUBLIC_URL + "/images/portfolio/portfolio-2.jpg"} className="img-fluid" alt="image2" />
+							<img src="/images/portfolio/portfolio-2.jpg" className="img-fluid" alt="App 2" />
 							<div className="portfolio-links">
-								<a href={process.env.PUBLIC_URL + "/images/portfolio/portfolio-2.jpg"} data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 3">
+								<a href="/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 2">
 									<i className="bx bx-plus"></i>
 								</a>
 								<a href="portfolio-details.html" title="More Details">
@@ -93,11 +113,12 @@ function Portfolio() {
 						</div>
 					</div>
 
-					<div className="col-lg-4 col-md-6 portfolio-item filter-web">
+					{/** portfolio 3 **/}
+					<div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 portfolio-item filter-web">
 						<div className="portfolio-wrap">
-							<img src={process.env.PUBLIC_URL + "/images/portfolio/portfolio-3.jpg"} className="img-fluid" alt="image3" />
+							<img src="/images/portfolio/portfolio-3.jpg" className="img-fluid" alt="App 3" />
 							<div className="portfolio-links">
-								<a href={process.env.PUBLIC_URL + "/images/portfolio/portfolio-3.jpg"} data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 2">
+								<a href="/images/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 3">
 									<i className="bx bx-plus"></i>
 								</a>
 								<a href="portfolio-details.html" title="More Details">

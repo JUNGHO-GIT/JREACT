@@ -3,7 +3,8 @@ import "../App.css";
 
 function Footer() {
   return (
-
+ 
+    <>
     <footer id="footer">
       <div className="container">
         <div className="copyright">
@@ -12,10 +13,14 @@ function Footer() {
         </div>
         <div className="credits">
           Designed by
-          <a href="www.junghomun.com">JUNGHO</a>
+          <a href="/">JUNGHO</a>
         </div>
       </div>
     </footer>
+    
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    
+    </>
 
   );
 }

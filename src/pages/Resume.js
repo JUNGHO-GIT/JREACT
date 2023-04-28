@@ -4,7 +4,7 @@ import "../App.css";
 function Resume() {
 	return (
 
-		<section id="resume" className="resume">
+    <section id="resume" className="resume">
 			<div className="container">
 				<div className="section-title">
 					<h2>Resume</h2>
@@ -13,7 +13,7 @@ function Resume() {
 
 				<div className="row">
 					<div className="col-lg-6" data-aos="fade-up">
-						<h3 className="resume-title">Sumary</h3>
+						<h3 className="resume-title"> <i class="bi bi-person-badge-fill"></i> Summary</h3>
 						<div className="resume-item pb-0">
 							<h4>JUNGHO MUN</h4>
 							<p>
@@ -26,7 +26,7 @@ function Resume() {
 							</ul>
 						</div>
 
-						<h3 className="resume-title">Education</h3>
+						<h3 className="resume-title"> <i class="bi bi-award-fill"></i> Education</h3>
 						<div className="resume-item">
 							<h4>Master of Fine Arts &amp; Graphic Design</h4>
 							<h5>2015 - 2016</h5>
@@ -45,7 +45,7 @@ function Resume() {
 						</div>
 					</div>
 					<div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-						<h3 className="resume-title">Professional Experience</h3>
+						<h3 className="resume-title"> <i className="bi bi-briefcase-fill"></i> Professional Experience</h3>
 						<div className="resume-item">
 							<h4>Senior graphic design specialist</h4>
 							<h5>2019 - Present</h5>

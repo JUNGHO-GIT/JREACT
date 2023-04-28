@@ -1,39 +1,149 @@
-/** Desktop Device = 1200px ***********************************************************************/
-@media only screen and (min-width: 1200px) and (max-width: 10000px) {
+/**************************************************************************************************/
+/** 1. (1201 ~ 10000) *****************************************************************************/
+/**************************************************************************************************/
+@media only screen and (min-width: 1201px) and (max-width: 10000px) {
+
   /** non display **/
 
-	/** display **/
+  /** display **/
+  .main {
+    max-width: 1400px;
+  }
 
+
+
+  #hero {
+    width: calc(100% - 0px);
+    height: 100vh;
+    background: url("../images/main.jpg") top center;
+    background-size: cover;
+    flex-direction: column;
+    display: flex;
+  }
+  #hero .hero-container {
+    position: relative;
+    z-index: 2;
+    min-width: 300px;
+    margin: 0px 0px 0px 80px;
+  }
 }
 
-/** Tablet Device = 992px ~ 1199px **************************************************************/
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
+/**************************************************************************************************/
+/** 2. (992 ~ 1200) *******************************************************************************/
+/**************************************************************************************************/
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+
   /** non display **/
 
-	/** display **/
-
+  /** display **/
+  #hero {
+    width: calc(100% - 0px);
+    height: 100vh;
+    background: url("../images/main.jpg") top center;
+    background-size: cover;
+    flex-direction: column;
+    display: flex;
+  }
+  #hero .hero-container {
+    position: relative;
+    z-index: 2;
+    min-width: 300px;
+    margin: 0px 0px 0px 80px;
+  }
 }
 
-/** Mobile Device = 768px ~ 991px *****************************************************************/
+/**************************************************************************************************/
+/** 3. (768 ~ 991) ********************************************************************************/
+/**************************************************************************************************/
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+
   /** non display **/
 
-	/** display **/
-
+  /** display **/
+  #hero {
+    width: calc(100% - 0px);
+    height: 100vh;
+    background: url("../images/main.jpg") top center;
+    background-size: cover;
+    flex-direction: column;
+    display: flex;
+  }
+  #hero .hero-container {
+    position: relative;
+    z-index: 2;
+    min-width: 300px;
+    margin: 0px 0px 0px 80px;
+  }
 }
 
-/** Mobile Device = 480px ~ 767px *****************************************************************/
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+/**************************************************************************************************/
+/** 4. (576 ~ 767) ********************************************************************************/
+/**************************************************************************************************/
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
   /** non display **/
 
-	/** display **/
-
+  /** display **/
+  #hero {
+    width: calc(100% - 0px);
+    height: 100vh;
+    background: url("../images/main.jpg") top center;
+    background-size: cover;
+    flex-direction: column;
+    display: flex;
+  }
+  #hero .hero-container {
+    position: relative;
+    z-index: 2;
+    min-width: 300px;
+    margin: 0px 0px 0px 80px;
+  }
 }
 
-/** Mobile Device = 0px ~ 479px *******************************************************************/
-@media only screen and (min-width: 0px) and (max-width: 479px) {
-	/** non display **/
+/**************************************************************************************************/
+/** 5. (375 ~ 575) ********************************************************************************/
+/**************************************************************************************************/
+@media only screen and (min-width: 375px) and (max-width: 575px) {
 
-	/** display **/
+  /** non display **/
 
+  /** display **/
+  #hero {
+    width: calc(100% - 0px);
+    height: 100vh;
+    background: url("../images/main2.jpg") top center;
+    background-size: cover;
+    flex-direction: column;
+    display: flex;
+  }
+  #hero .hero-container {
+    position: relative;
+    z-index: 2;
+    min-width: 300px;
+    margin: 0px 0px 100px 80px;
+  }
+}
+
+/**************************************************************************************************/
+/** 6. (0~374)***********************************************************************************/
+/**************************************************************************************************/
+@media only screen and (min-width: 0px) and (max-width: 374px) {
+
+  /** non display **/
+
+  /** display **/
+  #hero {
+    width: calc(100% - 0px);
+    height: 100vh;
+    background: url("../images/main2.jpg") top center;
+    background-size: cover;
+    flex-direction: column;
+    display: flex;
+  }
+  #hero .hero-container {
+    position: relative;
+    z-index: 2;
+    min-width: 300px;
+    margin: 0px 0px 100px 80px;
+  }
 }

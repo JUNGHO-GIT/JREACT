@@ -1,9 +1,13 @@
 import React from "react";
 import {BrowserRouter as Router} from "react-router-dom";
+
 import "./App.css";
+import "./styles/Jungho.css";
+import "./styles/Media.css";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 import "boxicons/css/boxicons.min.css";
 import "glightbox/dist/css/glightbox.min.css";
 import "swiper/swiper-bundle.min.css";
@@ -18,7 +22,7 @@ import Resume from "./pages/Resume";
 import Skills from "./pages/Skills";
 import Facts from "./pages/Facts";
 
-import AOS from 'aos';
+import AOS from "aos";
 import PureCounter from "@srexi/purecounterjs";
 
 class App extends React.Component {
