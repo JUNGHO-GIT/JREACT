@@ -1,9 +1,9 @@
 import React from "react";
-import "../App.css";
+import "../app/App.css";
 
 function Footer() {
   return (
- 
+
     <>
     <footer id="footer">
       <div className="container">
@@ -17,9 +17,9 @@ function Footer() {
         </div>
       </div>
     </footer>
-    
+
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    
+
     </>
 
   );

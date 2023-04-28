@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import Isotope from "isotope-layout";
 import GLightbox from "glightbox";
 import Swiper from "swiper";
-import "../App.css";
+import "../app/App.css";
 
 function Portfolio() {
 

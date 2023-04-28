@@ -28,6 +28,38 @@ h6 {
   max-height: 350px;
 }
 
+.list-transition-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+  max-height: 0;
+  overflow: hidden;
+}
+
+.list-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 800px; /* 필요한 경우 이 값을 조절하세요 */
+  overflow: hidden;
+  transition: opacity 300ms, transform 300ms, max-height 300ms;
+}
+
+.list-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 800px; /* 필요한 경우 이 값을 조절하세요 */
+  overflow: hidden;
+}
+
+.list-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 300ms, transform 300ms, max-height 300ms;
+}
+
+
+
 /** button ****************************************************************************************/
 .back-to-top {
  position: fixed;
@@ -260,7 +292,7 @@ h6 {
 #hero {
  width: 100%;
  height: 100vh;
- background: url("./images/main.jpg") top center;
+ background: url("../images/main.jpg") top center;
  background-size: cover;
 }
 
@@ -325,7 +357,7 @@ h6 {
 
 /** section ***************************************************************************************/
 section {
- padding: 20px 0px 0px 0px;
+ padding: 20px 20px 20px 20px;
  overflow: hidden;
 }
 
