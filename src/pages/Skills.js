@@ -1,11 +1,85 @@
 import React, {useRef, useState, useEffect, useCallback} from "react";
 import {InView} from "react-intersection-observer";
 import {CSSTransition} from "react-transition-group";
+import { Waypoint } from 'react-waypoint';
+// icons
 import {FaJava, FaNodeJs, FaNpm} from "react-icons/fa";
 import {FcGoogle, FcLinux} from "react-icons/fc";
 import {BsFiletypeXml, BsFiletypeJava} from "react-icons/bs";
 import {SiSpring, SiSpringboot, SiJavascript, SiHtml5, SiCss3, SiBootstrap, SiMysql, SiOracle, SiJson, SiGradle, SiJquery, SiApache, SiGithub, SiReact, SiApachemaven, SiThymeleaf, SiApachetomcat, SiBower, SiWindows, SiMariadb} from "react-icons/si";
 import "../app/App.css";
+
+const skillsSections = [
+	{
+		title: "Frontend",
+		skills: [
+			{name: "HTML5", icon: SiHtml5, color: "#E34F26", value: 100},
+			{name: "CSS3", icon: SiCss3, color: "#1572B6", value: 100},
+			{name: "JavaScript", icon: SiJavascript, color: "#F7DF1E", value: 80},
+			{name: "jQuery", icon: SiJquery, color: "#0769AD", value: 80},
+			{name: "React", icon: SiReact, color: "#61DAFB", value: 80},
+			{name: "Node.js", icon: FaNodeJs, color: "#339933", value: 80},
+			{name: "Bootstrap", icon: SiBootstrap, color: "#7952B3", value: 80},
+		],
+	},
+	{
+		title: "Backend",
+		skills: [
+			{name: "Java8", icon: FaJava, color: "#E51F24", value: 100},
+			{name: "Java11", icon: FaJava, color: "#E51F24", value: 80},
+			{name: "Java17", icon: FaJava, color: "#E51F24", value: 80},
+			{name: "Spring", icon: SiSpring, color: "#6DB33F", value: 80},
+			{name: "Boot", icon: SiSpringboot, color: "#6DB33F", value: 80},
+			{name: "Thymeleaf", icon: SiThymeleaf, color: "#005F0F", value: 80},
+			{name: "Jsp", icon: BsFiletypeJava, color: "#E51F24", value: 80},
+		],
+	},
+	{
+		title: "DB",
+		skills: [
+			{name: "MySQL", icon: SiMysql, color: "#4479A1", value: 100},
+			{name: "Oracle", icon: SiOracle, color: "#F80000", value: 100},
+			{name: "MariaDB", icon: SiMariadb, color: "#003545", value: 80},
+			{name: "Mybatis", icon: SiBower, color: "#EF5734", value: 80},
+		],
+	},
+	{
+		title: "Build",
+		skills: [
+			{name: "Maven", icon: SiApachemaven, color: "#C71A36", value: 80},
+			{name: "Gradle", icon: SiGradle, color: "#02303A", value: 80},
+			{name: "NPM", icon: FaNpm, color: "#CB3837", value: 80},
+		],
+	},
+	{
+		title: "Server",
+		skills: [
+			{name: "Apache", icon: SiApache, color: "#D22128", value: 80},
+			{name: "Tomcat", icon: SiApachetomcat, color: "#F8DC75", value: 80},
+		],
+	},
+	{
+		title: "Cloud",
+		skills: [
+			{name: "Google", icon: FcGoogle, color: "#4285F4", value: 80},
+			{name: "Git", icon: SiGithub, color: "#F05032", value: 100},
+		],
+	},
+	{
+		title: "Data",
+		skills: [
+			{name: "XML", icon: BsFiletypeXml, color: "#EE0000", value: 80},
+			{name: "JSON", icon: SiJson, color: "#000000", value: 80},
+		],
+	},
+	{
+		title: "System",
+		skills: [
+			{name: "Windows", icon: SiWindows, color: "#0078D6", value: 80},
+			{name: "Linux", icon: FcLinux, color: "#FCC624", value: 80},
+		],
+	},
+];
 
 function Skills() {
 	// variables

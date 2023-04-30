@@ -13,7 +13,7 @@ function Resume() {
 
 				<div className="row">
 					<div className="col-lg-6" data-aos="fade-up">
-						<h3 className="resume-title"> <i class="bi bi-person-badge-fill"></i> Summary</h3>
+						<h3 className="resume-title"> <i className="bi bi-person-badge-fill"></i> Summary</h3>
 						<div className="resume-item pb-0">
 							<h4>JUNGHO MUN</h4>
 							<p>
@@ -26,7 +26,7 @@ function Resume() {
 							</ul>
 						</div>
 
-						<h3 className="resume-title"> <i class="bi bi-award-fill"></i> Education</h3>
+						<h3 className="resume-title"> <i className="bi bi-award-fill"></i> Education</h3>
 						<div className="resume-item">
 							<h4>Master of Fine Arts &amp; Graphic Design</h4>
 							<h5>2015 - 2016</h5>
