@@ -1,5 +1,6 @@
+// import ----------------------------------------------------------------------------------------->
 import React from "react";
-import {BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import "../assets/styles/Jungho.css";
@@ -18,6 +19,9 @@ import Toggle from "../components/common/Toggle";
 import Hero from "../pages/main/Hero";
 import About from "../pages/main/About";
 import Portfolio from "../pages/main/Portfolio";
+import Project1 from "../pages/details/Project1";
+import Project2 from "../pages/details/Project2";
+import Project3 from "../pages/details/Project3";
 import Resume from "../pages/main/Resume";
 import Skills from "../pages/main/Skills";
 import Facts from "../pages/main/Facts";
@@ -25,6 +29,7 @@ import Facts from "../pages/main/Facts";
 import AOS from "aos";
 import PureCounter from "@srexi/purecounterjs";
 
+// state ------------------------------------------------------------------------------------------>
 
 // Main
 class Main extends React.Component {
@@ -39,32 +44,64 @@ class Main extends React.Component {
   }
   render() {
     return (
-      <Router>
-        <div className="App">
-          <Toggle />
-          <Header />
-          <main id="main">
-            <Hero />
-            <About />
-            <Resume />
-            <Skills />
-            <Facts />
-            <Portfolio />
-          </main>
-          <Footer />
-        </div>
-      </Router>
+      <div className="App">
+        <Toggle />
+        <Header />
+        <main id="main">
+          <Hero />
+          <About />
+          <Resume />
+          <Skills />
+          <Facts />
+          <Portfolio />
+        </main>
+        <Footer />
+      </div>
     );
   }
 }
 
 // Details
+class ProjectDetails extends React.Component {
+  componentDidMount() {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false,
+    });
+    new PureCounter();
+  }
+  render() {
+    const { project } = this.props;
 
-// Portfolio
-
-// Return
-const App = () => {
-  return <Main />;
+    return (
+      <div className="App">
+        <Toggle />
+        <Header />
+        <main id="main">
+          {project === "project1" && <Project1 />}
+          {project === "project2" && <Project2 />}
+          {project === "project3" && <Project3 />}
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 }
+
+// render ----------------------------------------------------------------------------------------->
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/details/project1" element={<ProjectDetails project="project1" />} />
+        <Route path="/details/project2" element={<ProjectDetails project="project2" />} />
+        <Route path="/details/project3" element={<ProjectDetails project="project3" />} />
+      </Routes>
+    </Router>
+  );
+};
 
 export default App;

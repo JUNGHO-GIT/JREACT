@@ -1,11 +1,21 @@
+// import ----------------------------------------------------------------------------------------->
 import React, {useEffect, useRef} from "react";
 import Typed from "typed.js";
 import "../../core/App.css";
 
+// state ------------------------------------------------------------------------------------------>
 const Hero = () => {
+
+  // variable ------------------------------------------------------------------------------------->
 	const typedRef = useRef(null);
 	const typedInstance = useRef(null);
 
+  // array ---------------------------------------------------------------------------------------->
+  const Items = [
+    "Java, Spring, Javascript, React, Jsp, Css, Html, Sass, Bootstrap, Sql, Hibernate, Maven"
+  ];
+
+  // useEffect ------------------------------------------------------------------------------------>
 	useEffect(() => {
 		const typed = typedRef.current;
 		if (typed) {
@@ -25,7 +35,6 @@ const Hero = () => {
 				cursorChar: "|",
 			});
 		}
-
 		return () => {
 			if (typedInstance.current) {
 				typedInstance.current.destroy();
@@ -33,17 +42,16 @@ const Hero = () => {
 		};
 	}, []);
 
+  // return --------------------------------------------------------------------------------------->
 	return (
-
 		<section id="hero" className="d-flex flex-column justify-content-center align-items-left">
 			<div className="hero-container" data-aos="fade-in">
 				<h1>JUNGHO MUN</h1>
 				<p>
-					<span ref={typedRef} className="typed" data-typed-items="Designer,Developer,Freelancer,Photographer"></span>
+					<span ref={typedRef} className="typed" data-typed-items={Items}></span>
 				</p>
 			</div>
 		</section>
-
 	);
 }
 

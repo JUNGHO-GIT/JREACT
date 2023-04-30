@@ -1,47 +1,58 @@
+// import ----------------------------------------------------------------------------------------->
 import React, {useEffect} from "react";
+import {Link} from "react-router-dom";
 import Isotope from "isotope-layout";
 import GLightbox from "glightbox";
-import Swiper from "swiper";
+import Image1 from "../../assets/images/portfolio/portfolio-1.jpg";
+import Image2 from "../../assets/images/portfolio/portfolio-2.jpg";
+import Image3 from "../../assets/images/portfolio/portfolio-3.jpg";
 import "../../core/App.css";
 
-import Image1 from "../../components/images/portfolio/portfolio-1.jpg";
-import Image2 from "../../components/images/portfolio/portfolio-2.jpg";
-import Image3 from "../../components/images/portfolio/portfolio-3.jpg";
-
+// state ------------------------------------------------------------------------------------------>
 const Portfolio = () => {
-	const portfolioItems = [
-		{
-			id: 1,
-			filter: "filter-app",
-			imgSrc: Image1,
-			title: "App 1",
-		},
-		{
-			id: 2,
-			filter: "filter-card",
-			imgSrc: Image2,
-			title: "App 2",
-		},
-		{
-			id: 3,
-			filter: "filter-web",
-			imgSrc: Image3,
-			title: "App 3",
-		},
-	];
+
+	// array ---------------------------------------------------------------------------------------->
+	const Items = {
+		title: ["Portfolios"],
+
+		description: ["Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia."],
+
+		items1: [
+			{
+				id: 1,
+				filter: "filter-app",
+				imgSrc: Image1,
+				title: "App 1",
+			},
+		],
+
+		items2: [
+			{
+				id: 2,
+				filter: "filter-card",
+				imgSrc: Image2,
+				title: "App 2",
+			},
+		],
+
+		items3: [
+			{
+				id: 3,
+				filter: "filter-web",
+				imgSrc: Image3,
+				title: "App 3",
+			},
+		],
+	};
 
 	useEffect(() => {
-
-		let portfolioContainer = document.querySelector(".portfolio-container");
-
+		const portfolioContainer = document.querySelector(".portfolio-container");
 		if (portfolioContainer) {
-
 			let portfolioIsotope = new Isotope(portfolioContainer, {
 				itemSelector: ".portfolio-item",
 			});
 			let portfolioFilters = document.querySelectorAll("#portfolio-filters li");
 			let allFilter = document.querySelector('#portfolio-filters li[data-filter="*"]');
-
 
 			portfolioFilters.forEach(function (el, index) {
 				el.addEventListener("click", function (e) {
@@ -61,54 +72,39 @@ const Portfolio = () => {
 						filter: el.getAttribute("data-filter"),
 					});
 				}
-        if (allFilter) {
-          allFilter.classList.add("filter-active");
-          portfolioIsotope.arrange({
-            filter: allFilter.getAttribute("data-filter"),
-          });
-        }
+				if (allFilter) {
+					allFilter.classList.add("filter-active");
+					portfolioIsotope.arrange({
+						filter: allFilter.getAttribute("data-filter"),
+					});
+				}
 			});
 		}
 
 		const portfolioLightbox = GLightbox({
 			selector: ".portfolio-lightbox",
 		});
-
-		new Swiper(".portfolio-details-slider", {
-			speed: 400,
-			loop: true,
-			autoplay: {
-				delay: 5000,
-				disableOnInteraction: false,
-			},
-			pagination: {
-				el: ".swiper-pagination",
-				type: "bullets",
-				clickable: true,
-			},
-		});
 	}, []);
-
 
 	return (
 		<section id="portfolio" className="portfolio section-bg">
 			<div className="container">
 				<div className="section-title">
-					<h2>Portfolio</h2>
-					<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex</p>
+					<h2>{Items.title}</h2>
+					<p>{Items.description}</p>
 				</div>
 				<div className="row">
 					<div className="col-lg-12 d-flex justify-content-center">
 						<ul id="portfolio-filters">
 							<li data-filter="*">All</li>
-							<li data-filter=".filter-app">p1</li>
-							<li data-filter=".filter-card">p2</li>
-							<li data-filter=".filter-web">p3</li>
+							<li data-filter=".filter-app">1</li>
+							<li data-filter=".filter-card">2</li>
+							<li data-filter=".filter-web">3</li>
 						</ul>
 					</div>
 				</div>
 				<div className="row portfolio-container">
-					{portfolioItems.map((item) => (
+					{[...Items.items1, ...Items.items2, ...Items.items3].map((item) => (
 						<div key={item.id} className={`col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 portfolio-item ${item.filter}`}>
 							<div className="portfolio-wrap">
 								<img src={item.imgSrc} className="img-fluid" alt={item.title} />
@@ -116,9 +112,9 @@ const Portfolio = () => {
 									<a href={item.imgSrc} data-gallery="portfolioGallery" className="portfolio-lightbox" title={item.title}>
 										<i className="bx bx-plus"></i>
 									</a>
-									<a href="portfolio-details.html" title="More Details">
+									<Link to={`/details/project${item.id}`} title="More Details">
 										<i className="bx bx-link"></i>
-									</a>
+									</Link>
 								</div>
 							</div>
 						</div>

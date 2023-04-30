@@ -1,27 +1,24 @@
+// import ----------------------------------------------------------------------------------------->
 import React from "react";
 import "../../core/App.css";
 
-function Footer() {
+// state ------------------------------------------------------------------------------------------>
+const Footer = () => {
   return (
-
     <>
-    <footer id="footer">
-      <div className="container">
-        <div className="copyright">
-          &copy; Copyright
-          <strong><span>JUNGHOMUN</span></strong>
+      <footer id="footer">
+        <div className="container">
+          <div className="copyright">
+            &copy; Copyright
+            <strong><span>JUNGHOMUN</span></strong>
+          </div>
+          <div className="credits">Designed by<a href="/">JUNGHO</a></div>
         </div>
-        <div className="credits">
-          Designed by
-          <a href="/">JUNGHO</a>
-        </div>
-      </div>
-    </footer>
-
-    <a href="#" className="back-to-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short"></i></a>
-
+      </footer>
+      <a href="#" className="back-to-top d-flex align-items-center justify-content-center">
+      <i className="bi bi-arrow-up-short"></i>
+      </a>
     </>
-
   );
 }
 

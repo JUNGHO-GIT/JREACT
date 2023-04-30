@@ -1,16 +1,19 @@
+// import ----------------------------------------------------------------------------------------->
 import React from "react";
 import "../../core/App.css";
 
+// state ------------------------------------------------------------------------------------------>
 const Resume = () => {
 
-	const resumes = {
+  // array ---------------------------------------------------------------------------------------->
+	const Items = {
 
-		// Resume Description
+		// description
 		description: [
       "Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas."
     ],
 
-		// Resume Summary
+		// summary
 		summary: [
 			{
 				title: "Summary",
@@ -27,7 +30,7 @@ const Resume = () => {
 			},
 		],
 
-		// Resume Education
+		// education
 		education: [
 			{
 				title: "Education",
@@ -49,7 +52,7 @@ const Resume = () => {
 			},
 		],
 
-		// Resume Experience
+		// experience
 		experience: [
 			{
 				title: "Professional Experience",
@@ -80,13 +83,15 @@ const Resume = () => {
 		],
 	};
 
+  // init ----------------------------------------------------------------------------------------->
 	const {
 		description: [description],
 		summary: [summary],
 		education: [education],
 		experience: [experience],
-	} = resumes;
+	} = Items;
 
+  // return --------------------------------------------------------------------------------------->
 	return (
 		<section id="resume" className="resume">
 			<div className="container">
