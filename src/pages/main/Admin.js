@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from "react";
-import "../app/App.css";
+import "../../core/App.css";
 
 const Admin = () => {
 	const SERVER_URL = "";

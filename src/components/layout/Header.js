@@ -1,5 +1,6 @@
 import React, {useEffect, useRef} from "react";
-import "../app/App.css";
+import Image from "../../components/images/profile2.jpg";
+import "../../core/App.css";
 
 function Header() {
 	const navToggleRef = useRef(null);
@@ -105,7 +106,7 @@ function Header() {
 			<header id="header" ref={sideNavRef}>
 				<div className="d-flex flex-column">
 					<div className="profile">
-						<img src="/images/profile2.jpg" className="img-fluid rounded-circle" alt="Profile"/>
+						<img src={Image} className="img-fluid rounded-circle" alt="Profile"/>
 						<h1 className="text-light">
 							<a href="/">JUNGHO MUN</a>
 						</h1>

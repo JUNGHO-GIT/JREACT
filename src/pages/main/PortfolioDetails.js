@@ -1,5 +1,5 @@
 /* import React from "react";
-import "../styles/PortfolioDetails.css";
+import "../assets/styles/PortfolioDetails.css";
 
 function PortfolioDetails() {
   return (

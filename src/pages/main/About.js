@@ -1,7 +1,9 @@
 import React from "react";
-import "../app/App.css";
+import "../../core/App.css";
+import Image from "../../components/images/profile.jpg";
 
 const About = () => {
+
   const elements = {
     firstDescription: [
       "Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex"
@@ -53,7 +55,7 @@ const About = () => {
 
         <div className="row">
           <div className="col-lg-4" data-aos="fade-right">
-            <img src="/images/profile.jpg" className="img-fluid" alt="Profile" width="380px" height="450px" />
+            <img src={Image} className="img-fluid" alt="Profile" width="380px" height="450px" />
           </div>
           <div className="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>{elements.roleTitle}</h3>

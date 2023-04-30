@@ -15,7 +15,7 @@
   #hero {
     width: calc(100% - 0px);
     height: 100vh;
-    background: url("../images/main.jpg") top center;
+    background: url("../../components/images/main.jpg") top center;
     background-size: cover;
     flex-direction: column;
     display: flex;
@@ -39,7 +39,7 @@
   #hero {
     width: calc(100% - 0px);
     height: 100vh;
-    background: url("../images/main.jpg") top center;
+    background: url("../../components/images/main.jpg") top center;
     background-size: cover;
     flex-direction: column;
     display: flex;
@@ -63,7 +63,7 @@
   #hero {
     width: calc(100% - 0px);
     height: 100vh;
-    background: url("../images/main.jpg") top center;
+    background: url("../../components/images/main.jpg") top center;
     background-size: cover;
     flex-direction: column;
     display: flex;
@@ -87,7 +87,7 @@
   #hero {
     width: calc(100% - 0px);
     height: 100vh;
-    background: url("../images/main.jpg") top center;
+    background: url("../../components/images/main.jpg") top center;
     background-size: cover;
     flex-direction: column;
     display: flex;
@@ -111,7 +111,7 @@
   #hero {
     width: calc(100% - 0px);
     height: 100vh;
-    background: url("../images/main2.jpg") top center;
+    background: url("../../components/images/main2.jpg") top center;
     background-size: cover;
     flex-direction: column;
     display: flex;
@@ -135,7 +135,7 @@
   #hero {
     width: calc(100% - 0px);
     height: 100vh;
-    background: url("../images/main2.jpg") top center;
+    background: url("../../components/images/main2.jpg") top center;
     background-size: cover;
     flex-direction: column;
     display: flex;

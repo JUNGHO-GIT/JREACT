@@ -8,7 +8,7 @@ import {FaJava, FaNodeJs, FaNpm} from "react-icons/fa";
 import {FcGoogle, FcLinux} from "react-icons/fc";
 import {BsFiletypeXml, BsFiletypeJava} from "react-icons/bs";
 import {SiSpring, SiSpringboot, SiJavascript, SiHtml5, SiCss3, SiBootstrap, SiMysql, SiOracle, SiJson, SiGradle, SiJquery, SiApache, SiGithub, SiReact, SiApachemaven, SiThymeleaf, SiApachetomcat, SiBower, SiWindows, SiMariadb} from "react-icons/si";
-import "../app/App.css";
+import "../../core/App.css";
 
 const skillsSections = [
 {

@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from "react";
 import Typed from "typed.js";
-import "../app/App.css";
+import "../../core/App.css";
 
 const Hero = () => {
 	const typedRef = useRef(null);
@@ -12,12 +12,10 @@ const Hero = () => {
 			let typedStrings = typed.getAttribute("data-typed-items");
 			typedStrings = typedStrings.split(",");
 
-			// 기존에 생성된 Typed 객체가 있는 경우 제거
 			if (typedInstance.current) {
 				typedInstance.current.destroy();
 			}
 
-			// 새 Typed 객체 생성
 			typedInstance.current = new Typed(typed, {
 				strings: typedStrings,
 				loop: true,
@@ -28,7 +26,6 @@ const Hero = () => {
 			});
 		}
 
-		// Cleanup: 컴포넌트 unmount 시 실행됩니다.
 		return () => {
 			if (typedInstance.current) {
 				typedInstance.current.destroy();

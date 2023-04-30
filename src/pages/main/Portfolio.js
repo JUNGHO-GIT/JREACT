@@ -2,26 +2,30 @@ import React, {useEffect} from "react";
 import Isotope from "isotope-layout";
 import GLightbox from "glightbox";
 import Swiper from "swiper";
-import "../app/App.css";
+import "../../core/App.css";
+
+import Image1 from "../../components/images/portfolio/portfolio-1.jpg";
+import Image2 from "../../components/images/portfolio/portfolio-2.jpg";
+import Image3 from "../../components/images/portfolio/portfolio-3.jpg";
 
 const Portfolio = () => {
 	const portfolioItems = [
 		{
 			id: 1,
 			filter: "filter-app",
-			imgSrc: "/images/portfolio/portfolio-1.jpg",
+			imgSrc: Image1,
 			title: "App 1",
 		},
 		{
 			id: 2,
 			filter: "filter-card",
-			imgSrc: "/images/portfolio/portfolio-2.jpg",
+			imgSrc: Image2,
 			title: "App 2",
 		},
 		{
 			id: 3,
 			filter: "filter-web",
-			imgSrc: "/images/portfolio/portfolio-3.jpg",
+			imgSrc: Image3,
 			title: "App 3",
 		},
 	];
