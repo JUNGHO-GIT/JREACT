@@ -4,7 +4,27 @@ import GLightbox from "glightbox";
 import Swiper from "swiper";
 import "../app/App.css";
 
-function Portfolio() {
+const Portfolio = () => {
+	const portfolioItems = [
+		{
+			id: 1,
+			filter: "filter-app",
+			imgSrc: "/images/portfolio/portfolio-1.jpg",
+			title: "App 1",
+		},
+		{
+			id: 2,
+			filter: "filter-card",
+			imgSrc: "/images/portfolio/portfolio-2.jpg",
+			title: "App 2",
+		},
+		{
+			id: 3,
+			filter: "filter-web",
+			imgSrc: "/images/portfolio/portfolio-3.jpg",
+			title: "App 3",
+		},
+	];
 
 	useEffect(() => {
 
@@ -65,6 +85,7 @@ function Portfolio() {
 		});
 	}, []);
 
+
 	return (
 		<section id="portfolio" className="portfolio section-bg">
 			<div className="container">
@@ -83,54 +104,25 @@ function Portfolio() {
 					</div>
 				</div>
 				<div className="row portfolio-container">
-					{/** portfolio 1 **/}
-					<div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 portfolio-item filter-app">
-						<div className="portfolio-wrap">
-							<img src="/images/portfolio/portfolio-1.jpg" className="img-fluid" alt="App 1" />
-							<div className="portfolio-links">
-								<a href="/images/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1">
-									<i className="bx bx-plus"></i>
-								</a>
-								<a href="portfolio-details.html" title="More Details">
-									<i className="bx bx-link"></i>
-								</a>
+					{portfolioItems.map((item) => (
+						<div key={item.id} className={`col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 portfolio-item ${item.filter}`}>
+							<div className="portfolio-wrap">
+								<img src={item.imgSrc} className="img-fluid" alt={item.title} />
+								<div className="portfolio-links">
+									<a href={item.imgSrc} data-gallery="portfolioGallery" className="portfolio-lightbox" title={item.title}>
+										<i className="bx bx-plus"></i>
+									</a>
+									<a href="portfolio-details.html" title="More Details">
+										<i className="bx bx-link"></i>
+									</a>
+								</div>
 							</div>
 						</div>
-					</div>
-
-					{/** portfolio 2 **/}
-					<div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 portfolio-item filter-card">
-						<div className="portfolio-wrap">
-							<img src="/images/portfolio/portfolio-2.jpg" className="img-fluid" alt="App 2" />
-							<div className="portfolio-links">
-								<a href="/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 2">
-									<i className="bx bx-plus"></i>
-								</a>
-								<a href="portfolio-details.html" title="More Details">
-									<i className="bx bx-link"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-
-					{/** portfolio 3 **/}
-					<div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 portfolio-item filter-web">
-						<div className="portfolio-wrap">
-							<img src="/images/portfolio/portfolio-3.jpg" className="img-fluid" alt="App 3" />
-							<div className="portfolio-links">
-								<a href="/images/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 3">
-									<i className="bx bx-plus"></i>
-								</a>
-								<a href="portfolio-details.html" title="More Details">
-									<i className="bx bx-link"></i>
-								</a>
-							</div>
-						</div>
-					</div>
+					))}
 				</div>
 			</div>
 		</section>
 	);
-}
+};
 
 export default Portfolio;

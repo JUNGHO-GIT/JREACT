@@ -2,7 +2,7 @@ import React, {useEffect, useRef} from "react";
 import Typed from "typed.js";
 import "../app/App.css";
 
-function Hero() {
+const Hero = () => {
 	const typedRef = useRef(null);
 	const typedInstance = useRef(null);
 
