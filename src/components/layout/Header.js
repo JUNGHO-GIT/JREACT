@@ -1,6 +1,5 @@
 import React, {useEffect, useRef} from "react";
 import Image from "../../assets/images/main/profile2.jpg";
-import Hover from "../../assets/scripts/Hover";
 import "../../core/App.css";
 
 const socialLinks = [
@@ -123,7 +122,6 @@ const Header = () => {
 	const sideNavRef = useRef(null);
 	const onMobileNavToggleClick = useNavToggle(navToggleRef, sideNavRef);
 	const onNavItemClick = useSmoothScroll();
-  Hover();
 
 	return (
 		<>

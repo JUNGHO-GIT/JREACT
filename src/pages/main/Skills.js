@@ -1,10 +1,7 @@
 // import ----------------------------------------------------------------------------------------->
-import React, {useRef, useState, useEffect, useCallback} from "react";
-import {InView} from "react-intersection-observer";
+import React, {useState, useEffect} from "react";
 import {CSSTransition} from "react-transition-group";
-import {Waypoint} from "react-waypoint";
 import CountUp from "react-countup";
-import Hover from "../../assets/scripts/Hover";
 import "../../core/App.css";
 // icons
 import {FaJava, FaNodeJs, FaNpm} from "react-icons/fa";
@@ -18,7 +15,6 @@ const Skills = () => {
   // variables ------------------------------------------------------------------------------------>
   const [activeSection, setActiveSection] = useState(-1);
 	const [progressWidths, setProgressWidths] = useState([]);
-  Hover();
 
   // array ---------------------------------------------------------------------------------------->
   const Items = {

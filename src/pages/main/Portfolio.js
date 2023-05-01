@@ -1,7 +1,6 @@
 // import ----------------------------------------------------------------------------------------->
 import React, {useEffect} from "react";
 import {Link} from "react-router-dom";
-import Hover from "../../assets/scripts/Hover";
 import Isotope from "isotope-layout";
 import GLightbox from "glightbox";
 import Image1 from "../../assets/images/portfolio/portfolio-1.jpg";
@@ -85,8 +84,6 @@ const Portfolio = () => {
 		const portfolioLightbox = GLightbox({
 			selector: ".portfolio-lightbox",
 		});
-
-    Hover();
 
 	}, []);
 

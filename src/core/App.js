@@ -28,6 +28,7 @@ import Facts from "../pages/main/Facts";
 
 import AOS from "aos";
 import PureCounter from "@srexi/purecounterjs";
+import Hover from "../assets/scripts/Hover";
 
 // state ------------------------------------------------------------------------------------------>
 
@@ -47,12 +48,15 @@ const PureCount = () => {
   return pure;
 };
 
+// Hover
+Hover();
 
 // Main
 class Main extends React.Component {
   componentDidMount() {
     Aos();
     PureCount();
+    Hover();
   }
   render() {
     return (
@@ -78,6 +82,7 @@ class ProjectDetails extends React.Component {
   componentDidMount() {
     Aos();
     PureCount();
+    Hover();
   }
   render() {
     const { project } = this.props;
