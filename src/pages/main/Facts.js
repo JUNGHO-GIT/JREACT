@@ -22,22 +22,26 @@ const Facts = ()  => {
       {
         id: 1,
         count: "123",
-        text: "Happy Clients"
+        text: "Happy Clients",
+        icon: "bi bi-emoji-smile"
       },
       {
         id: 2,
         count: "234",
-        text: "Projects"
+        text: "Projects",
+        icon: "bi bi-journal-richtext"
       },
       {
         id: 3,
         count: "567",
-        text: "Hours Of Support"
+        text: "Hours Of Support",
+        icon: "bi bi-clock"
       },
       {
         id: 4,
         count: "890",
-        text: "Hard Workers"
+        text: "Hard Workers",
+        icon: "bi bi-award"
       }
     ]
   };
@@ -59,7 +63,7 @@ const Facts = ()  => {
               data-aos="fade-up"
             >
               <div className="count-box">
-                <i className="bi bi-emoji-smile"></i>
+                <i className={itemTitle.icon}></i>
                 <span
                   className="purecounter"
                   data-purecounter-duration="1"

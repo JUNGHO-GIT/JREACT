@@ -39,8 +39,7 @@ const useNavToggle = (navToggleRef, sideNavRef) => {
 			document.removeEventListener("mousedown", handleClickOutside);
 		};
 	}, []);
-
-	return onMobileNavToggleClick;
+  return onMobileNavToggleClick;
 };
 
 const useSmoothScroll = () => {
