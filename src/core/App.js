@@ -31,16 +31,28 @@ import PureCounter from "@srexi/purecounterjs";
 
 // state ------------------------------------------------------------------------------------------>
 
+// AOS
+const Aos = () => {
+  AOS.init({
+    duration: 1000,
+    easing: "ease-in-out",
+    once: true,
+    mirror: false,
+  });
+};
+
+// PureCounter
+const PureCount = () => {
+  const pure = new PureCounter();
+  return pure;
+};
+
+
 // Main
 class Main extends React.Component {
   componentDidMount() {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false,
-    });
-    new PureCounter();
+    Aos();
+    PureCount();
   }
   render() {
     return (
@@ -64,17 +76,11 @@ class Main extends React.Component {
 // Details
 class ProjectDetails extends React.Component {
   componentDidMount() {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false,
-    });
-    new PureCounter();
+    Aos();
+    PureCount();
   }
   render() {
     const { project } = this.props;
-
     return (
       <div className="App">
         <Toggle />

@@ -4,6 +4,7 @@ import {InView} from "react-intersection-observer";
 import {CSSTransition} from "react-transition-group";
 import {Waypoint} from "react-waypoint";
 import CountUp from "react-countup";
+import Hover from "../../assets/scripts/Hover";
 import "../../core/App.css";
 // icons
 import {FaJava, FaNodeJs, FaNpm} from "react-icons/fa";
@@ -17,6 +18,7 @@ const Skills = () => {
   // variables ------------------------------------------------------------------------------------>
   const [activeSection, setActiveSection] = useState(-1);
 	const [progressWidths, setProgressWidths] = useState([]);
+  Hover();
 
   // array ---------------------------------------------------------------------------------------->
   const Items = {
@@ -159,6 +161,7 @@ const Skills = () => {
 		}
 	}, [activeSection]);
 
+
   // return --------------------------------------------------------------------------------------->
 	return (
 		<section id="skills" className="skills section-bg">
@@ -171,7 +174,7 @@ const Skills = () => {
 					<div key={sectionIndex} className="row skills-content">
 						{section.rowValue.map((skillSection, skillSectionIndex) => (
 							<div key={skillSectionIndex} className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6" data-aos="fade-up" onClick={() => handleClick(section.rowNumber)}>
-								<h3 className="skills-title">
+								<h3 className="skills-title text-hover glowing-text">
 									<i className={skillSection.titleIcon}></i>
 									{skillSection.titleValue}
 								</h3>
@@ -185,8 +188,7 @@ const Skills = () => {
 													<i className="val">{activeSection === section.rowNumber ? <CountUp end={prop.propPercent} duration={1} /> : 0}%</i>
 												</span>
 												<div className="progress-bar-wrap">
-													<div
-														className="progress-bar"
+													<div className="progress-bar"
 														role="progressbar"
 														aria-valuemin="0"
 														aria-valuemax="100"

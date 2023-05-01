@@ -1,6 +1,7 @@
 // import ----------------------------------------------------------------------------------------->
 import React, {useEffect} from "react";
 import {Link} from "react-router-dom";
+import Hover from "../../assets/scripts/Hover";
 import Isotope from "isotope-layout";
 import GLightbox from "glightbox";
 import Image1 from "../../assets/images/portfolio/portfolio-1.jpg";
@@ -84,6 +85,9 @@ const Portfolio = () => {
 		const portfolioLightbox = GLightbox({
 			selector: ".portfolio-lightbox",
 		});
+
+    Hover();
+
 	}, []);
 
 	return (
@@ -96,10 +100,10 @@ const Portfolio = () => {
 				<div className="row">
 					<div className="col-lg-12 d-flex justify-content-center">
 						<ul id="portfolio-filters">
-							<li data-filter="*">All</li>
-							<li data-filter=".filter-app">1</li>
-							<li data-filter=".filter-card">2</li>
-							<li data-filter=".filter-web">3</li>
+							<li data-filter="*"  className="text-hover">All</li>
+							<li data-filter=".filter-app" className="text-hover">1</li>
+							<li data-filter=".filter-card" className="text-hover">2</li>
+							<li data-filter=".filter-web" className="text-hover">3</li>
 						</ul>
 					</div>
 				</div>

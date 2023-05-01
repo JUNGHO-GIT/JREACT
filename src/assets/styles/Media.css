@@ -2,148 +2,141 @@
 /** 1. (1201 ~ 10000) *****************************************************************************/
 /**************************************************************************************************/
 @media only screen and (min-width: 1201px) and (max-width: 10000px) {
+	/** non display **/
 
-  /** non display **/
+	/** display **/
+	.main {
+		max-width: 1400px;
+	}
 
-  /** display **/
-  .main {
-    max-width: 1400px;
-  }
-
-
-
-  #hero {
-    width: calc(100% - 0px);
-    height: 100vh;
-    background: url("../../assets/images/main/main.jpg") top center;
-    background-size: cover;
-    flex-direction: column;
-    display: flex;
-  }
-  #hero .hero-container {
-    position: relative;
-    z-index: 2;
-    min-width: 300px;
-    margin: 0px 0px 0px 80px;
-  }
+	#hero {
+		width: calc(100% - 0px);
+		height: 100vh;
+		background: url("../../assets/images/main/main.jpg") top center;
+		background-size: cover;
+		flex-direction: column;
+		display: flex;
+	}
+	#hero .hero-container {
+		position: relative;
+		z-index: 2;
+		min-width: 300px;
+		margin: 0px 0px 0px 80px;
+	}
 }
 
 /**************************************************************************************************/
 /** 2. (992 ~ 1200) *******************************************************************************/
 /**************************************************************************************************/
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
+	/** non display **/
 
-  /** non display **/
-
-  /** display **/
-  #hero {
-    width: calc(100% - 0px);
-    height: 100vh;
-    background: url("../../assets/images/main/main.jpg") top center;
-    background-size: cover;
-    flex-direction: column;
-    display: flex;
-  }
-  #hero .hero-container {
-    position: relative;
-    z-index: 2;
-    min-width: 300px;
-    margin: 0px 0px 0px 80px;
-  }
+	/** display **/
+	#hero {
+		width: calc(100% - 0px);
+		height: 100vh;
+		background: url("../../assets/images/main/main.jpg") top center;
+		background-size: cover;
+		flex-direction: column;
+		display: flex;
+	}
+	#hero .hero-container {
+		position: relative;
+		z-index: 2;
+		min-width: 300px;
+		margin: 0px 0px 0px 80px;
+	}
 }
 
 /**************************************************************************************************/
 /** 3. (768 ~ 991) ********************************************************************************/
 /**************************************************************************************************/
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+	/** non display **/
 
-  /** non display **/
-
-  /** display **/
-  #hero {
-    width: calc(100% - 0px);
-    height: 100vh;
-    background: url("../../assets/images/main/main.jpg") top center;
-    background-size: cover;
-    flex-direction: column;
-    display: flex;
-  }
-  #hero .hero-container {
-    position: relative;
-    z-index: 2;
-    min-width: 300px;
-    margin: 0px 0px 0px 80px;
-  }
+	/** display **/
+	#hero {
+		width: calc(100% - 0px);
+		height: 100vh;
+		background: url("../../assets/images/main/main.jpg") top center;
+		background-size: cover;
+		flex-direction: column;
+		display: flex;
+	}
+	#hero .hero-container {
+		position: relative;
+		z-index: 2;
+		min-width: 300px;
+		margin: 0px 0px 0px 80px;
+	}
 }
 
 /**************************************************************************************************/
 /** 4. (576 ~ 767) ********************************************************************************/
 /**************************************************************************************************/
 @media only screen and (min-width: 576px) and (max-width: 767px) {
+	/** non display **/
 
-  /** non display **/
-
-  /** display **/
-  #hero {
-    width: calc(100% - 0px);
-    height: 100vh;
-    background: url("../../assets/images/main/main.jpg") top center;
-    background-size: cover;
-    flex-direction: column;
-    display: flex;
-  }
-  #hero .hero-container {
-    position: relative;
-    z-index: 2;
-    min-width: 300px;
-    margin: 0px 0px 0px 80px;
-  }
+	/** display **/
+	#hero {
+		width: calc(100% - 0px);
+		height: 100vh;
+		background: url("../../assets/images/main/main.jpg") top center;
+		background-size: cover;
+		flex-direction: column;
+		display: flex;
+	}
+	#hero .hero-container {
+		position: relative;
+		z-index: 2;
+		min-width: 300px;
+		margin: 0px 0px 0px 80px;
+	}
 }
 
 /**************************************************************************************************/
 /** 5. (375 ~ 575) ********************************************************************************/
 /**************************************************************************************************/
 @media only screen and (min-width: 375px) and (max-width: 575px) {
+	/** non display **/
 
-  /** non display **/
-
-  /** display **/
-  #hero {
-    width: calc(100% - 0px);
-    height: 100vh;
-    background: url("../../assets/images/main/main2.jpg") top center;
-    background-size: cover;
-    flex-direction: column;
-    display: flex;
-  }
-  #hero .hero-container {
-    position: relative;
-    z-index: 2;
-    min-width: 300px;
-    margin: 0px 0px 100px 80px;
-  }
+	/** display **/
+	#hero {
+		width: calc(100% - 0px);
+		height: 100vh;
+		background: url("../../assets/images/main/main2.jpg") top center;
+		background-size: cover;
+		flex-direction: column;
+		display: flex;
+	}
+	#hero .hero-container {
+		position: relative;
+		z-index: 2;
+		min-width: 300px;
+		margin: 0px 0px 100px 80px;
+	}
 }
 
 /**************************************************************************************************/
 /** 6. (0~374)***********************************************************************************/
 /**************************************************************************************************/
 @media only screen and (min-width: 0px) and (max-width: 374px) {
+	/** non display **/
 
-  /** non display **/
-
-  /** display **/
-  #hero {
-    width: calc(100% - 0px);
-    height: 100vh;
-    background: url("../../assets/images/main/main2.jpg") top center;
-    background-size: cover;
-    flex-direction: column;
-    display: flex;
-  }
-  #hero .hero-container {
-    position: relative;
-    z-index: 2;
-    min-width: 300px;
-    margin: 0px 0px 100px 80px;
-  }
+	/** display **/
+	#hero {
+		width: calc(100% - 0px);
+		height: 100vh;
+		background: url("../../assets/images/main/main2.jpg") top center;
+		background-size: cover;
+		flex-direction: column;
+		display: flex;
+	}
+	#hero .hero-container {
+		position: relative;
+		z-index: 2;
+		min-width: 300px;
+		margin: 0px 0px 100px 80px;
+	}
 }
+
