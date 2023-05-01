@@ -25,10 +25,11 @@ import Project3 from "../pages/details/Project3";
 import Resume from "../pages/main/Resume";
 import Skills from "../pages/main/Skills";
 import Facts from "../pages/main/Facts";
+import Loader from "../components/common/Loader";
 
 import AOS from "aos";
 import PureCounter from "@srexi/purecounterjs";
-import Hover from "../assets/scripts/Hover";
+import Hover from "../components/common/Hover";
 
 // state ------------------------------------------------------------------------------------------>
 
@@ -62,6 +63,7 @@ class Main extends React.Component {
     return (
       <div className="App">
         <Toggle />
+        <Loader />
         <Header />
         <main id="main">
           <Hero />
@@ -89,6 +91,7 @@ class ProjectDetails extends React.Component {
     return (
       <div className="App">
         <Toggle />
+        <Loader />
         <Header />
         <main id="main">
           {project === "project1" && <Project1 />}
