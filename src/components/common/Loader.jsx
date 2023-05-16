@@ -1,10 +1,14 @@
 import React from "react";
-import "../../core/App.css";
+import "../../assets/styles/Loader.css";
 
 // ------------------------------------------------------------------------------------------------>
-const Toggle = () => {
+const Loader = () => {
 
   // ---------------------------------------------------------------------------------------------->
-  return <i className="bi bi-list mobile-nav-toggle d-xl-none"></i>;
+  return (
+    <div class="background">
+      <div class="loader"></div>
+    </div>
+  );
 };
-export default Toggle;
+export default Loader;

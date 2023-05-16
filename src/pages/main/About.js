@@ -1,54 +1,43 @@
-// import ----------------------------------------------------------------------------------------->
 import React from "react";
 import "../../core/App.css";
 import Image from "../../assets/images/main/profile.jpg";
 
-// state ------------------------------------------------------------------------------------------>
+// ------------------------------------------------------------------------------------------------>
 const About = () => {
-
-  // array ---------------------------------------------------------------------------------------->
   const items = {
-    firstDescription: [
-      "Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex"
-    ],
-    roleTitle: [
-      "UI/UX Designer & Web Developer."
-    ],
-    roleDescription: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    ],
+    firstDescription: ["Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex"],
+    roleTitle: ["UI/UX Designer & Web Developer."],
+    roleDescription: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."],
     section: [
       {
         sectionTitle: "birthday",
-        sectionValue: "1 May 1995"
+        sectionValue: "1 May 1995",
       },
       {
         sectionTitle: "Website",
-        sectionValue: "www.example.com"
+        sectionValue: "www.example.com",
       },
       {
         sectionTitle: "Phone",
-        sectionValue: "+123 456 7890"
+        sectionValue: "+123 456 7890",
       },
       {
         sectionTitle: "City",
-        sectionValue: "New York, USA"
+        sectionValue: "New York, USA",
       },
       {
         sectionTitle: "Age",
-        sectionValue: "30"
+        sectionValue: "30",
       },
       {
         sectionTitle: "Degree",
-        sectionValue: "Master"
-      }
+        sectionValue: "Master",
+      },
     ],
-    lastDescription: [
-      "Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore."
-    ]
+    lastDescription: ["Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore."],
   };
 
-  // return --------------------------------------------------------------------------------------->
+  // ---------------------------------------------------------------------------------------------->
   return (
     <section id="about" className="about section-bg">
       <div className="container">
@@ -83,5 +72,4 @@ const About = () => {
     </section>
   );
 };
-
 export default About;

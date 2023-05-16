@@ -1,18 +1,14 @@
-// import ----------------------------------------------------------------------------------------->
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import "./App.css";
 import "../assets/styles/Jungho.css";
 import "../assets/styles/Media.css";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "aos/dist/aos.css";
 import "boxicons/css/boxicons.min.css";
 import "glightbox/dist/css/glightbox.min.css";
 import "swiper/swiper-bundle.min.css";
-
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Toggle from "../components/common/Toggle";
@@ -26,14 +22,11 @@ import Resume from "../pages/main/Resume";
 import Skills from "../pages/main/Skills";
 import Facts from "../pages/main/Facts";
 import Loader from "../components/common/Loader";
-
 import AOS from "aos";
 import PureCounter from "@srexi/purecounterjs";
 import Hover from "../components/common/Hover";
 
-// state ------------------------------------------------------------------------------------------>
-
-// AOS
+// ------------------------------------------------------------------------------------------------>
 const Aos = () => {
   AOS.init({
     duration: 1000,
@@ -43,16 +36,14 @@ const Aos = () => {
   });
 };
 
-// PureCounter
+// ------------------------------------------------------------------------------------------------>
 const PureCount = () => {
   const pure = new PureCounter();
   return pure;
 };
-
-// Hover
 Hover();
 
-// Main
+// ------------------------------------------------------------------------------------------------>
 class Main extends React.Component {
   componentDidMount() {
     Aos();
@@ -60,6 +51,8 @@ class Main extends React.Component {
     Hover();
   }
   render() {
+
+    // -------------------------------------------------------------------------------------------->
     return (
       <div className="App">
         <Toggle />
@@ -79,7 +72,7 @@ class Main extends React.Component {
   }
 }
 
-// Details
+// ------------------------------------------------------------------------------------------------>
 class ProjectDetails extends React.Component {
   componentDidMount() {
     Aos();
@@ -87,7 +80,9 @@ class ProjectDetails extends React.Component {
     Hover();
   }
   render() {
-    const { project } = this.props;
+    const {project} = this.props;
+
+    // -------------------------------------------------------------------------------------------->
     return (
       <div className="App">
         <Toggle />
@@ -104,8 +99,10 @@ class ProjectDetails extends React.Component {
   }
 }
 
-// render ----------------------------------------------------------------------------------------->
+// ------------------------------------------------------------------------------------------------>
 const App = () => {
+
+  // ---------------------------------------------------------------------------------------------->
   return (
     <Router>
       <Routes>
@@ -117,5 +114,4 @@ const App = () => {
     </Router>
   );
 };
-
 export default App;

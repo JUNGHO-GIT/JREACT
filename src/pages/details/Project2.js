@@ -1,51 +1,38 @@
-// import ----------------------------------------------------------------------------------------->
-import React,{useEffect} from "react";
+import React, {useEffect} from "react";
 import Swiper from "swiper";
 import Image1 from "../../assets/images/portfolio/portfolio-details-1.jpg";
 import Image2 from "../../assets/images/portfolio/portfolio-details-2.jpg";
 import Image3 from "../../assets/images/portfolio/portfolio-details-3.jpg";
 import "../../core/App.css";
 
-// state ------------------------------------------------------------------------------------------>
-const Project2= () => {
-
-  // array ---------------------------------------------------------------------------------------->
+// ------------------------------------------------------------------------------------------------>
+const Project2 = () => {
   const project = {
+    infoTitle: ["Project Information 2"],
 
-    infoTitle : [
-      "Project Information 2"
-    ],
-
-    infoItems : [
+    infoItems: [
       {
         infoTitle: "Category",
-        infoValue: "Web design"
+        infoValue: "Web design",
       },
       {
         infoTitle: "Client",
-        infoValue: "ASU Company"
+        infoValue: "ASU Company",
       },
       {
         infoTitle: "Project date",
-        infoValue: "01 March, 2020"
+        infoValue: "01 March, 2020",
       },
       {
         infoTitle: "Project URL",
-        infoValue: "www.example.com"
-      }
+        infoValue: "www.example.com",
+      },
     ],
 
-    descriptionTitle : [
-      "Project Description"
-    ],
+    descriptionTitle: ["Project Description"],
 
-    descriptionValue : [
-      "Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius."
-    ]
-
+    descriptionValue: ["Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius."],
   };
-
-  // useEffect ------------------------------------------------------------------------------------>
   useEffect(() => {
     const swiperInstance = new Swiper(".portfolio-details-slider", {
       speed: 400,
@@ -62,9 +49,8 @@ const Project2= () => {
     });
   });
 
-  // render --------------------------------------------------------------------------------------->
+  // ---------------------------------------------------------------------------------------------->
   return (
-
     <section id="portfolio-details" className="portfolio-details">
       <div className="container">
         <div className="row gy-4">
@@ -99,16 +85,12 @@ const Project2= () => {
             </div>
             <div className="portfolio-description">
               <h2>{project.descriptionTitle}</h2>
-              <p>
-                {project.descriptionValue}
-              </p>
+              <p>{project.descriptionValue}</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-
   );
-}
-
+};
 export default Project2;
