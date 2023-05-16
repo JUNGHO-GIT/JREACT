@@ -12,7 +12,7 @@ const Portfolio = () => {
   const Items = {
     title: ["Portfolios"],
 
-    description: ["Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia."],
+    description: ["This is my Portfolios"],
 
     items1: [
       {

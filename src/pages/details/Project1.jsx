@@ -53,8 +53,8 @@ const Project1 = () => {
   return (
     <section id="portfolio-details" className="portfolio-details">
       <div className="container">
-        <div className="row gy-4">
-          <div className="col-lg-8">
+        <div className="row">
+          <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
             <div className="portfolio-details-slider swiper">
               <div className="swiper-wrapper align-items-center">
                 <div className="swiper-slide">
@@ -70,7 +70,7 @@ const Project1 = () => {
               <div className="swiper-pagination"></div>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
             <div className="portfolio-info">
               <h3>{project.infoTitle}</h3>
               <ul>
