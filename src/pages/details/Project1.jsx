@@ -27,14 +27,32 @@ const Project1 = () => {
         infoTitle: "Project URL",
         infoValue: "www.example.com",
       },
+      {
+        infoTitle: "Project URL",
+        infoValue: "www.example.com",
+      },
     ],
 
-    descriptionTitle: ["Project Description"],
+    descriptionTitle1: ["Project Description"],
 
-    descriptionValue: ["Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius."],
+    descriptionValue1: ["Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius."],
+
+    descriptionTitle2: ["Project Description"],
+
+    descriptionValue2: ["Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius."],
+
+    descriptionTitle3: ["Project Description"],
+
+    descriptionValue3: ["Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius."],
+
+    descriptionTitle4: ["Project Description"],
+
+    descriptionValue4: ["Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius."],
   };
+
+  // ---------------------------------------------------------------------------------------------->
   useEffect(() => {
-    const swiperInstance = new Swiper(".portfolio-details-slider", {
+    new Swiper(".portfolio-details-slider", {
       speed: 400,
       loop: true,
       autoplay: {
@@ -83,9 +101,31 @@ const Project1 = () => {
                 })}
               </ul>
             </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div className="portfolio-description">
-              <h2>{project.descriptionTitle}</h2>
-              <p>{project.descriptionValue}</p>
+              <h2>{project.descriptionTitle1}</h2>
+              <p>{project.descriptionValue1}</p>
+            </div>
+          </div>
+          <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div className="portfolio-description">
+              <h2>{project.descriptionTitle2}</h2>
+              <p>{project.descriptionValue2}</p>
+            </div>
+          </div>
+          <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div className="portfolio-description">
+              <h2>{project.descriptionTitle3}</h2>
+              <p>{project.descriptionValue3}</p>
+            </div>
+          </div>
+          <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div className="portfolio-description">
+              <h2>{project.descriptionTitle4}</h2>
+              <p>{project.descriptionValue4}</p>
             </div>
           </div>
         </div>

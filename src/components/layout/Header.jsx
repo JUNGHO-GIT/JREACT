@@ -61,6 +61,8 @@ const useSmoothScroll = () => {
   // ---------------------------------------------------------------------------------------------->
   const onNavItemClick = (e, hash) => {
     e.preventDefault();
+
+    // 메인페이지일 경우
     if (select(hash)) {
       let body = select("body");
       if (body.classList.contains("mobile-nav-active")) {
@@ -77,6 +79,10 @@ const useSmoothScroll = () => {
           inline: "nearest",
         });
       }
+    }
+    // 서브페이지일 경우
+    else {
+      window.location.href = `/`;
     }
   };
 
@@ -148,7 +154,7 @@ const Header = () => {
           <div className="profile">
             <img src={Image} className="img-fluid rounded-circle" alt="Profile" />
             <h1 className="text-light">
-              <a href="/">JUNGHO MUN</a>
+              <a href="/" className="text-hover">JUNGHO MUN</a>
             </h1>
             <div className="social-links mt-3 text-center">
               {socialLinks.map((socialItem) => (
