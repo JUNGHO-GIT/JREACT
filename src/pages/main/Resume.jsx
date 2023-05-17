@@ -3,8 +3,9 @@ import "../../core/App.css";
 
 // ------------------------------------------------------------------------------------------------>
 const Resume = () => {
-  const Items = {
-    description: ["Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas."],
+  const itemsArray = {
+
+    title: ["Resume"],
 
     summary: [
       {
@@ -65,26 +66,21 @@ const Resume = () => {
     ],
   };
   const {
-    description: [description],
     summary: [summary],
     education: [education],
     experience: [experience],
-  } = Items;
+  } = itemsArray;
 
   // ---------------------------------------------------------------------------------------------->
   return (
     <section id="resume" className="resume">
       <div className="container">
         <div className="section-title">
-          <h2>Resume</h2>
-          <p>{description}</p>
+          <h2>{itemsArray.title}</h2>
         </div>
-
         <div className="row">
           <div className="col-lg-6" data-aos="fade-up">
-            {}
             <h3 className="resume-title">
-              {" "}
               <i className="bi bi-person-badge-fill"></i>
               {summary.title}
             </h3>
@@ -101,10 +97,7 @@ const Resume = () => {
                 </ul>
               </div>
             ))}
-
-            {}
             <h3 className="resume-title">
-              {" "}
               <i className="bi bi-award-fill"></i>
               {education.title}
             </h3>
@@ -120,9 +113,7 @@ const Resume = () => {
             ))}
           </div>
           <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            {}
             <h3 className="resume-title">
-              {" "}
               <i className="bi bi-briefcase-fill"></i>
               {experience.title}
             </h3>

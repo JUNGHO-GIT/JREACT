@@ -502,7 +502,6 @@
   }
 }
 
-
 .image-container {
   position: relative;
   display: inline-block;
@@ -513,7 +512,7 @@
   top: 5%;
   right: 3%;
   font-size: 50px;
-  background-color: rgba(62, 61, 61, 0.542);
+  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 50%;
   padding: 0px 12px 0px 12px;
 }

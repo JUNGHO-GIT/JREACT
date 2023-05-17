@@ -12,7 +12,7 @@ const Skills = () => {
   const [activeSection, setActiveSection] = useState(-1);
   const [progressWidths, setProgressWidths] = useState([]);
   const Items = {
-    description: ["Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia."],
+    title: ["Skills"],
 
     skills: [
       {
@@ -151,8 +151,7 @@ const Skills = () => {
     <section id="skills" className="skills section-bg">
       <div className="container">
         <div className="section-title">
-          <h2>Skills</h2>
-          <p>{Items.description}</p>
+          <h2>{Items.title}</h2>
         </div>
         {Items.skills.map((section, sectionIndex) => (
           <div key={sectionIndex} className="row skills-content">

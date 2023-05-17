@@ -5,7 +5,7 @@ import Image from "../../assets/images/main/profile.jpg";
 // ------------------------------------------------------------------------------------------------>
 const About = () => {
   const items = {
-    firstDescription: ["Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex"],
+    title : ["About"],
     roleTitle: ["UI/UX Designer & Web Developer."],
     roleDescription: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."],
     section: [
@@ -42,8 +42,7 @@ const About = () => {
     <section id="about" className="about section-bg">
       <div className="container">
         <div className="section-title">
-          <h2>About</h2>
-          <p>{items.firstDescription}</p>
+          <h2>{items.title}</h2>
         </div>
         <div className="row">
           <div className="col-lg-4" data-aos="fade-right">

@@ -8,41 +8,56 @@ import "../../core/App.css";
 
 // ------------------------------------------------------------------------------------------------>
 const Portfolio = () => {
-  const Items = {
+  const itemsArray = {
     title: ["Portfolios"],
-
-    description: ["This is my Portfolios"],
-
-    items1: [
+    items: [
       {
-        id: 1,
+        id: "1",
         filter: "filter-app",
         imgSrc: Image1,
         title: "App 1",
         icon: "bx bxl-nodejs",
         color: "#2ecc71",
       },
-    ],
-
-    items2: [
       {
-        id: 2,
+        id: "2",
         filter: "filter-card",
         imgSrc: Image2,
         title: "App 2",
         icon: "bx bxl-react",
         color: "#61dbfb",
       },
-    ],
-
-    items3: [
       {
-        id: 3,
+        id: "3",
         filter: "filter-web",
         imgSrc: Image3,
         title: "App 3",
-        icon: "bx bxl-angular",
-        color: "#dd0031",
+        icon: "bx bxl-javascript",
+        color: "#f0db4f",
+      },
+      {
+        id: "4",
+        filter: "filter-app",
+        imgSrc: Image1,
+        title: "App 1",
+        icon: "bx bxl-bootstrap",
+        color: "#7952b3",
+      },
+      {
+        id: "5",
+        filter: "filter-card",
+        imgSrc: Image2,
+        title: "App 2",
+        icon: "bx bxl-css3",
+        color: "#1572b6",
+      },
+      {
+        id: "6",
+        filter: "filter-web",
+        imgSrc: Image3,
+        title: "App 3",
+        icon: "bx bxl-html5",
+        color: "#e34f26",
       },
     ],
   };
@@ -55,7 +70,7 @@ const Portfolio = () => {
         itemSelector: ".portfolio-item",
       });
       let portfolioFilters = document.querySelectorAll("#portfolio-filters li");
-      let allFilter = document.querySelector("#portfolio-filters li[data-filter="*"]");
+      let allFilter = document.querySelector("#portfolio-filters li[data-filter=" * "]");
       portfolioFilters.forEach(function  (el, index)  {
         el.addEventListener("click", function  (e)  {
           e.preventDefault();
@@ -88,40 +103,31 @@ const Portfolio = () => {
     <section id="portfolio" className="portfolio section-bg">
       <div className="container">
         <div className="section-title">
-          <h2>{Items.title}</h2>
-          <p>{Items.description}</p>
+          <h2>{itemsArray.title}</h2>
         </div>
         <div className="row">
           <div className="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-filters">
-              <li data-filter="*" className="text-hover">
-                All
-              </li>
-              <li data-filter=".filter-app" className="text-hover">
-                1
-              </li>
-              <li data-filter=".filter-card" className="text-hover">
-                2
-              </li>
-              <li data-filter=".filter-web" className="text-hover">
-                3
-              </li>
+              <li data-filter="*">All</li>
+              <li data-filter=".filter-app">1</li>
+              <li data-filter=".filter-card">2</li>
+              <li data-filter=".filter-web">3</li>
             </ul>
           </div>
         </div>
         <div className="row portfolio-container">
-          {[...Items.items1, ...Items.items2, ...Items.items3].map((item) => (
+          {itemsArray.items.map((item) => (
             <div key={item.id} className={`col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 portfolio-item ${item.filter}`}>
               <div className="portfolio-wrap">
                 <div className="image-container">
                   <img src={item.imgSrc} className="img-fluid" alt={item.title} />
-                  <span class="overlay-icon">
-                    <i class={item.icon} style={{color: item.color}}></i>
+                  <span className="overlay-icon">
+                    <i className={item.icon} style={{color: item.color}}></i>
                   </span>
                 </div>
                 <div className="portfolio-links">
                   <Link to={`/details/project${item.id}`} title="More Details">
-                    <i class='bx bx-search-alt-2'></i>
+                    <i className="bx bx-search-alt-2"></i>
                   </Link>
                 </div>
               </div>
