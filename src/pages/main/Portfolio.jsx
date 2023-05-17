@@ -99,7 +99,7 @@ const Portfolio = () => {
 
   // ---------------------------------------------------------------------------------------------->
   return (
-    <section id="portfolio" className="portfolio">
+    <section id="portfolio" className="portfolio section-bg">
       <div className="container">
         <div className="section-title">
           <h2>{itemsArray.title}</h2>

@@ -14,9 +14,8 @@ const socialLinks = [
 const navLinks = [
   {id: 1, name: "Home", url: "#hero", icon: "bx bx-home"},
   {id: 2, name: "About", url: "#about", icon: "bx bx-user"},
-  {id: 3, name: "Resume", url: "#resume", icon: "bx bx-file-blank"},
-  {id: 4, name: "Skills", url: "#skills", icon: "bx bx-book-heart"},
-  {id: 5, name: "Portfolio", url: "#portfolio", icon: "bx bx-book-content"},
+  {id: 3, name: "Skills", url: "#skills", icon: "bx bx-book-heart"},
+  {id: 4, name: "Portfolio", url: "#portfolio", icon: "bx bx-book-content"},
 ];
 
 // ------------------------------------------------------------------------------------------------>

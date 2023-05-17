@@ -24,7 +24,6 @@ import Project2 from "../pages/details/Project2";
 import Project3 from "../pages/details/Project3";
 import Project4 from "../pages/details/Project4";
 import Project5 from "../pages/details/Project5";
-import Resume from "../pages/main/Resume";
 import Skills from "../pages/main/Skills";
 import Loader from "../components/common/Loader";
 
@@ -68,7 +67,6 @@ class Main extends React.Component {
         <main id="main">
           <Hero />
           <About />
-          <Resume />
           <Skills />
           <Portfolio />
         </main>

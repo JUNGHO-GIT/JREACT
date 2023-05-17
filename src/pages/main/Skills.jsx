@@ -145,7 +145,7 @@ const Skills = () => {
 
   // ---------------------------------------------------------------------------------------------->
   return (
-    <section id="skills" className="skills section-bg">
+    <section id="skills" className="skills">
       <div className="container">
         <div className="section-title">
           <h2>{Items.title}</h2>
