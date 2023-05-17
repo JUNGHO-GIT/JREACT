@@ -6,31 +6,39 @@ import Image from "../../assets/images/main/profile.jpg";
 const About = () => {
   const itemsArray = {
     title : ["About"],
-    roleTitle: ["UI/UX Designer & Web Developer."],
+    roleTitle: ["Full Stack Developer"],
     section: [
       {
-        sectionTitle: "birthday",
-        sectionValue: "1 May 1995",
+        sectionTitle: "이름",
+        sectionValue: " : 문정호",
       },
       {
-        sectionTitle: "Website",
-        sectionValue: "www.example.com",
+        sectionTitle: "전화번호",
+        sectionValue: " : 010-8252-4757",
       },
       {
-        sectionTitle: "Phone",
-        sectionValue: "+123 456 7890",
+        sectionTitle: "생년월일",
+        sectionValue: " : 1996.09.14",
       },
       {
-        sectionTitle: "City",
-        sectionValue: "New York, USA",
+        sectionTitle: "이메일",
+        sectionValue: " : junghomun00@gmail.com",
       },
       {
-        sectionTitle: "Age",
-        sectionValue: "30",
+        sectionTitle: "병역",
+        sectionValue: " : 육군 병장 만기 전역",
       },
       {
-        sectionTitle: "Degree",
-        sectionValue: "Master",
+        sectionTitle: "깃허브",
+        sectionValue: " : www.github.com/junghomun",
+      },
+      {
+        sectionTitle: "주소",
+        sectionValue: " : 서울시 동대문구",
+      },
+      {
+        sectionTitle: "사이트",
+        sectionValue: " : www.junghomun.com",
       },
     ],
   };

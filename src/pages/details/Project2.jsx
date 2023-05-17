@@ -96,7 +96,11 @@ const Project2 = () => {
         },
       ],
     },
-    destContent3: {
+  };
+
+  // ---------------------------------------------------------------------------------------------->
+  const descArray2 = {
+    destContent1: {
       descTitle: ["3. API"],
       value1: [
         {
@@ -110,45 +114,52 @@ const Project2 = () => {
         },
       ],
     },
-  };
-  const descArray2 = {
-    destContent5: {
-      descTitle: ["5. 특징"],
+    destContent2: {
+      descTitle: ["4. 특징"],
       value1: [
         {
           title: "- 특징1",
-          text: "blabla",
+          icon: ["SiApache"],
+          text: [
+            "blabla"
+          ],
         },
       ],
       value2: [
         {
           title: "- 특징2",
-          text: "blabla",
+          icon: ["SiApache"],
+          text: [
+            "blabla"
+          ],
         },
       ],
       value3: [
         {
           title: "- 특징3",
-          text: "blabla",
+          icon: ["SiApache"],
+          text: [
+            "blabla"
+          ],
         },
       ],
       value4: [
         {
           title: "- 특징4",
-          text: "blabla",
+          icon: ["SiApache"],
+          text: [
+            "blabla"
+          ],
         },
       ],
       value5: [
         {
           title: "- 특징5",
-          text: "blabla",
-        },
-      ],
-      value6: [
-        {
-          title: "- 특징6",
-          text: "blabla",
-        },
+          icon: ["SiApache"],
+          text: [
+            "blabla"
+          ],
+        }
       ],
     },
   };
@@ -158,7 +169,7 @@ const Project2 = () => {
     <section id="portfolio-details" className="portfolio-details">
       <div className="container">
         <div className="row">
-          <div className="col-lg-6 col-md-12 col-sm-12 col-12">
+          <div className="col-lg-12 col-md-12 col-sm-12 col-12">
             <div className="portfolio-details-slider swiper">
               <div className="swiper-wrapper align-items-center">
                 <div className="swiper-slide">
@@ -174,40 +185,42 @@ const Project2 = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-6 col-md-12 col-sm-12 col-12">
+        </div>
+        <div class="row">
+          <div className="col-lg-12 col-md-12 col-sm-12 col-12">
             <div className="portfolio-info">
               <h3>{infoArray.infoTitle}</h3>
-              <ul>
                 {infoArray.infoItems.map((item, index) => (
-                  <li key={index}>
-                    <div className="titleWrapper1">
-                      <strong>{item.title}</strong>
-                    </div>
-                      :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{item.content}
-                  </li>
+                  <div key={index}>
+                    <h5 className="fw-8 titleWrapper1">
+                      {item.title}&nbsp;&nbsp;
+                    </h5>
+                    <span>
+                      =&nbsp;&nbsp;&nbsp;&nbsp;{item.content}
+                    </span>
+                  </div>
                 ))}
-              </ul>
             </div>
           </div>
         </div>
-        <div className="row">
-          <div className="col-lg-6 col-md-6 col-sm-12 col-12">
-            <div className="portfolio-description">
+        <div class="row">
+          <div className="col-lg-6 col-md-6 col-sm-12 col-12 jungho-col1">
+            <div className="portfolio-info">
               {Object.entries(descArray1).map(([key, value]) => (
                 <div key={key}>
                   <h3>{value.descTitle}</h3>
                   {Object.entries(value).map(([key, obj]) => {
                     if (key.startsWith("value")) {
                       return Object.entries(obj).map(([subKey, value]) => (
-                        <div key={subKey}>
-                          <p className="titleWrapper2">
+                        <div key={subKey} style={{ marginBottom: "20px" }}>
+                          <h6 className="fw-8 titleWrapper2">
                             {value.title}&nbsp;&nbsp;
-                          </p>
+                          </h6>
                           {value.icon.map((icon, i) => (
                             <React.Fragment key={i}>
                               <span>
                                 <Icons icon={icon} />&nbsp;&nbsp;
-                                {value.text[i]}&nbsp;&nbsp;&nbsp;&nbsp;
+                                {value.text[i]}&nbsp;&nbsp;
                               </span>
                             </React.Fragment>
                           ))}
@@ -220,22 +233,27 @@ const Project2 = () => {
               ))}
             </div>
           </div>
-          <div className="col-lg-6 col-md-6 col-sm-12 col-12">
-            <div className="portfolio-description">
+          <div className="col-lg-6 col-md-6 col-sm-12 col-12 jungho-col2">
+            <div className="portfolio-info">
               {Object.entries(descArray2).map(([key, value]) => (
                 <div key={key}>
                   <h3>{value.descTitle}</h3>
                   {Object.entries(value).map(([key, obj]) => {
                     if (key.startsWith("value")) {
                       return Object.entries(obj).map(([subKey, value]) => (
-                        <p key={subKey}>
-                          <div className="titleWrapper2">
+                        <div key={subKey} style={{ marginBottom: "20px" }}>
+                          <h6 className="fw-8 titleWrapper2">
                             {value.title}&nbsp;&nbsp;
-                          </div>
-                          <span>{
-                            value.text}&nbsp;&nbsp;
-                          </span>
-                        </p>
+                          </h6>
+                          {value.icon.map((icon, i) => (
+                            <React.Fragment key={i}>
+                              <span>
+                                <Icons icon={icon} />&nbsp;&nbsp;
+                                {value.text[i]}&nbsp;&nbsp;
+                              </span>
+                            </React.Fragment>
+                          ))}
+                        </div>
                       ));
                     }
                   })}

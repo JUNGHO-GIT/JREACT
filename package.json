@@ -5,24 +5,19 @@
   "dependencies": {
     "@srexi/purecounterjs": "^1.5.0",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^14.0.0",
-    "@testing-library/user-event": "^14.4.3",
     "aos": "^2.3.4",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.4",
     "boxicons": "^2.1.4",
     "isotope-layout": "^3.0.6",
-    "jquery.counterup": "^2.1.0",
     "react": "^18.2.0",
     "react-countup": "^6.4.2",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
-    "react-intersection-observer": "^9.4.3",
     "react-router-dom": "^6.11.0",
     "react-scripts": "5.0.1",
     "react-tooltip": "^5.13.0",
     "react-transition-group": "^4.4.5",
-    "react-waypoint": "^10.3.0",
     "swiper": "^9.2.4",
     "typed.js": "^2.0.15",
     "web-vitals": "^3.3.1"
@@ -50,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-unused-imports": "^2.0.0"
   }
 }

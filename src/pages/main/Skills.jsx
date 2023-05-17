@@ -50,7 +50,7 @@ const Skills = () => {
             titleIcon: "bi bi-database-fill-add",
             titleValue: "  DB  ",
             props: [
-              {propIcon: "SiMysql", propValue: "MySQL",  propPercent: 100},
+              {propIcon: "TbBrandMysql", propValue: "MySQL",  propPercent: 100},
               {propIcon: "SiOracle", propValue: "Oracle",  propPercent: 100},
               {propIcon: "SiMariadb", propValue: "MariaDB",  propPercent: 80},
               {propIcon: "SiBower", propValue: "Mybatis",  propPercent: 80},

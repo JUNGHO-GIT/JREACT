@@ -404,12 +404,10 @@ section {
 .about .content ul {
 	list-style: none;
 	padding: 0;
-  margin-bottom: 50px;
-
+  margin-bottom: 30px;
 }
 
 .about .content ul li {
-	margin-bottom: 20px;
 	display: flex;
 	align-items: center;
 }
@@ -691,10 +689,22 @@ section {
 	border-bottom: 1px solid #eee;
 }
 
+.portfolio-details .portfolio-info h5 {
+  font-size: 18px;
+  display: inline-flex;
+}
+
 .portfolio-details .portfolio-info ul {
 	list-style: none;
 	padding: 0;
 	font-size: 15px;
+}
+
+.portfolio-details .portfolio-info span {
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 20px;
 }
 
 .portfolio-details .portfolio-info ul li + li {
