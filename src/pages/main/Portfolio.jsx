@@ -6,11 +6,7 @@ import Image1 from "../../assets/images/portfolio/portfolio-1.jpg";
 import Image2 from "../../assets/images/portfolio/portfolio-2.jpg";
 import Image3 from "../../assets/images/portfolio/portfolio-3.jpg";
 import "../../core/App.css";
-
-import {FaJava, FaNodeJs, FaNpm} from "react-icons/fa";
-import {FcGoogle, FcLinux} from "react-icons/fc";
-import {BsFiletypeXml, BsFiletypeJava} from "react-icons/bs";
-import {SiSpring, SiSpringboot, SiJavascript, SiHtml5, SiCss3, SiBootstrap, SiMysql, SiOracle, SiJson, SiGradle, SiJquery, SiApache, SiGithub, SiReact, SiApachemaven, SiThymeleaf, SiApachetomcat, SiBower, SiWindows, SiMariadb} from "react-icons/si";
+import {Icons} from "../../components/common/Icons";
 
 // ------------------------------------------------------------------------------------------------>
 const Portfolio = () => {
@@ -23,8 +19,8 @@ const Portfolio = () => {
         imgSrc: Image1,
         title: "JREACT",
         desc: "Portfolio React",
-        icon: SiReact,
-        color: "#61dbfb",
+        icon: "SiReact",
+        color : "#61DAFB",
       },
       {
         id: "2",
@@ -32,8 +28,8 @@ const Portfolio = () => {
         imgSrc: Image2,
         title: "JLINT",
         desc: "Vscode Language Formatter Extension",
-        icon: FaNodeJs,
-        color: "#2ecc71",
+        icon: "FaNodeJs",
+        color : "#339933",
       },
       {
         id: "3",
@@ -41,8 +37,8 @@ const Portfolio = () => {
         imgSrc: Image3,
         title: "JUNGHQLO",
         desc: "Online Clothing Shopping Store",
-        icon: SiSpringboot,
-        color: "#6db33f",
+        icon: "SiSpringboot",
+        color : "#6DC73F",
       },
       {
         id: "4",
@@ -50,8 +46,8 @@ const Portfolio = () => {
         imgSrc: Image1,
         title: "Good Neighbor",
         desc: "Charity and Donation Website",
-        icon: SiSpring,
-        color: "#6db33f",
+        icon: "SiSpring",
+        color : "#6DC73F",
       },
       {
         id: "5",
@@ -59,8 +55,8 @@ const Portfolio = () => {
         imgSrc: Image2,
         title: "Meat Store",
         desc: "Online Meat Shopping Store",
-        icon: FaJava,
-        color: "#e51f24",
+        icon: "FaJava",
+        color : "#E51F24",
       },
     ],
   };
@@ -125,12 +121,12 @@ const Portfolio = () => {
                 <div className="image-container">
                   <img src={item.imgSrc} className="img-fluid" alt={item.title} />
                   <span className="overlay-icon">
-                    <item.icon color={item.color} />
+                    <Icons icon={item.icon} />
                   </span>
                 </div>
                 <div className="portfolio-links" data-tooltip-id={item.id}>
                   <Tooltip id={item.id} place="top" effect="float">
-                    <h5>{item.title}</h5>
+                    <h5 style={{color: item.color}}>{item.title}</h5>
                     <p>{item.desc}</p>
                   </Tooltip>
                   <Link to={`/details/project${item.id}`} title="More Details">

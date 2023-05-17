@@ -4,10 +4,7 @@ import Image1 from "../../assets/images/portfolio/portfolio-details-1.jpg";
 import Image2 from "../../assets/images/portfolio/portfolio-details-2.jpg";
 import Image3 from "../../assets/images/portfolio/portfolio-details-3.jpg";
 import "../../core/App.css";
-import {FaJava, FaNodeJs, FaNpm} from "react-icons/fa";
-import {FcGoogle, FcLinux} from "react-icons/fc";
-import {BsFiletypeXml, BsFiletypeJava} from "react-icons/bs";
-import {SiSpring, SiSpringboot, SiJavascript, SiHtml5, SiCss3, SiBootstrap, SiMysql, SiOracle, SiJson, SiGradle, SiJquery, SiApache, SiGithub, SiReact, SiApachemaven, SiThymeleaf, SiApachetomcat, SiBower, SiWindows, SiMariadb} from "react-icons/si";
+import {Icons} from "../../components/common/Icons";
 
 // ------------------------------------------------------------------------------------------------>
 const Project1 = () => {
@@ -59,16 +56,14 @@ const Project1 = () => {
       value1: [
         {
           title: "- 프레임워크",
-          icon: SiHtml5,
-          color: "#E34F26",
-          text: "HTML5",
+          icon: "SiReact",
+          text: "React",
         },
       ],
       value2: [
         {
           title: "- 언어",
-          icon: SiHtml5,
-          color: "#E34F26",
+          icon: "SiHtml5",
           text: "HTML5",
         },
       ],
@@ -78,16 +73,14 @@ const Project1 = () => {
       value1: [
         {
           title: "- 프레임워크",
-          icon: SiHtml5,
-          color: "#E34F26",
+          icon: "SiHtml5",
           text: "HTML5",
         },
       ],
       value2: [
         {
           title: "- 언어",
-          icon: SiHtml5,
-          color: "#E34F26",
+          icon: "SiHtml5",
           text: "HTML5",
         },
       ],
@@ -97,16 +90,14 @@ const Project1 = () => {
       value1: [
         {
           title: "- 프레임워크",
-          icon: SiHtml5,
-          color: "#E34F26",
+          icon: "SiHtml5",
           text: "HTML5",
         },
       ],
       value2: [
         {
           title: "- 언어",
-          icon: SiHtml5,
-          color: "#E34F26",
+          icon: "SiHtml5",
           text: "HTML5",
         },
       ],
@@ -116,16 +107,14 @@ const Project1 = () => {
       value1: [
         {
           title: "- 프레임워크",
-          icon: SiHtml5,
-          color: "#E34F26",
+          icon: "SiHtml5",
           text: "HTML5",
         },
       ],
       value2: [
         {
           title: "- 언어",
-          icon: SiHtml5,
-          color: "#E34F26",
+          icon: "SiHtml5",
           text: "HTML5",
         },
       ],
@@ -220,7 +209,9 @@ const Project1 = () => {
                         <p key={subKey}>
                           {value.title}&nbsp;&nbsp;
                           <span>
-                            <value.icon color={value.color} />
+                            <Icons icon={value.icon}/>
+                          </span>
+                          <span>
                             {value.text}&nbsp;&nbsp;
                           </span>
                         </p>
