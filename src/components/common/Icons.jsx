@@ -2,25 +2,31 @@ import React from "react";
 import {FaJava, FaNodeJs, FaNpm} from "react-icons/fa";
 import {FcGoogle, FcLinux} from "react-icons/fc";
 import {BsFiletypeXml, BsFiletypeJava} from "react-icons/bs";
-import {SiSpring, SiSpringboot, SiJavascript, SiHtml5, SiCss3, SiBootstrap, SiMysql, SiOracle, SiJson, SiGradle, SiJquery, SiApache, SiGithub, SiReact, SiApachemaven, SiThymeleaf, SiApachetomcat, SiBower, SiWindows, SiMariadb} from "react-icons/si";
+import {GiBeaver} from "react-icons/gi";
+import {TbBrandVscode, TbBrandMysql} from "react-icons/tb";
+import {SiSpring, SiSpringboot, SiJavascript, SiHtml5, SiCss3, SiBootstrap, SiMysql, SiOracle, SiJson, SiGradle, SiJquery, SiApache, SiGithub, SiReact, SiApachemaven, SiThymeleaf, SiTypescript, SiApachetomcat, SiBower, SiWindows, SiMariadb, SiMarkdown, SiNginx} from "react-icons/si";
 
 const Icons = (props) => {
 
   const iconArray = {
+    GiBeaver : {icon: GiBeaver, color: "#004F99", size: "1.0em", style: "inline-block"},
     SiHtml5 : {icon: SiHtml5, color: "#E34F26", size: "1.0em", style: "inline-block"},
     SiCss3 : {icon: SiCss3, color: "#1572B6", size: "1.0em", style: "inline-block"},
     SiJavascript : {icon: SiJavascript, color: "#F7DF1E", size: "1.0em", style: "inline-block"},
+    SiTypescript : {icon: SiTypescript, color: "#007ACC", size: "1.0em", style: "inline-block"},
     SiJquery : {icon: SiJquery, color: "#0769AD", size: "1.0em", style: "inline-block"},
+    SiNginx : {icon: SiNginx, color: "#269539", size: "1.0em", style: "inline-block"},
     SiReact : {icon: SiReact, color: "#61DAFB", size: "1.0em", style: "inline-block"},
+    SiMarkdown : {icon: SiMarkdown, color: "#000000", size: "1.0em", style: "inline-block"},
     FaNodeJs : {icon: FaNodeJs, color: "#339933", size: "1.0em", style: "inline-block"},
     SiBootstrap : {icon: SiBootstrap, color: "#7952B3", size: "1.0em", style: "inline-block"},
     FaJava : {icon: FaJava, color: "#E51F24", size: "1.0em", style: "inline-block"},
     SiSpring : {icon: SiSpring, color: "#6DC73F", size: "1.0em", style: "inline-block"},
     SiSpringboot : {icon: SiSpringboot, color: "#6DC73F", size: "1.0em", style: "inline-block"},
     SiThymeleaf : {icon: SiThymeleaf, color: "#005F0F", size: "1.0em", style: "inline-block"},
-    SiMysql : {icon: SiMysql, color: "#4479A1", size: "1.0em", style: "inline-block"},
+    TbBrandMysql : {icon: TbBrandMysql, color: "#4479A1", size: "1.0em", style: "inline-block"},
     SiOracle : {icon: SiOracle, color: "#F80000", size: "1.0em", style: "inline-block"},
-    BsFiletypeJava : {icon: BsFiletypeJava, color: "#007396", size: "1.0em", style: "inline-block"},
+    BsFiletypeJava : {icon: BsFiletypeJava, color: "#E51F24", size: "1.0em", style: "inline-block"},
     SiGradle : {icon: SiGradle, color: "#02303A", size: "1.0em", style: "inline-block"},
     SiApache : {icon: SiApache, color: "#D22128", size: "1.0em", style: "inline-block"},
     SiApachetomcat : {icon: SiApachetomcat, color: "#D22128", size: "1.0em", style: "inline-block"},
@@ -34,6 +40,7 @@ const Icons = (props) => {
     SiMariadb : {icon: SiMariadb, color: "#003545", size: "1.0em", style: "inline-block"},
     FcGoogle : {icon: FcGoogle, color: "#4285F4", size: "1.0em", style: "inline-block"},
     FcLinux : {icon: FcLinux, color: "#FBC02D", size: "1.0em", style: "inline-block"},
+    TbBrandVscode : {icon: TbBrandVscode, color: "#007ACC", size: "1.0em", style: "inline-block"},
   };
 
   const {icon, color, size, style} = iconArray[props.icon];

@@ -7,7 +7,7 @@ import Image3 from "../../assets/images/project/project1/portfolio-details-3.jpg
 import {Icons} from "../../components/common/Icons";
 
 // ------------------------------------------------------------------------------------------------>
-const Project3 = () => {
+const Project5 = () => {
 
   // ---------------------------------------------------------------------------------------------->
   useEffect(() => {
@@ -34,23 +34,23 @@ const Project3 = () => {
     infoItems: [
       {
         title: "프로젝트명",
-        content: "JUNGHQLO",
+        content: "MeatStore",
       },
       {
         title: "주제",
-        content: "BOOT를 활용한 남성의류 쇼핑몰 웹사이트",
+        content: "MVC 모델1 방식을 활용한 종합 육류 판매 웹사이트",
       },
       {
         title: "기간",
-        content: "2023.04.01 ~ 2023.04.30",
+        content: "2023.02.01 ~ 2023.02.30",
       },
       {
         title: "참여인원",
-        content: "총 1명(개인)",
+        content: "총 4명(팀)",
       },
       {
         title: "프로젝트 주소 ",
-        content: "www.junghomun.com/JUNGHQLO"
+        content: "www.junghomun.com/MEATSTORE"
       },
     ],
   };
@@ -59,7 +59,7 @@ const Project3 = () => {
   const descArray1 = {
     destContent1: {
       descTitle: ["1. 프론트엔드"],
-     value1: [
+      value1: [
         {
           title: "- 언어",
           icon: [
@@ -85,10 +85,10 @@ const Project3 = () => {
         {
           title: "- 템플릿",
           icon: [
-            "SiThymeleaf", "BsFiletypeJava"
+            "BsFiletypeJava"
           ],
           text: [
-            "THYMELEAF 2.5", "JSP 2.3"
+            "JSP 2.3"
           ]
         },
       ],
@@ -102,29 +102,18 @@ const Project3 = () => {
             "FaJava"
           ],
           text: [
-            "JAVA 17"
+            "JAVA 1.8"
           ]
         },
       ],
       value2: [
         {
-          title: "- 프레임워크",
-          icon: [
-            "SiSpringboot"
-          ],
-          text: [
-            "BOOT 2.7"
-          ]
-        },
-      ],
-      value3: [
-        {
           title: "- 패키지관리, 빌드",
           icon: [
-            "SiApachemaven", "BsFiletypeXml", "SiJson"
+            "BsFiletypeXml"
           ],
           text: [
-            "MAVEN 4", "XML", "JSON"
+            "XML"
           ]
         },
       ],
@@ -138,20 +127,20 @@ const Project3 = () => {
             "TbBrandMysql"
           ],
           text: [
-            "MYSQL 8.0"
+            "MYSQL 5.5"
           ]
         },
       ],
       value2: [
         {
-          title: "- 프레임워크, 관리",
+          title: "- 관리도구",
           icon: [
-            "SiBower", "GiBeaver"
+            "GiBeaver"
           ],
           text: [
-            "MYBATIS 3.5", "DBEAVER 22.3"
+            "DBEAVER 22.3"
           ]
-        }
+        },
       ],
     },
     destContent4: {
@@ -160,10 +149,10 @@ const Project3 = () => {
         {
           title: "- 플랫폼",
           icon: [
-            "SiApachetomcat", "SiApache"
+            "SiApachetomcat"
           ],
           text: [
-            "TOMCAT 9.0", "APACHE"
+            "TOMCAT 8.0"
           ]
         },
       ],
@@ -318,4 +307,4 @@ const Project3 = () => {
     </section>
   );
 };
-export default Project3;
+export default Project5;

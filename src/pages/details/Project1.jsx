@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
 import Swiper from "swiper";
-import Image1 from "../../assets/images/portfolio/portfolio-details-1.jpg";
-import Image2 from "../../assets/images/portfolio/portfolio-details-2.jpg";
-import Image3 from "../../assets/images/portfolio/portfolio-details-3.jpg";
+import Image1 from "../../assets/images/project/project1/portfolio-details-1.jpg";
+import Image2 from "../../assets/images/project/project1/portfolio-details-2.jpg";
+import Image3 from "../../assets/images/project/project1/portfolio-details-3.jpg";
 import "../../core/App.css";
 import {Icons} from "../../components/common/Icons";
 
@@ -11,30 +11,34 @@ const Project1 = () => {
 
   // ---------------------------------------------------------------------------------------------->
   useEffect(() => {
-    new Swiper(".portfolio-details-slider", {
+    new Swiper(".swiper", {
       speed: 400,
       loop: true,
+      centeredSlides: true,
+      touchRatio: 0.5,
       autoplay: {
-        delay: 5000,
+        delay: 2000,
         disableOnInteraction: false,
       },
       pagination: {
         el: ".swiper-pagination",
         type: "bullets",
-        clickable: true,
+        clickable: false,
       },
     });
-  });
+  }, []);
+
+  // ---------------------------------------------------------------------------------------------->
   const infoArray = {
     infoTitle: ["PROJECT INFO"],
     infoItems: [
       {
         title: "프로젝트명",
-        content: "Meat Store",
+        content: "JREACT",
       },
       {
         title: "주제",
-        content: "육류판매 온라인전문점",
+        content: "React를 활용한 개인 포트폴리오 웹사이트",
       },
       {
         title: "기간",
@@ -42,29 +46,39 @@ const Project1 = () => {
       },
       {
         title: "참여인원",
-        content: "총 4명",
+        content: "총 1명(개인)",
       },
       {
         title: "프로젝트 주소 ",
-        content: "www.example.com",
+        content: "www.junghomun.com/JREACT",
       },
     ],
   };
+
+  // ---------------------------------------------------------------------------------------------->
   const descArray1 = {
     destContent1: {
       descTitle: ["1. 프론트엔드"],
       value1: [
         {
-          title: "- 프레임워크",
-          icon: "SiReact",
-          text: "React",
+          title: "- 언어",
+          icon: [
+            "SiHtml5", "SiCss3", "SiJavascript", "SiTypescript"
+          ],
+          text: [
+            "HTML 5", "CSS 3", "JS ES6", "TS ES6"
+          ]
         },
       ],
       value2: [
         {
-          title: "- 언어",
-          icon: "SiHtml5",
-          text: "HTML5",
+          title: "- 프레임워크",
+          icon: [
+            "SiReact", "SiBootstrap"
+          ],
+          text: [
+            "REACT 18", "BOOTSTRAP 5"
+          ]
         },
       ],
     },
@@ -72,55 +86,42 @@ const Project1 = () => {
       descTitle: ["2. 백엔드"],
       value1: [
         {
-          title: "- 프레임워크",
-          icon: "SiHtml5",
-          text: "HTML5",
+          title: "- 언어",
+          icon: [
+            "FaNodeJs"
+          ],
+          text: [
+            "NODEJS 16"
+          ]
         },
       ],
       value2: [
         {
-          title: "- 언어",
-          icon: "SiHtml5",
-          text: "HTML5",
+          title: "- 패키지관리, 빌드",
+          icon: [
+            "FaNpm", "SiGithub","SiJson"
+          ],
+          text: [
+            "NPM", "GITHUB", "JSON"
+          ]
         },
       ],
     },
     destContent3: {
-      descTitle: ["3. 데이터베이스"],
+      descTitle: ["3. 서버"],
       value1: [
         {
-          title: "- 프레임워크",
-          icon: "SiHtml5",
-          text: "HTML5",
-        },
-      ],
-      value2: [
-        {
-          title: "- 언어",
-          icon: "SiHtml5",
-          text: "HTML5",
-        },
-      ],
-    },
-    destContent4: {
-      descTitle: ["4. 서버"],
-      value1: [
-        {
-          title: "- 프레임워크",
-          icon: "SiHtml5",
-          text: "HTML5",
-        },
-      ],
-      value2: [
-        {
-          title: "- 언어",
-          icon: "SiHtml5",
-          text: "HTML5",
+          title: "- 플랫폼",
+          icon: [
+            "SiApache", "SiNginx"
+          ],
+          text: [
+            "APACHE", "NGINX"
+          ]
         },
       ],
     },
   };
-
   const descArray2 = {
     destContent5: {
       descTitle: ["5. 특징"],
@@ -160,7 +161,7 @@ const Project1 = () => {
           text: "blabla",
         },
       ],
-    }
+    },
   };
 
   // ---------------------------------------------------------------------------------------------->
@@ -180,8 +181,8 @@ const Project1 = () => {
                 <div className="swiper-slide">
                   <img src={Image3} alt="Details3" />
                 </div>
+                <div className="swiper-pagination"></div>
               </div>
-              <div className="swiper-pagination"></div>
             </div>
           </div>
           <div className="col-lg-6 col-md-12 col-sm-12 col-12">
@@ -190,7 +191,10 @@ const Project1 = () => {
               <ul>
                 {infoArray.infoItems.map((item, index) => (
                   <li key={index}>
-                    <strong>{item.title}</strong> : {item.content}
+                    <div className="titleWrapper1">
+                      <strong>{item.title}</strong>
+                    </div>
+                      :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{item.content}
                   </li>
                 ))}
               </ul>
@@ -204,21 +208,25 @@ const Project1 = () => {
                 <div key={key}>
                   <h3>{value.descTitle}</h3>
                   {Object.entries(value).map(([key, obj]) => {
-                    if (key.startsWith('value')) {
+                    if (key.startsWith("value")) {
                       return Object.entries(obj).map(([subKey, value]) => (
-                        <p key={subKey}>
-                          {value.title}&nbsp;&nbsp;
-                          <span>
-                            <Icons icon={value.icon}/>
-                          </span>
-                          <span>
-                            {value.text}&nbsp;&nbsp;
-                          </span>
-                        </p>
+                        <div key={subKey}>
+                          <p className="titleWrapper2">
+                            {value.title}&nbsp;&nbsp;
+                          </p>
+                          {value.icon.map((icon, i) => (
+                            <React.Fragment key={i}>
+                              <span>
+                                <Icons icon={icon} />&nbsp;&nbsp;
+                                {value.text[i]}&nbsp;&nbsp;&nbsp;&nbsp;
+                              </span>
+                            </React.Fragment>
+                          ))}
+                        </div>
                       ));
                     }
                   })}
-                  <br/>
+                  <br />
                 </div>
               ))}
             </div>
@@ -229,18 +237,20 @@ const Project1 = () => {
                 <div key={key}>
                   <h3>{value.descTitle}</h3>
                   {Object.entries(value).map(([key, obj]) => {
-                    if (key.startsWith('value')) {
+                    if (key.startsWith("value")) {
                       return Object.entries(obj).map(([subKey, value]) => (
                         <p key={subKey}>
-                          {value.title}&nbsp;&nbsp;
-                          <span>
-                            {value.text}&nbsp;&nbsp;
+                          <div className="titleWrapper2">
+                            {value.title}&nbsp;&nbsp;
+                          </div>
+                          <span>{
+                            value.text}&nbsp;&nbsp;
                           </span>
                         </p>
                       ));
                     }
                   })}
-                  <br/>
+                  <br />
                 </div>
               ))}
             </div>

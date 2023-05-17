@@ -7,7 +7,7 @@ import Image3 from "../../assets/images/project/project1/portfolio-details-3.jpg
 import {Icons} from "../../components/common/Icons";
 
 // ------------------------------------------------------------------------------------------------>
-const Project3 = () => {
+const Project4 = () => {
 
   // ---------------------------------------------------------------------------------------------->
   useEffect(() => {
@@ -34,23 +34,23 @@ const Project3 = () => {
     infoItems: [
       {
         title: "프로젝트명",
-        content: "JUNGHQLO",
+        content: "GoodNeighbor",
       },
       {
         title: "주제",
-        content: "BOOT를 활용한 남성의류 쇼핑몰 웹사이트",
+        content: "SPRING FRAMEWORK를 활용한 자선단체 웹사이트",
       },
       {
         title: "기간",
-        content: "2023.04.01 ~ 2023.04.30",
+        content: "2023.03.01 ~ 2023.03.30",
       },
       {
         title: "참여인원",
-        content: "총 1명(개인)",
+        content: "총 4명(팀)",
       },
       {
         title: "프로젝트 주소 ",
-        content: "www.junghomun.com/JUNGHQLO"
+        content: "www.junghomun.com/GOODNEIGHBOR"
       },
     ],
   };
@@ -59,7 +59,7 @@ const Project3 = () => {
   const descArray1 = {
     destContent1: {
       descTitle: ["1. 프론트엔드"],
-     value1: [
+      value1: [
         {
           title: "- 언어",
           icon: [
@@ -85,10 +85,10 @@ const Project3 = () => {
         {
           title: "- 템플릿",
           icon: [
-            "SiThymeleaf", "BsFiletypeJava"
+            "BsFiletypeJava"
           ],
           text: [
-            "THYMELEAF 2.5", "JSP 2.3"
+            "JSP 2.3"
           ]
         },
       ],
@@ -102,7 +102,7 @@ const Project3 = () => {
             "FaJava"
           ],
           text: [
-            "JAVA 17"
+            "JAVA 11"
           ]
         },
       ],
@@ -110,10 +110,10 @@ const Project3 = () => {
         {
           title: "- 프레임워크",
           icon: [
-            "SiSpringboot"
+            "SiSpring"
           ],
           text: [
-            "BOOT 2.7"
+            "SPRING 4.3"
           ]
         },
       ],
@@ -135,10 +135,10 @@ const Project3 = () => {
         {
           title: "- DBMS",
           icon: [
-            "TbBrandMysql"
+            "SiOracle"
           ],
           text: [
-            "MYSQL 8.0"
+            "ORACLE X11"
           ]
         },
       ],
@@ -160,10 +160,10 @@ const Project3 = () => {
         {
           title: "- 플랫폼",
           icon: [
-            "SiApachetomcat", "SiApache"
+            "SiApachetomcat"
           ],
           text: [
-            "TOMCAT 9.0", "APACHE"
+            "TOMCAT 9.0"
           ]
         },
       ],
@@ -318,4 +318,4 @@ const Project3 = () => {
     </section>
   );
 };
-export default Project3;
+export default Project4;
