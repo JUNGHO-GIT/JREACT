@@ -1,7 +1,6 @@
 import React, {useEffect} from "react";
 import {Link} from "react-router-dom";
 import Isotope from "isotope-layout";
-import GLightbox from "glightbox";
 import Image1 from "../../assets/images/portfolio/portfolio-1.jpg";
 import Image2 from "../../assets/images/portfolio/portfolio-2.jpg";
 import Image3 from "../../assets/images/portfolio/portfolio-3.jpg";
@@ -20,6 +19,8 @@ const Portfolio = () => {
         filter: "filter-app",
         imgSrc: Image1,
         title: "App 1",
+        icon: "bx bxl-nodejs",
+        color: "#2ecc71",
       },
     ],
 
@@ -29,6 +30,8 @@ const Portfolio = () => {
         filter: "filter-card",
         imgSrc: Image2,
         title: "App 2",
+        icon: "bx bxl-react",
+        color: "#61dbfb",
       },
     ],
 
@@ -38,6 +41,8 @@ const Portfolio = () => {
         filter: "filter-web",
         imgSrc: Image3,
         title: "App 3",
+        icon: "bx bxl-angular",
+        color: "#dd0031",
       },
     ],
   };
@@ -76,10 +81,6 @@ const Portfolio = () => {
         }
       });
     }
-
-    const portfolioLightbox = GLightbox({
-      selector: ".portfolio-lightbox",
-    });
   }, []);
 
   // ---------------------------------------------------------------------------------------------->
@@ -112,13 +113,15 @@ const Portfolio = () => {
           {[...Items.items1, ...Items.items2, ...Items.items3].map((item) => (
             <div key={item.id} className={`col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 portfolio-item ${item.filter}`}>
               <div className="portfolio-wrap">
-                <img src={item.imgSrc} className="img-fluid" alt={item.title} />
+                <div className="image-container">
+                  <img src={item.imgSrc} className="img-fluid" alt={item.title} />
+                  <span class="overlay-icon">
+                    <i class={item.icon} style={{color: item.color}}></i>
+                  </span>
+                </div>
                 <div className="portfolio-links">
-                  <a href={item.imgSrc} data-gallery="portfolioGallery" className="portfolio-lightbox" title={item.title}>
-                    <i className="bx bx-plus"></i>
-                  </a>
                   <Link to={`/details/project${item.id}`} title="More Details">
-                    <i className="bx bx-link"></i>
+                    <i class='bx bx-search-alt-2'></i>
                   </Link>
                 </div>
               </div>

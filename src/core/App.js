@@ -7,7 +7,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "aos/dist/aos.css";
 import "boxicons/css/boxicons.min.css";
-import "glightbox/dist/css/glightbox.min.css";
 import "swiper/swiper-bundle.min.css";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
@@ -20,7 +19,6 @@ import Project2 from "../pages/details/Project2";
 import Project3 from "../pages/details/Project3";
 import Resume from "../pages/main/Resume";
 import Skills from "../pages/main/Skills";
-import Facts from "../pages/main/Facts";
 import Loader from "../components/common/Loader";
 import AOS from "aos";
 import PureCounter from "@srexi/purecounterjs";
@@ -63,7 +61,6 @@ class Main extends React.Component {
           <About />
           <Resume />
           <Skills />
-          <Facts />
           <Portfolio />
         </main>
         <Footer />

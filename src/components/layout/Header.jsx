@@ -4,7 +4,7 @@ import "../../core/App.css";
 
 // ------------------------------------------------------------------------------------------------>
 const socialLinks = [
-  {id: 1, name: "Twitter", url: "https://twitter.com", icon: "bx bxl-twitter"},
+  {id: 1, name: "Github", url: "https://twitter.com", icon: "bx bxl-github"},
   {id: 2, name: "Facebook", url: "https://facebook.com", icon: "bx bxl-facebook"},
   {id: 3, name: "Instagram", url: "https://instagram.com", icon: "bx bxl-instagram"},
   {id: 4, name: "Linkedin", url: "https://linkedin.com", icon: "bx bxl-linkedin"},
@@ -16,8 +16,7 @@ const navLinks = [
   {id: 2, name: "About", url: "#about", icon: "bx bx-user"},
   {id: 3, name: "Resume", url: "#resume", icon: "bx bx-file-blank"},
   {id: 4, name: "Skills", url: "#skills", icon: "bx bx-book-heart"},
-  {id: 5, name: "Facts", url: "#facts", icon: "bx bx-receipt"},
-  {id: 6, name: "Portfolio", url: "#portfolio", icon: "bx bx-book-content"},
+  {id: 5, name: "Portfolio", url: "#portfolio", icon: "bx bx-book-content"},
 ];
 
 // ------------------------------------------------------------------------------------------------>
