@@ -8,9 +8,12 @@ const Hero = () => {
   const typedInstance = useRef(null);
 
   // ---------------------------------------------------------------------------------------------->
-  const itemsArray = [
-    "Java, Spring, Javascript, React, Jsp, Css, Html, Sass, Bootstrap, Sql, Hibernate, Maven"
-  ];
+  const itemsArray ={
+    title : ["JUNGHO MUN"],
+    contents : [
+      "Java, Spring, Javascript, React, Jsp, Css, Html, Sass, Bootstrap, Sql, Hibernate, Maven"
+    ],
+  };
 
   // ---------------------------------------------------------------------------------------------->
   useEffect(() => {
@@ -27,7 +30,7 @@ const Hero = () => {
         loop: true,
         typeSpeed: 100,
         backSpeed: 50,
-        backDelay: 2000,
+        backDelay: 1500,
         cursorChar: "|",
       });
     }
@@ -42,9 +45,9 @@ const Hero = () => {
   return (
     <section id="hero" className="d-flex flex-column justify-content-center align-items-left">
       <div className="hero-container" data-aos="fade-in">
-        <h1>JUNGHO MUN</h1>
+        <h1>{itemsArray.title}</h1>
         <p>
-          <span ref={typedRef} className="typed" data-typed-items={itemsArray}></span>
+          <span ref={typedRef} data-typed-items={itemsArray.contents}></span>
         </p>
       </div>
     </section>

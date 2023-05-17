@@ -15,7 +15,7 @@ const Portfolio = () => {
     items: [
       {
         id: "1",
-        filter: "filter-app",
+        filter: "filter-front",
         imgSrc: Image1,
         title: "JREACT",
         desc: "Portfolio React",
@@ -24,7 +24,7 @@ const Portfolio = () => {
       },
       {
         id: "2",
-        filter: "filter-card",
+        filter: "filter-etc",
         imgSrc: Image2,
         title: "JLINT",
         desc: "Vscode Language Formatter Extension",
@@ -33,7 +33,7 @@ const Portfolio = () => {
       },
       {
         id: "3",
-        filter: "filter-web",
+        filter: "filter-back",
         imgSrc: Image3,
         title: "JUNGHQLO",
         desc: "Online Clothing Shopping Store",
@@ -42,7 +42,7 @@ const Portfolio = () => {
       },
       {
         id: "4",
-        filter: "filter-app",
+        filter: "filter-back",
         imgSrc: Image1,
         title: "GoodNeighbor",
         desc: "Charity and Donation Website",
@@ -51,7 +51,7 @@ const Portfolio = () => {
       },
       {
         id: "5",
-        filter: "filter-card",
+        filter: "filter-back",
         imgSrc: Image2,
         title: "MeatStore",
         desc: "Online Meat Shopping Store",
@@ -99,7 +99,7 @@ const Portfolio = () => {
 
   // ---------------------------------------------------------------------------------------------->
   return (
-    <section id="portfolio" className="portfolio section-bg">
+    <section id="portfolio" className="portfolio">
       <div className="container">
         <div className="section-title">
           <h2>{itemsArray.title}</h2>
@@ -108,9 +108,9 @@ const Portfolio = () => {
           <div className="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-filters">
               <li data-filter="*">All</li>
-              <li data-filter=".filter-app">1</li>
-              <li data-filter=".filter-card">2</li>
-              <li data-filter=".filter-web">3</li>
+              <li data-filter=".filter-back">1</li>
+              <li data-filter=".filter-front">2</li>
+              <li data-filter=".filter-etc">3</li>
             </ul>
           </div>
         </div>

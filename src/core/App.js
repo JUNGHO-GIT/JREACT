@@ -13,19 +13,20 @@ import "boxicons/css/boxicons.min.css";
 import "swiper/swiper-bundle.min.css";
 
 // components ------------------------------------------------------------------------------------->
+import Loader from "../components/common/Loader";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Toggle from "../components/common/Toggle";
 import Hero from "../pages/main/Hero";
 import About from "../pages/main/About";
+import Skills from "../pages/main/Skills";
 import Portfolio from "../pages/main/Portfolio";
+import Contact from "../pages/main/Contact";
 import Project1 from "../pages/details/Project1";
 import Project2 from "../pages/details/Project2";
 import Project3 from "../pages/details/Project3";
 import Project4 from "../pages/details/Project4";
 import Project5 from "../pages/details/Project5";
-import Skills from "../pages/main/Skills";
-import Loader from "../components/common/Loader";
 
 // plugins ---------------------------------------------------------------------------------------->
 import AOS from "aos";
@@ -69,6 +70,7 @@ class Main extends React.Component {
           <About />
           <Skills />
           <Portfolio />
+          <Contact />
         </main>
         <Footer />
       </div>

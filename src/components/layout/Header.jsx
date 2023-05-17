@@ -16,6 +16,7 @@ const navLinks = [
   {id: 2, name: "About", url: "#about", icon: "bx bx-user"},
   {id: 3, name: "Skills", url: "#skills", icon: "bx bx-book-heart"},
   {id: 4, name: "Portfolio", url: "#portfolio", icon: "bx bx-book-content"},
+  {id: 5, name: "Contact", url: "#contact", icon: "bx bx-envelope"},
 ];
 
 // ------------------------------------------------------------------------------------------------>
