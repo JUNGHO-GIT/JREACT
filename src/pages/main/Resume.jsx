@@ -4,9 +4,7 @@ import "../../core/App.css";
 // ------------------------------------------------------------------------------------------------>
 const Resume = () => {
   const itemsArray = {
-
     title: ["Resume"],
-
     summary: [
       {
         title: "Summary",
@@ -22,7 +20,6 @@ const Resume = () => {
         ],
       },
     ],
-
     education: [
       {
         title: "Education",
@@ -43,7 +40,6 @@ const Resume = () => {
         ],
       },
     ],
-
     experience: [
       {
         title: "Professional Experience",

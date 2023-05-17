@@ -398,11 +398,14 @@ section {
 	font-weight: 700;
 	font-size: 26px;
 	color: #173b6c;
+  margin-bottom: 50px;
 }
 
 .about .content ul {
 	list-style: none;
 	padding: 0;
+  margin-bottom: 50px;
+
 }
 
 .about .content ul li {
@@ -424,55 +427,6 @@ section {
 
 .about .content p:last-child {
 	margin-bottom: 0;
-}
-
-/** facts *****************************************************************************************/
-.facts {
-	padding-bottom: 30px;
-}
-
-.facts .count-box {
-	padding: 30px;
-	width: 100%;
-}
-
-.facts .count-box i {
-	display: block;
-	font-size: 44px;
-	color: #149ddd;
-	float: left;
-	line-height: 0;
-}
-
-.facts .count-box span {
-	font-size: 48px;
-	line-height: 40px;
-	display: block;
-	font-weight: 700;
-	color: #050d18;
-	margin-left: 60px;
-}
-
-.facts .count-box p {
-	padding: 15px 0 0 0;
-	margin: 0 0 0 60px;
-	font-family: "Raleway", sans-serif;
-	font-size: 14px;
-	color: #122f57;
-}
-
-.facts .count-box a {
-	font-weight: 600;
-	display: block;
-	margin-top: 20px;
-	color: #122f57;
-	font-size: 15px;
-	font-family: "Poppins", sans-serif;
-	transition: ease-in-out 0.3s;
-}
-
-.facts .count-box a:hover {
-	color: #1f5297;
 }
 
 /** skills ****************************************************************************************/
@@ -657,6 +611,24 @@ section {
 	background: rgba(20, 157, 221, 0.75);
 	transition: 0.3s;
 	width: 100%;
+}
+
+.portfolio .portfolio-wrap .portfolio-links h5 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.portfolio .portfolio-wrap .portfolio-links p {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+  transition: 0.3s;
+  width: 100%;
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {

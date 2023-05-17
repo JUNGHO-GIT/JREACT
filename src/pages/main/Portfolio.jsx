@@ -1,10 +1,16 @@
 import React, {useEffect} from "react";
 import {Link} from "react-router-dom";
 import Isotope from "isotope-layout";
+import {Tooltip} from "react-tooltip";
 import Image1 from "../../assets/images/portfolio/portfolio-1.jpg";
 import Image2 from "../../assets/images/portfolio/portfolio-2.jpg";
 import Image3 from "../../assets/images/portfolio/portfolio-3.jpg";
 import "../../core/App.css";
+
+import {FaJava, FaNodeJs, FaNpm} from "react-icons/fa";
+import {FcGoogle, FcLinux} from "react-icons/fc";
+import {BsFiletypeXml, BsFiletypeJava} from "react-icons/bs";
+import {SiSpring, SiSpringboot, SiJavascript, SiHtml5, SiCss3, SiBootstrap, SiMysql, SiOracle, SiJson, SiGradle, SiJquery, SiApache, SiGithub, SiReact, SiApachemaven, SiThymeleaf, SiApachetomcat, SiBower, SiWindows, SiMariadb} from "react-icons/si";
 
 // ------------------------------------------------------------------------------------------------>
 const Portfolio = () => {
@@ -15,49 +21,46 @@ const Portfolio = () => {
         id: "1",
         filter: "filter-app",
         imgSrc: Image1,
-        title: "App 1",
-        icon: "bx bxl-nodejs",
-        color: "#2ecc71",
+        title: "JREACT",
+        desc: "Portfolio React",
+        icon: SiReact,
+        color: "#61dbfb",
       },
       {
         id: "2",
         filter: "filter-card",
         imgSrc: Image2,
-        title: "App 2",
-        icon: "bx bxl-react",
-        color: "#61dbfb",
+        title: "JLINT",
+        desc: "Vscode Language Formatter Extension",
+        icon: FaNodeJs,
+        color: "#2ecc71",
       },
       {
         id: "3",
         filter: "filter-web",
         imgSrc: Image3,
-        title: "App 3",
-        icon: "bx bxl-javascript",
-        color: "#f0db4f",
+        title: "JUNGHQLO",
+        desc: "Online Clothing Shopping Store",
+        icon: SiSpringboot,
+        color: "#6db33f",
       },
       {
         id: "4",
         filter: "filter-app",
         imgSrc: Image1,
-        title: "App 1",
-        icon: "bx bxl-bootstrap",
-        color: "#7952b3",
+        title: "Good Neighbor",
+        desc: "Charity and Donation Website",
+        icon: SiSpring,
+        color: "#6db33f",
       },
       {
         id: "5",
         filter: "filter-card",
         imgSrc: Image2,
-        title: "App 2",
-        icon: "bx bxl-css3",
-        color: "#1572b6",
-      },
-      {
-        id: "6",
-        filter: "filter-web",
-        imgSrc: Image3,
-        title: "App 3",
-        icon: "bx bxl-html5",
-        color: "#e34f26",
+        title: "Meat Store",
+        desc: "Online Meat Shopping Store",
+        icon: FaJava,
+        color: "#e51f24",
       },
     ],
   };
@@ -100,7 +103,7 @@ const Portfolio = () => {
 
   // ---------------------------------------------------------------------------------------------->
   return (
-    <section id="portfolio" className="portfolio section-bg">
+    <section id="portfolio" className="portfolio">
       <div className="container">
         <div className="section-title">
           <h2>{itemsArray.title}</h2>
@@ -122,10 +125,14 @@ const Portfolio = () => {
                 <div className="image-container">
                   <img src={item.imgSrc} className="img-fluid" alt={item.title} />
                   <span className="overlay-icon">
-                    <i className={item.icon} style={{color: item.color}}></i>
+                    <item.icon color={item.color} />
                   </span>
                 </div>
-                <div className="portfolio-links">
+                <div className="portfolio-links" data-tooltip-id={item.id}>
+                  <Tooltip id={item.id} place="top" effect="float">
+                    <h5>{item.title}</h5>
+                    <p>{item.desc}</p>
+                  </Tooltip>
                   <Link to={`/details/project${item.id}`} title="More Details">
                     <i className="bx bx-search-alt-2"></i>
                   </Link>

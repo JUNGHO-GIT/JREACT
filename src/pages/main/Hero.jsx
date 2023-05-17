@@ -8,7 +8,9 @@ const Hero = () => {
   const typedInstance = useRef(null);
 
   // ---------------------------------------------------------------------------------------------->
-  const Items = ["Java, Spring, Javascript, React, Jsp, Css, Html, Sass, Bootstrap, Sql, Hibernate, Maven"];
+  const itemsArray = [
+    "Java, Spring, Javascript, React, Jsp, Css, Html, Sass, Bootstrap, Sql, Hibernate, Maven"
+  ];
 
   // ---------------------------------------------------------------------------------------------->
   useEffect(() => {
@@ -42,7 +44,7 @@ const Hero = () => {
       <div className="hero-container" data-aos="fade-in">
         <h1>JUNGHO MUN</h1>
         <p>
-          <span ref={typedRef} className="typed" data-typed-items={Items}></span>
+          <span ref={typedRef} className="typed" data-typed-items={itemsArray}></span>
         </p>
       </div>
     </section>

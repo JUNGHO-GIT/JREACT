@@ -4,10 +4,9 @@ import Image from "../../assets/images/main/profile.jpg";
 
 // ------------------------------------------------------------------------------------------------>
 const About = () => {
-  const items = {
+  const itemsArray = {
     title : ["About"],
     roleTitle: ["UI/UX Designer & Web Developer."],
-    roleDescription: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."],
     section: [
       {
         sectionTitle: "birthday",
@@ -34,7 +33,6 @@ const About = () => {
         sectionValue: "Master",
       },
     ],
-    lastDescription: ["Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore."],
   };
 
   // ---------------------------------------------------------------------------------------------->
@@ -42,17 +40,16 @@ const About = () => {
     <section id="about" className="about section-bg">
       <div className="container">
         <div className="section-title">
-          <h2>{items.title}</h2>
+          <h2>{itemsArray.title}</h2>
         </div>
         <div className="row">
           <div className="col-lg-4" data-aos="fade-right">
-            <img src={Image} className="img-fluid" alt="Profile" width="380px" height="450px" />
+            <img src={Image}  alt="Profile" width="350px" height="300px" />
           </div>
           <div className="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>{items.roleTitle}</h3>
-            <p className="fst-italic">{items.roleDescription}</p>
+            <h3>{itemsArray.roleTitle}</h3>
             <div className="row">
-              {items.section.map((sectionItem, index) => (
+              {itemsArray.section.map((sectionItem, index) => (
                 <div className="col-lg-6" key={index}>
                   <ul>
                     <li>
@@ -64,7 +61,6 @@ const About = () => {
                 </div>
               ))}
             </div>
-            <p>{items.lastDescription}</p>
           </div>
         </div>
       </div>
