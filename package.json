@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react": "^18.2.6",
     "eslint-plugin-unused-imports": "^2.0.0"
   }
 }

@@ -4,8 +4,8 @@ import "../../assets/styles/Loader.css";
 // ------------------------------------------------------------------------------------------------>
 const Loader = () => {
   return (
-    <div class="background">
-      <div class="loader"></div>
+    <div className="background">
+      <div className="loader"></div>
     </div>
   );
 };
