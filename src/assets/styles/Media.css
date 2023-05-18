@@ -126,6 +126,11 @@
 		min-width: 300px;
 		margin: 0px 0px 100px 80px;
 	}
+  .swiper {
+    width: 100%;
+    max-height: 500px;
+    height: 40vh;
+  }
 }
 
 /** 6. (0~374)***********************************************************************************/
@@ -147,5 +152,8 @@
 		min-width: 300px;
 		margin: 0px 0px 100px 80px;
 	}
+  .swiper {
+    height: 40vh;
+  }
 }
 

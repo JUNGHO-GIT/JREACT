@@ -1,10 +1,12 @@
 import React, {useEffect} from "react";
-import "../../core/App.css";
 import Swiper from "swiper";
-import Image1 from "../../assets/images/project/project1/portfolio-details-1.jpg";
-import Image2 from "../../assets/images/project/project1/portfolio-details-2.jpg";
-import Image3 from "../../assets/images/project/project1/portfolio-details-3.jpg";
+import "../../core/App.css";
 import {Icons} from "../../components/common/Icons";
+import Image1 from "../../assets/images/project/project5/1.png";
+import Image2 from "../../assets/images/project/project5/2.png";
+import Image3 from "../../assets/images/project/project5/3.png";
+import Image4 from "../../assets/images/project/project5/4.png";
+import Image5 from "../../assets/images/project/project5/5.png";
 
 // ------------------------------------------------------------------------------------------------>
 const Project5 = () => {
@@ -188,6 +190,9 @@ const Project5 = () => {
   };
 
   // ---------------------------------------------------------------------------------------------->
+  const images = [Image1, Image2, Image3, Image4, Image5];
+
+  // ---------------------------------------------------------------------------------------------->
   return (
     <section id="portfolio-details" className="portfolio-details">
       <div className="container">
@@ -197,17 +202,13 @@ const Project5 = () => {
           <div className="col-lg-12 col-md-12 col-sm-12 col-12">
             <div className="portfolio-details-slider swiper">
               <div className="swiper-wrapper align-items-center">
-                <div className="swiper-slide">
-                  <img src={Image1} alt="Details1" />
+                {images.map((image, index) => (
+                  <div className="swiper-slide" key={index}>
+                    <img key={index} src={image} alt={`Image ${index + 1}`} />
+                  </div>
+                ))}
+                <div className="swiper-pagination" key="pagination"></div>
                 </div>
-                <div className="swiper-slide">
-                  <img src={Image2} alt="Details2" />
-                </div>
-                <div className="swiper-slide">
-                  <img src={Image3} alt="Details3" />
-                </div>
-                <div className="swiper-pagination"></div>
-              </div>
             </div>
           </div>
         </div>
