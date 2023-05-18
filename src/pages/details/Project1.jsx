@@ -23,8 +23,10 @@ const ImageComponent = () => {
     <Swiper
       spaceBetween={50}
       slidesPerView={1}
-      autoHeight={true}
       grabCursor={true}
+      centeredSlides={true}
+      autoplay={{ delay: 2000 }}
+      centeredSlidesBounds={true}
       fadeEffect={{ crossFade: true }}
       loop={true}
     >
@@ -188,7 +190,7 @@ const Project1 = () => {
         {/** main info **/}
         <div className="row">
           {/** left side **/}
-          <div className="col-lg-6 col-md-6 col-sm-12 col-12 jungho-col-left">
+          <div className="col-lg-6 col-md-12 col-sm-12 col-12 jungho-col-left">
             <div className="portfolio-info">
               {Object.entries(itemsArray1).map(([key, index]) => (
                 <div key={key} className="jungho-border-top">
@@ -235,7 +237,7 @@ const Project1 = () => {
           </div>
 
           {/** right side **/}
-          <div className="col-lg-6 col-md-6 col-sm-12 col-12 jungho-col-right">
+          <div className="col-lg-6 col-md-12 col-sm-12 col-12 jungho-col-right">
             <div className="portfolio-info">
               {Object.entries(itemsArray2).map(([key, index]) => (
                 <div key={key} className="jungho-border-top">

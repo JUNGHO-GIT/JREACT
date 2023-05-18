@@ -1,5 +1,5 @@
 /** 1. (1201 ~ 10000) *****************************************************************************/
-@media only screen and (min-width: 1201px) and (max-width: 10000px) {
+@media only screen and (min-width: 1200px) and (max-width: 10000px) {
 	/** non display **/
 
 	/** display **/
@@ -28,10 +28,20 @@
   .jungho-col-right {
     padding-left: 0px !important;
   }
+
+  .portfolio-details .portfolio-details-slider img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: scale-down;
+    margin: 0px 0px 20px 0px;
+  }
 }
 
+
 /** 2. (992 ~ 1200) *******************************************************************************/
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
+@media only screen and (min-width: 991px) and (max-width: 1200px) {
 	/** non display **/
 
 	/** display **/
@@ -56,10 +66,12 @@
   .jungho-col-right {
     padding-left: 0px !important;
   }
+
+
 }
 
 /** 3. (768 ~ 991) ********************************************************************************/
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 767px) and (max-width: 991px) {
 	/** non display **/
 
 	/** display **/
@@ -84,10 +96,12 @@
   .jungho-col-right {
     padding-left: 0px !important;
   }
+
+
 }
 
 /** 4. (576 ~ 767) ********************************************************************************/
-@media only screen and (min-width: 576px) and (max-width: 767px) {
+@media only screen and (min-width: 575px) and (max-width: 767px) {
 	/** non display **/
 
 	/** display **/
@@ -105,10 +119,12 @@
 		min-width: 300px;
 		margin: 0px 0px 0px 80px;
 	}
+
+
 }
 
 /** 5. (375 ~ 575) ********************************************************************************/
-@media only screen and (min-width: 375px) and (max-width: 575px) {
+@media only screen and (min-width: 374px) and (max-width: 575px) {
 	/** non display **/
 
 	/** display **/
@@ -126,11 +142,7 @@
 		min-width: 300px;
 		margin: 0px 0px 100px 80px;
 	}
-  .swiper {
-    width: 100%;
-    max-height: 500px;
-    height: 40vh;
-  }
+
 }
 
 /** 6. (0~374)***********************************************************************************/
@@ -152,8 +164,6 @@
 		min-width: 300px;
 		margin: 0px 0px 100px 80px;
 	}
-  .swiper {
-    height: 40vh;
-  }
+
 }
 
