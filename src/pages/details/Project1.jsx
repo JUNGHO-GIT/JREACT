@@ -64,6 +64,7 @@ const Project1 = () => {
         icon1: ["FcExpand"],
         text:  ["www.junghomun.com/JREACT"],
         icon2: ["RxDash"],
+        isLink : [true],
       }],
     },
     items2: {
@@ -214,13 +215,19 @@ const Project1 = () => {
                         {item.icon2.map((icon, i) => (
                           <span key={i}>
                             <Icons icon={icon}/>&nbsp;
-                            {item.text[i]}&nbsp;
+                            {item.isLink && item.isLink[i]
+                              ? <a href={`http://${item.text[i]}`} className="text-hover">
+                                  {item.text[i]}
+                                </a>
+                              : <span>
+                                  {item.text[i]}
+                                </span>
+                            }
                           </span>
                         ))}
                       </div>
                     ))
-                  ))}
-                  <br />
+                  ))}<br />
                 </div>
               ))}
             </div>
@@ -260,8 +267,7 @@ const Project1 = () => {
                         ))}
                       </div>
                     ))
-                  ))}
-                  <br />
+                  ))}<br />
                 </div>
               ))}
             </div>

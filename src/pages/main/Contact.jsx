@@ -19,7 +19,7 @@ const Contact = () => {
         <div className="row" data-aos="fade-in">
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
             <iframe src="https://www.google.com/maps/d/embed?mid=1aZouwMhWCdnZgWWpA1vwNf-yE8Y&hl=en_US&ehbc=2E312F" width="100%" height="500"
-            style={{border:0, alignContent:"center", caretColor:"#f5f8fd", marginBottom: -60}} allowfullscreen="" loading="lazy">
+            style={{border:0, alignContent:"center", marginBottom: -60}} allowfullscreen="" loading="lazy">
             </iframe>
           </div>
         </div>
