@@ -29,205 +29,166 @@ const Project4 = () => {
   }, []);
 
   // ---------------------------------------------------------------------------------------------->
-  const infoArray = {
-    infoTitle: ["PROJECT INFO"],
-    infoItems: [
-      {
+  const itemsArray1 = {
+    items1: {
+      mainTitle: [{
+        title : "정보",
+        icon : ["FcSearch"]
+      }],
+      value1: [{
         title: "프로젝트명",
-        content: "GoodNeighbor",
-      },
-      {
+        icon1: ["FcExpand"],
+        text: ["GoodNeighbor"],
+        icon2: ["RxDash"],
+      }],
+      value2: [{
         title: "주제",
-        content: "SPRING FRAMEWORK를 활용한 자선단체 웹사이트",
-      },
-      {
+        icon1: ["FcExpand"],
+        text: ["SPRING FRAMEWORK를 활용한 자선단체 웹사이트"],
+        icon2: ["RxDash"],
+      }],
+      value3: [{
         title: "기간",
-        content: "2023.03.01 ~ 2023.03.30",
-      },
-      {
+        icon1: ["FcExpand"],
+        text: ["2023.03.01 ~ 2023.03.30"],
+        icon2: ["RxDash"],
+      }],
+      value4: [{
         title: "참여인원",
-        content: "총 4명(팀)",
-      },
-      {
+        icon1: ["FcExpand"],
+        text: ["총 4명(팀)"],
+        icon2: ["RxDash"],
+      }],
+      value5: [{
         title: "프로젝트 주소 ",
-        content: "www.junghomun.com/GOODNEIGHBOR"
-      },
-    ],
-  };
+        icon1: ["FcExpand"],
+        text: ["www.junghomun.com/GoodNeighbor"],
+        icon2: ["RxDash"],
+      }],
+    },
+    items2: {
+      mainTitle: [{
+        title : "특징",
+        icon : ["FcSearch"]
+      }],
+      value1: [{
+        title: "특징1",
+        icon1: ["FcExpand"],
+        text: ["blabla"],
+        icon2: ["RxDash"],
+      }],
+      value2: [{
+        title: "특징2",
+        icon1: ["FcExpand"],
+        text: ["blabla"],
+        icon2: ["RxDash"],
+      }],
+      value3: [{
+        title: "특징3",
+        icon1: ["FcExpand"],
+        text: ["blabla"],
+        icon2: ["RxDash"],
+      }],
+      value4: [{
+        title: "특징4",
+        icon1: ["FcExpand"],
+        text: ["blabla"],
+        icon2: ["RxDash"],
+      }],
+      value5: [{
+        title: "특징5",
+        icon1: ["FcExpand"],
+        text: ["blabla"],
+        icon2: ["RxDash"],
+      }],
+    },
+  }
 
   // ---------------------------------------------------------------------------------------------->
-  const descArray1 = {
-    destContent1: {
-      descTitle: ["1. 프론트엔드"],
-      value1: [
-        {
-          title: "- 언어",
-          icon: [
-            "SiHtml5", "SiCss3", "SiJavascript"
-          ],
-          text: [
-            "HTML 5", "CSS 3", "JS ES6"
-          ]
-        },
-      ],
-      value2 : [
-        {
-          title: "- 프레임워크",
-          icon: [
-            "SiBootstrap"
-          ],
-          text: [
-            "BOOTSTRAP 4"
-          ]
-        },
-      ],
-      value3: [
-        {
-          title: "- 템플릿",
-          icon: [
-            "BsFiletypeJava"
-          ],
-          text: [
-            "JSP 2.3"
-          ]
-        },
-      ],
+  const itemsArray2 = {
+    items1: {
+      mainTitle: [{
+        title : "프론트엔드",
+        icon : ["FcSettings"]
+      }],
+      value1: [{
+        title: "언어",
+        icon1: ["FcCursor"],
+        text: ["HTML 5", "CSS 3", "JS ES6"],
+        icon2: ["SiHtml5", "SiCss3", "SiJavascript"],
+      }],
+      value2: [{
+        title: "프레임워크",
+        icon1: ["FcCursor"],
+        text: ["BOOTSTRAP 5"],
+        icon2: ["SiBootstrap"],
+      }],
+      value3: [{
+        title: "템플릿",
+        icon1: ["FcCursor"],
+        text: ["JSP"],
+        icon2: ["BsFiletypeJava"],
+      }],
     },
-    destContent2: {
-      descTitle: ["2. 백엔드"],
-      value1: [
-        {
-          title: "- 언어",
-          icon: [
-            "FaJava"
-          ],
-          text: [
-            "JAVA 11"
-          ]
-        },
-      ],
-      value2: [
-        {
-          title: "- 프레임워크",
-          icon: [
-            "SiSpring"
-          ],
-          text: [
-            "SPRING 4.3"
-          ]
-        },
-      ],
-      value3: [
-        {
-          title: "- 패키지관리, 빌드",
-          icon: [
-            "SiApachemaven", "BsFiletypeXml", "SiJson"
-          ],
-          text: [
-            "MAVEN 4", "XML", "JSON"
-          ]
-        },
-      ],
+    items2: {
+      mainTitle: [{
+        title : "백엔드",
+        icon : ["FcSettings"]
+      }],
+      value1: [{
+        title: "언어",
+        icon1: ["FcCursor"],
+        text: ["JAVA 11"],
+        icon2: ["FaJava"],
+      }],
+      value2: [{
+        title: "프레임워크",
+        icon1: ["FcCursor"],
+        text: ["SPRING 4.3"],
+        icon2: ["SiSpring"],
+      }],
+      value3: [{
+        title: "패키지관리, 빌드",
+        icon1: ["FcCursor"],
+        text: ["MAVEN 4", "XML", "JSON"],
+        icon2: ["SiApachemaven", "BsFiletypeXml", "SiJson"],
+      }],
     },
-    destContent3: {
-      descTitle: ["3. 데이터베이스"],
-      value1: [
-        {
-          title: "- DBMS",
-          icon: [
-            "SiOracle"
-          ],
-          text: [
-            "ORACLE X11"
-          ]
-        },
-      ],
-      value2: [
-        {
-          title: "- 프레임워크, 관리",
-          icon: [
-            "SiBower", "GiBeaver"
-          ],
-          text: [
-            "MYBATIS 3.5", "DBEAVER 22.3"
-          ]
-        }
-      ],
+    items3: {
+      mainTitle: [{
+        title : "DBMS",
+        icon : ["FcSettings"]
+      }],
+      value1: [{
+        title: "플랫폼",
+        icon1: ["FcCursor"],
+        text: ["ORACLE 11XE"],
+        icon2: ["SiOracle"],
+      }],
+      value2: [{
+        title: "프레임워크, 관리",
+        icon1: ["FcCursor"],
+        text: ["MYBATIS 3.5", "DBEAVER 22.3"],
+        icon2: ["SiBower", "GiBeaver"],
+      }],
     },
-  };
-  const descArray2 = {
-    destContent1: {
-      descTitle: ["4. 서버"],
-      value1: [
-        {
-          title: "- 플랫폼",
-          icon: [
-            "SiApachetomcat"
-          ],
-          text: [
-            "TOMCAT 9.0"
-          ]
-        },
-      ],
-      value2: [
-        {
-          title: "- 클라우드",
-          icon: [
-            "FcGoogle", "FcGoogle", "FcGoogle"
-          ],
-          text: [
-            "GCP-INSTANCE", "GCP-SQL", "GCP-BUCKET"
-          ]
-        }
-      ],
-    },
-    destContent2: {
-      descTitle: ["4. 특징"],
-      value1: [
-        {
-          title: "- 특징1",
-          icon: ["SiApache"],
-          text: [
-            "blabla"
-          ],
-        },
-      ],
-      value2: [
-        {
-          title: "- 특징2",
-          icon: ["SiApache"],
-          text: [
-            "blabla"
-          ],
-        },
-      ],
-      value3: [
-        {
-          title: "- 특징3",
-          icon: ["SiApache"],
-          text: [
-            "blabla"
-          ],
-        },
-      ],
-      value4: [
-        {
-          title: "- 특징4",
-          icon: ["SiApache"],
-          text: [
-            "blabla"
-          ],
-        },
-      ],
-      value5: [
-        {
-          title: "- 특징5",
-          icon: ["SiApache"],
-          text: [
-            "blabla"
-          ],
-        }
-      ],
+    items4: {
+      mainTitle: [{
+        title : "서버",
+        icon : ["FcSettings"]
+      }],
+      value1: [{
+        title: "플랫폼",
+        icon1: ["FcCursor"],
+        text: ["TOMCAT 8.5", "APACHE"],
+        icon2: ["SiApachetomcat", "SiApache"],
+      }],
+      value2: [{
+        title: "- 클라우드",
+        icon1: ["FcCursor"],
+        text: ["GCP-INSTANCE", "GCP-SQL", "GCP-BUCKET"],
+        icon2: ["FcGoogle", "FcGoogle", "FcGoogle"],
+      }],
     },
   };
 
@@ -235,6 +196,8 @@ const Project4 = () => {
   return (
     <section id="portfolio-details" className="portfolio-details">
       <div className="container">
+
+        {/** main image **/}
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-12">
             <div className="portfolio-details-slider swiper">
@@ -253,77 +216,86 @@ const Project4 = () => {
             </div>
           </div>
         </div>
+
+        {/** main info **/}
         <div class="row">
-          <div className="col-lg-12 col-md-12 col-sm-12 col-12">
+
+          {/** left side **/}
+          <div className="col-lg-6 col-md-6 col-sm-12 col-12 jungho-col-left">
             <div className="portfolio-info">
-              <h3>{infoArray.infoTitle}</h3>
-                {infoArray.infoItems.map((item, index) => (
-                  <div key={index}>
-                    <h5 className="fw-8 titleWrapper1">
-                      {item.title}&nbsp;&nbsp;
-                    </h5>
-                    <span>
-                      =&nbsp;&nbsp;&nbsp;&nbsp;{item.content}
-                    </span>
-                  </div>
-                ))}
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div className="col-lg-6 col-md-6 col-sm-12 col-12 jungho-col1">
-            <div className="portfolio-info">
-              {Object.entries(descArray1).map(([key, value]) => (
+              {Object.entries(itemsArray1).map(([key, index]) => (
                 <div key={key}>
-                  <h3>{value.descTitle}</h3>
-                  {Object.entries(value).map(([key, obj]) => {
-                    if (key.startsWith("value")) {
-                      return Object.entries(obj).map(([subKey, value]) => (
-                        <div key={subKey} style={{ marginBottom: "20px" }}>
-                          <h6 className="fw-8 titleWrapper2">
-                            {value.title}&nbsp;&nbsp;
-                          </h6>
-                          {value.icon.map((icon, i) => (
-                            <React.Fragment key={i}>
-                              <span>
-                                <Icons icon={icon} />&nbsp;&nbsp;
-                                {value.text[i]}&nbsp;&nbsp;
-                              </span>
-                            </React.Fragment>
+                  {index.mainTitle.map((titleObj, titleIdx) => (
+                    <h3 key={titleIdx}>
+                      {titleObj.icon.map((icon, i) => (
+                        <span key={i}>
+                          <Icons icon={icon} />&nbsp;
+                        </span>
+                      ))}
+                      {titleObj.title}
+                    </h3>
+                  ))}
+                  {Object.entries(index).filter(([key2]) => key2.startsWith("value")).map(([key2, valueArray]) => (
+                    valueArray.map((item, itemIdx) => (
+                      <div key={`${key2}-${itemIdx}`} style={{ marginBottom: "20px" }}>
+                        <h6 className="fw-8 titleWrapper2">
+                          {item.icon1.map((icon, i) => (
+                            <span key={i}>
+                              <Icons icon={icon} />&nbsp;
+                            </span>
                           ))}
-                        </div>
-                      ));
-                    }
-                  })}
+                          {item.title}&nbsp;
+                        </h6>
+                        {item.icon2.map((icon, i) => (
+                          <span key={i}>
+                            <Icons icon={icon}/>&nbsp;
+                            {item.text[i]}&nbsp;
+                          </span>
+                        ))}
+                      </div>
+                    ))
+                  ))}
                   <br />
                 </div>
               ))}
             </div>
           </div>
-          <div className="col-lg-6 col-md-6 col-sm-12 col-12 jungho-col2">
+
+          {/** right side **/}
+          <div className="col-lg-6 col-md-6 col-sm-12 col-12 jungho-col-right">
             <div className="portfolio-info">
-              {Object.entries(descArray2).map(([key, value]) => (
+              {Object.entries(itemsArray2).map(([key, index]) => (
                 <div key={key}>
-                  <h3>{value.descTitle}</h3>
-                  {Object.entries(value).map(([key, obj]) => {
-                    if (key.startsWith("value")) {
-                      return Object.entries(obj).map(([subKey, value]) => (
-                        <div key={subKey} style={{ marginBottom: "20px" }}>
-                          <h6 className="fw-8 titleWrapper2">
-                            {value.title}&nbsp;&nbsp;
-                          </h6>
-                          {value.icon.map((icon, i) => (
-                            <React.Fragment key={i}>
-                              <span>
-                                <Icons icon={icon} />&nbsp;&nbsp;
-                                {value.text[i]}&nbsp;&nbsp;
-                              </span>
-                            </React.Fragment>
+                  {index.mainTitle.map((titleObj, titleIdx) => (
+                    <h3 key={titleIdx}>
+                      {titleObj.icon.map((icon, i) => (
+                        <span key={i}>
+                          <Icons icon={icon} />&nbsp;
+                        </span>
+                      ))}
+                      {titleObj.title}
+                    </h3>
+                  ))}
+                  {Object.entries(index).filter(([key2]) => key2.startsWith("value")).map(([key2, valueArray]) => (
+                    valueArray.map((item, itemIdx) => (
+                      <div key={`${key2}-${itemIdx}`} style={{ marginBottom: "20px" }}>
+                        <h6 className="fw-8 titleWrapper2">
+                          {item.icon1.map((icon, i) => (
+                            <span key={i}>
+                              <Icons icon={icon} />&nbsp;
+                            </span>
                           ))}
-                        </div>
-                      ));
-                    }
-                  })}
+                          {item.title}&nbsp;
+                        </h6>
+                        {item.icon2.map((icon, i) => (
+                          <span key={i}>
+                            <Icons icon={icon} />&nbsp;
+                            {item.text[i]}&nbsp;
+                          </span>
+                        ))}
+                      </div>
+                    ))
+                  ))}
                   <br />
                 </div>
               ))}

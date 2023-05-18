@@ -29,138 +29,136 @@ const Project2 = () => {
   }, []);
 
   // ---------------------------------------------------------------------------------------------->
-  const infoArray = {
-    infoTitle: ["PROJECT INFO"],
-    infoItems: [
-      {
+  const itemsArray1 = {
+    items1: {
+      mainTitle: [{
+        title : "정보",
+        icon : ["FcSearch"]
+      }],
+      value1: [{
         title: "프로젝트명",
-        content: "JLINT",
-      },
-      {
+        icon1: ["FcExpand"],
+        text: ["JLINT",],
+        icon2: ["RxDash"],
+      }],
+      value2: [{
         title: "주제",
-        content: "NODEJS 및 TS를 활용한 VSCODE 언어 린팅 확장프로그램",
-      },
-      {
+        icon1: ["FcExpand"],
+        text: ["NODEJS 및 TS를 활용한 VSCODE 언어 린팅 확장프로그램"],
+        icon2: ["RxDash"],
+      }],
+      value3: [{
         title: "기간",
-        content: "2023.05.01 ~ 2023.05.15",
-      },
-      {
+        icon1: ["FcExpand"],
+        text: ["2023.05.01 ~ 2023.05.15"],
+        icon2: ["RxDash"],
+      }],
+      value4: [{
         title: "참여인원",
-        content: "총 1명(개인)",
-      },
-      {
+        icon1: ["FcExpand"],
+        text: ["총 1명(개인)"],
+        icon2: ["RxDash"],
+      }],
+      value5: [{
         title: "프로젝트 주소 ",
-        content: "www.junghomun.com/JLINT",
-      },
-    ],
-  };
+        icon1: ["FcExpand"],
+        text: ["www.junghomun.com/JLINT"],
+        icon2: ["RxDash"],
+      }],
+    },
+    items2: {
+      mainTitle: [{
+        title : "특징",
+        icon : ["FcSearch"]
+      }],
+      value1: [{
+        title: "특징1",
+        icon1: ["FcExpand"],
+        text: ["blabla"],
+        icon2: ["RxDash"],
+      }],
+      value2: [{
+        title: "특징2",
+        icon1: ["FcExpand"],
+        text: ["blabla"],
+        icon2: ["RxDash"],
+      }],
+      value3: [{
+        title: "특징3",
+        icon1: ["FcExpand"],
+        text: ["blabla"],
+        icon2: ["RxDash"],
+      }],
+      value4: [{
+        title: "특징4",
+        icon1: ["FcExpand"],
+        text: ["blabla"],
+        icon2: ["RxDash"],
+      }],
+      value5: [{
+        title: "특징5",
+        icon1: ["FcExpand"],
+        text: ["blabla"],
+        icon2: ["RxDash"],
+      }],
+    },
+  }
 
   // ---------------------------------------------------------------------------------------------->
-  const descArray1 = {
-    destContent1: {
-      descTitle: ["1. 프론트엔드"],
-      value1: [
-        {
-          title: "- 언어",
-          icon: [
-            "SiHtml5", "SiMarkdown"
-          ],
-          text: [
-            "HTML 5", "MARKDOWN"
-          ]
-        },
-      ],
+  const itemsArray2 = {
+    items1: {
+      mainTitle: [{
+        title : "프론트엔드",
+        icon : ["FcSettings"]
+      }],
+      value1: [{
+        title: "언어",
+        icon1: ["FcCursor"],
+        text: ["HTML 5", "MARKDOWN"],
+        icon2: ["SiHtml5", "SiMarkdown"]
+      }]
     },
-    destContent2: {
-      descTitle: ["2. 백엔드"],
-      value1: [
-        {
-          title: "- 언어",
-          icon: [
-            "FaNodeJs", "SiJavascript", "SiTypescript"
-          ],
-          text: [
-            "NODEJS 16", "JS ES6", "TS ES6"
-          ]
-        },
-      ],
-      value2: [
-        {
-          title: "- 패키지관리, 빌드",
-          icon: [
-            "FaNpm", "SiGithub","SiJson"
-          ],
-          text: [
-            "NPM", "GITHUB", "JSON"
-          ]
-        },
-      ],
+    items2: {
+      mainTitle: [{
+        title : "백엔드",
+        icon : ["FcSettings"]
+      }],
+      value1: [{
+        title: "언어",
+        icon1: ["FcCursor"],
+        text: ["NODEJS 16", "JS ES6", "TS ES6"],
+        icon2: ["FaNodeJs", "SiJavascript", "SiTypescript"],
+      }],
+      value2: [{
+        title: "패키지관리, 빌드",
+        icon1: ["FcCursor"],
+        text: ["NPM", "GITHUB", "JSON"],
+        icon2: ["FaNpm", "SiGithub","SiJson"],
+      }],
     },
-  };
-
-  // ---------------------------------------------------------------------------------------------->
-  const descArray2 = {
-    destContent1: {
-      descTitle: ["3. API"],
-      value1: [
-        {
-          title: "- 플랫폼",
-          icon: [
-            "TbBrandVscode"
-          ],
-          text: [
-            "VSCODE-API 1.78"
-          ]
-        },
-      ],
+    items3: {
+      mainTitle: [{
+        title : "서버",
+        icon : ["FcSettings"]
+      }],
+      value1: [{
+        title: "플랫폼",
+        icon1: ["FcCursor"],
+        text: ["APACHE", "NGINX"],
+        icon2: ["SiApache", "SiNginx"],
+      }],
     },
-    destContent2: {
-      descTitle: ["4. 특징"],
-      value1: [
-        {
-          title: "- 특징1",
-          icon: ["SiApache"],
-          text: [
-            "blabla"
-          ],
-        },
-      ],
-      value2: [
-        {
-          title: "- 특징2",
-          icon: ["SiApache"],
-          text: [
-            "blabla"
-          ],
-        },
-      ],
-      value3: [
-        {
-          title: "- 특징3",
-          icon: ["SiApache"],
-          text: [
-            "blabla"
-          ],
-        },
-      ],
-      value4: [
-        {
-          title: "- 특징4",
-          icon: ["SiApache"],
-          text: [
-            "blabla"
-          ],
-        },
-      ],
-      value5: [
-        {
-          title: "- 특징5",
-          icon: ["SiApache"],
-          text: [
-            "blabla"
-          ],
-        }
-      ],
+    items4: {
+      mainTitle: [{
+        title : "API",
+        icon : ["FcSettings"]
+      }],
+      value1: [{
+        title: "플랫폼",
+        icon1: ["FcCursor"],
+        text: ["VSCODE-API 1.78"],
+        icon2: ["TbBrandVscode"],
+      }],
     },
   };
 
@@ -168,6 +166,8 @@ const Project2 = () => {
   return (
     <section id="portfolio-details" className="portfolio-details">
       <div className="container">
+
+        {/** main image **/}
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-12">
             <div className="portfolio-details-slider swiper">
@@ -186,77 +186,86 @@ const Project2 = () => {
             </div>
           </div>
         </div>
+
+        {/** main info **/}
         <div class="row">
-          <div className="col-lg-12 col-md-12 col-sm-12 col-12">
+
+          {/** left side **/}
+          <div className="col-lg-6 col-md-6 col-sm-12 col-12 jungho-col-left">
             <div className="portfolio-info">
-              <h3>{infoArray.infoTitle}</h3>
-                {infoArray.infoItems.map((item, index) => (
-                  <div key={index}>
-                    <h5 className="fw-8 titleWrapper1">
-                      {item.title}&nbsp;&nbsp;
-                    </h5>
-                    <span>
-                      =&nbsp;&nbsp;&nbsp;&nbsp;{item.content}
-                    </span>
-                  </div>
-                ))}
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div className="col-lg-6 col-md-6 col-sm-12 col-12 jungho-col1">
-            <div className="portfolio-info">
-              {Object.entries(descArray1).map(([key, value]) => (
+              {Object.entries(itemsArray1).map(([key, index]) => (
                 <div key={key}>
-                  <h3>{value.descTitle}</h3>
-                  {Object.entries(value).map(([key, obj]) => {
-                    if (key.startsWith("value")) {
-                      return Object.entries(obj).map(([subKey, value]) => (
-                        <div key={subKey} style={{ marginBottom: "20px" }}>
-                          <h6 className="fw-8 titleWrapper2">
-                            {value.title}&nbsp;&nbsp;
-                          </h6>
-                          {value.icon.map((icon, i) => (
-                            <React.Fragment key={i}>
-                              <span>
-                                <Icons icon={icon} />&nbsp;&nbsp;
-                                {value.text[i]}&nbsp;&nbsp;
-                              </span>
-                            </React.Fragment>
+                  {index.mainTitle.map((titleObj, titleIdx) => (
+                    <h3 key={titleIdx}>
+                      {titleObj.icon.map((icon, i) => (
+                        <span key={i}>
+                          <Icons icon={icon} />&nbsp;
+                        </span>
+                      ))}
+                      {titleObj.title}
+                    </h3>
+                  ))}
+                  {Object.entries(index).filter(([key2]) => key2.startsWith("value")).map(([key2, valueArray]) => (
+                    valueArray.map((item, itemIdx) => (
+                      <div key={`${key2}-${itemIdx}`} style={{ marginBottom: "20px" }}>
+                        <h6 className="fw-8 titleWrapper2">
+                          {item.icon1.map((icon, i) => (
+                            <span key={i}>
+                              <Icons icon={icon} />&nbsp;
+                            </span>
                           ))}
-                        </div>
-                      ));
-                    }
-                  })}
+                          {item.title}&nbsp;
+                        </h6>
+                        {item.icon2.map((icon, i) => (
+                          <span key={i}>
+                            <Icons icon={icon}/>&nbsp;
+                            {item.text[i]}&nbsp;
+                          </span>
+                        ))}
+                      </div>
+                    ))
+                  ))}
                   <br />
                 </div>
               ))}
             </div>
           </div>
-          <div className="col-lg-6 col-md-6 col-sm-12 col-12 jungho-col2">
+
+          {/** right side **/}
+          <div className="col-lg-6 col-md-6 col-sm-12 col-12 jungho-col-right">
             <div className="portfolio-info">
-              {Object.entries(descArray2).map(([key, value]) => (
+              {Object.entries(itemsArray2).map(([key, index]) => (
                 <div key={key}>
-                  <h3>{value.descTitle}</h3>
-                  {Object.entries(value).map(([key, obj]) => {
-                    if (key.startsWith("value")) {
-                      return Object.entries(obj).map(([subKey, value]) => (
-                        <div key={subKey} style={{ marginBottom: "20px" }}>
-                          <h6 className="fw-8 titleWrapper2">
-                            {value.title}&nbsp;&nbsp;
-                          </h6>
-                          {value.icon.map((icon, i) => (
-                            <React.Fragment key={i}>
-                              <span>
-                                <Icons icon={icon} />&nbsp;&nbsp;
-                                {value.text[i]}&nbsp;&nbsp;
-                              </span>
-                            </React.Fragment>
+                  {index.mainTitle.map((titleObj, titleIdx) => (
+                    <h3 key={titleIdx}>
+                      {titleObj.icon.map((icon, i) => (
+                        <span key={i}>
+                          <Icons icon={icon} />&nbsp;
+                        </span>
+                      ))}
+                      {titleObj.title}
+                    </h3>
+                  ))}
+                  {Object.entries(index).filter(([key2]) => key2.startsWith("value")).map(([key2, valueArray]) => (
+                    valueArray.map((item, itemIdx) => (
+                      <div key={`${key2}-${itemIdx}`} style={{ marginBottom: "20px" }}>
+                        <h6 className="fw-8 titleWrapper2">
+                          {item.icon1.map((icon, i) => (
+                            <span key={i}>
+                              <Icons icon={icon} />&nbsp;
+                            </span>
                           ))}
-                        </div>
-                      ));
-                    }
-                  })}
+                          {item.title}&nbsp;
+                        </h6>
+                        {item.icon2.map((icon, i) => (
+                          <span key={i}>
+                            <Icons icon={icon} />&nbsp;
+                            {item.text[i]}&nbsp;
+                          </span>
+                        ))}
+                      </div>
+                    ))
+                  ))}
                   <br />
                 </div>
               ))}

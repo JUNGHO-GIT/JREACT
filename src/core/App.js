@@ -13,6 +13,7 @@ import "boxicons/css/boxicons.min.css";
 import "swiper/swiper-bundle.min.css";
 
 // components ------------------------------------------------------------------------------------->
+import Scroll from "../components/common/Scroll";
 import Loader from "../components/common/Loader";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
@@ -113,6 +114,7 @@ const App = () => {
   // ---------------------------------------------------------------------------------------------->
   return (
     <Router>
+      <Scroll/>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/details/project1" element={<ProjectDetails project="project1" />} />

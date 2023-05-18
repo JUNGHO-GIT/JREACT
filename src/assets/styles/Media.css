@@ -22,10 +22,10 @@
 		margin: 0px 0px 0px 80px;
 	}
 
-  .jungho-col1 {
+  .jungho-col-left {
     padding-right: 0px !important;
   }
-  .jungho-col2 {
+  .jungho-col-right {
     padding-left: 0px !important;
   }
 }
@@ -50,10 +50,10 @@
 		margin: 0px 0px 0px 80px;
 	}
 
-  .jungho-col1 {
+  .jungho-col-left {
     padding-right: 0px !important;
   }
-  .jungho-col2 {
+  .jungho-col-right {
     padding-left: 0px !important;
   }
 }
@@ -78,10 +78,10 @@
 		margin: 0px 0px 0px 80px;
 	}
 
-  .jungho-col1 {
+  .jungho-col-left {
     padding-right: 0px !important;
   }
-  .jungho-col2 {
+  .jungho-col-right {
     padding-left: 0px !important;
   }
 }
