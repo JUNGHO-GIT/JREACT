@@ -1,34 +1,43 @@
-import React, {useEffect} from "react";
-import Swiper from "swiper";
+import React, {useState, useEffect} from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 import "../../core/App.css";
 import {Icons} from "../../components/common/Icons";
-import Image1 from "../../assets/images/project/project4/1.png";
-import Image2 from "../../assets/images/project/project4/2.png";
-import Image3 from "../../assets/images/project/project4/3.png";
-import Image4 from "../../assets/images/project/project4/4.png";
-import Image5 from "../../assets/images/project/project4/5.png";
+
+// 스와이프 이미지 -------------------------------------------------------------------------------->
+const ImageComponent = () => {
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    const loadImages = async () => {
+      let loadedImages = [];
+      for (let i = 1; i <= 5; i++) {
+        const image = await import(`../../assets/images/project/project4/${i}.png`);
+        loadedImages.push(image.default);
+      }
+      setImages(loadedImages);
+    };
+    loadImages();
+  }, []);
+
+  return (
+    <Swiper
+      spaceBetween={50}
+      slidesPerView={1}
+      autoHeight={true}
+      grabCursor={true}
+      fadeEffect={{ crossFade: true }}
+      loop={true}>
+      {images.map((image, index) => (
+        <SwiperSlide key={index}>
+          <img src={image} alt={`image-${index + 1}`} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
+};
 
 // ------------------------------------------------------------------------------------------------>
 const Project4 = () => {
-
-  // ---------------------------------------------------------------------------------------------->
-  useEffect(() => {
-    new Swiper(".swiper", {
-      speed: 400,
-      loop: true,
-      centeredSlides: true,
-      touchRatio: 0.5,
-      autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-        clickable: false,
-      },
-    });
-  }, []);
 
   // ---------------------------------------------------------------------------------------------->
   const itemsArray1 = {
@@ -196,9 +205,6 @@ const Project4 = () => {
   };
 
   // ---------------------------------------------------------------------------------------------->
-  const images = [Image1, Image2, Image3, Image4, Image5];
-
-  // ---------------------------------------------------------------------------------------------->
   return (
     <section id="portfolio-details" className="portfolio-details">
       <div className="container">
@@ -208,13 +214,8 @@ const Project4 = () => {
           <div className="col-lg-12 col-md-12 col-sm-12 col-12">
             <div className="portfolio-details-slider swiper">
               <div className="swiper-wrapper align-items-center">
-                {images.map((image, index) => (
-                  <div className="swiper-slide" key={index}>
-                    <img key={index} src={image} alt={`Image ${index + 1}`} />
-                  </div>
-                ))}
-                <div className="swiper-pagination" key="pagination"></div>
-                </div>
+                <ImageComponent />
+              </div>
             </div>
           </div>
         </div>
