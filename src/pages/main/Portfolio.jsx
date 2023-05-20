@@ -1,62 +1,75 @@
-import React, {useEffect} from "react";
-import {Link} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Isotope from "isotope-layout";
-import {Tooltip} from "react-tooltip";
-import Image1 from "../../assets/images/portfolio/portfolio-1.jpg";
-import Image2 from "../../assets/images/portfolio/portfolio-2.jpg";
-import Image3 from "../../assets/images/portfolio/portfolio-3.jpg";
+import { Tooltip } from "react-tooltip";
 import "../../core/App.css";
-import {Icons} from "../../components/common/Icons";
+import { Icons } from "../../components/common/Icons";
 
 // ------------------------------------------------------------------------------------------------>
 const Portfolio = () => {
+  const [images, setImages] = useState([]); // `images` state 정의 위치 확인
+
+  useEffect(() => {
+    const loadImages = async () => {
+      let loadedImages = [];
+      for (let j = 1; j <= 5; j++) {
+        const image = await import(
+          `../../assets/images/project/project${j}/1.png`
+        );
+        loadedImages.push(image.default);
+      }
+      setImages(loadedImages);
+    };
+    loadImages();
+  }, []);
+
   const itemsArray = {
     title: ["Portfolios"],
     items: [
       {
         id: "1",
         filter: "filter-front",
-        imgSrc: Image1,
+        imgSrc: 0,
         title: "JREACT",
         desc: "Portfolio React",
         icon: "SiReact",
-        color : "#61DAFB",
+        color: "#61DAFB",
       },
       {
         id: "2",
         filter: "filter-etc",
-        imgSrc: Image2,
+        imgSrc: 1,
         title: "JLINT",
         desc: "Vscode Language Formatter Extension",
         icon: "FaNodeJs",
-        color : "#339933",
+        color: "#339933",
       },
       {
         id: "3",
         filter: "filter-back",
-        imgSrc: Image3,
+        imgSrc: 2,
         title: "JUNGHQLO",
         desc: "Online Clothing Shopping Store",
         icon: "SiSpringboot",
-        color : "#6DC73F",
+        color: "#6DC73F",
       },
       {
         id: "4",
         filter: "filter-back",
-        imgSrc: Image1,
+        imgSrc: 3,
         title: "GoodNeighbor",
         desc: "Charity and Donation Website",
         icon: "SiSpring",
-        color : "#6DC73F",
+        color: "#6DC73F",
       },
       {
         id: "5",
         filter: "filter-back",
-        imgSrc: Image2,
+        imgSrc: 4,
         title: "MeatStore",
         desc: "Online Meat Shopping Store",
         icon: "FaJava",
-        color : "#E51F24",
+        color: "#E51F24",
       },
     ],
   };
@@ -69,11 +82,13 @@ const Portfolio = () => {
         itemSelector: ".portfolio-item",
       });
       let portfolioFilters = document.querySelectorAll("#portfolio-filters li");
-      let allFilter = document.querySelector("#portfolio-filters li[data-filter=" * "]");
-      portfolioFilters.forEach(function  (el, index)  {
-        el.addEventListener("click", function  (e)  {
+      let allFilter = document.querySelector(
+        "#portfolio-filters li[data-filter=" * "]"
+      );
+      portfolioFilters.forEach(function (el, index) {
+        el.addEventListener("click", function (e) {
           e.preventDefault();
-          portfolioFilters.forEach(function  (el)  {
+          portfolioFilters.forEach(function (el) {
             el.classList.remove("filter-active");
           });
           this.classList.add("filter-active");
@@ -97,6 +112,9 @@ const Portfolio = () => {
     }
   }, []);
 
+  if (images.length < itemsArray.items.length) {
+    return <div>Loading...</div>; // or your custom loading UI
+  }
   // ---------------------------------------------------------------------------------------------->
   return (
     <section id="portfolio" className="portfolio">
@@ -116,17 +134,25 @@ const Portfolio = () => {
         </div>
         <div className="row portfolio-container">
           {itemsArray.items.map((item) => (
-            <div key={item.id} className={`col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 portfolio-item ${item.filter}`}>
+            <div
+              key={item.id}
+              className={`col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 portfolio-item ${item.filter}`}
+            >
               <div className="portfolio-wrap">
                 <div className="image-container">
-                  <img src={item.imgSrc} className="img-fluid" alt={item.title} />
+                  <img
+                    src={images[item.imgSrc]}
+                    className="img-fluid"
+                    alt={item.title}
+                  />
+
                   <span className="overlay-icon">
                     <Icons icon={item.icon} />
                   </span>
                 </div>
                 <div className="portfolio-links" data-tooltip-id={item.id}>
                   <Tooltip id={item.id} place="top" effect="float">
-                    <h5 style={{color: item.color}}>{item.title}</h5>
+                    <h5 style={{ color: item.color }}>{item.title}</h5>
                     <p>{item.desc}</p>
                   </Tooltip>
                   <Link to={`/details/project${item.id}`} title="More Details">
