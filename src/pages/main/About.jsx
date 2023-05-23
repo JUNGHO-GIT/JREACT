@@ -1,5 +1,4 @@
 import React from "react";
-import "../../core/App.css";
 import Image from "../../assets/images/main/profile.jpg";
 
 // ------------------------------------------------------------------------------------------------>
@@ -45,28 +44,27 @@ const About = () => {
         </div>
         <div className="row">
           {/** image **/}
-          <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12" data-aos="fade-right">
-            <img src={Image}  alt="Profile" width="300px" height="300px" />
+          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-right">
+            <img src={Image}  alt="Profile" className="jungho-image" style={{maxHeight: "400px"}}/>
           </div>
+          <div className="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 col-12"></div>
           {/** details **/}
-          <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-12 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <div className="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>{itemsArray.roleTitle}</h3>
             <div className="row">
               {itemsArray.section.map((sectionItem, index) => (
-                <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" key={index}>
-                  <ul>
-                    <li>
-                      <i className="bi bi-chevron-right"></i>
-                      <strong>{sectionItem.sectionTitle}</strong>
-                      {sectionItem.isLink ? (
-                        <a href={`http://${sectionItem.sectionValue}`} target="_blank" rel="noreferrer" className="text-hover">
-                          {sectionItem.sectionValue}
-                        </a>
-                        ) : (sectionItem.sectionValue)
-                      }
-                    </li>
-                  </ul>
-                </div>
+                <ul key={index}>
+                  <li>
+                    <i className="bi bi-chevron-right"></i>
+                    <strong>{sectionItem.sectionTitle}</strong>
+                    {sectionItem.isLink ? (
+                      <a href={`http://${sectionItem.sectionValue}`} target="_blank" rel="noreferrer" className="text-hover">
+                        {sectionItem.sectionValue}
+                      </a>
+                    ) : (sectionItem.sectionValue)
+                    }
+                  </li>
+                </ul>
               ))}
             </div>
           </div>

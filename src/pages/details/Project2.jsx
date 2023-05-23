@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import "../../core/App.css";
+import { Navigation, Pagination} from 'swiper';
 import {Icons} from "../../components/common/Icons";
 
 // 스와이프 이미지 -------------------------------------------------------------------------------->
@@ -21,12 +21,12 @@ const ImageComponent = () => {
 
   return (
     <Swiper
+      modules={[Navigation, Pagination]}
       spaceBetween={50}
       slidesPerView={1}
-      autoHeight={true}
-      grabCursor={true}
-      fadeEffect={{ crossFade: true }}
-      loop={true}>
+      navigation
+      pagination
+    >
       {images.map((image, index) => (
         <SwiperSlide key={index}>
           <img src={image} alt={`image-${index + 1}`} />

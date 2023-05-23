@@ -465,3 +465,35 @@
 .sh-8 { box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.45) !important;}
 .sh-9 { box-shadow: 0px 9px 18px rgba(0, 0, 0, 0.5) !important;}
 .sh-10 { box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.55) !important;}
+
+.jungho-center {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.jungho-left {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  text-align: left !important;
+}
+
+.jungho-right {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  text-align: right !important;
+}
+
+.jungho-image {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  vertical-align: middle !important;
+}

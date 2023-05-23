@@ -1,5 +1,4 @@
 import React, {useRef, useEffect} from "react";
-import "../../core/App.css";
 
 // ------------------------------------------------------------------------------------------------>
 const Admin = () => {

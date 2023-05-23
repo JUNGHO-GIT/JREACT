@@ -388,11 +388,14 @@ section {
 }
 
 /** about *****************************************************************************************/
+
+
+
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
   color: #173b6c;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .about .content ul {
@@ -467,19 +470,38 @@ section {
 
 
 /** portfolio *************************************************************************************/
-
 .portfolio .portfolio-item {
   min-height: 300px;
   margin-bottom: 30px;
+  animation: fadeInUp 1s all ease-in-out;
   display: flex;
   align-items: center;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.project-line {
+  width: 70px;
+  height: 2px;
+  display: block;
+  background: #149ddd;
 }
 
 .portfolio #portfolio-filters {
   margin: 0 auto 35px auto;
   list-style: none;
   text-align: center;
-  background: #fff;
+  background: #f5f8fd;
   border-radius: 50px;
   padding: 2px 15px;
 }
@@ -488,7 +510,7 @@ section {
   cursor: pointer;
   display: inline-block;
   padding: 10px 15px 8px 15px;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
@@ -499,6 +521,7 @@ section {
 
 .portfolio #portfolio-filters li:hover,
 .portfolio #portfolio-filters li.filter-active {
+  font-weight: 900;
   color: #149ddd;
 }
 
@@ -508,7 +531,7 @@ section {
 
 .portfolio .portfolio-wrap {
   height: 100%;
-  transition: 0.3s;
+  transition: all ease-in-out 0.3s;
   position: relative;
   overflow: hidden;
   z-index: 1;

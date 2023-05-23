@@ -1,6 +1,5 @@
 import React, {useEffect, useRef} from "react";
 import Image from "../../assets/images/main/profile2.jpg";
-import "../../core/App.css";
 
 // ------------------------------------------------------------------------------------------------>
 const socialLinks = [

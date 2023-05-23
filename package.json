@@ -2,26 +2,6 @@
   "name": "work",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@srexi/purecounterjs": "^1.5.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "aos": "^2.3.4",
-    "bootstrap": "^5.2.3",
-    "bootstrap-icons": "^1.10.4",
-    "boxicons": "^2.1.4",
-    "isotope-layout": "^3.0.6",
-    "react": "^18.2.0",
-    "react-countup": "^6.4.2",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.8.0",
-    "react-router-dom": "^6.11.0",
-    "react-scripts": "5.0.1",
-    "react-tooltip": "^5.13.0",
-    "react-transition-group": "^4.4.5",
-    "swiper": "^9.2.4",
-    "typed.js": "^2.0.15",
-    "web-vitals": "^3.3.1"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -46,9 +26,30 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "@srexi/purecounterjs": "^1.5.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "aos": "^2.3.4",
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.4",
+    "boxicons": "^2.1.4",
+    "isotope-layout": "^3.0.6",
+    "react": "^18.2.0",
+    "react-countup": "^6.4.2",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.11.0",
+    "react-scripts": "5.0.1",
+    "react-tooltip": "^5.13.0",
+    "react-transition-group": "^4.4.5",
+    "typed.js": "^2.0.15",
+    "web-vitals": "^3.3.1"
+  },
   "devDependencies": {
     "@types/react": "^18.2.6",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "swiper": "^9.3.2",
+    "swiper-react": "^1.0.0"
   }
 }

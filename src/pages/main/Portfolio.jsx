@@ -1,28 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 import Isotope from "isotope-layout";
-import { Tooltip } from "react-tooltip";
-import "../../core/App.css";
-import { Icons } from "../../components/common/Icons";
+import {Tooltip} from "react-tooltip";
+import {Icons} from "../../components/common/Icons";
 
 // ------------------------------------------------------------------------------------------------>
 const Portfolio = () => {
-  const [images, setImages] = useState([]); // `images` state 정의 위치 확인
+  const [images, setImages] = useState([]);
 
+  // ---------------------------------------------------------------------------------------------->
   useEffect(() => {
     const loadImages = async () => {
       let loadedImages = [];
       for (let j = 1; j <= 5; j++) {
-        const image = await import(
-          `../../assets/images/project/project${j}/1.png`
-        );
+        const image = await import(`../../assets/images/project/project${j}/1.png`);
         loadedImages.push(image.default);
       }
       setImages(loadedImages);
     };
     loadImages();
   }, []);
-
   const itemsArray = {
     title: ["Portfolios"],
     items: [
@@ -82,13 +79,11 @@ const Portfolio = () => {
         itemSelector: ".portfolio-item",
       });
       let portfolioFilters = document.querySelectorAll("#portfolio-filters li");
-      let allFilter = document.querySelector(
-        "#portfolio-filters li[data-filter=" * "]"
-      );
-      portfolioFilters.forEach(function (el, index) {
-        el.addEventListener("click", function (e) {
+      let allFilter = document.querySelector("#portfolio-filters li[data-filter=" * "]");
+      portfolioFilters.forEach(function  (el, index)  {
+        el.addEventListener("click", function  (e)  {
           e.preventDefault();
-          portfolioFilters.forEach(function (el) {
+          portfolioFilters.forEach(function  (el)  {
             el.classList.remove("filter-active");
           });
           this.classList.add("filter-active");
@@ -112,9 +107,7 @@ const Portfolio = () => {
     }
   }, []);
 
-  if (images.length < itemsArray.items.length) {
-    return <div>Loading...</div>; // or your custom loading UI
-  }
+
   // ---------------------------------------------------------------------------------------------->
   return (
     <section id="portfolio" className="portfolio">
@@ -134,25 +127,17 @@ const Portfolio = () => {
         </div>
         <div className="row portfolio-container">
           {itemsArray.items.map((item) => (
-            <div
-              key={item.id}
-              className={`col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 portfolio-item ${item.filter}`}
-            >
+            <div key={item.id} className={`col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 portfolio-item ${item.filter}`}>
               <div className="portfolio-wrap">
                 <div className="image-container">
-                  <img
-                    src={images[item.imgSrc]}
-                    className="img-fluid"
-                    alt={item.title}
-                  />
-
+                  <img src={images[item.imgSrc]} className="img-fluid" alt={item.title} />
                   <span className="overlay-icon">
                     <Icons icon={item.icon} />
                   </span>
                 </div>
                 <div className="portfolio-links" data-tooltip-id={item.id}>
                   <Tooltip id={item.id} place="top" effect="float">
-                    <h5 style={{ color: item.color }}>{item.title}</h5>
+                    <h5 style={{color: item.color}}>{item.title}</h5>
                     <p>{item.desc}</p>
                   </Tooltip>
                   <Link to={`/details/project${item.id}`} title="More Details">

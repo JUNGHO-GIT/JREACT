@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import "../../core/App.css";
+import { Navigation, Pagination} from 'swiper';
 import {Icons} from "../../components/common/Icons";
 
 // 스와이프 이미지 -------------------------------------------------------------------------------->
@@ -21,18 +21,15 @@ const ImageComponent = () => {
 
   return (
     <Swiper
+      modules={[Navigation, Pagination]}
       spaceBetween={50}
       slidesPerView={1}
-      grabCursor={true}
-      centeredSlides={true}
-      autoplay={{ delay: 2000 }}
-      centeredSlidesBounds={true}
-      fadeEffect={{ crossFade: true }}
-      loop={true}
+      navigation
+      pagination
     >
       {images.map((image, index) => (
         <SwiperSlide key={index}>
-          <img src={image} alt={`image-${index + 1}`} />
+          <img src={image} alt={`image-${index + 1}`} className="img-fluid" />
         </SwiperSlide>
       ))}
     </Swiper>
@@ -195,6 +192,7 @@ const Project1 = () => {
               {Object.entries(itemsArray1).map(([key, index]) => (
                 <div key={key} className="jungho-border-top">
                   {index.mainTitle.map((titleObj, titleIdx) => (
+                    <>
                     <h3 key={titleIdx}>
                       {titleObj.icon1.map((icon, i) => (
                         <span key={i}>
@@ -203,6 +201,8 @@ const Project1 = () => {
                       ))}
                       {titleObj.title}
                     </h3>
+                    <div className="project-line"></div>
+                    </>
                   ))}
                   {Object.entries(index).filter(([key2]) => key2.startsWith("value")).map(([key2, valueArray]) => (
                     valueArray.map((item, itemIdx) => (
@@ -242,6 +242,7 @@ const Project1 = () => {
               {Object.entries(itemsArray2).map(([key, index]) => (
                 <div key={key} className="jungho-border-top">
                   {index.mainTitle.map((titleObj, titleIdx) => (
+                    <>
                     <h3 key={titleIdx}>
                       {titleObj.icon1.map((icon, i) => (
                         <span key={i}>
@@ -250,6 +251,8 @@ const Project1 = () => {
                       ))}
                       {titleObj.title}
                     </h3>
+                    <div className="project-line"></div>
+                    </>
                   ))}
                   {Object.entries(index).filter(([key2]) => key2.startsWith("value")).map(([key2, valueArray]) => (
                     valueArray.map((item, itemIdx) => (

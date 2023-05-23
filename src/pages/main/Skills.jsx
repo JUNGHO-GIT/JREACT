@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {CSSTransition} from "react-transition-group";
 import CountUp from "react-countup";
-import "../../core/App.css";
 import {Icons} from "../../components/common/Icons";
 
 // ------------------------------------------------------------------------------------------------>
@@ -17,28 +16,30 @@ const Skills = () => {
         rowValue: [
           {
             titleIcon: "bi bi-badge-hd-fill",
+            titleColor: {color: "#dc3545"},
             titleValue: "  Frontend  ",
             props: [
-              {propIcon: "SiHtml5", propValue: "HTML5",  propPercent: 100},
-              {propIcon: "SiCss3", propValue: "CSS3",  propPercent: 100},
-              {propIcon: "SiJavascript", propValue: "JavaScript",  propPercent: 80},
-              {propIcon: "SiJquery", propValue: "jQuery",  propPercent: 80},
-              {propIcon: "SiReact", propValue: "React",  propPercent: 80},
-              {propIcon: "FaNodeJs", propValue: "Node.js",  propPercent: 80},
-              {propIcon: "SiBootstrap", propValue: "Bootstrap",  propPercent: 80},
+              {propIcon: "SiHtml5", propValue: "HTML5", propPercent: 100},
+              {propIcon: "SiCss3", propValue: "CSS3", propPercent: 100},
+              {propIcon: "SiJavascript", propValue: "JavaScript", propPercent: 80},
+              {propIcon: "SiJquery", propValue: "jQuery", propPercent: 80},
+              {propIcon: "SiReact", propValue: "React", propPercent: 80},
+              {propIcon: "FaNodeJs", propValue: "Node.js", propPercent: 80},
+              {propIcon: "SiBootstrap", propValue: "Bootstrap", propPercent: 80},
             ],
           },
           {
             titleIcon: "bi bi-file-earmark-code-fill",
+            titleColor: {color: "#007bff"},
             titleValue: "  Backend  ",
             props: [
-              {propIcon: "FaJava", propValue: "Java8",  propPercent: 100},
-              {propIcon: "FaJava", propValue: "Java11",  propPercent: 80},
-              {propIcon: "FaJava", propValue: "Java17",  propPercent: 80},
-              {propIcon: "SiSpring", propValue: "Spring",  propPercent: 80},
-              {propIcon: "SiSpringboot", propValue: "Boot",  propPercent: 80},
-              {propIcon: "SiThymeleaf", propValue: "Thymeleaf",  propPercent: 80},
-              {propIcon: "BsFiletypeJava", propValue: "Jsp",  propPercent: 80},
+              {propIcon: "FaJava", propValue: "Java8", propPercent: 100},
+              {propIcon: "FaJava", propValue: "Java11", propPercent: 80},
+              {propIcon: "FaJava", propValue: "Java17", propPercent: 80},
+              {propIcon: "SiSpring", propValue: "Spring", propPercent: 80},
+              {propIcon: "SiSpringboot", propValue: "Boot", propPercent: 80},
+              {propIcon: "SiThymeleaf", propValue: "Thymeleaf", propPercent: 80},
+              {propIcon: "BsFiletypeJava", propValue: "Jsp", propPercent: 80},
             ],
           },
         ],
@@ -48,21 +49,23 @@ const Skills = () => {
         rowValue: [
           {
             titleIcon: "bi bi-database-fill-add",
+            titleColor: {color: "#28a745"},
             titleValue: "  DB  ",
             props: [
-              {propIcon: "TbBrandMysql", propValue: "MySQL",  propPercent: 100},
-              {propIcon: "SiOracle", propValue: "Oracle",  propPercent: 100},
-              {propIcon: "SiMariadb", propValue: "MariaDB",  propPercent: 80},
-              {propIcon: "SiBower", propValue: "Mybatis",  propPercent: 80},
+              {propIcon: "TbBrandMysql", propValue: "MySQL", propPercent: 100},
+              {propIcon: "SiOracle", propValue: "Oracle", propPercent: 100},
+              {propIcon: "SiMariadb", propValue: "MariaDB", propPercent: 80},
+              {propIcon: "SiBower", propValue: "Mybatis", propPercent: 80},
             ],
           },
           {
             titleIcon: "bi bi-hammer",
+            titleColor: {color: "#ffc107"},
             titleValue: "  Build  ",
             props: [
-              {propIcon: "SiApachemaven", propValue: "Maven",  propPercent: 80},
-              {propIcon: "SiGradle", propValue: "Gradle",  propPercent: 80},
-              {propIcon: "FaNpm", propValue: "NPM",  propPercent: 80},
+              {propIcon: "SiApachemaven", propValue: "Maven", propPercent: 80},
+              {propIcon: "SiGradle", propValue: "Gradle", propPercent: 80},
+              {propIcon: "FaNpm", propValue: "NPM", propPercent: 80},
             ],
           },
         ],
@@ -72,18 +75,20 @@ const Skills = () => {
         rowValue: [
           {
             titleIcon: "bi bi-hdd-rack-fill",
+            titleColor: {color: "#1b1464"},
             titleValue: "  Server  ",
             props: [
-              {propIcon: "SiApache", propValue: "Apache",  propPercent: 80},
-              {propIcon: "SiApachetomcat", propValue: "Tomcat",  propPercent: 80},
+              {propIcon: "SiApache", propValue: "Apache", propPercent: 80},
+              {propIcon: "SiApachetomcat", propValue: "Tomcat", propPercent: 80},
             ],
           },
           {
             titleIcon: "bi bi-cloud-check-fill",
+            titleColor: {color: "#17a2b8"},
             titleValue: "  Cloud  ",
             props: [
-              {propIcon: "FcGoogle", propValue: "Google",  propPercent: 80},
-              {propIcon: "SiGithub", propValue: "Git",  propPercent: 100},
+              {propIcon: "FcGoogle", propValue: "Google", propPercent: 80},
+              {propIcon: "SiGithub", propValue: "Git", propPercent: 100},
             ],
           },
         ],
@@ -93,18 +98,20 @@ const Skills = () => {
         rowValue: [
           {
             titleIcon: "bi bi-gear-fill",
+            titleColor: {color: "#6c757d"},
             titleValue: "  Data  ",
             props: [
-              {propIcon: "BsFiletypeXml", propValue: "XML",  propPercent: 80},
-              {propIcon: "SiJson", propValue: "JSON",  propPercent: 80},
+              {propIcon: "BsFiletypeXml", propValue: "XML", propPercent: 80},
+              {propIcon: "SiJson", propValue: "JSON", propPercent: 80},
             ],
           },
           {
             titleIcon: "bi bi-terminal-fill",
+            titleColor: {color: "#343a40"},
             titleValue: "  System  ",
             props: [
-              {propIcon: "SiWindows", propValue: "Windows",  propPercent: 80},
-              {propIcon: "FcLinux", propValue: "Linux",  propPercent: 80},
+              {propIcon: "SiWindows", propValue: "Windows", propPercent: 80},
+              {propIcon: "FcLinux", propValue: "Linux", propPercent: 80},
             ],
           },
         ],
@@ -151,11 +158,11 @@ const Skills = () => {
           <h2>{Items.title}</h2>
         </div>
         {Items.skills.map((section, sectionIndex) => (
-          <div key={sectionIndex} className="row skills-content">
+          <div key={sectionIndex} className="row skills-content d-flex justify-content-center">
             {section.rowValue.map((skillSection, skillSectionIndex) => (
               <div key={skillSectionIndex} className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6" data-aos="fade-up" onClick={() => handleClick(section.rowNumber)}>
                 <h3 className="skills-title text-hover glowing-text">
-                  <i className={skillSection.titleIcon}></i>
+                  <i className={skillSection.titleIcon} style={skillSection.titleColor}></i>
                   {skillSection.titleValue}
                 </h3>
                 {skillSection.props.map((prop, propIndex) => (
@@ -168,16 +175,12 @@ const Skills = () => {
                           <i className="val">{activeSection === section.rowNumber ? <CountUp end={prop.propPercent} duration={1} /> : 0}%</i>
                         </span>
                         <div className="progress-bar-wrap">
-                          <div
-                            className="progress-bar"
-                            role="progressbar"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
+                          <div className="progress-bar" role="progressbar"
+                            aria-valuemin="0" aria-valuemax="100"
                             aria-valuenow={activeSection === section.rowNumber ? prop.propPercent : 0}
-                            style={{
-                              width: `${activeSection === section.rowNumber ? progressWidths[propIndex] || 0 : 0}%`,
-                              transition: activeSection === section.rowNumber ? "width 1s" : "",
-                            }}></div>
+                            style={{ width: `${activeSection === section.rowNumber ? progressWidths[propIndex] || 0 : 0}%`, transition: activeSection === section.rowNumber ? "width 1s" : "",
+                            }}>
+                          </div>
                         </div>
                       </div>
                     </div>
