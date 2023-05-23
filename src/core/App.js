@@ -14,10 +14,12 @@ import "swiper/swiper-bundle.min.css";
 
 // components ------------------------------------------------------------------------------------->
 import Scroll from "../components/common/Scroll";
+import Modal from "../components/common/Modal";
 import Loader from "../components/common/Loader";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Toggle from "../components/common/Toggle";
+import Hover from "../components/common/Hover";
 import Hero from "../pages/main/Hero";
 import About from "../pages/main/About";
 import Skills from "../pages/main/Skills";
@@ -32,7 +34,6 @@ import Project5 from "../pages/details/Project5";
 // plugins ---------------------------------------------------------------------------------------->
 import AOS from "aos";
 import PureCounter from "@srexi/purecounterjs";
-import Hover from "../components/common/Hover";
 
 // ------------------------------------------------------------------------------------------------>
 const Aos = () => {
@@ -49,6 +50,8 @@ const PureCount = () => {
   const pure = new PureCounter();
   return pure;
 };
+
+// ------------------------------------------------------------------------------------------------>
 Hover();
 
 // ------------------------------------------------------------------------------------------------>

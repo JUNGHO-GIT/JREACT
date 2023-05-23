@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "../../assets/images/main/profile.jpg";
+import Image from "../../assets/images/main/profile.png";
 
 // ------------------------------------------------------------------------------------------------>
 const About = () => {
@@ -8,27 +8,27 @@ const About = () => {
     roleTitle: ["Full Stack Developer"],
     section: [
       {
-        sectionTitle: "이름  :  ",
+        sectionTitle: "Name  :  ",
         sectionValue: "문정호",
       },
       {
-        sectionTitle: "주소  :  ",
+        sectionTitle: "Address  :  ",
         sectionValue: "서울시 동대문구",
       },
       {
-        sectionTitle: "생년월일  :  ",
+        sectionTitle: "Birth  :  ",
         sectionValue: "1996.09.14",
       },
       {
-        sectionTitle: "이메일  :  ",
+        sectionTitle: "Email  :  ",
         sectionValue: "junghomun@naver.com",
       },
       {
-        sectionTitle: "전화번호  :  ",
+        sectionTitle: "Phone  :  ",
         sectionValue: "010-8252-4757",
       },
       {
-        sectionTitle: "사이트  :  ",
+        sectionTitle: "Domain  :  ",
         sectionValue: "www.junghomun.com",
         isLink : true,
       },
@@ -45,7 +45,7 @@ const About = () => {
         <div className="row">
           {/** image **/}
           <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-right">
-            <img src={Image}  alt="Profile" className="jungho-image" style={{maxHeight: "400px"}}/>
+            <img src={Image}  alt="Profile" className="jungho-image" style={{maxHeight: "420px"}}/>
           </div>
           <div className="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 col-12"></div>
           {/** details **/}
