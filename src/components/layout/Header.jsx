@@ -3,7 +3,7 @@ import Image from "../../assets/images/main/name.png";
 
 // ------------------------------------------------------------------------------------------------>
 const socialLinks = [
-  {id: 1, name: "Github", url: "https://twitter.com", icon: "bx bxl-github"},
+  {id: 1, name: "Github", url: "https://github.com/JUNGHO-GIT", icon: "bx bxl-github"},
   {id: 2, name: "Facebook", url: "https://facebook.com", icon: "bx bxl-facebook"},
   {id: 3, name: "Instagram", url: "https://instagram.com", icon: "bx bxl-instagram"},
   {id: 4, name: "Linkedin", url: "https://linkedin.com", icon: "bx bxl-linkedin"},

@@ -612,7 +612,7 @@ section {
 
 .portfolio-details .portfolio-info {
   padding: 30px 20px 0 20px;
-  box-shadow: 0px 0 30px rgba(5, 13, 24, 0.08);
+  box-shadow: 0px 0px 40px 10px rgba(3, 9, 17, 0.08);
 }
 
 .portfolio-details .portfolio-details-slider img {

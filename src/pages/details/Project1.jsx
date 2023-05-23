@@ -10,7 +10,7 @@ const ImageComponent = () => {
   useEffect(() => {
     const loadImages = async () => {
       let loadedImages = [];
-      for (let i = 1; i <= 5; i++) {
+      for (let i = 1; i <= 2; i++) {
         const image = await import(`../../assets/images/project/project1/${i}.png`);
         loadedImages.push(image.default);
       }

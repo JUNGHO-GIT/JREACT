@@ -14,7 +14,6 @@ import "swiper/swiper-bundle.min.css";
 
 // components ------------------------------------------------------------------------------------->
 import Scroll from "../components/common/Scroll";
-import Modal from "../components/common/Modal";
 import Loader from "../components/common/Loader";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";

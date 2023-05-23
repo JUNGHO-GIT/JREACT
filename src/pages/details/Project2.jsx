@@ -61,7 +61,7 @@ const Project2 = () => {
       value3: [{
         title: "기간",
         icon1: ["FcExpand"],
-        text:  ["2023.05.01 ~ 2023.05.15"],
+        text:  ["2023.05.05 ~ 2023.05.24"],
         icon2: ["RxDash"],
       }],
       value4: [{
@@ -102,9 +102,9 @@ const Project2 = () => {
         icon2: ["RxDash"],
       }],
       value4: [{
-        title: "주석 자동생성 기능",
+        title: "구분선 자동 생성",
         icon1: ["FcExpand"],
-        text:  ["클래스, 함수, 변수, 배열 .. 등의 요소에 주석을 자동으로 생성하여 불필요한 주석 작성 시간을 단축하여 코드 생산성 증대에 기여. 각 요소별 주석으로 인한 코드 가독성 향상"],
+        text:  ["클래스, 함수, 변수, 배열 등의 요소에 구분선 주석을 자동으로 삽입하여 전체적인 코드 흐름을 더욱 명확하게 파악하고 코드 가독성을 향상"],
         icon2: ["RxDash"],
       }],
       value5: [{
@@ -201,6 +201,7 @@ const Project2 = () => {
               {Object.entries(itemsArray1).map(([key, index]) => (
                 <div key={key} className="jungho-border-top">
                   {index.mainTitle.map((titleObj, titleIdx) => (
+                    <>
                     <h3 key={titleIdx}>
                       {titleObj.icon1.map((icon, i) => (
                         <span key={i}>
@@ -209,6 +210,8 @@ const Project2 = () => {
                       ))}
                       {titleObj.title}
                     </h3>
+                    <div className="project-line"></div>
+                    </>
                   ))}
                   {Object.entries(index).filter(([key2]) => key2.startsWith("value")).map(([key2, valueArray]) => (
                     valueArray.map((item, itemIdx) => (
@@ -248,6 +251,7 @@ const Project2 = () => {
               {Object.entries(itemsArray2).map(([key, index]) => (
                 <div key={key} className="jungho-border-top">
                   {index.mainTitle.map((titleObj, titleIdx) => (
+                    <>
                     <h3 key={titleIdx}>
                       {titleObj.icon1.map((icon, i) => (
                         <span key={i}>
@@ -256,6 +260,8 @@ const Project2 = () => {
                       ))}
                       {titleObj.title}
                     </h3>
+                    <div className="project-line"></div>
+                    </>
                   ))}
                   {Object.entries(index).filter(([key2]) => key2.startsWith("value")).map(([key2, valueArray]) => (
                     valueArray.map((item, itemIdx) => (

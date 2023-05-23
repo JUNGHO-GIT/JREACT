@@ -61,7 +61,7 @@ const Project4 = () => {
       value3: [{
         title: "기간",
         icon1: ["FcExpand"],
-        text:  ["2023.03.01 ~ 2023.03.30"],
+        text:  ["2023.02.20 ~ 2023.03.08"],
         icon2: ["RxDash"],
       }],
       value4: [{
@@ -229,6 +229,7 @@ const Project4 = () => {
               {Object.entries(itemsArray1).map(([key, index]) => (
                 <div key={key} className="jungho-border-top">
                   {index.mainTitle.map((titleObj, titleIdx) => (
+                    <>
                     <h3 key={titleIdx}>
                       {titleObj.icon1.map((icon, i) => (
                         <span key={i}>
@@ -237,6 +238,8 @@ const Project4 = () => {
                       ))}
                       {titleObj.title}
                     </h3>
+                    <div className="project-line"></div>
+                    </>
                   ))}
                   {Object.entries(index).filter(([key2]) => key2.startsWith("value")).map(([key2, valueArray]) => (
                     valueArray.map((item, itemIdx) => (
@@ -276,6 +279,7 @@ const Project4 = () => {
               {Object.entries(itemsArray2).map(([key, index]) => (
                 <div key={key} className="jungho-border-top">
                   {index.mainTitle.map((titleObj, titleIdx) => (
+                    <>
                     <h3 key={titleIdx}>
                       {titleObj.icon1.map((icon, i) => (
                         <span key={i}>
@@ -284,6 +288,8 @@ const Project4 = () => {
                       ))}
                       {titleObj.title}
                     </h3>
+                    <div className="project-line"></div>
+                    </>
                   ))}
                   {Object.entries(index).filter(([key2]) => key2.startsWith("value")).map(([key2, valueArray]) => (
                     valueArray.map((item, itemIdx) => (

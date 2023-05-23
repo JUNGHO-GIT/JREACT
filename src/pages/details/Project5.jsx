@@ -49,19 +49,19 @@ const Project5 = () => {
       value1: [{
         title: "프로젝트명",
         icon1: ["FcExpand"],
-        text:  ["GoodNeighbor"],
+        text:  ["MeatStore"],
         icon2: ["RxDash"],
       }],
       value2: [{
         title: "주제",
         icon1: ["FcExpand"],
-        text:  ["MVC 모델1 방식을 활용한 종합 육류 판매 웹사이트"],
+        text:  ["MVC 모델2 방식을 활용한 종합 육류 판매 웹사이트"],
         icon2: ["RxDash"],
       }],
       value3: [{
         title: "기간",
         icon1: ["FcExpand"],
-        text:  ["2023.02.01 ~ 2023.02.30"],
+        text:  ["2023.01.18 ~ 2023.02.03"],
         icon2: ["RxDash"],
       }],
       value4: [{
@@ -84,21 +84,21 @@ const Project5 = () => {
         icon1 : ["FcSearch"]
       }],
       value1: [{
-        title: "Java & MVC Model 1",
+        title: "Java & MVC Model 2",
         icon1: ["FcExpand"],
-        text:  ["Java(v1.8)와 MVC Model1 방식을 통한 프로토타입 위주의 빠른개발 진행과 직관적인 코드 관리로 프로젝트의 효율성을 향상"],
+        text:  ["Java 언어와 MVC Model 2 패턴을 기반으로, 비즈니스 로직을 처리하는 Controller, Model 구성 및 사용자 인터페이스를 담당하는 View 분리하여 유지보수성과 확장성을 높임"],
         icon2: ["RxDash"],
       }],
       value2: [{
         title: "Jsp",
         icon1: ["FcExpand"],
-        text:  ["Model 1 아키텍처와 함께 JSP를 사용하여 웹 페이지의 동적 컨텐츠의 생성과 프레젠테이션 레이어를 통합함으로써, 개발 프로세스를 단순화하고 유지 보수의 편의성을 증대."],
+        text:  ["JSP(Java Server Pages)를 활용하여 동적인 웹페이지 구현. EL(Expression Language)와 JSTL(JSP Standard Tag Library)를 사용하여 코드의 가독성과 재사용성을 높임"],
         icon2: ["RxDash"],
       }],
       value3: [{
         title: "MySql",
         icon1: ["FcExpand"],
-        text:  ["MySQL을 활용하여 DB 설계 및 구축. 데이터베이스의 무결성을 유지하고, 데이터베이스의 효율적인 활용을 위해 정규화를 진행하여 데이터의 중복을 최소화"],
+        text:  ["MySQL을 활용하여 DB 설계 및 구축. 데이터베이스의 무결성을 유지하고, 데이터의 효율적인 활용을 위해 정규화를 진행하여 데이터의 중복을 최소화"],
         icon2: ["RxDash"],
       }],
       value4: [{
@@ -108,7 +108,7 @@ const Project5 = () => {
         icon2: ["RxDash"],
       }],
       value5: [{
-        title: "클라우드 서버구축, 서블릿 컨테이너 배포",
+        title: "클라우드 서버, 서블릿 컨테이너",
         icon1: ["FcExpand"],
         text:  ["Google Cloud Platform의 Compute Engine 서비스를 활용하여 프로젝트를 배포, 서블릿 컨테이너인 Apache Tomcat을 설치하여 웹앱을 구동"],
         icon2: ["RxDash"],
@@ -126,19 +126,19 @@ const Project5 = () => {
       value1: [{
         title: "언어",
         icon1: ["FcCursor"],
-        text: ["HTML", "CSS", "JS"],
+        text:  ["HTML", "CSS", "JS"],
         icon2: ["SiHtml5", "SiCss3", "SiJavascript"],
       }],
       value2: [{
         title: "프레임워크",
         icon1: ["FcCursor"],
-        text: ["BOOTSTRAP"],
+        text:  ["BOOTSTRAP"],
         icon2: ["SiBootstrap"],
       }],
       value3: [{
         title: "템플릿",
         icon1: ["FcCursor"],
-        text: ["JSP"],
+        text:  ["JSP"],
         icon2: ["BsFiletypeJava"],
       }],
     },
@@ -150,13 +150,13 @@ const Project5 = () => {
       value1: [{
         title: "언어",
         icon1: ["FcCursor"],
-        text: ["JAVA 1.8"],
+        text:  ["JAVA 1.8"],
         icon2: ["FaJava"],
       }],
       value2: [{
         title: "패키지관리, 빌드",
         icon1: ["FcCursor"],
-        text: ["XML"],
+        text:  ["XML"],
         icon2: ["BsFiletypeXml"],
       }],
     },
@@ -174,7 +174,7 @@ const Project5 = () => {
       value2: [{
         title: "프레임워크, 관리",
         icon1: ["FcCursor"],
-        text: ["DBEAVER"],
+        text:  ["DBEAVER"],
         icon2: ["GiBeaver"],
       }],
     },
@@ -186,13 +186,13 @@ const Project5 = () => {
       value1: [{
         title: "플랫폼",
         icon1: ["FcCursor"],
-        text: ["TOMCAT 8.0", "APACHE"],
+        text:  ["TOMCAT 8.0", "APACHE"],
         icon2: ["SiApachetomcat", "SiApache"],
       }],
       value2: [{
         title: "- 클라우드",
         icon1: ["FcCursor"],
-        text: ["GCP-INSTANCE", "GCP-SQL", "GCP-BUCKET"],
+        text:  ["GCP-INSTANCE", "GCP-SQL", "GCP-BUCKET"],
         icon2: ["FcGoogle", "FcGoogle", "FcGoogle"],
       }],
     },
@@ -223,6 +223,7 @@ const Project5 = () => {
               {Object.entries(itemsArray1).map(([key, index]) => (
                 <div key={key} className="jungho-border-top">
                   {index.mainTitle.map((titleObj, titleIdx) => (
+                    <>
                     <h3 key={titleIdx}>
                       {titleObj.icon1.map((icon, i) => (
                         <span key={i}>
@@ -231,6 +232,8 @@ const Project5 = () => {
                       ))}
                       {titleObj.title}
                     </h3>
+                    <div className="project-line"></div>
+                    </>
                   ))}
                   {Object.entries(index).filter(([key2]) => key2.startsWith("value")).map(([key2, valueArray]) => (
                     valueArray.map((item, itemIdx) => (
@@ -270,6 +273,7 @@ const Project5 = () => {
               {Object.entries(itemsArray2).map(([key, index]) => (
                 <div key={key} className="jungho-border-top">
                   {index.mainTitle.map((titleObj, titleIdx) => (
+                    <>
                     <h3 key={titleIdx}>
                       {titleObj.icon1.map((icon, i) => (
                         <span key={i}>
@@ -278,6 +282,8 @@ const Project5 = () => {
                       ))}
                       {titleObj.title}
                     </h3>
+                    <div className="project-line"></div>
+                    </>
                   ))}
                   {Object.entries(index).filter(([key2]) => key2.startsWith("value")).map(([key2, valueArray]) => (
                     valueArray.map((item, itemIdx) => (
