@@ -37,6 +37,14 @@
     object-fit: scale-down;
     margin: 0px 0px 20px 0px;
   }
+
+  .skills .skills-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #050d18;
+  }
 }
 
 
@@ -48,7 +56,7 @@
 	#hero {
 		width: calc(100% - 0px);
 		height: 100vh;
-		background: url("../../assets/images/main/main.png") top center;
+		background: url("../../assets/images/main/main2.png") top center;
 		background-size: cover;
 		flex-direction: column;
 		display: flex;
@@ -60,6 +68,7 @@
 		margin: 0px 0px 0px 80px;
 	}
 
+
   .jungho-col-left {
     padding-right: 0px !important;
   }
@@ -67,6 +76,13 @@
     padding-left: 0px !important;
   }
 
+  .skills .skills-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #050d18;
+  }
 
 }
 
@@ -78,7 +94,7 @@
 	#hero {
 		width: calc(100% - 0px);
 		height: 100vh;
-		background: url("../../assets/images/main/main.png") top center;
+		background: url("../../assets/images/main/main2.png") top center;
 		background-size: cover;
 		flex-direction: column;
 		display: flex;
@@ -90,11 +106,20 @@
 		margin: 0px 0px 0px 80px;
 	}
 
+
   .jungho-col-left {
     padding-right: 0px !important;
   }
   .jungho-col-right {
     padding-left: 0px !important;
+  }
+
+  .skills .skills-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #050d18;
   }
 
 
@@ -108,7 +133,7 @@
 	#hero {
 		width: calc(100% - 0px);
 		height: 100vh;
-		background: url("../../assets/images/main/main.png") top center;
+		background: url("../../assets/images/main/main2.png") top center;
 		background-size: cover;
 		flex-direction: column;
 		display: flex;
@@ -121,6 +146,14 @@
 	}
 
 
+  .skills .skills-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #050d18;
+  }
+
 }
 
 /** 5. (375 ~ 575) ********************************************************************************/
@@ -131,7 +164,7 @@
 	#hero {
 		width: calc(100% - 0px);
 		height: 100vh;
-		background: url("../../assets/images/main/main.png") top center;
+		background: url("../../assets/images/main/main2.png") top center;
 		background-size: cover;
 		flex-direction: column;
 		display: flex;
@@ -143,6 +176,14 @@
 		margin: 0px 0px 100px 80px;
 	}
 
+
+  .skills .skills-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #050d18;
+  }
 }
 
 /** 6. (0~374)***********************************************************************************/
@@ -153,7 +194,7 @@
 	#hero {
 		width: calc(100% - 0px);
 		height: 100vh;
-		background: url("../../assets/images/main/main.png") top center;
+		background: url("../../assets/images/main/main2.png") top center;
 		background-size: cover;
 		flex-direction: column;
 		display: flex;
@@ -164,6 +205,14 @@
 		min-width: 300px;
 		margin: 0px 0px 100px 80px;
 	}
+  .skills .skills-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #050d18;
+    margin-left: -12px;
+  }
 
 }
 

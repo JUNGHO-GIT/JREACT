@@ -17,7 +17,7 @@ const Skills = () => {
           {
             titleIcon: "bi bi-badge-hd-fill",
             titleColor: {color: "#dc3545"},
-            titleValue: "  Frontend  ",
+            titleValue: "  Front  ",
             props: [
               {propIcon: "SiHtml5", propValue: "HTML5", propPercent: 85},
               {propIcon: "SiJavascript", propValue: "JavaScript", propPercent: 85},
@@ -31,7 +31,7 @@ const Skills = () => {
           {
             titleIcon: "bi bi-file-earmark-code-fill",
             titleColor: {color: "#007bff"},
-            titleValue: "  Backend  ",
+            titleValue: "  Back  ",
             props: [
               {propIcon: "FaJava", propValue: "Java8", propPercent: 85},
               {propIcon: "FaJava", propValue: "Java11", propPercent: 85},

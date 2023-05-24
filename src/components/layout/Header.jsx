@@ -1,5 +1,5 @@
-import React, {useEffect, useRef, useState} from "react";
-import Image from "../../assets/images/main/name.png";
+import React, {useEffect, useRef} from "react";
+import Image from "../../assets/images/main/logo.png";
 
 // ------------------------------------------------------------------------------------------------>
 const socialLinks = [
