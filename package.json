@@ -48,7 +48,6 @@
   "devDependencies": {
     "@types/react": "^18.2.6",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "jest": "^27.5.1",
     "swiper": "^9.3.2",
     "swiper-react": "^1.0.0"
   }

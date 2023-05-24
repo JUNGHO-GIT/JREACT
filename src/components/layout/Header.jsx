@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Image from "../../assets/images/main/name.png";
 
 // ------------------------------------------------------------------------------------------------>
@@ -137,11 +137,25 @@ const useSmoothScroll = () => {
 };
 
 // ------------------------------------------------------------------------------------------------>
+const pageAlert = (event) => {
+  event.preventDefault();
+  const confirm = window.prompt("Confirmation")
+
+  if (confirm == "7411") {
+    window.location.href="http://www.junghomun.com:8888";
+  }
+  else {
+    alert("Fail");
+  }
+};
+
+// ------------------------------------------------------------------------------------------------>
 const Header = () => {
   const navToggleRef = useRef(null);
   const sideNavRef = useRef(null);
   const onMobileNavToggleClick = useNavToggle(navToggleRef, sideNavRef);
   const onNavItemClick = useSmoothScroll();
+
 
   // ---------------------------------------------------------------------------------------------->
   return (
@@ -151,9 +165,7 @@ const Header = () => {
         <div className="d-flex flex-column">
           <div className="profile">
             <img src={Image} className="img-fluid rounded-circle" alt="Profile" />
-            <h1 className="text-light">
-              <a href="/" className="text-hover">JUNGHO MUN</a>
-            </h1>
+            <h1 className="text-light"><a href="/" onClick={pageAlert}>JUNGHO MUN</a></h1>
             <div className="social-links mt-3 text-center">
               {socialLinks.map((socialItem) => (
                 <a key={socialItem.id} href={socialItem.url} className={socialItem.name.toLowerCase()}>

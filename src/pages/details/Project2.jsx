@@ -73,7 +73,7 @@ const Project2 = () => {
       value5: [{
         title: "프로젝트 주소 ",
         icon1: ["FcExpand"],
-        text:  ["www.junghomun.com/JLINT"],
+        text:  ["https://marketplace.visualstudio.com/items?itemName=JUNGHO.JLINT"],
         icon2: ["RxDash"],
         isLink : [true],
       }],
