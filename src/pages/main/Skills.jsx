@@ -164,7 +164,7 @@ const Skills = () => {
                 <h3 className="skills-title text-hover glowing-text">
                   <i className={skillSection.titleIcon} style={skillSection.titleColor}></i>
                   {skillSection.titleValue}&nbsp;&nbsp;
-                  <img src="/tab3.png" alt="tab3" width="25px" height="25px" />
+                  <img src="/tab.png" alt="tab" width="25px" height="25px" />
                 </h3>
                 {skillSection.props.map((prop, propIndex) => (
                   <CSSTransition key={propIndex} in={activeSection === section.rowNumber} timeout={300} classNames="list-transition" unmountOnExit>
