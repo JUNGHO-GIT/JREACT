@@ -127,10 +127,10 @@ const Portfolio = () => {
         </div>
         <div className="row portfolio-container">
           {itemsArray.items.map((item) => (
-            <div key={item.id} className={`col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 portfolio-item ${item.filter}`}>
+            <div key={item.id} className={`col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12 portfolio-item ${item.filter}`}>
               <div className="portfolio-wrap">
                 <div className="image-container">
-                  <img src={images[item.imgSrc]} className="img-fluid" alt={item.title} />
+                  <img src={images[item.imgSrc]} className="img-fluid" alt={item.title}/>
                   <span className="overlay-icon">
                     <Icons icon={item.icon} />
                   </span>

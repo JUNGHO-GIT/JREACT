@@ -145,7 +145,7 @@ const pageAlert = (event) => {
     window.location.href="http://www.junghomun.com:8888";
   }
   else {
-    alert("Fail");
+    alert("Failed to confirm")
   }
 };
 
