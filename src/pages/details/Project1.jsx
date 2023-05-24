@@ -61,7 +61,7 @@ const Project1 = () => {
       value3: [{
         title: "기간",
         icon1: ["FcExpand"],
-        text:  ["2023.01.05 ~ 2023.02.05"],
+        text:  ["2023.04.26 ~ 2023.05.23"],
         icon2: ["RxDash"],
       }],
       value4: [{
