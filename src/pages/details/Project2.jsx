@@ -10,7 +10,7 @@ const ImageComponent = () => {
   useEffect(() => {
     const loadImages = async () => {
       let loadedImages = [];
-      for (let i = 1; i <= 5; i++) {
+      for (let i = 1; i <= 4; i++) {
         const image = await import(`../../assets/images/project/project2/${i}.png`);
         loadedImages.push(image.default);
       }
@@ -73,7 +73,7 @@ const Project2 = () => {
       value5: [{
         title: "프로젝트 주소 ",
         icon1: ["FcExpand"],
-        text:  ["http://marketplace.visualstudio.com/items?itemName=JUNGHO.JLINT"],
+        text:  ["www.github.com/JUNGHO-GIT/JLINT.git"],
         icon2: ["RxDash"],
         isLink : [true],
       }],

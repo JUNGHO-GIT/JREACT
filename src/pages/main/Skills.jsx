@@ -21,7 +21,7 @@ const Skills = () => {
             props: [
               {propIcon: "SiHtml5", propValue: "HTML5", propPercent: 85},
               {propIcon: "SiJavascript", propValue: "JavaScript", propPercent: 85},
-              {propIcon: "SiJquery", propValue: "jQuery", propPercent: 80},
+              {propIcon: "SiTypescript", propValue: "TypeScript", propPercent: 85},
               {propIcon: "SiReact", propValue: "React", propPercent: 70},
               {propIcon: "FaNodeJs", propValue: "Node.js", propPercent: 70},
               {propIcon: "SiCss3", propValue: "CSS3", propPercent: 80},

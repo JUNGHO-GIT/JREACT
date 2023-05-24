@@ -5,7 +5,7 @@ import {TbBrandVscode, TbBrandMysql} from "react-icons/tb";
 import {FaJava, FaNodeJs, FaNpm} from "react-icons/fa";
 import {BsFiletypeXml, BsFiletypeJava} from "react-icons/bs";
 import {FcGoogle, FcLinux, FcExpand, FcAbout, FcSettings, FcSearch, FcCursor} from "react-icons/fc";
-import {SiSpring, SiSpringboot, SiJavascript, SiHtml5, SiCss3, SiBootstrap, SiOracle, SiJson, SiGradle, SiJquery, SiApache, SiGithub, SiReact, SiApachemaven, SiThymeleaf, SiTypescript, SiApachetomcat, SiBower, SiWindows, SiMariadb, SiMarkdown, SiNginx} from "react-icons/si";
+import {SiSpring, SiSpringboot, SiJavascript, SiHtml5, SiCss3, SiBootstrap, SiOracle, SiJson, SiGradle, SiApache, SiGithub, SiReact, SiApachemaven, SiThymeleaf, SiTypescript, SiApachetomcat, SiBower, SiWindows, SiMariadb, SiMarkdown, SiNginx} from "react-icons/si";
 
 const Icons = (props) => {
 
@@ -44,7 +44,6 @@ const Icons = (props) => {
     SiCss3 : {icon: SiCss3, color: "#1572B6", size: "1.0em", style: "inline-block"},
     SiJavascript : {icon: SiJavascript, color: "#F7DF1E", size: "1.0em", style: "inline-block"},
     SiTypescript : {icon: SiTypescript, color: "#007ACC", size: "1.0em", style: "inline-block"},
-    SiJquery : {icon: SiJquery, color: "#0769AD", size: "1.0em", style: "inline-block"},
     SiNginx : {icon: SiNginx, color: "#269539", size: "1.0em", style: "inline-block"},
     SiReact : {icon: SiReact, color: "#61DAFB", size: "1.0em", style: "inline-block"},
     SiMarkdown : {icon: SiMarkdown, color: "#000000", size: "1.0em", style: "inline-block"},
