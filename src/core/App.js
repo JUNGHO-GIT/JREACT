@@ -13,6 +13,7 @@ import "boxicons/css/boxicons.min.css";
 import "swiper/swiper-bundle.min.css";
 
 // components ------------------------------------------------------------------------------------->
+import Resize from "../components/common/Resize";
 import Scroll from "../components/common/Scroll";
 import Loader from "../components/common/Loader";
 import Header from "../components/layout/Header";
@@ -67,6 +68,7 @@ class Main extends React.Component {
       <div className="App">
         <Toggle />
         <Loader />
+        <Resize />
         <Header />
         <main id="main">
           <Hero />
@@ -96,6 +98,7 @@ class ProjectDetails extends React.Component {
       <div className="App">
         <Toggle />
         <Loader />
+        <Resize />
         <Header />
         <main id="main">
           {project === "project1" && <Project1 />}

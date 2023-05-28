@@ -92,7 +92,7 @@ const Project4 = () => {
       value2: [{
         title: "오라클 DBMS",
         icon1: ["FcExpand"],
-        text:  ["Oracle DBMS(XE)를 활용한 데이터베이스 설계 및 관리로 데이터의 정확성 향상과 일관성 유지"],
+        text:  ["Azure 인스턴스(Ubuntu 20.04 LTS)에 오라클 DBMS (11g xe) 설치 및 연동하여 데이터 관리"],
         icon2: ["RxDash"],
       }],
       value3: [{
@@ -110,7 +110,7 @@ const Project4 = () => {
       value5: [{
         title: "클라우드 서버 구축 및 배포",
         icon1: ["FcExpand"],
-        text:  ["Google Cloud Platform의 Compute Engine 서비스를 활용하여 프로젝트를 배포, 서블릿 컨테이너인 Apache Tomcat을 설치하여 웹앱을 구동. 또한 Google Cloud Platform의 Cloud SQL 서비스를 활용하여 DB를 구축하고, 프로젝트와 연동하여 데이터 관리의 용이성 및 보안성을 확장"],
+        text:  ["Microsoft Azure를 활용한 클라우드 서버 구축 및 배포로 언제 어디서나 접속 가능한 환경 제공"],
         icon2: ["RxDash"],
       }],
     },
@@ -192,14 +192,14 @@ const Project4 = () => {
       value1: [{
         title: "플랫폼",
         icon1: ["FcCursor"],
-        text:  ["TOMCAT 8.5", "APACHE"],
+        text:  ["TOMCAT 9.0", "APACHE"],
         icon2: ["SiApachetomcat", "SiApache"],
       }],
       value2: [{
-        title: "- 클라우드",
+        title: "클라우드",
         icon1: ["FcCursor"],
-        text:  ["GCP-INSTANCE", "GCP-SQL", "GCP-BUCKET"],
-        icon2: ["FcGoogle", "FcGoogle", "FcGoogle"],
+        text:  ["Microsoft Azure", "Ubuntu 20.04 LTS"],
+        icon2: ["SiMicrosoftazure", "FaUbuntu"],
       }],
     },
   };
@@ -270,6 +270,7 @@ const Project4 = () => {
                   ))}<br />
                 </div>
               ))}
+              <div className="empty-100"></div>
             </div>
           </div>
 

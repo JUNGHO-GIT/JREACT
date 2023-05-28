@@ -190,7 +190,7 @@ const Project5 = () => {
         icon2: ["SiApachetomcat", "SiApache"],
       }],
       value2: [{
-        title: "- 클라우드",
+        title: "클라우드",
         icon1: ["FcCursor"],
         text:  ["GCP-INSTANCE", "GCP-SQL", "GCP-BUCKET"],
         icon2: ["FcGoogle", "FcGoogle", "FcGoogle"],
@@ -307,6 +307,7 @@ const Project5 = () => {
                   ))}<br />
                 </div>
               ))}
+              <div className="empty-20"></div>
             </div>
           </div>
         </div>

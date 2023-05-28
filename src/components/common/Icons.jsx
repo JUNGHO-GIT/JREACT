@@ -2,10 +2,10 @@ import React from "react";
 import {GiBeaver} from "react-icons/gi";
 import {RxDash} from  "react-icons/rx";
 import {TbBrandVscode, TbBrandMysql} from "react-icons/tb";
-import {FaJava, FaNodeJs, FaNpm} from "react-icons/fa";
+import {FaJava, FaNodeJs, FaNpm, FaUbuntu, FaCentos} from "react-icons/fa";
 import {BsFiletypeXml, BsFiletypeJava} from "react-icons/bs";
 import {FcGoogle, FcLinux, FcExpand, FcAbout, FcSettings, FcSearch, FcCursor} from "react-icons/fc";
-import {SiSpring, SiSpringboot, SiJavascript, SiHtml5, SiCss3, SiBootstrap, SiOracle, SiJson, SiGradle, SiApache, SiGithub, SiReact, SiApachemaven, SiThymeleaf, SiTypescript, SiApachetomcat, SiBower, SiWindows, SiMariadb, SiMarkdown, SiNginx} from "react-icons/si";
+import {SiSpring, SiSpringboot, SiJavascript, SiHtml5, SiCss3, SiBootstrap, SiOracle, SiJson, SiGradle, SiApache, SiGithub, SiReact, SiApachemaven, SiThymeleaf, SiTypescript, SiApachetomcat, SiBower, SiWindows, SiMariadb, SiMarkdown, SiNginx, SiMicrosoftazure} from "react-icons/si";
 
 const Icons = (props) => {
 
@@ -25,6 +25,8 @@ const Icons = (props) => {
     FaNodeJs : {icon: FaNodeJs, color: "#339933", size: "1.0em", style: "inline-block"},
     FaJava : {icon: FaJava, color: "#E51F24", size: "1.0em", style: "inline-block"},
     FaNpm : {icon: FaNpm, color: "#CB3837", size: "1.0em", style: "inline-block"},
+    FaUbuntu : {icon: FaUbuntu, color: "#E95420", size: "1.0em", style: "inline-block"},
+    FaCentos : {icon: FaCentos, color: "#262577", size: "1.0em", style: "inline-block"},
 
     // Bs
     BsFiletypeJava : {icon: BsFiletypeJava, color: "#E51F24", size: "1.0em", style: "inline-block"},
@@ -61,6 +63,7 @@ const Icons = (props) => {
     SiBower : {icon: SiBower, color: "#EF5734", size: "1.0em", style: "inline-block"},
     SiWindows : {icon: SiWindows, color: "#0078D6", size: "1.0em", style: "inline-block"},
     SiMariadb : {icon: SiMariadb, color: "#003545", size: "1.0em", style: "inline-block"},
+    SiMicrosoftazure : {icon: SiMicrosoftazure, color: "#0078D4", size: "1.0em", style: "inline-block"},
   };
 
   const {icon, color, size, style} = iconArray[props.icon];

@@ -175,8 +175,6 @@ const Project2 = () => {
   };
 
   // ---------------------------------------------------------------------------------------------->
-
-  // ---------------------------------------------------------------------------------------------->
   return (
     <section id="portfolio-details" className="portfolio-details">
       <div className="container">
@@ -285,6 +283,7 @@ const Project2 = () => {
                   ))}<br />
                 </div>
               ))}
+              <div className="empty-390"></div>
             </div>
           </div>
         </div>

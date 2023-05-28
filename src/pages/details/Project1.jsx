@@ -102,15 +102,15 @@ const Project1 = () => {
         icon2: ["RxDash"],
       }],
       value4: [{
-        title: "반응형 웹",
+        title: "Apache2 서버 구성 및 관리",
         icon1: ["FcExpand"],
-        text:  ["React Bootstrap(v5)를 활용, 모바일 환경에서도 최적화된 UI/UX를 제공하는 유저 친화적 반응형 웹페이지 설계"],
+        text:  ["Apache2 서버의 가상호스트 설정을 통해 여러 도메인을 단일 서버에서 운영하여 자원의 효율적 사용, Mod_rewrite 등의 Apache 모듈을 활용하여 웹사이트의 URL 리다이렉션을 구현"],
         icon2: ["RxDash"],
       }],
       value5: [{
         title: "서버 배포 및 도메인 연결",
         icon1: ["FcExpand"],
-        text:  ["Google Cloud Platform(GCP)의 Instance 에 Apache2, Nginx를 설치하여 서버 배포, 개인 도메인 주소에 연결"],
+        text:  ["GCP 인스턴스의 CentOS7 환경에서 서버 구축 작업을 진행하고, 도메인 취득 및 DNS 설정을 통해 도메인과 서버를 연결"],
         icon2: ["RxDash"],
       }],
     },
@@ -164,6 +164,12 @@ const Project1 = () => {
         icon1: ["FcCursor"],
         text:  ["APACHE", "NGINX"],
         icon2: ["SiApache", "SiNginx"],
+      }],
+      value2: [{
+        title: "클라우드",
+        icon1: ["FcCursor"],
+        text:  ["GCP", "CentOS 7"],
+        icon2: ["FcGoogle", "FaCentos"],
       }],
     },
   };
@@ -276,6 +282,7 @@ const Project1 = () => {
                   ))}<br />
                 </div>
               ))}
+              <div className="empty-350"></div>
             </div>
           </div>
         </div>
