@@ -28,8 +28,8 @@ const About = () => {
         sectionValue: "010-8252-4757",
       },
       {
-        sectionTitle: "Domain  :  ",
-        sectionValue: "www.junghomun.com",
+        sectionTitle: "GIT  :  ",
+        sectionValue: "https://github.com/JUNGHO-GIT",
         isLink : true,
       },
     ],
