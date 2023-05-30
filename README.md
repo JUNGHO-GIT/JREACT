@@ -1,10 +1,6 @@
 ## 1. 📝 정보
 <table style="width:100%">
   <tr>
-    <th style="width:20%"></th>
-    <th style="width:80%"></th>
-  </tr>
-  <tr>
     <td><b>🔹프로젝트명</b></td>
     <td>JREACT</td>
   </tr>
