@@ -29,7 +29,7 @@ const About = () => {
       },
       {
         sectionTitle: "GIT  :  ",
-        sectionValue: "https://github.com/JUNGHO-GIT",
+        sectionValue: "www.github.com/JUNGHO-GIT",
         isLink : true,
       },
     ],

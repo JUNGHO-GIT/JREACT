@@ -73,9 +73,9 @@ const Project1 = () => {
       value5: [{
         title: "프로젝트 주소 ",
         icon1: ["FcExpand"],
-        text:  ["www.junghomun.com"],
-        icon2: ["RxDash"],
-        isLink : [true],
+        text: ["www.junghomun.com", "www.github.com/JUNGHO-GIT/JREACT.git"],
+        icon2: ["RxDash", "RxDash"],
+        isLink : [true, true],
       }],
     },
     items2: {

@@ -73,9 +73,9 @@ const Project3 = () => {
       value5: [{
         title: "프로젝트 주소 ",
         icon1: ["FcExpand"],
-        text:  ["www.junghomun.com/JUNGHQLO"],
-        icon2: ["RxDash"],
-        isLink : [true],
+        text:  ["www.junghomun.com/JUNGHQLO", "www.github.com/JUNGHO-GIT/JUNGHQLO"],
+        icon2: ["RxDash", "RxDash"],
+        isLink : [true, true],
       }],
     },
     items2: {

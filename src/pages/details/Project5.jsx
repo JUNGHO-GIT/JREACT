@@ -73,9 +73,9 @@ const Project5 = () => {
       value5: [{
         title: "프로젝트 주소 ",
         icon1: ["FcExpand"],
-        text:  ["www.junghomun.com/MEATSTORE"],
-        icon2: ["RxDash"],
-        isLink : [true],
+        text:  ["www.junghomun.com/MEATSTORE", "www.github.com/JUNGHO-GIT/MEATSTORE"],
+         icon2: ["RxDash", "RxDash"],
+        isLink : [true, true],
       }],
     },
     items2: {
@@ -92,7 +92,7 @@ const Project5 = () => {
       value2: [{
         title: "Jsp",
         icon1: ["FcExpand"],
-        text:  ["JSP(Java Server Pages)를 활용하여 동적인 웹페이지 구현. EL(Expression Language)와 JSTL(JSP Standard Tag Library)를 사용하여 코드의 가독성과 재사용성을 높임"],
+        text:  ["JSP(Java Server Pages)를 활용하여 동적인 웹페이지 구현. EL(Expression Language)와 JSTL(JSP Standard Tag Library)를 사용하여 코드의 가독성과 재사용성 증대"],
         icon2: ["RxDash"],
       }],
       value3: [{
@@ -102,12 +102,6 @@ const Project5 = () => {
         icon2: ["RxDash"],
       }],
       value4: [{
-        title: "반응형 웹",
-        icon1: ["FcExpand"],
-        text:  ["React Bootstrap(v3)를 활용, 모바일 환경에서도 최적화된 UI/UX를 제공하는 유저 친화적 반응형 웹페이지 설계"],
-        icon2: ["RxDash"],
-      }],
-      value5: [{
         title: "클라우드 서버, 서블릿 컨테이너",
         icon1: ["FcExpand"],
         text:  ["Google Cloud Platform의 Compute Engine 서비스를 활용하여 프로젝트를 배포, 서블릿 컨테이너인 Apache Tomcat을 설치하여 웹앱을 구동"],
@@ -192,8 +186,8 @@ const Project5 = () => {
       value2: [{
         title: "클라우드",
         icon1: ["FcCursor"],
-        text:  ["GCP-INSTANCE", "GCP-SQL", "GCP-BUCKET"],
-        icon2: ["FcGoogle", "FcGoogle", "FcGoogle"],
+        text:  ["GCP", "CentOS 7"],
+        icon2: ["FcGoogle", "FaCentos"],
       }],
     },
   };

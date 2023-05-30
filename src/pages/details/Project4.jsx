@@ -73,9 +73,9 @@ const Project4 = () => {
       value5: [{
         title: "프로젝트 주소 ",
         icon1: ["FcExpand"],
-        text:  ["www.junghomun.com/GOODNEIGHBOR"],
-        icon2: ["RxDash"],
-        isLink : [true],
+        text:  ["www.junghomun.com/GOODNEIGHBOR", "www.github.com/JUNGHO-GIT/GOODNEIGHBOR"],
+        icon2: ["RxDash", "RxDash"],
+        isLink : [true, true],
       }],
     },
     items2: {
@@ -92,7 +92,7 @@ const Project4 = () => {
       value2: [{
         title: "오라클 DBMS",
         icon1: ["FcExpand"],
-        text:  ["Azure 인스턴스(Ubuntu 20.04 LTS)에 오라클 DBMS (11g xe) 설치 및 연동하여 데이터 관리"],
+        text:  ["Azure 인스턴스(Ubuntu 20.04 LTS)에 오라클 DBMS (11g xe) 설치 및 연동하여 효율적으로 데이터 관리"],
         icon2: ["RxDash"],
       }],
       value3: [{
@@ -110,7 +110,7 @@ const Project4 = () => {
       value5: [{
         title: "클라우드 서버 구축 및 배포",
         icon1: ["FcExpand"],
-        text:  ["Microsoft Azure를 활용한 클라우드 서버 구축 및 배포로 언제 어디서나 접속 가능한 환경 제공"],
+        text:  ["Microsoft Azure를 활용한 클라우드 서버 구축 및 배포로 물리적 공간의 제약없이 접속 가능한 환경 제공"],
         icon2: ["RxDash"],
       }],
     },
