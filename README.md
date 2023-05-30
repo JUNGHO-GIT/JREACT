@@ -25,10 +25,6 @@
 ## 2. ⭐ 특징
 <table style="width:100%">
   <tr>
-    <th style="width:30%"></th>
-    <th style="width:70%"></th>
-  </tr>
-  <tr>
     <td><b>🔹React Framework</b></td>
     <td>React Framework(v18) 를 활용, SPA방식의 종합 포트폴리오 웹사이트 제작</td>
   </tr>
@@ -52,10 +48,6 @@
 
 ## 3. 🛠️ 사용 기술
 <table style="width:100%">
-  <tr>
-    <th style="width:20%"></th>
-    <th style="width:80%"></th>
-  </tr>
   <tr>
     <td><b>🔹프론트엔드</b></td>
     <td>HTML, CSS, Javascript, TypeScript, React 18, Node.js, NPM, Bootstrap 5</td>
