@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination} from 'swiper';
-import {Icons} from "../../components/common/Icons";
+import {Icons} from "../../components/Icons";
 
 // 스와이프 이미지 -------------------------------------------------------------------------------->
 const ImageComponent = () => {
@@ -10,8 +10,8 @@ const ImageComponent = () => {
   useEffect(() => {
     const loadImages = async () => {
       let loadedImages = [];
-      for (let i = 1; i <= 4; i++) {
-        const image = await import(`../../assets/images/project/project4/${i}.png`);
+      for (let i = 1; i <= 5; i++) {
+        const image = await import(`../../assets/images/project/project2/${i}.png`);
         loadedImages.push(image.default);
       }
       setImages(loadedImages);
@@ -37,7 +37,7 @@ const ImageComponent = () => {
 };
 
 // ------------------------------------------------------------------------------------------------>
-const Project4 = () => {
+const Project2 = () => {
 
   // ---------------------------------------------------------------------------------------------->
   const itemsArray1 = {
@@ -49,33 +49,33 @@ const Project4 = () => {
       value1: [{
         title: "프로젝트명",
         icon1: ["FcExpand"],
-        text:  ["GoodNeighbor"],
+        text:  ["JLINT",],
         icon2: ["RxDash"],
       }],
       value2: [{
         title: "주제",
         icon1: ["FcExpand"],
-        text:  ["SPRING FRAMEWORK를 활용한 자선단체 웹사이트"],
+        text:  ["NODEJS 및 TS를 활용한 VSCODE 언어 린팅 확장프로그램"],
         icon2: ["RxDash"],
       }],
       value3: [{
         title: "기간",
         icon1: ["FcExpand"],
-        text:  ["2023.02.20 ~ 2023.03.08"],
+        text:  ["2023.05.05 ~ 2023.05.24"],
         icon2: ["RxDash"],
       }],
       value4: [{
         title: "참여인원",
         icon1: ["FcExpand"],
-        text:  ["총 4명(팀)"],
+        text:  ["총 1명(개인)"],
         icon2: ["RxDash"],
       }],
       value5: [{
         title: "프로젝트 주소 ",
         icon1: ["FcExpand"],
-        text:  ["www.junghomun.com/GOODNEIGHBOR", "www.github.com/JUNGHO-GIT/GOODNEIGHBOR"],
-        icon2: ["RxDash", "RxDash"],
-        isLink : [true, true],
+        text:  ["www.github.com/JUNGHO-GIT/JLINT.git"],
+        icon2: ["RxDash"],
+        isLink : [true],
       }],
     },
     items2: {
@@ -84,33 +84,33 @@ const Project4 = () => {
         icon1 : ["FcSearch"]
       }],
       value1: [{
-        title: "Spring Framework",
+        title: "NodeJs",
         icon1: ["FcExpand"],
-        text:  ["Spring Framework(v4.3)를 활용한 MVC model2 방식의 웹개발로 인한 서버사이드 개발의 효율성 확장과 프로젝트 관리의 유연성 확보"],
+        text:  ["NodeJs(v16)를 통한 프로젝트 생성 및 빌드, 주 언어로 Typescript 사용"],
         icon2: ["RxDash"],
       }],
       value2: [{
-        title: "오라클 DBMS",
+        title: "다양한 라이브러리 활용",
         icon1: ["FcExpand"],
-        text:  ["Azure 인스턴스(Ubuntu 20.04 LTS)에 오라클 DBMS (11g xe) 설치 및 연동하여 효율적으로 데이터 관리"],
+        text:  ["NPM을 통한 'prettier, lodash, cheerio, mocha, ts-node' 등의 패키지 설치, 관리, 사용을 통한 개발 확장성 및 효율성 증대"],
         icon2: ["RxDash"],
       }],
       value3: [{
-        title: "Mybatis 프레임워크 연동",
+        title: "언어 다중지원 및 자동정렬",
         icon1: ["FcExpand"],
-        text:  ["Mybatis 프레임워크를 활용하여 SQL문을 자바코드에서 분리하여 관리하고, DB 데이터를 객체지향적으로 관리"],
+        text:  ["10가지 이상의 다양한 언어를 지원하며, 각 언어별로 린팅, 코딩 스타일 설정, Indent 최적화, 코드 자동 정렬 등의 기능을 제공하여 코드의 일관성 유지, 품질 향상 및 개발 생산성 증대"],
         icon2: ["RxDash"],
       }],
       value4: [{
-        title: "반응형 웹",
+        title: "구분선 자동 생성",
         icon1: ["FcExpand"],
-        text:  ["React Bootstrap(v4)를 활용, 모바일 환경에서도 최적화된 UI/UX를 제공하는 유저 친화적 반응형 웹페이지 설계"],
+        text:  ["클래스, 함수, 변수, 배열 등의 요소에 구분선 주석을 자동으로 삽입하여 전체적인 코드 흐름을 더욱 명확하게 파악하고 코드 가독성을 향상"],
         icon2: ["RxDash"],
       }],
       value5: [{
-        title: "클라우드 서버 구축 및 배포",
+        title: "Vscode API",
         icon1: ["FcExpand"],
-        text:  ["Microsoft Azure를 활용한 클라우드 서버 구축 및 배포로 물리적 공간의 제약없이 접속 가능한 환경 제공"],
+        text:  ["Vscode API를 통한 확장 프로그램 제작 및 빌드 후 실제 Marketplace에 배포하여 사용자에게 제공함으로써 실제 프로젝트에 적용 가능한 확장성 확보"],
         icon2: ["RxDash"],
       }],
     },
@@ -126,21 +126,9 @@ const Project4 = () => {
       value1: [{
         title: "언어",
         icon1: ["FcCursor"],
-        text:  ["HTML", "CSS", "JS"],
-        icon2: ["SiHtml5", "SiCss3", "SiJavascript"],
-      }],
-      value2: [{
-        title: "프레임워크",
-        icon1: ["FcCursor"],
-        text:  ["BOOTSTRAP"],
-        icon2: ["SiBootstrap"],
-      }],
-      value3: [{
-        title: "템플릿",
-        icon1: ["FcCursor"],
-        text:  ["JSP"],
-        icon2: ["BsFiletypeJava"],
-      }],
+        text:  ["HTML", "MARKDOWN"],
+        icon2: ["SiHtml5", "SiMarkdown"]
+      }]
     },
     items2: {
       mainTitle: [{
@@ -150,41 +138,17 @@ const Project4 = () => {
       value1: [{
         title: "언어",
         icon1: ["FcCursor"],
-        text:  ["JAVA 11"],
-        icon2: ["FaJava"],
+        text:  ["NODEJS", "JS", "TS"],
+        icon2: ["FaNodeJs", "SiJavascript", "SiTypescript"],
       }],
       value2: [{
-        title: "프레임워크",
-        icon1: ["FcCursor"],
-        text:  ["SPRING 4.3"],
-        icon2: ["SiSpring"],
-      }],
-      value3: [{
         title: "패키지관리, 빌드",
         icon1: ["FcCursor"],
-        text:  ["MAVEN", "XML", "JSON"],
-        icon2: ["SiApachemaven", "BsFiletypeXml", "SiJson"],
+        text:  ["NPM", "GITHUB", "JSON"],
+        icon2: ["FaNpm", "SiGithub","SiJson"],
       }],
     },
     items3: {
-      mainTitle: [{
-        title : "데이터베이스",
-        icon1 : ["FcSettings"]
-      }],
-      value1: [{
-        title: "DBMS",
-        icon1: ["FcCursor"],
-        text:  ["ORACLE 11XE"],
-        icon2: ["SiOracle"],
-      }],
-      value2: [{
-        title: "프레임워크, 관리",
-        icon1: ["FcCursor"],
-        text:  ["MYBATIS", "DBEAVER"],
-        icon2: ["SiBower", "GiBeaver"],
-      }],
-    },
-    items4: {
       mainTitle: [{
         title : "서버",
         icon1 : ["FcSettings"]
@@ -192,14 +156,20 @@ const Project4 = () => {
       value1: [{
         title: "플랫폼",
         icon1: ["FcCursor"],
-        text:  ["TOMCAT 9.0", "APACHE"],
-        icon2: ["SiApachetomcat", "SiApache"],
+        text:  ["APACHE", "NGINX"],
+        icon2: ["SiApache", "SiNginx"],
       }],
-      value2: [{
-        title: "클라우드",
+    },
+    items4: {
+      mainTitle: [{
+        title : "API",
+        icon1 : ["FcSettings"]
+      }],
+      value1: [{
+        title: "플랫폼",
         icon1: ["FcCursor"],
-        text:  ["Microsoft Azure", "Ubuntu 20.04 LTS"],
-        icon2: ["SiMicrosoftazure", "FaUbuntu"],
+        text:  ["VSCODE-API 1.78"],
+        icon2: ["TbBrandVscode"],
       }],
     },
   };
@@ -270,7 +240,6 @@ const Project4 = () => {
                   ))}<br />
                 </div>
               ))}
-              <div className="empty-100"></div>
             </div>
           </div>
 
@@ -314,6 +283,7 @@ const Project4 = () => {
                   ))}<br />
                 </div>
               ))}
+              <div className="empty-390"></div>
             </div>
           </div>
         </div>
@@ -321,4 +291,4 @@ const Project4 = () => {
     </section>
   );
 };
-export default Project4;
+export default Project2;

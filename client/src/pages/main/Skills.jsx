@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {CSSTransition} from "react-transition-group";
 import CountUp from "react-countup";
-import {Icons} from "../../components/common/Icons";
+import {Icons} from "../../components/Icons";
 
 // ------------------------------------------------------------------------------------------------>
 const Skills = () => {

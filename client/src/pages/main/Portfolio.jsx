@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import Isotope from "isotope-layout";
 import {Tooltip} from "react-tooltip";
-import {Icons} from "../../components/common/Icons";
+import {Icons} from "../../components/Icons";
 
 // ------------------------------------------------------------------------------------------------>
 const Portfolio = () => {

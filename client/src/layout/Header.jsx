@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from "react";
-import Image from "../../assets/images/main/logo.png";
+import Image from "../assets/images/main/logo.png";
 
 // ------------------------------------------------------------------------------------------------>
 const socialLinks = [
@@ -142,7 +142,7 @@ const pageAlert = (event) => {
   const confirm = window.prompt("Confirmation")
 
   if (confirm == "7411") {
-    window.location.href="http://www.junghomun.com:8888";
+    window.location.href="/loginForm"
   }
   else {
     alert("Failed to confirm")

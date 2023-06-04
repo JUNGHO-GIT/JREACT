@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination} from 'swiper';
-import {Icons} from "../../components/common/Icons";
+import {Icons} from "../../components/Icons";
 
 // 스와이프 이미지 -------------------------------------------------------------------------------->
 const ImageComponent = () => {
@@ -10,8 +10,8 @@ const ImageComponent = () => {
   useEffect(() => {
     const loadImages = async () => {
       let loadedImages = [];
-      for (let i = 1; i <= 2; i++) {
-        const image = await import(`../../assets/images/project/project1/${i}.png`);
+      for (let i = 1; i <= 4; i++) {
+        const image = await import(`../../assets/images/project/project5/${i}.png`);
         loadedImages.push(image.default);
       }
       setImages(loadedImages);
@@ -29,7 +29,7 @@ const ImageComponent = () => {
     >
       {images.map((image, index) => (
         <SwiperSlide key={index}>
-          <img src={image} alt={`image-${index + 1}`} className="img-fluid" />
+          <img src={image} alt={`image-${index + 1}`} />
         </SwiperSlide>
       ))}
     </Swiper>
@@ -37,7 +37,7 @@ const ImageComponent = () => {
 };
 
 // ------------------------------------------------------------------------------------------------>
-const Project1 = () => {
+const Project5 = () => {
 
   // ---------------------------------------------------------------------------------------------->
   const itemsArray1 = {
@@ -49,32 +49,32 @@ const Project1 = () => {
       value1: [{
         title: "프로젝트명",
         icon1: ["FcExpand"],
-        text:  ["JREACT",],
+        text:  ["MeatStore"],
         icon2: ["RxDash"],
       }],
       value2: [{
         title: "주제",
         icon1: ["FcExpand"],
-        text:  ["React를 활용한 개인 포트폴리오 웹사이트"],
+        text:  ["MVC 모델2 방식을 활용한 종합 육류 판매 웹사이트"],
         icon2: ["RxDash"],
       }],
       value3: [{
         title: "기간",
         icon1: ["FcExpand"],
-        text:  ["2023.04.26 ~ 2023.05.23"],
+        text:  ["2023.01.18 ~ 2023.02.03"],
         icon2: ["RxDash"],
       }],
       value4: [{
         title: "참여인원",
         icon1: ["FcExpand"],
-        text:  ["총 1명(개인)"],
+        text:  ["총 4명(팀)"],
         icon2: ["RxDash"],
       }],
       value5: [{
         title: "프로젝트 주소 ",
         icon1: ["FcExpand"],
-        text: ["www.junghomun.com", "www.github.com/JUNGHO-GIT/JREACT.git"],
-        icon2: ["RxDash", "RxDash"],
+        text:  ["www.junghomun.com/MEATSTORE", "www.github.com/JUNGHO-GIT/MEATSTORE"],
+         icon2: ["RxDash", "RxDash"],
         isLink : [true, true],
       }],
     },
@@ -84,33 +84,27 @@ const Project1 = () => {
         icon1 : ["FcSearch"]
       }],
       value1: [{
-        title: "리액트 프레임워크",
+        title: "Java & MVC Model 2",
         icon1: ["FcExpand"],
-        text:  ["React Framework(v18) 를 활용, SPA방식의 종합 포트폴리오 웹사이트 제작"],
+        text:  ["Java 언어와 MVC Model 2 패턴을 기반으로, 비즈니스 로직을 처리하는 Controller, Model 구성 및 사용자 인터페이스를 담당하는 View 분리하여 유지보수성과 확장성을 높임"],
         icon2: ["RxDash"],
       }],
       value2: [{
-        title: "리액트 훅 & 라우터",
+        title: "Jsp",
         icon1: ["FcExpand"],
-        text:  ["React Hooks와 React Router를 활용하여 효율적 상태 관리와 동적 라우팅을 구현"],
+        text:  ["JSP(Java Server Pages)를 활용하여 동적인 웹페이지 구현. EL(Expression Language)와 JSTL(JSP Standard Tag Library)를 사용하여 코드의 가독성과 재사용성 증대"],
         icon2: ["RxDash"],
       }],
       value3: [{
-        title: "컴포넌트 기반 설계",
+        title: "MySql",
         icon1: ["FcExpand"],
-        text:  ["컴포넌트 기반의 구조 설계를 통한 효율적인 상태 관리 및 코드 재사용성 확보"],
+        text:  ["MySQL을 활용하여 DB 설계 및 구축. 데이터베이스의 무결성을 유지하고, 데이터의 효율적인 활용을 위해 정규화를 진행하여 데이터의 중복을 최소화"],
         icon2: ["RxDash"],
       }],
       value4: [{
-        title: "Apache2 서버 구성 및 관리",
+        title: "클라우드 서버, 서블릿 컨테이너",
         icon1: ["FcExpand"],
-        text:  ["Apache2 서버의 가상호스트 설정을 통해 여러 도메인을 단일 서버에서 운영하여 자원의 효율적 사용, Mod_rewrite 등의 Apache 모듈을 활용하여 웹사이트의 URL 리다이렉션을 구현"],
-        icon2: ["RxDash"],
-      }],
-      value5: [{
-        title: "서버 배포 및 도메인 연결",
-        icon1: ["FcExpand"],
-        text:  ["GCP 인스턴스의 CentOS7 환경에서 서버 구축 작업을 진행하고, 도메인 취득 및 DNS 설정을 통해 도메인과 서버를 연결"],
+        text:  ["Google Cloud Platform의 Compute Engine 서비스를 활용하여 프로젝트를 배포, 서블릿 컨테이너인 Apache Tomcat을 설치하여 웹앱을 구동"],
         icon2: ["RxDash"],
       }],
     },
@@ -126,14 +120,20 @@ const Project1 = () => {
       value1: [{
         title: "언어",
         icon1: ["FcCursor"],
-        text:  ["HTML", "CSS", "JS", "TS"],
-        icon2: ["SiHtml5", "SiCss3", "SiJavascript", "SiTypescript"],
+        text:  ["HTML", "CSS", "JS"],
+        icon2: ["SiHtml5", "SiCss3", "SiJavascript"],
       }],
       value2: [{
         title: "프레임워크",
         icon1: ["FcCursor"],
-        text:  ["REACT", "BOOTSTRAP"],
-        icon2: ["SiReact", "SiBootstrap"],
+        text:  ["BOOTSTRAP"],
+        icon2: ["SiBootstrap"],
+      }],
+      value3: [{
+        title: "템플릿",
+        icon1: ["FcCursor"],
+        text:  ["JSP"],
+        icon2: ["BsFiletypeJava"],
       }],
     },
     items2: {
@@ -144,26 +144,44 @@ const Project1 = () => {
       value1: [{
         title: "언어",
         icon1: ["FcCursor"],
-        text:  ["NODEJS"],
-        icon2: ["FaNodeJs"],
+        text:  ["JAVA 1.8"],
+        icon2: ["FaJava"],
       }],
       value2: [{
         title: "패키지관리, 빌드",
         icon1: ["FcCursor"],
-        text:  ["NPM", "GITHUB", "JSON"],
-        icon2: ["FaNpm", "SiGithub","SiJson"],
+        text:  ["XML"],
+        icon2: ["BsFiletypeXml"],
       }],
     },
     items3: {
       mainTitle: [{
+        title : "데이터베이스",
+        icon1 : ["FcSettings"]
+      }],
+      value1: [{
+        title: "DBMS",
+        icon1: ["FcCursor"],
+        text: ["MYSQL 5.5"],
+        icon2: ["TbBrandMysql"],
+      }],
+      value2: [{
+        title: "프레임워크, 관리",
+        icon1: ["FcCursor"],
+        text:  ["DBEAVER"],
+        icon2: ["GiBeaver"],
+      }],
+    },
+    items4: {
+      mainTitle: [{
         title : "서버",
-        icon1: ["FcSettings"]
+        icon1 : ["FcSettings"]
       }],
       value1: [{
         title: "플랫폼",
         icon1: ["FcCursor"],
-        text:  ["APACHE", "NGINX"],
-        icon2: ["SiApache", "SiNginx"],
+        text:  ["TOMCAT 8.0", "APACHE"],
+        icon2: ["SiApachetomcat", "SiApache"],
       }],
       value2: [{
         title: "클라우드",
@@ -192,8 +210,9 @@ const Project1 = () => {
 
         {/** main info **/}
         <div className="row">
+
           {/** left side **/}
-          <div className="col-lg-6 col-md-12 col-sm-12 col-12 jungho-col-left">
+          <div className="col-lg-6 col-md-6 col-sm-12 col-12 jungho-col-left">
             <div className="portfolio-info">
               {Object.entries(itemsArray1).map(([key, index]) => (
                 <div key={key} className="jungho-border-top">
@@ -243,7 +262,7 @@ const Project1 = () => {
           </div>
 
           {/** right side **/}
-          <div className="col-lg-6 col-md-12 col-sm-12 col-12 jungho-col-right">
+          <div className="col-lg-6 col-md-6 col-sm-12 col-12 jungho-col-right">
             <div className="portfolio-info">
               {Object.entries(itemsArray2).map(([key, index]) => (
                 <div key={key} className="jungho-border-top">
@@ -282,7 +301,7 @@ const Project1 = () => {
                   ))}<br />
                 </div>
               ))}
-              <div className="empty-350"></div>
+              <div className="empty-20"></div>
             </div>
           </div>
         </div>
@@ -290,4 +309,4 @@ const Project1 = () => {
     </section>
   );
 };
-export default Project1;
+export default Project5;

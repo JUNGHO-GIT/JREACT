@@ -2,6 +2,10 @@
 import React from "react";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
+// plugins ---------------------------------------------------------------------------------------->
+import AOS from "aos";
+import PureCounter from "@srexi/purecounterjs";
+
 // css -------------------------------------------------------------------------------------------->
 import "./App.css";
 import "../assets/styles/Jungho.css";
@@ -13,27 +17,24 @@ import "boxicons/css/boxicons.min.css";
 import "swiper/swiper-bundle.min.css";
 
 // components ------------------------------------------------------------------------------------->
-import Resize from "../components/common/Resize";
-import Scroll from "../components/common/Scroll";
-import Loader from "../components/common/Loader";
-import Header from "../components/layout/Header";
-import Footer from "../components/layout/Footer";
-import Toggle from "../components/common/Toggle";
-import Hover from "../components/common/Hover";
+import Resize from "../components/Resize";
+import Scroll from "../components/Scroll";
+import Loader from "../components/Loader";
+import Header from "../layout/Header";
+import Footer from "../layout/Footer";
+import Toggle from "../components/Toggle";
+import Hover from "../components/Hover";
 import Hero from "../pages/main/Hero";
 import About from "../pages/main/About";
 import Skills from "../pages/main/Skills";
 import Portfolio from "../pages/main/Portfolio";
 import Contact from "../pages/main/Contact";
+import Login from "../pages/extra/Login";
 import Project1 from "../pages/details/Project1";
 import Project2 from "../pages/details/Project2";
 import Project3 from "../pages/details/Project3";
 import Project4 from "../pages/details/Project4";
 import Project5 from "../pages/details/Project5";
-
-// plugins ---------------------------------------------------------------------------------------->
-import AOS from "aos";
-import PureCounter from "@srexi/purecounterjs";
 
 // ------------------------------------------------------------------------------------------------>
 const Aos = () => {
@@ -50,8 +51,6 @@ const PureCount = () => {
   const pure = new PureCounter();
   return pure;
 };
-
-// ------------------------------------------------------------------------------------------------>
 Hover();
 
 // ------------------------------------------------------------------------------------------------>
@@ -62,8 +61,6 @@ class Main extends React.Component {
     Hover();
   }
   render() {
-
-    // -------------------------------------------------------------------------------------------->
     return (
       <div className="App">
         <Toggle />
@@ -92,8 +89,6 @@ class ProjectDetails extends React.Component {
   }
   render() {
     const {project} = this.props;
-
-    // -------------------------------------------------------------------------------------------->
     return (
       <div className="App">
         <Toggle />
@@ -116,12 +111,12 @@ class ProjectDetails extends React.Component {
 // ------------------------------------------------------------------------------------------------>
 const App = () => {
 
-  // ---------------------------------------------------------------------------------------------->
   return (
     <Router>
       <Scroll/>
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/loginForm" element={<Login />} />
         <Route path="/details/project1" element={<ProjectDetails project="project1" />} />
         <Route path="/details/project2" element={<ProjectDetails project="project2" />} />
         <Route path="/details/project3" element={<ProjectDetails project="project3" />} />
