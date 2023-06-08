@@ -1,4 +1,4 @@
-import { Router, Request, Response } from "express";
+import {Router, Request, Response} from "express";
 import * as path from "path";
 import * as userService from "../service/userService";
 

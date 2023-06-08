@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination} from 'swiper';
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {Navigation, Pagination} from 'swiper';
 import {Icons} from "../../components/Icons";
 
 // 스와이프 이미지 -------------------------------------------------------------------------------->
@@ -270,7 +270,7 @@ const Project4 = () => {
                   ))}<br />
                 </div>
               ))}
-              <div className="empty-100"></div>
+              <div className="empty-80"></div>
             </div>
           </div>
 

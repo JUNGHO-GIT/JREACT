@@ -142,7 +142,7 @@ const pageAlert = (event) => {
   const confirm = window.prompt("Confirmation")
 
   if (confirm == "7411") {
-    window.location.href="/loginForm"
+    window.location.href="/login"
   }
   else {
     alert("Failed to confirm")

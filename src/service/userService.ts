@@ -1,21 +1,21 @@
 import User from "../model/User";
 
-// register
+// register "POST"
 export const registerUser = async (userData: any) => {
   return new User(userData).save();
 };
 
-// login
+// login "POST"
 export const loginUser = async (loginData: any) => {
   return User.findOne(loginData);
 };
 
-// update ("PUT" method)
+// update "PUT"
 export const updateUser = async (userData: any) => {
   return User.findByIdAndUpdate(userData._id, userData);
 };
 
-// delete
+// delete "DELETE"
 export const deleteUser = async (id: string) => {
   return User.findByIdAndDelete(id);
 };

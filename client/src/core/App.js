@@ -116,7 +116,7 @@ const App = () => {
       <Scroll/>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/loginForm" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/details/project1" element={<ProjectDetails project="project1" />} />
         <Route path="/details/project2" element={<ProjectDetails project="project2" />} />
         <Route path="/details/project3" element={<ProjectDetails project="project3" />} />

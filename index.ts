@@ -19,7 +19,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 mongoose.connect("mongodb://localhost/test");
 
 app.use(express.static(path.join(__dirname, "client/build")));
-
 app.use("/api", router);
 
 app.listen(app.get("port"), () => {
