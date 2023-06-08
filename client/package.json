@@ -30,8 +30,6 @@
     "@srexi/purecounterjs": "^1.5.0",
     "@testing-library/jest-dom": "^5.16.5",
     "aos": "^2.3.4",
-    "bootstrap": "^5.2.3",
-    "bootstrap-icons": "^1.10.4",
     "boxicons": "^2.1.4",
     "isotope-layout": "^3.0.6",
     "react": "^18.2.0",
@@ -47,12 +45,19 @@
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
+    "@types/bootstrap": "^5.2.6",
     "@types/cors": "^2.8.13",
+    "@types/jquery": "^3.5.16",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
+    "@types/styled-components": "^5.1.26",
     "axios": "^1.4.0",
+    "bootstrap": "^5.3.0",
+    "bootstrap-icons": "^1.10.5",
     "cors": "^2.8.5",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "jquery": "^3.7.0",
+    "styled-components": "^6.0.0-rc.3",
     "swiper": "^9.3.2",
     "swiper-react": "^1.0.0"
   }

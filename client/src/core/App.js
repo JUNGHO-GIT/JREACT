@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 // plugins ---------------------------------------------------------------------------------------->
 import AOS from "aos";
 import PureCounter from "@srexi/purecounterjs";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 // css -------------------------------------------------------------------------------------------->
 import "./App.css";
@@ -16,7 +17,7 @@ import "aos/dist/aos.css";
 import "boxicons/css/boxicons.min.css";
 import "swiper/swiper-bundle.min.css";
 
-// components ------------------------------------------------------------------------------------->
+// components1 ------------------------------------------------------------------------------------>
 import Resize from "../components/Resize";
 import Scroll from "../components/Scroll";
 import Loader from "../components/Loader";
@@ -24,17 +25,23 @@ import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 import Toggle from "../components/Toggle";
 import Hover from "../components/Hover";
+
+// components2 ------------------------------------------------------------------------------------>
 import Hero from "../pages/main/Hero";
 import About from "../pages/main/About";
 import Skills from "../pages/main/Skills";
 import Portfolio from "../pages/main/Portfolio";
 import Contact from "../pages/main/Contact";
-import Login from "../pages/extra/Login";
 import Project1 from "../pages/details/Project1";
 import Project2 from "../pages/details/Project2";
 import Project3 from "../pages/details/Project3";
 import Project4 from "../pages/details/Project4";
 import Project5 from "../pages/details/Project5";
+
+// components3 ---------------------------------------------------------------------------------->
+import Private from "../private/page/Private";
+import Login from "../private/page/Login";
+import Signup from "../private/page/Signup";
 
 // ------------------------------------------------------------------------------------------------>
 const Aos = () => {
@@ -116,7 +123,9 @@ const App = () => {
       <Scroll/>
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/private" element={<Private />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/details/project1" element={<ProjectDetails project="project1" />} />
         <Route path="/details/project2" element={<ProjectDetails project="project2" />} />
         <Route path="/details/project3" element={<ProjectDetails project="project3" />} />
