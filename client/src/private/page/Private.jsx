@@ -80,7 +80,7 @@ const CarouselSecond = () => {
   }
 
   return (
-    <div className="carousel-item active">
+    <div className="carousel-item">
       <rect width="100%" height="100%" fill="#eeeeee" />
       <div className="carousel-caption text-center">
         <h1 className="mb-10">Managing Server</h1>
@@ -100,7 +100,7 @@ const CarouselThird = () => {
   }
 
   return (
-    <div className="carousel-item active">
+    <div className="carousel-item">
       <rect width="100%" height="100%" fill="#eeeeee" />
       <div className="carousel-caption text-end">
         <h1 className="mb-10">Managing Server</h1>
