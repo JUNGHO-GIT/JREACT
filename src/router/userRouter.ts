@@ -41,4 +41,20 @@ router.post("/signup", async (req: Request, res: Response) => {
   }
 });
 
+// secretKey -------------------------------------------------------------------------------------->
+router.get("/secretKey", async (req: Request, res: Response) => {
+  try {
+    const user = await userService.secretKey(Number(req.query.secretKey));
+    if (user) {
+      res.send("success");
+    }
+    else {
+      res.send("fail");
+    }
+  }
+  catch (err) {
+    res.status(500).send(err);
+  }
+});
+
 export default router;

@@ -74,6 +74,7 @@ const Sidebar = () => {
 
   // ---------------------------------------------------------------------------------------------->
   const [sidebar, sidebarOpen] = useState(false);
+  const userId = JSON.parse(sessionStorage.getItem("userId"));
   useEffect(() => {
     const closeNav = (event) => {
       const sidebarElement = document.getElementById("sidebar");
@@ -96,9 +97,14 @@ const Sidebar = () => {
       <div id="sidebar" className={`sidebar ${sidebar ? "open" : "close"}`}>
         <a className="closeBtn" onClick={() => sidebarOpen(false)}>×</a>
         <a href="/private" className="side-menu linkHover">Home</a>
-        <a href="#" className="side-menu linkHover">Pricing</a>
-        <a href="#" className="side-menu linkHover">FAQ</a>
-        <a href="#" className="side-menu linkHover">About</a>
+        {!userId ? (
+          <div>
+            <a href="/login" className="side-menu linkHover">Login</a>
+            <a href="/login" className="side-menu linkHover">SignUp</a>
+          </div>
+        ) : (
+          <a onClick={() => {sessionStorage.setItem('userId', false); window.location.href = "/login"}} className="side-menu linkHover">Logout</a>
+        )}
         <hr/>
       </div>
       <div className={`${sidebar ? "margin-left" : ""}`}></div>

@@ -22,12 +22,8 @@ const Footer = () => {
     <div><FooterStyle />
       <footer className="footer">
         <div className="row pb-6 pt-6">
-          <div className="col-8 custom-flex-left ps-10">
+          <div className="col-12 custom-flex-center">
             <span className="">&copy; JUNGHO's Domain</span>
-          </div>
-          <div className="col-4 custom-flex-center pe-10">
-            <a href="/"><i className="bi bi-facebook me-5"></i></a>
-            <a href="/"><i className="bi bi-twitter me-5"></i></a>
           </div>
         </div>
       </footer>

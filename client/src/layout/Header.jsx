@@ -139,10 +139,10 @@ const useSmoothScroll = () => {
 // ------------------------------------------------------------------------------------------------>
 const pageAlert = (event) => {
   event.preventDefault();
-  const confirm = window.prompt("Confirmation")
+  const confirm = window.confirm("Enter the private page");
 
-  if (confirm == "7411") {
-    window.location.href="/login"
+  if (confirm == true) {
+    window.location.href="/private";
   }
   else {
     alert("Failed to confirm")
@@ -156,7 +156,6 @@ const Header = () => {
   const onMobileNavToggleClick = useNavToggle(navToggleRef, sideNavRef);
   const onNavItemClick = useSmoothScroll();
 
-
   // ---------------------------------------------------------------------------------------------->
   return (
     <>
@@ -165,7 +164,7 @@ const Header = () => {
         <div className="d-flex flex-column">
           <div className="profile">
             <img src={Image} className="img-fluid rounded-circle" alt="Profile" />
-            <h1 className="text-light"><a href="/" onClick={pageAlert}>JUNGHO MUN</a></h1>
+            <h1 className="text-light"><a href="/">JUNGHO MUN</a></h1>
             <div className="social-links mt-3 text-center">
               {socialLinks.map((socialItem) => (
                 <a key={socialItem.id} href={socialItem.url} className={socialItem.name.toLowerCase()}>
@@ -184,6 +183,12 @@ const Header = () => {
                   </a>
                 </li>
               ))}
+              <li>
+                <a href="/private" className="nav-link scrollTo text-hover" onClick={pageAlert}>
+                  <i className="bx bx-user"></i>
+                  <span>Private</span>
+                </a>
+              </li>
             </ul>
           </nav>
         </div>

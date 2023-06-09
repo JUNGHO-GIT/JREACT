@@ -9,7 +9,7 @@ const PrivateStyle = createGlobalStyle`
 
   .carousel-caption {
     color: var(--bs-black);
-    bottom: 3rem;
+    bottom: 6rem;
     z-index: 10;
   }
 
@@ -27,6 +27,10 @@ const PrivateStyle = createGlobalStyle`
     transition: -webkit-transform 0.3s ease;
     overflow: hidden;
     opacity: 0.5;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
   }
 
   .carousel-item.active {
@@ -44,21 +48,24 @@ const PrivateStyle = createGlobalStyle`
 
 // ------------------------------------------------------------------------------------------------>
 const CarouselFirst = () => {
+
+  const enterIn = (e) => {
+    e.preventDefault();
+    if (window.sessionStorage.getItem("userId") == null) {
+      alert("Please log in to use this service.");
+    }
+    else {
+     window.location.href="http://www.junghomun.com:8888";
+    }
+  }
+
   return (
     <div className="carousel-item active">
-      <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-        <rect width="100%" height="100%" fill="#eeeeee" />
-      </svg>
-      <div className="container">
-        <div className="carousel-caption text-start">
-          <h1>Example headline.</h1>
-          <p>Some representative placeholder content for the first slide of the carousel.</p>
-          <p>
-            <a className="btn btn-lg btn-primary" href="#">
-              Sign up today
-            </a>
-          </p>
-        </div>
+      <rect width="100%" height="100%" fill="#eeeeee" />
+      <div className="carousel-caption text-start">
+        <h1 className="mb-10">Managing Server</h1>
+        <p className="mb-10">Modification and management of servers running on Tomcat</p>
+        <a className="btn btn-lg btn-primary" href="#" onClick={enterIn}>ENTER</a>
       </div>
     </div>
   );
@@ -66,22 +73,19 @@ const CarouselFirst = () => {
 
 // ------------------------------------------------------------------------------------------------>
 const CarouselSecond = () => {
-  return (
-    <div className="carousel-item">
-      <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-        <rect width="100%" height="100%" fill="#eeeeee" />
-      </svg>
 
-      <div className="container">
-        <div className="carousel-caption">
-          <h1>Another example headline.</h1>
-          <p>Some representative placeholder content for the second slide of the carousel.</p>
-          <p>
-            <a className="btn btn-lg btn-primary" href="#">
-              Learn more
-            </a>
-          </p>
-        </div>
+  const enterIn = (e) => {
+    e.preventDefault();
+    window.location.href="http://www.junghomun.com:8888";
+  }
+
+  return (
+    <div className="carousel-item active">
+      <rect width="100%" height="100%" fill="#eeeeee" />
+      <div className="carousel-caption text-center">
+        <h1 className="mb-10">Managing Server</h1>
+        <p className="mb-10">Modification and management of servers running on Tomcat</p>
+        <a className="btn btn-lg btn-primary" href="#" onClick={enterIn}>ENTER</a>
       </div>
     </div>
   );
@@ -89,22 +93,19 @@ const CarouselSecond = () => {
 
 // ------------------------------------------------------------------------------------------------>
 const CarouselThird = () => {
-  return (
-    <div className="carousel-item">
-      <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-        <rect width="100%" height="100%" fill="#eeeeee" />
-      </svg>
 
-      <div className="container">
-        <div className="carousel-caption text-end">
-          <h1>One more for good measure.</h1>
-          <p>Some representative placeholder content for the third slide of this carousel.</p>
-          <p>
-            <a className="btn btn-lg btn-primary" href="#">
-              Browse gallery
-            </a>
-          </p>
-        </div>
+  const enterIn = (e) => {
+    e.preventDefault();
+    window.location.href="http://www.junghomun.com:8888";
+  }
+
+  return (
+    <div className="carousel-item active">
+      <rect width="100%" height="100%" fill="#eeeeee" />
+      <div className="carousel-caption text-end">
+        <h1 className="mb-10">Managing Server</h1>
+        <p className="mb-10">Modification and management of servers running on Tomcat</p>
+        <a className="btn btn-lg btn-primary" href="#" onClick={enterIn}>ENTER</a>
       </div>
     </div>
   );

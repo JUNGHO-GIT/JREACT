@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import "../core/Private.css";
 import {createGlobalStyle} from "styled-components";
 import Sidebar from "./Sidebar";
@@ -38,8 +39,25 @@ const HeaderStyle = createGlobalStyle`
 
 // ------------------------------------------------------------------------------------------------>
 const Header = () => {
+  const userId = JSON.parse(sessionStorage.getItem("userId"));
 
-  // ---------------------------------------------------------------------------------------------->
+  const signupPrompt = async () => {
+    const prompt = window.prompt("Enter the secret key to sign up", "");
+    const res = await axios.get("http://localhost:4000/api/secretKey");
+
+    if (res.data == "success") {
+      window.location.href = "/signup";
+    }
+    else if (res.data == "fail") {
+      alert("Invalid secret key");
+      return;
+    }
+    else {
+      alert("Unknown error");
+      return;
+    }
+  };
+
   return (
     <div>
       <HeaderStyle />
@@ -51,15 +69,21 @@ const Header = () => {
           <div className="d-lg-block d-none col-6 custom-flex-center mt-6 ps-10">
             <ul className="nav">
               <li><a href="/private" className="nav-link linkHover ms-2 text-white">Home</a></li>
-              <li><a href="/private" className="nav-link linkHover ms-2 text-white">Blog</a></li>
-              <li><a href="/private" className="nav-link linkHover ms-2 text-white">FAQ</a></li>
-              <li><a href="/private" className="nav-link linkHover ms-2 text-white">About</a></li>
             </ul>
           </div>
           <div className="col-lg-6 col-7 custom-flex-right pe-10">
             <form className="form-group custom-flex-center">
-              <button type="button" className="btn btn-outline-light ms-2" onClick={() => window.location.href = "/login"}>Login</button>
-              <button type="button" className="btn btn-outline-light ms-2" onClick={() => window.location.href = "/signup"}>SignUp</button>
+              {userId === true ? (
+                <button type="button" className="btn btn-outline-light ms-2" onClick={() => {
+                  sessionStorage.setItem('userId', false);
+                  window.location.reload();
+                }}>Logout</button>
+              ) : (
+                <>
+                  <button type="button" className="btn btn-outline-light ms-2" onClick={() => window.location.href = "/login"}>Login</button>
+                  <button type="button" className="btn btn-outline-light ms-2" onClick={signupPrompt}>Signup</button>
+                </>
+              )}
             </form>
           </div>
         </div>

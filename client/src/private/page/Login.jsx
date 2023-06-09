@@ -55,11 +55,12 @@ const Login = () => {
     }
     else if (res.data === "success") {
       alert("Login successful");
-      window.location.reload();
+      window.sessionStorage.setItem("userId", true);
+      window.location.href = "/private";
     }
     else if (res.data === "fail") {
       alert("Incorrect Id or password");
-      window.location.reload();
+      window.sessionStorage.setItem("userId", false);
     }
     else {
       alert(`${res.data}error`);
