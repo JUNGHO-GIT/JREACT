@@ -50,7 +50,7 @@ const Login = () => {
     });
 
     if (userId.length === 0 || userPw.length === 0) {
-      alert("Please enter both Id and password");
+      alert("Please enter both ID and PW");
       return;
     }
     else if (res.data === "success") {
@@ -59,7 +59,7 @@ const Login = () => {
       window.location.href = "/private";
     }
     else if (res.data === "fail") {
-      alert("Incorrect Id or password");
+      alert("Incorrect ID or PW");
       window.sessionStorage.setItem("userId", false);
     }
     else {

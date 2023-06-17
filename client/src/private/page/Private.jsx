@@ -52,7 +52,7 @@ const CarouselFirst = () => {
   const enterIn = (e) => {
     e.preventDefault();
     if (window.sessionStorage.getItem("userId") == null) {
-      alert("Please log in to use this service.");
+      alert("Please login to use this service.");
     }
     else {
      window.location.href="http://www.junghomun.com:8888";

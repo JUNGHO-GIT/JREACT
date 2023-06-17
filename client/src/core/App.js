@@ -42,6 +42,7 @@ import Project5 from "../pages/details/Project5";
 import Private from "../private/page/Private";
 import Login from "../private/page/Login";
 import Signup from "../private/page/Signup";
+import SecretKey from "../private/page/SecretKey";
 
 // ------------------------------------------------------------------------------------------------>
 const Aos = () => {
@@ -125,7 +126,7 @@ const App = () => {
         <Route path="/" element={<Main />} />
         <Route path="/private" element={<Private />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/signup" element={<SecretKey />} />
         <Route path="/details/project1" element={<ProjectDetails project="project1" />} />
         <Route path="/details/project2" element={<ProjectDetails project="project2" />} />
         <Route path="/details/project3" element={<ProjectDetails project="project3" />} />

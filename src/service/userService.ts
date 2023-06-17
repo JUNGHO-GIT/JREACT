@@ -1,26 +1,31 @@
 import User from "../model/User";
 
-// secretKey "GET"
-export const secretKey = (secretKey: number) => {
-  return User.findOne({ secretKey: secretKey});
+// secretKey
+export const secretKey = (secretKey: any) => {
+  return User.findOne(secretKey);
 };
 
-// register "POST"
-export const registerUser = async (userData: any) => {
-  return new User(userData).save();
+// checkId
+export const checkId = async (userId: any) => {
+  return User.findOne(userId);
 };
 
-// login "POST"
+// signup
+export const signupUser = async (userData: any) => {
+  return User.create(userData);
+};
+
+// login
 export const loginUser = async (loginData: any) => {
   return User.findOne(loginData);
 };
 
-// update "PUT"
+// update
 export const updateUser = async (userData: any) => {
   return User.findByIdAndUpdate(userData._id, userData);
 };
 
-// delete "DELETE"
+// delete
 export const deleteUser = async (id: string) => {
   return User.findByIdAndDelete(id);
 };

@@ -1,4 +1,4 @@
-import * as  path from "path";
+import * as path from "path";
 import * as mongoose from "mongoose";
 import express from "express";
 import router from "./src/router/userRouter";
@@ -10,8 +10,8 @@ const app = express();
 app.set("port", process.env.PORT || 4000);
 
 app.use(cors(), (req, res, next) => {
-  res.set('Content-Type', 'application/json; charset=utf-8')
-  next()
+  res.set("Content-Type", "application/json; charset=utf-8");
+  next();
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

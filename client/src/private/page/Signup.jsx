@@ -43,8 +43,11 @@ const Signup = () => {
   const [userId, setId] = useState("");
   const [userPw, setPassword] = useState("");
 
-  const Signup = async () => {
-    const res = await axios.post("http://localhost:4000/api/signup", {userId, userPw});
+  const SignupFlow = async () => {
+    const res = await axios.post("http://localhost:4000/api/signup", {
+      userId: userId,
+      userPw: userPw,
+    });
 
     if (userId === "" || userPw === "") {
       alert("Please enter both Id and Pw");
@@ -52,15 +55,22 @@ const Signup = () => {
     }
     else if (res.data === "success") {
       alert("Signup successful");
+      window.location.href = "/login";
+    }
+    else if (res.data === "duplicate") {
+      alert("This ID already exists");
+      setId(""); setPassword("");
     }
     else if (res.data === "fail") {
       alert("Incorrect Id or Pw");
+      setId(""); setPassword("");
     }
     else {
       alert(`${res.data}error`);
     }
   };
 
+  // ---------------------------------------------------------------------------------------------->
   return (
     <div>
     <Header />
@@ -82,7 +92,7 @@ const Signup = () => {
             <label htmlFor="floatingPassword">Password</label>
           </div>
           <div className="empty-h20"></div>
-          <button className="w-100 btn btn-lg btn-primary" type="button" onClick={Signup}>Submit</button>
+          <button className="w-100 btn btn-lg btn-primary" type="button" onClick={SignupFlow}>Submit</button>
           <p className="mt-5 mb-3 text-muted">&copy; 2023 JUNGHO</p>
           <div className="empty-h50"></div>
         </form>
