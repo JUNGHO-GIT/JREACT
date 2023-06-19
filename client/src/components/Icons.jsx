@@ -5,7 +5,7 @@ import {TbBrandVscode, TbBrandMysql} from "react-icons/tb";
 import {FaJava, FaNodeJs, FaNpm, FaUbuntu, FaCentos} from "react-icons/fa";
 import {BsFiletypeXml, BsFiletypeJava} from "react-icons/bs";
 import {FcGoogle, FcLinux, FcExpand, FcAbout, FcSettings, FcSearch, FcCursor} from "react-icons/fc";
-import {SiSpring, SiSpringboot, SiJavascript, SiHtml5, SiCss3, SiBootstrap, SiOracle, SiJson, SiGradle, SiApache, SiGithub, SiReact, SiApachemaven, SiThymeleaf, SiTypescript, SiApachetomcat, SiBower, SiWindows, SiMariadb, SiMarkdown, SiNginx, SiMicrosoftazure} from "react-icons/si";
+import {SiSpring, SiSpringboot, SiJavascript, SiHtml5, SiCss3, SiBootstrap, SiOracle, SiJson, SiGradle, SiApache, SiGithub, SiReact, SiApachemaven, SiThymeleaf, SiTypescript, SiApachetomcat, SiBower, SiWindows, SiMariadb, SiMarkdown, SiNginx, SiMicrosoftazure, SiExpress, SiMongodb, SiPostgresql} from "react-icons/si";
 
 const Icons = (props) => {
 
@@ -64,6 +64,9 @@ const Icons = (props) => {
     SiWindows : {icon: SiWindows, color: "#0078D6", size: "1.0em", style: "inline-block"},
     SiMariadb : {icon: SiMariadb, color: "#003545", size: "1.0em", style: "inline-block"},
     SiMicrosoftazure : {icon: SiMicrosoftazure, color: "#0078D4", size: "1.0em", style: "inline-block"},
+    SiExpress : {icon: SiExpress, color: "#000000", size: "1.0em", style: "inline-block"},
+    SiMongodb : {icon: SiMongodb, color: "#47A248", size: "1.0em", style: "inline-block"},
+    SiPostgresql : {icon: SiPostgresql, color: "#336791", size: "1.0em", style: "inline-block"}
   };
 
   const {icon, color, size, style} = iconArray[props.icon];

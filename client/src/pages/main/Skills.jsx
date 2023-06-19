@@ -11,6 +11,8 @@ const Skills = () => {
     title: ["Skills"],
 
     skills: [
+
+      // ------------------------------------------------------------------------------------------>
       {
         rowNumber: 1,
         rowValue: [
@@ -19,13 +21,12 @@ const Skills = () => {
             titleColor: {color: "#dc3545"},
             titleValue: "  Front  ",
             props: [
-              {propIcon: "SiHtml5", propValue: "HTML5", propPercent: 85},
-              {propIcon: "SiJavascript", propValue: "JavaScript", propPercent: 85},
+              {propIcon: "SiHtml5", propValue: "HTML", propPercent: 80},
+              {propIcon: "SiCss3", propValue: "CSS", propPercent: 80},
+              {propIcon: "SiJavascript", propValue: "JavaScript", propPercent: 80},
               {propIcon: "SiTypescript", propValue: "TypeScript", propPercent: 85},
-              {propIcon: "SiReact", propValue: "React", propPercent: 70},
-              {propIcon: "FaNodeJs", propValue: "Node.js", propPercent: 70},
-              {propIcon: "SiCss3", propValue: "CSS3", propPercent: 80},
               {propIcon: "SiBootstrap", propValue: "Bootstrap", propPercent: 80},
+              {propIcon: "SiReact", propValue: "React", propPercent: 70},
             ],
           },
           {
@@ -33,17 +34,18 @@ const Skills = () => {
             titleColor: {color: "#007bff"},
             titleValue: "  Back  ",
             props: [
-              {propIcon: "FaJava", propValue: "Java8", propPercent: 85},
-              {propIcon: "FaJava", propValue: "Java11", propPercent: 85},
-              {propIcon: "FaJava", propValue: "Java17", propPercent: 80},
+              {propIcon: "FaJava", propValue: "Java", propPercent: 85},
+              {propIcon: "BsFiletypeJava", propValue: "Jsp", propPercent: 80},
               {propIcon: "SiSpring", propValue: "Spring", propPercent: 70},
               {propIcon: "SiSpringboot", propValue: "Boot", propPercent: 70},
-              {propIcon: "SiThymeleaf", propValue: "Thymeleaf", propPercent: 80},
-              {propIcon: "BsFiletypeJava", propValue: "Jsp", propPercent: 80},
+              {propIcon: "FaNodeJs", propValue: "Node.js", propPercent: 70},
+              {propIcon: "SiExpress", propValue: "Express.js", propPercent: 70},
             ],
           },
         ],
       },
+
+      // ------------------------------------------------------------------------------------------>
       {
         rowNumber: 2,
         rowValue: [
@@ -55,24 +57,10 @@ const Skills = () => {
               {propIcon: "TbBrandMysql", propValue: "MySQL", propPercent: 85},
               {propIcon: "SiMariadb", propValue: "MariaDB", propPercent: 80},
               {propIcon: "SiOracle", propValue: "Oracle", propPercent: 70},
-              {propIcon: "SiBower", propValue: "Mybatis", propPercent: 80},
+              {propIcon: "SiMongodb", propValue: "MongoDB", propPercent: 70},
+              {propIcon: "SiPostgresql", propValue: "PostgreSQL", propPercent: 70},
             ],
           },
-          {
-            titleIcon: "bi bi-hammer",
-            titleColor: {color: "#ffc107"},
-            titleValue: "  Build  ",
-            props: [
-              {propIcon: "SiApachemaven", propValue: "Maven", propPercent: 85},
-              {propIcon: "FaNpm", propValue: "NPM", propPercent: 80},
-              {propIcon: "SiGradle", propValue: "Gradle", propPercent: 70},
-            ],
-          },
-        ],
-      },
-      {
-        rowNumber: 3,
-        rowValue: [
           {
             titleIcon: "bi bi-hdd-rack-fill",
             titleColor: {color: "#1b1464"},
@@ -80,27 +68,25 @@ const Skills = () => {
             props: [
               {propIcon: "SiApache", propValue: "Apache", propPercent: 75},
               {propIcon: "SiApachetomcat", propValue: "Tomcat", propPercent: 75},
-            ],
-          },
-          {
-            titleIcon: "bi bi-cloud-check-fill",
-            titleColor: {color: "#17a2b8"},
-            titleValue: "  Cloud  ",
-            props: [
-              {propIcon: "FcGoogle", propValue: "Google", propPercent: 75},
-              {propIcon: "SiGithub", propValue: "Git", propPercent: 75},
+              {propIcon: "FcGoogle", propValue: "GCP", propPercent: 75},
+              {propIcon: "SiMicrosoftazure", propValue: "Azure", propPercent: 75},
             ],
           },
         ],
       },
+
+      // ------------------------------------------------------------------------------------------>
       {
-        rowNumber: 4,
+        rowNumber: 3,
         rowValue: [
           {
             titleIcon: "bi bi-gear-fill",
             titleColor: {color: "#6c757d"},
             titleValue: "  Data  ",
             props: [
+              {propIcon: "SiApachemaven", propValue: "Maven", propPercent: 85},
+              {propIcon: "FaNpm", propValue: "NPM", propPercent: 80},
+              {propIcon: "SiGradle", propValue: "Gradle", propPercent: 70},
               {propIcon: "BsFiletypeXml", propValue: "XML", propPercent: 85},
               {propIcon: "SiJson", propValue: "JSON", propPercent: 85},
             ],
@@ -112,6 +98,8 @@ const Skills = () => {
             props: [
               {propIcon: "SiWindows", propValue: "Windows", propPercent: 85},
               {propIcon: "FcLinux", propValue: "Linux", propPercent: 85},
+              {propIcon: "FaCentos", propValue: "CentOS", propPercent: 75},
+              {propIcon: "FaUbuntu", propValue: "Ubuntu", propPercent: 75},
             ],
           },
         ],
