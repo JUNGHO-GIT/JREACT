@@ -41,7 +41,6 @@ import Project5 from "../pages/details/Project5";
 // components3 ---------------------------------------------------------------------------------->
 import Private from "../private/page/Private";
 import Login from "../private/page/Login";
-import Signup from "../private/page/Signup";
 import SecretKey from "../private/page/SecretKey";
 
 // ------------------------------------------------------------------------------------------------>
@@ -62,7 +61,7 @@ const PureCount = () => {
 Hover();
 
 // ------------------------------------------------------------------------------------------------>
-class Main extends React.Component {
+class MainPages extends React.Component {
   componentDidMount() {
     Aos();
     PureCount();
@@ -89,7 +88,7 @@ class Main extends React.Component {
 }
 
 // ------------------------------------------------------------------------------------------------>
-class ProjectDetails extends React.Component {
+class DetailPages extends React.Component {
   componentDidMount() {
     Aos();
     PureCount();
@@ -123,15 +122,15 @@ const App = () => {
     <Router>
       <Scroll/>
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<MainPages />} />
         <Route path="/private" element={<Private />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SecretKey />} />
-        <Route path="/details/project1" element={<ProjectDetails project="project1" />} />
-        <Route path="/details/project2" element={<ProjectDetails project="project2" />} />
-        <Route path="/details/project3" element={<ProjectDetails project="project3" />} />
-        <Route path="/details/project4" element={<ProjectDetails project="project4" />} />
-        <Route path="/details/project5" element={<ProjectDetails project="project5" />} />
+        <Route path="/details/project1" element={<DetailPages project="project1" />} />
+        <Route path="/details/project2" element={<DetailPages project="project2" />} />
+        <Route path="/details/project3" element={<DetailPages project="project3" />} />
+        <Route path="/details/project4" element={<DetailPages project="project4" />} />
+        <Route path="/details/project5" element={<DetailPages project="project5" />} />
       </Routes>
     </Router>
   );
