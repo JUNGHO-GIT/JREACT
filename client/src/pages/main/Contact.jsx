@@ -9,7 +9,6 @@ const Contact = () => {
 
   // ---------------------------------------------------------------------------------------------->
   return (
-
     <section id="contact" className="contact section-bg">
       <div className="container">
         <div className="section-title">
