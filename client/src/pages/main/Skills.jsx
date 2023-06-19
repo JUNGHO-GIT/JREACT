@@ -98,8 +98,8 @@ const Skills = () => {
             props: [
               {propIcon: "SiWindows", propValue: "Windows", propPercent: 85},
               {propIcon: "FcLinux", propValue: "Linux", propPercent: 85},
-              {propIcon: "FaCentos", propValue: "CentOS", propPercent: 75},
-              {propIcon: "FaUbuntu", propValue: "Ubuntu", propPercent: 75},
+              {propIcon: "FaCentos", propValue: "CentOS", propPercent: 70},
+              {propIcon: "FaUbuntu", propValue: "Ubuntu", propPercent: 70},
             ],
           },
         ],
