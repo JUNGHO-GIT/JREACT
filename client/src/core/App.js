@@ -36,7 +36,6 @@ import Project1 from "../pages/details/Project1";
 import Project2 from "../pages/details/Project2";
 import Project3 from "../pages/details/Project3";
 import Project4 from "../pages/details/Project4";
-import Project5 from "../pages/details/Project5";
 
 // components3 ---------------------------------------------------------------------------------->
 import Private from "../private/page/Private";
@@ -107,7 +106,6 @@ class DetailPages extends React.Component {
           {project === "project2" && <Project2 />}
           {project === "project3" && <Project3 />}
           {project === "project4" && <Project4 />}
-          {project === "project5" && <Project5 />}
         </main>
         <Footer />
       </div>
@@ -130,7 +128,6 @@ const App = () => {
         <Route path="/details/project2" element={<DetailPages project="project2" />} />
         <Route path="/details/project3" element={<DetailPages project="project3" />} />
         <Route path="/details/project4" element={<DetailPages project="project4" />} />
-        <Route path="/details/project5" element={<DetailPages project="project5" />} />
       </Routes>
     </Router>
   );

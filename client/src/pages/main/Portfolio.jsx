@@ -12,7 +12,7 @@ const Portfolio = () => {
   useEffect(() => {
     const loadImages = async () => {
       let loadedImages = [];
-      for (let j = 1; j <= 5; j++) {
+      for (let j = 1; j <= 4; j++) {
         const image = await import(`../../assets/images/project/project${j}/1.png`);
         loadedImages.push(image.default);
       }
@@ -58,15 +58,6 @@ const Portfolio = () => {
         desc: "Charity and Donation Website",
         icon: "SiSpring",
         color: "#6DC73F",
-      },
-      {
-        id: "5",
-        filter: "filter-back",
-        imgSrc: 4,
-        title: "MeatStore",
-        desc: "Online Meat Shopping Store",
-        icon: "FaJava",
-        color: "#E51F24",
       },
     ],
   };
