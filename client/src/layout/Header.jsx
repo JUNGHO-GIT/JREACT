@@ -169,7 +169,7 @@ const Header = () => {
                 <a key={socialItem.id} href={socialItem.url} className={socialItem.name.toLowerCase()}>
                   <i className={`${socialItem.icon} text-hover`}></i>
                 </a>
-              ))}
+              ))};
             </div>
           </div>
           <nav id="navbar" className="nav-menu navbar">
@@ -181,7 +181,7 @@ const Header = () => {
                     <span>{navItem.name}</span>
                   </a>
                 </li>
-              ))}
+              ))};
               <li>
                 <a href="/private" className="nav-link scrollTo text-hover" onClick={pageAlert}>
                   <i className="bx bx-user"></i>
