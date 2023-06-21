@@ -31,7 +31,6 @@ import Hero from "../pages/main/Hero";
 import About from "../pages/main/About";
 import Skills from "../pages/main/Skills";
 import Portfolio from "../pages/main/Portfolio";
-import Contact from "../pages/main/Contact";
 import Project1 from "../pages/details/Project1";
 import Project2 from "../pages/details/Project2";
 import Project3 from "../pages/details/Project3";
@@ -78,7 +77,6 @@ class MainPages extends React.Component {
           <About />
           <Skills />
           <Portfolio />
-          <Contact />
         </main>
         <Footer />
       </div>

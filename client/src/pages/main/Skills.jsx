@@ -25,10 +25,25 @@ const Skills = () => {
               {propIcon: "SiCss3", propValue: "CSS", propPercent: 80},
               {propIcon: "SiJavascript", propValue: "JavaScript", propPercent: 80},
               {propIcon: "SiTypescript", propValue: "TypeScript", propPercent: 85},
+            ],
+          },
+          {
+            titleIcon: "bi bi-badge-hd-fill",
+            titleColor: {color: "#990033"},
+            titleValue: "  Front  ",
+            props: [
               {propIcon: "SiBootstrap", propValue: "Bootstrap", propPercent: 80},
               {propIcon: "SiReact", propValue: "React", propPercent: 70},
             ],
           },
+
+        ],
+      },
+
+      // ------------------------------------------------------------------------------------------>
+      {
+        rowNumber: 2,
+        rowValue: [
           {
             titleIcon: "bi bi-file-earmark-code-fill",
             titleColor: {color: "#007bff"},
@@ -36,10 +51,19 @@ const Skills = () => {
             props: [
               {propIcon: "FaJava", propValue: "Java", propPercent: 85},
               {propIcon: "BsFiletypeJava", propValue: "Jsp", propPercent: 80},
-              {propIcon: "SiSpring", propValue: "Spring", propPercent: 70},
-              {propIcon: "SiSpringboot", propValue: "Boot", propPercent: 70},
-              {propIcon: "FaNodeJs", propValue: "Node.js", propPercent: 70},
-              {propIcon: "SiExpress", propValue: "Express.js", propPercent: 70},
+              {propIcon: "SiSpring", propValue: "Spring", propPercent: 80},
+              {propIcon: "SiSpringboot", propValue: "Boot", propPercent: 80},
+            ],
+          },
+          {
+            titleIcon: "bi bi-file-earmark-code-fill",
+            titleColor: {color: "#0056b3"},
+            titleValue: "  Back  ",
+            props: [
+              {propIcon: "FaNodeJs", propValue: "Nodejs", propPercent: 85},
+              {propIcon: "SiExpress", propValue: "Expressjs", propPercent: 80},
+              {propIcon: "SiWebpack", propValue: "Webpack", propPercent: 80},
+
             ],
           },
         ],
@@ -47,7 +71,7 @@ const Skills = () => {
 
       // ------------------------------------------------------------------------------------------>
       {
-        rowNumber: 2,
+        rowNumber: 3,
         rowValue: [
           {
             titleIcon: "bi bi-database-fill-add",
@@ -62,24 +86,6 @@ const Skills = () => {
             ],
           },
           {
-            titleIcon: "bi bi-hdd-rack-fill",
-            titleColor: {color: "#1b1464"},
-            titleValue: "  Server  ",
-            props: [
-              {propIcon: "SiApache", propValue: "Apache", propPercent: 75},
-              {propIcon: "SiApachetomcat", propValue: "Tomcat", propPercent: 75},
-              {propIcon: "FcGoogle", propValue: "GCP", propPercent: 75},
-              {propIcon: "SiMicrosoftazure", propValue: "Azure", propPercent: 75},
-            ],
-          },
-        ],
-      },
-
-      // ------------------------------------------------------------------------------------------>
-      {
-        rowNumber: 3,
-        rowValue: [
-          {
             titleIcon: "bi bi-gear-fill",
             titleColor: {color: "#6c757d"},
             titleValue: "  Data  ",
@@ -91,15 +97,33 @@ const Skills = () => {
               {propIcon: "SiJson", propValue: "JSON", propPercent: 85},
             ],
           },
+        ],
+      },
+
+      // ------------------------------------------------------------------------------------------>
+      {
+        rowNumber: 4,
+        rowValue: [
+          {
+            titleIcon: "bi bi-hdd-rack-fill",
+            titleColor: {color: "#1b1464"},
+            titleValue: "  Server  ",
+            props: [
+              {propIcon: "SiApache", propValue: "Apache", propPercent: 85},
+              {propIcon: "SiApachetomcat", propValue: "Tomcat", propPercent: 80},
+              {propIcon: "FcGoogle", propValue: "GCP", propPercent: 85},
+              {propIcon: "SiMicrosoftazure", propValue: "Azure", propPercent: 80},
+            ],
+          },
           {
             titleIcon: "bi bi-terminal-fill",
             titleColor: {color: "#343a40"},
             titleValue: "  System  ",
             props: [
               {propIcon: "SiWindows", propValue: "Windows", propPercent: 85},
-              {propIcon: "FcLinux", propValue: "Linux", propPercent: 85},
-              {propIcon: "FaCentos", propValue: "CentOS", propPercent: 70},
-              {propIcon: "FaUbuntu", propValue: "Ubuntu", propPercent: 70},
+              {propIcon: "FcLinux", propValue: "Linux", propPercent: 80},
+              {propIcon: "FaCentos", propValue: "CentOS", propPercent: 80},
+              {propIcon: "FaUbuntu", propValue: "Ubuntu", propPercent: 80},
             ],
           },
         ],
