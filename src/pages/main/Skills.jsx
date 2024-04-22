@@ -9,7 +9,6 @@ const Skills = () => {
   const [progressWidths, setProgressWidths] = useState([]);
   const Items = {
     title: ["Skills"],
-
     skills: [
 
       // ------------------------------------------------------------------------------------------>
@@ -154,7 +153,7 @@ const Skills = () => {
           });
         }
       });
-      const newProgressWidths = activeProps.map((prop) => prop.propPercent);
+      const newProgressWidths = activeProps.map((prop) => (prop.propPercent));
       setProgressWidths(newProgressWidths);
     }
     else {

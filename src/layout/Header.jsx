@@ -6,7 +6,7 @@ const socialLinks = [
   {id: 1, name: "Github", url: "https://github.com/JUNGHO-GIT", icon: "bx bxl-github"},
   {id: 2, name: "Facebook", url: "https://facebook.com", icon: "bx bxl-facebook"},
   {id: 3, name: "Instagram", url: "https://instagram.com", icon: "bx bxl-instagram"},
-  {id: 4, name: "Linkedin", url: "https://linkedin.com", icon: "bx bxl-linkedin"},
+  {id: 4, name: "LinkedIn", url: "https://linkedin.com", icon: "bx bxl-linkedin"},
 ];
 
 // ------------------------------------------------------------------------------------------------>
@@ -20,14 +20,12 @@ const navLinks = [
 // ------------------------------------------------------------------------------------------------>
 const useNavToggle = (navToggleRef, sideNavRef) => {
 
-  // ---------------------------------------------------------------------------------------------->
   const onMobileNavToggleClick = (e) => {
     document.body.classList.toggle("mobile-nav-active");
     e.currentTarget.classList.toggle("bi-list");
     e.currentTarget.classList.toggle("bi-x");
   };
 
-  // ---------------------------------------------------------------------------------------------->
   const handleClickOutside = (e) => {
     if (navToggleRef.current && !navToggleRef.current.contains(e.target) && !sideNavRef.current.contains(e.target) && document.body.classList.contains("mobile-nav-active")) {
       document.body.classList.remove("mobile-nav-active");
@@ -36,7 +34,6 @@ const useNavToggle = (navToggleRef, sideNavRef) => {
     }
   };
 
-  // ---------------------------------------------------------------------------------------------->
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -49,13 +46,11 @@ const useNavToggle = (navToggleRef, sideNavRef) => {
 // ------------------------------------------------------------------------------------------------>
 const useSmoothScroll = () => {
 
-  // ---------------------------------------------------------------------------------------------->
   const select = (el, all = false) => {
     el = el.trim();
     return all ? [...document.querySelectorAll(el)] : document.querySelector(el);
   };
 
-  // ---------------------------------------------------------------------------------------------->
   const onNavItemClick = (e, hash) => {
     e.preventDefault();
 
@@ -86,42 +81,40 @@ const useSmoothScroll = () => {
   // ---------------------------------------------------------------------------------------------->
   useEffect(() => {
 
-    // -------------------------------------------------------------------------------------------->
-    const navbarlinksActive = () => {
+    const navbarLinksActive = () => {
       let position = window.scrollY + 200;
-      let navbarlinks = select("#navbar .scrollTo", true);
-      navbarlinks.forEach((navbarlink) => {
-        if (!navbarlink.hash) return;
-        let section = select(navbarlink.hash);
+      let navbarLinks = select("#navbar .scrollTo", true);
+      navbarLinks.forEach((navbarLink) => {
+        if (!navbarLink.hash) return;
+        let section = select(navbarLink.hash);
         if (!section) return;
         if (position >= section.offsetTop && position <= section.offsetTop + section.offsetHeight) {
-          navbarlink.classList.add("active");
+          navbarLink.classList.add("active");
         }
         else {
-          navbarlink.classList.remove("active");
+          navbarLink.classList.remove("active");
         }
       });
     };
 
-    // -------------------------------------------------------------------------------------------->
-    const toggleBacktotop = () => {
-      let backtotop = select(".back-to-top");
-      if (backtotop) {
+    const toggleBackToTop = () => {
+      let backToTop = select(".back-to-top");
+      if (backToTop) {
         if (window.scrollY > 100) {
-          backtotop.classList.add("active");
+          backToTop.classList.add("active");
         }
         else {
-          backtotop.classList.remove("active");
+          backToTop.classList.remove("active");
         }
       }
     };
 
     // -------------------------------------------------------------------------------------------->
     const events = [
-      {target: window, type: "load", listener: navbarlinksActive},
-      {target: window, type: "load", listener: toggleBacktotop},
-      {target: window, type: "scroll", listener: navbarlinksActive},
-      {target: window, type: "scroll", listener: toggleBacktotop},
+      {target: window, type: "load", listener: navbarLinksActive},
+      {target: window, type: "load", listener: toggleBackToTop},
+      {target: window, type: "scroll", listener: navbarLinksActive},
+      {target: window, type: "scroll", listener: toggleBackToTop},
     ];
     events.forEach(({target, type, listener}) => {
       target.addEventListener(type, listener);
@@ -158,7 +151,11 @@ const Header = () => {
   // ---------------------------------------------------------------------------------------------->
   return (
     <>
-      <i ref={navToggleRef} className="bi bi-list mobile-nav-toggle d-xl-none" onClick={onMobileNavToggleClick}></i>
+      <i
+        ref={navToggleRef}
+        className="bi bi-list mobile-nav-toggle d-xl-none"
+        onClick={onMobileNavToggleClick}>
+      </i>
       <header id="header" ref={sideNavRef}>
         <div className="d-flex flex-column">
           <div className="profile">
@@ -182,12 +179,6 @@ const Header = () => {
                   </a>
                 </li>
               ))};
-              <li>
-                <a href="/private" className="nav-link scrollTo text-hover" onClick={pageAlert}>
-                  <i className="bx bx-user"></i>
-                  <span>Private</span>
-                </a>
-              </li>
             </ul>
           </nav>
         </div>

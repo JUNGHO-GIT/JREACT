@@ -36,11 +36,6 @@ import Project2 from "../pages/details/Project2";
 import Project3 from "../pages/details/Project3";
 import Project4 from "../pages/details/Project4";
 
-// components3 ---------------------------------------------------------------------------------->
-import Private from "../private/page/Private";
-import Login from "../private/page/Login";
-import SecretKey from "../private/page/SecretKey";
-
 // ------------------------------------------------------------------------------------------------>
 const Aos = () => {
   AOS.init({
@@ -119,9 +114,6 @@ const App = () => {
       <Scroll/>
       <Routes>
         <Route path="/" element={<MainPages />} />
-        <Route path="/private" element={<Private />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SecretKey />} />
         <Route path="/details/project1" element={<DetailPages project="project1" />} />
         <Route path="/details/project2" element={<DetailPages project="project2" />} />
         <Route path="/details/project3" element={<DetailPages project="project3" />} />
