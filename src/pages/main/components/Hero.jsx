@@ -1,12 +1,14 @@
-import React, {useEffect, useRef} from "react";
-import Typed from "typed.js";
+// Hero.jsx
 
-// ------------------------------------------------------------------------------------------------>
-const Hero = () => {
+import { React, useRef, useEffect } from "../../../import/ImportReacts.jsx";
+import { Typed } from "../../../import/ImportLibs.jsx";
+
+// -------------------------------------------------------------------------------------------------
+export const Hero = () => {
   const typedRef = useRef(null);
   const typedInstance = useRef(null);
 
-  // ---------------------------------------------------------------------------------------------->
+  // -----------------------------------------------------------------------------------------------
   const itemsArray ={
     title : ["JUNGHO MUN"],
     contents : [
@@ -14,7 +16,7 @@ const Hero = () => {
     ],
   };
 
-  // ---------------------------------------------------------------------------------------------->
+  // -----------------------------------------------------------------------------------------------
   useEffect(() => {
     const typed = typedRef.current;
     if (typed) {
@@ -40,7 +42,7 @@ const Hero = () => {
     };
   }, []);
 
-  // ---------------------------------------------------------------------------------------------->
+  // -----------------------------------------------------------------------------------------------
   return (
     <section id="hero" className="d-flex flex-column justify-content-center align-items-left">
       <div className="hero-container" data-aos="fade-in">
@@ -52,4 +54,3 @@ const Hero = () => {
     </section>
   );
 };
-export default Hero;

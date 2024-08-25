@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from "react";
 import Image from "../assets/images/main/logo.png";
 
-// ------------------------------------------------------------------------------------------------>
+// -------------------------------------------------------------------------------------------------
 const socialLinks = [
   {id: 1, name: "Github", url: "https://github.com/JUNGHO-GIT", icon: "bx bxl-github"},
   {id: 2, name: "Facebook", url: "https://facebook.com", icon: "bx bxl-facebook"},
@@ -9,7 +9,7 @@ const socialLinks = [
   {id: 4, name: "LinkedIn", url: "https://linkedin.com", icon: "bx bxl-linkedin"},
 ];
 
-// ------------------------------------------------------------------------------------------------>
+// -------------------------------------------------------------------------------------------------
 const navLinks = [
   {id: 1, name: "Home", url: "#hero", icon: "bx bx-home"},
   {id: 2, name: "About", url: "#about", icon: "bx bx-user"},
@@ -17,7 +17,7 @@ const navLinks = [
   {id: 4, name: "Portfolio", url: "#portfolio", icon: "bx bx-book-content"},
 ];
 
-// ------------------------------------------------------------------------------------------------>
+// -------------------------------------------------------------------------------------------------
 const useNavToggle = (navToggleRef, sideNavRef) => {
 
   const onMobileNavToggleClick = (e) => {
@@ -43,7 +43,7 @@ const useNavToggle = (navToggleRef, sideNavRef) => {
   return onMobileNavToggleClick;
 };
 
-// ------------------------------------------------------------------------------------------------>
+// -------------------------------------------------------------------------------------------------
 const useSmoothScroll = () => {
 
   const select = (el, all = false) => {
@@ -78,7 +78,7 @@ const useSmoothScroll = () => {
     }
   };
 
-  // ---------------------------------------------------------------------------------------------->
+  // -----------------------------------------------------------------------------------------------
   useEffect(() => {
 
     const navbarLinksActive = () => {
@@ -109,7 +109,7 @@ const useSmoothScroll = () => {
       }
     };
 
-    // -------------------------------------------------------------------------------------------->
+    // ---------------------------------------------------------------------------------------------
     const events = [
       {target: window, type: "load", listener: navbarLinksActive},
       {target: window, type: "load", listener: toggleBackToTop},
@@ -128,7 +128,7 @@ const useSmoothScroll = () => {
   return onNavItemClick;
 };
 
-// ------------------------------------------------------------------------------------------------>
+// -------------------------------------------------------------------------------------------------
 const pageAlert = (event) => {
   event.preventDefault();
   const confirm = window.confirm("Enter the private page");
@@ -141,14 +141,14 @@ const pageAlert = (event) => {
   }
 };
 
-// ------------------------------------------------------------------------------------------------>
+// -------------------------------------------------------------------------------------------------
 const Header = () => {
   const navToggleRef = useRef(null);
   const sideNavRef = useRef(null);
   const onMobileNavToggleClick = useNavToggle(navToggleRef, sideNavRef);
   const onNavItemClick = useSmoothScroll();
 
-  // ---------------------------------------------------------------------------------------------->
+  // -----------------------------------------------------------------------------------------------
   return (
     <>
       <i

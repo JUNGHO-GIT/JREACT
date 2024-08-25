@@ -1,17 +1,20 @@
 {
-  "name": "work",
-  "version": "0.1.0",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+  "name": "JREACT",
+  "version": "1.0.0",
+  "homepage": "/JREACT",
+  "main": "index.jsx",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+      "react-app"
+    ],
+    "rules": {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "react-hooks/exhaustive-deps": "off"
+    }
   },
   "browserslist": {
     "production": [
@@ -24,6 +27,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "fetch": "git fetch --all && git reset --hard origin/master",
+    "push": "git add . && git commit -m 'update' && git push origin master",
+    "gcloud": "node gcloud.cjs"
   },
   "dependencies": {
     "@srexi/purecounterjs": "^1.5.0",
@@ -39,18 +49,20 @@
     "react-scripts": "^5.0.1",
     "react-tooltip": "^5.13.0",
     "react-transition-group": "^4.4.5",
-    "typed.js": "^2.0.15",
-    "web-vitals": "^3.3.1"
+    "typed.js": "^2.0.15"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/aos": "^3.0.7",
     "@types/axios": "^0.14.0",
     "@types/bootstrap": "^5.2.6",
     "@types/cors": "^2.8.13",
     "@types/history": "^5.0.0",
+    "@types/isotope-layout": "^3.0.13",
     "@types/jquery": "^3.5.16",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
+    "@types/react-transition-group": "^4.4.11",
     "@types/styled-components": "^5.1.26",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.0",

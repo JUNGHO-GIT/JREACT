@@ -1,45 +1,41 @@
-import React, {useState, useEffect} from "react";
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Navigation, Pagination} from 'swiper';
-import {Icons} from "../../components/Icons";
+// Project2.jsx
 
-// 스와이프 이미지 -------------------------------------------------------------------------------->
-const ImageComponent = () => {
-  const [images, setImages] = useState([]);
+import { React, useState } from "../../import/ImportReacts.jsx";
+import { Swiper, SwiperSlide, Navigation, Pagination } from "../../import/ImportLibs.jsx";
+import { Icons } from "../../assets/components/Icons";
+import { project2_1, project2_2, project2_3, project2_4, project2_5 } from "../../import/ImportImages.jsx";
 
-  useEffect(() => {
-    const loadImages = async () => {
-      let loadedImages = [];
-      for (let i = 1; i <= 5; i++) {
-        const image = await import(`../../assets/images/project/project2/${i}.png`);
-        loadedImages.push(image.default);
-      }
-      setImages(loadedImages);
-    };
-    loadImages();
-  }, []);
+// -------------------------------------------------------------------------------------------------
+export const Project2 = () => {
 
-  return (
-    <Swiper
-      modules={[Navigation, Pagination]}
-      spaceBetween={50}
-      slidesPerView={1}
-      navigation
-      pagination
-    >
-      {images.map((image, index) => (
-        <SwiperSlide key={index}>
-          <img src={image} alt={`image-${index + 1}`} />
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  );
-};
+  const [images, setImages] = useState([
+    project2_1,
+    project2_2,
+    project2_3,
+    project2_4,
+    project2_5,
+  ]);
 
-// ------------------------------------------------------------------------------------------------>
-const Project2 = () => {
+  // 스와이프 이미지 -------------------------------------------------------------------------------
+  const ImageComponent = () => {
+    return (
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation
+        pagination
+      >
+        {images.map((image, index) => (
+          <SwiperSlide key={index}>
+            <img src={image} alt={`${index + 1}`} className="img-fluid" />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    );
+  };
 
-  // ---------------------------------------------------------------------------------------------->
+  // -----------------------------------------------------------------------------------------------
   const itemsArray1 = {
     items1: {
       mainTitle: [{
@@ -116,7 +112,7 @@ const Project2 = () => {
     },
   }
 
-  // ---------------------------------------------------------------------------------------------->
+  // -----------------------------------------------------------------------------------------------
   const itemsArray2 = {
     items1: {
       mainTitle: [{
@@ -174,7 +170,7 @@ const Project2 = () => {
     },
   };
 
-  // ---------------------------------------------------------------------------------------------->
+  // -----------------------------------------------------------------------------------------------
   return (
     <section id="portfolio-details" className="portfolio-details">
       <div className="container">
@@ -291,4 +287,3 @@ const Project2 = () => {
     </section>
   );
 };
-export default Project2;

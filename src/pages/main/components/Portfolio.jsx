@@ -1,32 +1,27 @@
-import React, {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
-import Isotope from "isotope-layout";
-import {Tooltip} from "react-tooltip";
-import {Icons} from "../../components/Icons";
+// Portfolio.jsx
 
-// ------------------------------------------------------------------------------------------------>
-const Portfolio = () => {
-  const [images, setImages] = useState([]);
+import { React, useEffect, useState, Link } from "../../../import/ImportReacts.jsx";
+import { IsoTope, Tooltip } from "../../../import/ImportLibs.jsx";
+import { Icons } from "../../../assets/components/Icons";
+import { project1_1, project2_1, project3_1, project4_1 } from "../../../import/ImportImages.jsx";
 
-  // ---------------------------------------------------------------------------------------------->
-  useEffect(() => {
-    const loadImages = async () => {
-      let loadedImages = [];
-      for (let j = 1; j <= 4; j++) {
-        const image = await import(`../../assets/images/project/project${j}/1.png`);
-        loadedImages.push(image.default);
-      }
-      setImages(loadedImages);
-    };
-    loadImages();
-  }, []);
+// -------------------------------------------------------------------------------------------------
+export const Portfolio = () => {
+  const [images, setImages] = useState({
+    project1_1,
+    project2_1,
+    project3_1,
+    project4_1,
+  });
+
+  // -----------------------------------------------------------------------------------------------
   const itemsArray = {
     title: ["Portfolios"],
     items: [
       {
         id: "1",
         filter: "filter-front",
-        imgSrc: 0,
+        imgSrc: "project1_1",
         title: "JREACT",
         desc: "Portfolio React",
         icon: "SiReact",
@@ -35,7 +30,7 @@ const Portfolio = () => {
       {
         id: "2",
         filter: "filter-etc",
-        imgSrc: 1,
+        imgSrc: "project2_1",
         title: "JLINT",
         desc: "Vscode Language Formatter Extension",
         icon: "FaNodeJs",
@@ -44,7 +39,7 @@ const Portfolio = () => {
       {
         id: "3",
         filter: "filter-back",
-        imgSrc: 2,
+        imgSrc: "project3_1",
         title: "JUNGHQLO",
         desc: "Online Clothing Shopping Store",
         icon: "SiSpringboot",
@@ -53,7 +48,7 @@ const Portfolio = () => {
       {
         id: "4",
         filter: "filter-back",
-        imgSrc: 3,
+        imgSrc: "project4_1",
         title: "GoodNeighbor",
         desc: "Charity and Donation Website",
         icon: "SiSpring",
@@ -62,11 +57,11 @@ const Portfolio = () => {
     ],
   };
 
-  // ---------------------------------------------------------------------------------------------->
+  // -----------------------------------------------------------------------------------------------
   useEffect(() => {
     const portfolioContainer = document.querySelector(".portfolio-container");
     if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
+      let portfolioIsotope = new IsoTope(portfolioContainer, {
         itemSelector: ".portfolio-item",
       });
       let portfolioFilters = document.querySelectorAll("#portfolio-filters li");
@@ -99,7 +94,7 @@ const Portfolio = () => {
   }, []);
 
 
-  // ---------------------------------------------------------------------------------------------->
+  // -----------------------------------------------------------------------------------------------
   return (
     <section id="portfolio" className="portfolio">
       <div className="container">
@@ -127,7 +122,7 @@ const Portfolio = () => {
                   </span>
                 </div>
                 <div className="portfolio-links" data-tooltip-id={item.id}>
-                  <Tooltip id={item.id} place="top" effect="float">
+                  <Tooltip id={item.id} place="top">
                     <h5 style={{color: item.color}}>{item.title}</h5>
                     <p>{item.desc}</p>
                   </Tooltip>
@@ -143,4 +138,3 @@ const Portfolio = () => {
     </section>
   );
 };
-export default Portfolio;

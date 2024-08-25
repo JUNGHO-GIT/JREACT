@@ -1,8 +1,11 @@
-import React from "react";
-import Image from "../../assets/images/main/profile.png";
+// About.jsx
 
-// ------------------------------------------------------------------------------------------------>
-const About = () => {
+import { React } from "../../../import/ImportReacts.jsx";
+import { profile } from "../../../import/ImportImages.jsx";
+
+// -------------------------------------------------------------------------------------------------
+export const About = () => {
+
   const itemsArray = {
     title : ["About"],
     roleTitle: ["Full Stack Developer"],
@@ -35,9 +38,12 @@ const About = () => {
     ],
   };
 
-  // ---------------------------------------------------------------------------------------------->
+  // -----------------------------------------------------------------------------------------------
   return (
-    <section id="about" className="about">
+    <section
+      id="about"
+      className="about"
+    >
       <div className="container">
         <div className="section-title">
           <h2>{itemsArray.title}</h2>
@@ -45,7 +51,7 @@ const About = () => {
         <div className="row">
           {/** image **/}
           <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-right">
-            <img src={Image}  alt="Profile" className="jungho-image" style={{maxHeight: "420px"}}/>
+            <img src={profile}  alt="Profile" className="jungho-image" style={{maxHeight: "420px"}}/>
           </div>
           <div className="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12 col-12"></div>
           {/** details **/}
@@ -73,4 +79,3 @@ const About = () => {
     </section>
   );
 };
-export default About;

@@ -1,10 +1,7 @@
+@charset "UTF-8";
+
 * {
   caret-color: transparent !important;
-}
-
-body {
-  font-family: "Open Sans", sans-serif;
-  color: #272829;
 }
 
 Link {
@@ -15,15 +12,6 @@ Link {
 a:link {
   color: #37b3ed;
   text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Raleway", sans-serif;
 }
 
 .img-fluid {
@@ -162,7 +150,6 @@ h6 {
   font-weight: 600;
   -moz-text-align-last: center;
   text-align-last: center;
-  font-family: "Poppins", sans-serif;
 }
 
 #header .profile h1 a,
@@ -286,7 +273,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../assets/images/main/main.png") top center;
+  background: url("../images/main/main.png") top center;
   background-size: cover;
 }
 
@@ -320,7 +307,6 @@ h6 {
   color: #fff;
   margin-bottom: 50px;
   font-size: 26px;
-  font-family: "Poppins", sans-serif;
 }
 
 #hero p span {
@@ -447,7 +433,6 @@ section {
   text-transform: uppercase;
   display: block;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
   color: #050d18;
 }
 
@@ -470,24 +455,23 @@ section {
 
 
 /** portfolio *************************************************************************************/
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
 .portfolio .portfolio-item {
   min-height: 300px;
   margin-bottom: 30px;
   animation: fadeInUp 1s all ease-in-out;
   display: flex;
   align-items: center;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
+  justify-content: center;
 }
 
 .project-line {

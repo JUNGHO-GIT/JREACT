@@ -1,17 +1,19 @@
-import React, {useState, useEffect} from "react";
-import {CSSTransition} from "react-transition-group";
-import CountUp from "react-countup";
-import {Icons} from "../../components/Icons";
+// Skills.jsx
 
-// ------------------------------------------------------------------------------------------------>
-const Skills = () => {
+import { React, useState, useEffect } from "../../../import/ImportReacts.jsx";
+import { CSSTransition, CountUp } from "../../../import/ImportLibs.jsx";
+import { Icons } from "../../../assets/components/Icons";
+import { tab } from "../../../import/ImportImages.jsx";
+
+// -------------------------------------------------------------------------------------------------
+export const Skills = () => {
   const [activeSection, setActiveSection] = useState(-1);
   const [progressWidths, setProgressWidths] = useState([]);
   const Items = {
     title: ["Skills"],
     skills: [
 
-      // ------------------------------------------------------------------------------------------>
+      // -------------------------------------------------------------------------------------------
       {
         rowNumber: 1,
         rowValue: [
@@ -39,7 +41,7 @@ const Skills = () => {
         ],
       },
 
-      // ------------------------------------------------------------------------------------------>
+      // -------------------------------------------------------------------------------------------
       {
         rowNumber: 2,
         rowValue: [
@@ -68,7 +70,7 @@ const Skills = () => {
         ],
       },
 
-      // ------------------------------------------------------------------------------------------>
+      // -------------------------------------------------------------------------------------------
       {
         rowNumber: 3,
         rowValue: [
@@ -99,7 +101,7 @@ const Skills = () => {
         ],
       },
 
-      // ------------------------------------------------------------------------------------------>
+      // -------------------------------------------------------------------------------------------
       {
         rowNumber: 4,
         rowValue: [
@@ -130,7 +132,7 @@ const Skills = () => {
     ],
   };
 
-  // ---------------------------------------------------------------------------------------------->
+  // -----------------------------------------------------------------------------------------------
   const handleClick = (index) => {
     if (activeSection === index) {
       setActiveSection(-1);
@@ -140,7 +142,7 @@ const Skills = () => {
     }
   };
 
-  // ---------------------------------------------------------------------------------------------->
+  // -----------------------------------------------------------------------------------------------
   useEffect(() => {
     if (activeSection !== -1) {
       let activeProps = [];
@@ -161,7 +163,7 @@ const Skills = () => {
     }
   }, [activeSection]);
 
-  // ---------------------------------------------------------------------------------------------->
+  // -----------------------------------------------------------------------------------------------
   return (
     <section id="skills" className="skills section-bg">
       <div className="container">
@@ -175,7 +177,12 @@ const Skills = () => {
                 <h3 className="skills-title text-hover glowing-text">
                   <i className={skillSection.titleIcon} style={skillSection.titleColor}></i>
                   {skillSection.titleValue}&nbsp;&nbsp;
-                  <img src="/tab.png" alt="tab" width="25px" height="25px" />
+                  <img
+                    src={tab}
+                    alt={"tab"}
+                    width={"25px"}
+                    height={"25px"}
+                  />
                 </h3>
                 {skillSection.props.map((prop, propIndex) => (
                   <CSSTransition key={propIndex} in={activeSection === section.rowNumber} timeout={300} classNames="list-transition" unmountOnExit>
@@ -206,4 +213,3 @@ const Skills = () => {
     </section>
   );
 };
-export default Skills;

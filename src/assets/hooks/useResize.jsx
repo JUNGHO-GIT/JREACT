@@ -1,8 +1,6 @@
-import React, {useEffect} from "react";
+import { useEffect } from "../../import/ImportReacts.jsx";
 
-function Resize ()  {
-
-  // useEffect Hook
+export const useResize = () => {
   useEffect(() => {
 
     function handleResize() {
@@ -49,12 +47,5 @@ function Resize ()  {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []); // Empty array ensures this runs on mount and unmount only
-
-  return (
-    <>
-    </>
-  );
+  }, []);
 };
-
-export default Resize;
