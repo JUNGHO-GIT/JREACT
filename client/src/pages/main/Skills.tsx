@@ -1,8 +1,8 @@
 // Skills.jsx
 
+import { useEffect, useState } from "@importReacts";
 import { Div, Hr, Icons } from "@importComponents";
-import { Grid, LinearProgress, Paper } from "@importMuis";
-import { useState } from "@importReacts";
+import { Grid, Paper } from "@importMuis";
 
 // -------------------------------------------------------------------------------------------------
 export const Skills = () => {
@@ -85,8 +85,8 @@ export const Skills = () => {
   return (
     <Paper className={"content-wrapper p-0"}>
       <Grid container={true} spacing={0}>
-        <Grid size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }} className={"d-left p-20"}>
-          <Div className={"fs-2-0rem fw-700 dark-navy mb-10"}>
+        <Grid size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }} className={"d-left px-20 py-10"}>
+          <Div className={"fs-2-0rem fw-700 dark-navy"}>
             {OBJECT.title}
           </Div>
           <Hr className={"w-100 bg-primary h-3"} />
@@ -94,40 +94,23 @@ export const Skills = () => {
       </Grid>
       {OBJECT.section.map((item: any, i: number) => (
         0 <= i && i <= 3 && (
-          <Grid container={true} spacing={0} key={i}>
-            <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }} className={"d-left p-20"}>
-              <Div className={"fs-1-4rem fw-600 navy mb-20"}>
+          <Grid container={true} spacing={0} key={i} className={"p-20"}>
+            <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }} className={"d-row-left mb-10"}>
+              <Div className={"fs-1-4rem fw-600 navy"}>
                 {item.main.value}
               </Div>
-              {item.sub.map((sub: any, j: number) => (
-                <Grid container={true} spacing={0} key={j}>
-                  <Grid size={1} className={"d-row-left mb-10"}>
-                    <Icons
-                      icon={sub.icon}
-                      className={"d-center"}
-                    />
-                  </Grid>
-                  <Grid size={3} className={"d-row-left mb-10"}>
-                    <Div className={"fs-0-9 fw-500 dark-navy"}>
-                      {sub.value}
-                    </Div>
-                  </Grid>
-                  <Grid size={6} className={"d-row-left mb-10"}>
-                    <LinearProgress
-                      variant={"buffer"}
-                      value={sub.percent}
-                      valueBuffer={100}
-                      className={"w-80p h-7"}
-                    />
-                  </Grid>
-                  <Grid size={2} className={"d-row-left mb-10"}>
-                    <Div className={"fs-0-8rem fw-600 primary"}>
-                      {sub.percent}%
-                    </Div>
-                  </Grid>
-                </Grid>
-              ))}
             </Grid>
+            {item.sub.map((sub: any, j: number) => (
+              <Grid size={{ xs: 6, sm: 4, md: 3, lg: 3, xl: 2 }} className={"d-row-left mb-10"} key={j}>
+                <Icons
+                  icon={sub.icon}
+                  className={"d-center me-5"}
+                />
+                <Div className={"fs-0-8 fw-500 dark-navy"}>
+                  {sub.value}
+                </Div>
+              </Grid>
+            ))}
           </Grid>
         )
       ))}

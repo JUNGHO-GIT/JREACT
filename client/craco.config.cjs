@@ -47,7 +47,6 @@ module.exports = {
             options: {
               workers: os.cpus().length - 1,
               workerParallelJobs: 75,
-              workerNodeArgs: ['--max-old-space-size=3072'],
               poolRespawn: false,
               poolTimeout: 2000,
               poolParallelJobs: 75,

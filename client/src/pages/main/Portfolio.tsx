@@ -121,6 +121,9 @@ export const Portfolio = () => {
                     radius={true}
                     shadow={true}
                     src={images[item.imgSrc]}
+                    onClick={() => {
+                      window.location.href = `/JREACT/details/project${item.id}`
+                    }}
                   />
                   <span className="overlay-icon">
                     <Icons icon={item.icon} />
