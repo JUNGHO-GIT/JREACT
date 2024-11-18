@@ -1,8 +1,0 @@
-@charset "UTF-8";
-
-html, body {
-	margin: 0;
-  font-family: "Noto Sans KR", sans-serif !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
-}

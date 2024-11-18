@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  -webkit-text-size-adjust: 100% !important;
+  -ms-text-size-adjust: 100% !important;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
+  background-color: #e8e8e8 !important;
+}
+
+/** 1. XXS (0 ~ 330px) ****************************************************************************/
+@media only screen and (min-width: 0px) and (max-width: 330px) {
+  html, body {
+    font-size: 15.5px;
+  }
+}
+
+/** 2. XS (330px ~ 630px) *************************************************************************/
+@media only screen and (min-width: 330px) and (max-width: 630px) {
+  html, body {
+    font-size: 16.0px;
+  }
+}
+
+/** 3. SM (630px ~ 930px) *************************************************************************/
+@media only screen and (min-width: 630px) and (max-width: 930px) {
+  html, body {
+    font-size: 16.5px;
+  }
+}
+
+/** 4. MD (930px ~ 1200px) ***********************************************************************/
+@media only screen and (min-width: 930px) and (max-width: 1200px) {
+  html, body {
+    font-size: 17.0px;
+  }
+}
+
+/** 5. LG (1200px ~ 1500px) **********************************************************************/
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
+  html, body {
+    font-size: 17.5px;
+  }
+}
+
+/** 6. XL (1500px ~ 10000px) *********************************************************************/
+@media only screen and (min-width: 1500px) {
+  html, body {
+    font-size: 18.0px;
+  }
+}

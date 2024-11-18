@@ -24,5 +24,22 @@
     "**/**build/**": true,
     "build.tar.gz": true
   },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/bower_components": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/target": true,
+
+    "**/*.conf": true,
+    "**/*.json": true,
+    "**/*.txt": true,
+    "**/*gcloud*": true,
+    "**/*Auth*": true,
+    "**/*.env*": true,
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib",
   "explorerExclude.backup": {},
 }
