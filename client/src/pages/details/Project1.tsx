@@ -3,15 +3,9 @@
 import { React, useState } from "@importReacts";
 import { Swiper, SwiperSlide, Navigation, Pagination } from "@importLibs";
 import { Icons } from "@importComponents";
-import { project1_1, project1_2 } from "@importImages";
 
 // -------------------------------------------------------------------------------------------------
 export const Project1 = () => {
-
-  const [images, setImages] = useState([
-    project1_1,
-    project1_2
-  ]);
 
   // 스와이프 이미지 -------------------------------------------------------------------------------
   const ImageComponent = () => {

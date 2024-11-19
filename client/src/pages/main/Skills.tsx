@@ -2,7 +2,7 @@
 
 import { useState } from "@importReacts";
 import { useResponsive } from "@importHooks";
-import { Div, Hr, Icons2, Img } from "@importComponents";
+import { Div, Hr, Icons, Img } from "@importComponents";
 import { Accordion, AccordionDetails, AccordionSummary, Grid, Paper } from "@importMuis";
 
 // -------------------------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ export const Skills = () => {
         sub: [
           { icon: "html", value: "Html" },
           { icon: "css", value: "Css" },
-          { icon: "javascript", value: "Js" },
-          { icon: "typescript", value: "Ts" },
+          { icon: "js", value: "Js" },
+          { icon: "ts", value: "Ts" },
           { icon: "bootstrap", value: "Bootstrap" },
           { icon: "react", value: "React" },
         ],
@@ -151,8 +151,8 @@ export const Skills = () => {
                     <Div className={"fs-1-2rem fw-700 navy"}>
                       {item.main.value}
                     </Div>
-                    <Div className={"fs-1-0rem fw-600 navy"}>
-                      <Icons2
+                    <Div className={"fs-1-2rem fw-700 navy"}>
+                      <Icons
                         key={"ChevronDown"}
                         name={"ChevronDown"}
                         className={"w-18 h-18"}
@@ -181,8 +181,7 @@ export const Skills = () => {
                           border={false}
                           radius={false}
                           src={sub.icon}
-                          group={"svg"}
-                          type={"svg"}
+                          group={"icon"}
                         />
                       </Div>
                       <Div className={"fs-0-8 fw-500 dark-navy"}>

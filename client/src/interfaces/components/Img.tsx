@@ -6,7 +6,6 @@ import { useCommonValue } from "@importHooks";
 // -------------------------------------------------------------------------------------------------
 declare type ImgProps = React.HTMLAttributes<HTMLImageElement> & {
   group?: string;
-  type?: string;
   src?: any;
   hover?: boolean;
   shadow?: boolean;
@@ -17,7 +16,7 @@ declare type ImgProps = React.HTMLAttributes<HTMLImageElement> & {
 
 // -------------------------------------------------------------------------------------------------
 export const Img = (
-  { group, type, src, hover, shadow, radius, border, max, ...props }: ImgProps
+  { group, src, hover, shadow, radius, border, max, ...props }: ImgProps
 ) => {
 
   // 1. common -------------------------------------------------------------------------------------
@@ -36,13 +35,13 @@ export const Img = (
       );
       setImgSrc(
         group !== "new"
-        ? `${GCLOUD_URL}/${group || "main"}/${src}.${type || "webp"}`
+        ? `${GCLOUD_URL}/${group || "main"}/${src}.webp`
         : src
       );
     }
     else {
       setFileName("empty");
-      setImgSrc(`${GCLOUD_URL}/main/empty.${type || "webp"}`);
+      setImgSrc(`${GCLOUD_URL}/main/empty.webp`);
     }
 
     let newClass = "w-100p h-100p object-contain";

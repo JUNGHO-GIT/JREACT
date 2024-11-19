@@ -1,148 +1,150 @@
 // Portfolio.jsx
 
-import { React, useEffect, useState, Link } from "@importReacts";
-import { IsoTope, Tooltip } from "@importLibs";
-import { Icons, Img } from "@importComponents";
+import { useState, useEffect } from "@importReacts";
+import { useResponsive, useCommonValue } from "@importHooks";
+import { Img, Hr, Div } from "@importComponents";
+import { Grid, Paper } from "@importMuis";
 
 // -------------------------------------------------------------------------------------------------
 export const Portfolio = () => {
-  const [images, setImages] = useState<any[]>([
-    "project1_1",
-    "project2_1",
-    "project3_1",
-    "project4_1",
-  ]);
 
-  // -----------------------------------------------------------------------------------------------
-  const itemsArray = {
-    title: ["Portfolios"],
-    items: [
+  // 0. common -------------------------------------------------------------------------------------
+  const { navigate } = useCommonValue();
+  const { xxs, xs, sm, md, lg, xl, xxl } = useResponsive();
+
+  // 2-1. useState ---------------------------------------------------------------------------------
+  const [OBJECT, _setOBJECT] = useState<any>({
+    title: "Portfolios",
+    section: [
       {
         id: "1",
-        filter: "filter-front",
-        imgSrc: "project1_1",
-        title: "JREACT",
-        desc: "Portfolio React",
-        icon: "SiReact",
-        color: "#61DAFB",
+        name: "JREACT",
+        desc: "Portfolio Page with React",
+        icon: "react",
+        img: "project1_1",
       },
       {
         id: "2",
-        filter: "filter-etc",
-        imgSrc: "project2_1",
-        title: "JLINT",
+        name: "JLINT",
         desc: "Vscode Language Formatter Extension",
-        icon: "FaNodeJs",
-        color: "#339933",
+        icon: "nodejs",
+        img: "project2_1",
       },
       {
         id: "3",
-        filter: "filter-back",
-        imgSrc: "project3_1",
-        title: "JUNGHQLO",
+        name: "JUNGHQLO",
         desc: "Online Clothing Shopping Store",
-        icon: "SiSpringboot",
-        color: "#6DC73F",
+        icon: "boot",
+        img: "project3_1",
       },
       {
         id: "4",
-        filter: "filter-back",
-        imgSrc: "project4_1",
-        title: "GoodNeighbor",
+        name: "GOOD-NEIGHBOR",
         desc: "Charity and Donation Website",
-        icon: "SiSpring",
-        color: "#6DC73F",
+        icon: "spring",
+        img: "project4_1",
       },
     ],
-  };
+  });
 
   // 2-3. useEffect --------------------------------------------------------------------------------
   useEffect(() => {
-    const portfolioContainer = document.getElementById("portfolio-container");
-    if (portfolioContainer) {
-      let portfolioIsotope = new IsoTope(portfolioContainer, {
-        itemSelector: ".portfolio-item",
-      });
-      let portfolioFilters = document.querySelectorAll("#portfolio-filters li");
-      let allFilter = document.querySelector("#portfolio-filters li[data-filter='*']");
-      portfolioFilters.forEach(function  (el: any, index: number) {
-        el.addEventListener("click", (e: any) => {
-          e.preventDefault();
-          portfolioFilters.forEach((el: any) => {
-            el.classList.remove("filter-active");
-          });
-          this.classList.add("filter-active");
-          portfolioIsotope.arrange({
-            filter: this.getAttribute("data-filter"),
-          });
-        });
-        if (index === 0) {
-          el.classList.add("filter-active");
-          portfolioIsotope.arrange({
-            filter: el.getAttribute("data-filter"),
-          });
-        }
-        if (allFilter) {
-          allFilter.classList.add("filter-active");
-          portfolioIsotope.arrange({
-            filter: allFilter.getAttribute("data-filter") || "",
-          });
-        }
-      });
-    }
-  }, []);
+    const imageContainer = document.querySelectorAll(".image-container");
+    const imageOverlay = document.querySelectorAll(".image-overlay");
 
+    imageContainer.forEach((el: any) => {
+      Object.assign(el.style, {
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        overflow: 'hidden',
+      });
+    });
+    imageOverlay.forEach((el: any) => {
+      Object.assign(el.style, {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        top: '0',
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        display: 'none',
+      });
+      el.parentElement.addEventListener('mouseover', () => {
+        Object.assign(el.style, {
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center'
+        });
+      });
+      el.parentElement.addEventListener('mouseout', () => {
+        Object.assign(el.style, {
+          display: 'none',
+        });
+      });
+    });
+  }, []);
 
   // -----------------------------------------------------------------------------------------------
   return (
-    <section id="portfolio" className="portfolio">
-      <div className="container">
-        <div className="section-title">
-          <h2>{itemsArray.title}</h2>
-        </div>
-        <div className="row">
-          <div className="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-filters">
-              <li data-filter="*">All</li>
-              <li data-filter=".filter-back">1</li>
-              <li data-filter=".filter-front">2</li>
-              <li data-filter=".filter-etc">3</li>
-            </ul>
-          </div>
-        </div>
-        <div className="row portfolio-container">
-          {itemsArray.items.map((item: any) => (
-            <div key={item.id} className={`col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12 portfolio-item ${item.filter}`}>
-              <div className="portfolio-wrap">
-                <div className="image-container">
+    <Paper className={"content-wrapper p-0"}>
+      <Grid container={true} spacing={0}>
+        <Grid size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }} className={"px-20 py-10"}>
+          <Div className={"fs-2-0rem fw-700 dark-navy"}>
+            {OBJECT.title}
+          </Div>
+          <Hr className={"w-100 bg-primary h-3"} />
+        </Grid>
+      </Grid>
+      <Grid container={true} spacing={0}>
+        {OBJECT.section.map((item: any, i: number) => (
+          <Grid
+            size={xxs ? 12 : xs ? 12 : sm ? 12 : md ? 6 : lg ? 6 : xl ? 6 : xxl ? 6 : 6}
+            className={"px-10"}
+            key={i}
+          >
+            <Div className={"p-relative d-center"}>
+              <Div className={"image-container"}>
+                <Img
+                  hover={true}
+                  shadow={false}
+                  border={false}
+                  radius={false}
+                  src={item.img}
+                  group={"project"}
+                />
+              </Div>
+              <Div className={"image-overlay fadeIn"}>
+                <Div
+                  className={"d-row-center mt-40 mb-20 hover"}
+                  onClick={() => {
+                    navigate(`/details/project${item.id}`);
+                  }}
+                >
                   <Img
-                    max={300}
-                    hover={true}
-                    radius={true}
-                    shadow={true}
-                    src={images[item.imgSrc]}
-                    onClick={() => {
-                      window.location.href = `/JREACT/details/project${item.id}`
-                    }}
+                    max={60}
+                    hover={false}
+                    shadow={false}
+                    border={false}
+                    radius={false}
+                    src={item.icon}
+                    group={"icon"}
+                    className={"me-10"}
                   />
-                  <span className="overlay-icon">
-                    <Icons icon={item.icon} />
-                  </span>
-                </div>
-                <div className="portfolio-links" data-tooltip-id={item.id}>
-                  <Tooltip id={item.id} place="top">
-                    <h5 style={{color: item.color}}>{item.title}</h5>
-                    <p>{item.desc}</p>
-                  </Tooltip>
-                  <Link to={`/details/project${item.id}`} title="More Details">
-                    <i className="bx bx-search-alt-2"></i>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+                  <Div className={"fs-1-8rem fw-700 white ls-4"}>
+                    {item.name}
+                  </Div>
+                </Div>
+                <Div className={"d-row-center mb-20"}>
+                  <Div className={"fs-1-0rem fw-400 white"}>
+                    {item.desc}
+                  </Div>
+                </Div>
+              </Div>
+            </Div>
+          </Grid>
+        ))}
+      </Grid>
+    </Paper>
   );
 };

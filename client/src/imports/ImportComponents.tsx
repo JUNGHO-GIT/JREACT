@@ -7,7 +7,6 @@ import { Hr } from "@interfaces/components/Hr";
 import { Btn } from "@interfaces/components/Btn";
 import { Bg } from "@interfaces/components/Bg";
 import { Icons } from "@interfaces/components/Icons";
-import { Icons2 } from "@interfaces/components/Icons2";
 
 // -------------------------------------------------------------------------------------------------
 export {
@@ -18,5 +17,4 @@ export {
   Btn,
   Bg,
   Icons,
-  Icons2,
 };

@@ -1,6 +1,5 @@
 // index.tsx
 
-import "aos/dist/aos.css";
 import '@assets/styles/Reset.css';
 import '@assets/styles/Mui.css';
 import '@assets/styles/Common.css';
