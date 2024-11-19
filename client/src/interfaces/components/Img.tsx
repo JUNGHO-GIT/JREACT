@@ -6,6 +6,7 @@ import { useCommonValue } from "@importHooks";
 // -------------------------------------------------------------------------------------------------
 declare type ImgProps = React.HTMLAttributes<HTMLImageElement> & {
   group?: string;
+  type?: string;
   src?: any;
   hover?: boolean;
   shadow?: boolean;
@@ -16,7 +17,7 @@ declare type ImgProps = React.HTMLAttributes<HTMLImageElement> & {
 
 // -------------------------------------------------------------------------------------------------
 export const Img = (
-  { group, src, hover, shadow, radius, border, max, ...props }: ImgProps
+  { group, type, src, hover, shadow, radius, border, max, ...props }: ImgProps
 ) => {
 
   // 1. common -------------------------------------------------------------------------------------
@@ -30,12 +31,18 @@ export const Img = (
   // 2-2. useEffect --------------------------------------------------------------------------------
   useEffect(() => {
     if (src && typeof src === "string") {
-      setFileName(src.split("/").pop()?.split(".")[0] || "empty");
-      setImgSrc(group === "new" ? src : `${GCLOUD_URL}/${group || "main"}/${src}.webp`);
+      setFileName(
+        src.split("/").pop()?.split(".")[0] || "empty"
+      );
+      setImgSrc(
+        group !== "new"
+        ? `${GCLOUD_URL}/${group || "main"}/${src}.${type || "webp"}`
+        : src
+      );
     }
     else {
       setFileName("empty");
-      setImgSrc(`${GCLOUD_URL}/main/empty.webp`);
+      setImgSrc(`${GCLOUD_URL}/main/empty.${type || "webp"}`);
     }
 
     let newClass = "w-100p h-100p object-contain";

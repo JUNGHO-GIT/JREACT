@@ -98,16 +98,16 @@
 }
 
 /** grid ******************************************************************************************/
-.MuiGrid2-root {
+.MuiGrid2-container {
   margin: 0px 0px 0px 0px !important;
   padding: 0px 0px 0px 0px !important;
-}
-.MuiGrid2-container {
   display: flex !important;
   flex-wrap: wrap !important;
   width: 100% !important;
-  justify-content: center !important;
-  align-items: center !important;
+  justify-content: center;
+  align-items: center;
+}
+.MuiGrid2-root {
   margin: 0px 0px 0px 0px !important;
   padding: 0px 0px 0px 0px !important;
 }

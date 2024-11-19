@@ -10,15 +10,11 @@ export const About = () => {
   // 2-1. useState ---------------------------------------------------------------------------------
   const [OBJECT, _setOBJECT] = useState<any>({
     title: "About",
-    sub: "Full Stack Developer",
+    sub: "FullStack Developer",
     section: [
       {
         title: "Name",
         value: "문정호",
-      },
-      {
-        title: "Address",
-        value: "서울시 동대문구",
       },
       {
         title: "Birth",
@@ -29,12 +25,8 @@ export const About = () => {
         value: "junghomun@naver.com",
       },
       {
-        title: "Phone",
-        value: "010-8252-4757",
-      },
-      {
-        title: "GitHub",
-        value: "www.github.com/JUNGHO-GIT"
+        title: "Git",
+        value: "github.com/JUNGHO-GIT"
       },
     ],
   });
@@ -43,7 +35,7 @@ export const About = () => {
   return (
     <Paper className={"content-wrapper p-0"}>
       <Grid container={true} spacing={0}>
-        <Grid size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }} className={"d-left px-20 py-10"}>
+        <Grid size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }} className={"px-20 py-10"}>
           <Div className={"fs-2-0rem fw-700 dark-navy mb-10"}>
             {OBJECT.title}
           </Div>
@@ -51,7 +43,7 @@ export const About = () => {
         </Grid>
       </Grid>
       <Grid container={true} spacing={0}>
-        <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }} className={"d-center p-10"}>
+        <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6, xl: 6 }} className={"d-center p-10"}>
           <Img
             hover={true}
             radius={true}
@@ -60,7 +52,7 @@ export const About = () => {
             src={"profile"}
           />
         </Grid>
-        <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }} className={"d-left p-20"}>
+        <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6, xl: 6 }} className={"p-20"}>
           {OBJECT.section.map((item: any, i: number) => (
             <Grid container={true} spacing={0} key={i}>
               <Grid size={12} className={"d-left"}>

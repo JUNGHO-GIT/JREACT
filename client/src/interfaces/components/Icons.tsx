@@ -10,16 +10,18 @@ import { RxDash } from "react-icons/rx";
 import { SiApache, SiApachemaven, SiApachetomcat, SiBootstrap, SiBower, SiCss3, SiExpress, SiGithub, SiGradle, SiHtml5, SiJavascript, SiJson, SiMariadb, SiMarkdown, SiMicrosoftazure, SiMongodb, SiNginx, SiOracle, SiPostgresql, SiReact, SiSpring, SiSpringboot, SiThymeleaf, SiTypescript, SiWebpack, SiWindows } from "react-icons/si";
 import { TbBrandMysql, TbBrandVscode } from "react-icons/tb";
 
+// -------------------------------------------------------------------------------------------------
 declare type IconsProps = React.HTMLAttributes<HTMLDivElement> & {
   icon: string;
 };
 
+// -------------------------------------------------------------------------------------------------
 export const Icons = (
   { icon, ...props }: IconsProps
 ) => {
 
+  // -----------------------------------------------------------------------------------------------
   const iconArray = {
-
     // Gi
     GiBeaver : {icon: GiBeaver, color: "#004F99", size: "1.0em", style: "inline-block"},
 
@@ -79,13 +81,16 @@ export const Icons = (
     SiWebpack : {icon: SiWebpack, color: "#8DD6F9", size: "1.0em", style: "inline-block"},
   } as any;
 
+  // -----------------------------------------------------------------------------------------------
   return (
     <div {...props}>
-      {React.createElement(iconArray[icon].icon, {
-        color: iconArray[icon].color,
-        size: iconArray[icon].size,
-        style: { display: iconArray[icon].style },
-      })}
+      {iconArray?.[icon]?.icon && (
+        React.createElement(iconArray?.[icon]?.icon, {
+          color: iconArray?.[icon]?.color,
+          size: iconArray?.[icon]?.size,
+          style: { display: iconArray?.[icon]?.style },
+        })
+      )}
     </div>
   );
 }

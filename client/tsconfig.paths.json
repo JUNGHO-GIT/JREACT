@@ -40,7 +40,14 @@
     "**/*.tsx",
     "**/*.d.ts",
     "**/*.js",
-    "**/*.jsx"
+    "**/*.jsx",
+    "**/*.json",
+    "**/*.svg",
+    "**/*.png",
+    "**/*.jpg",
+    "**/*.jpeg",
+    "**/*.gif",
+    "**/*.webp"
   ],
   "exclude": [
     "node_modules",

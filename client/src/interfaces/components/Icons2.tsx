@@ -1,10 +1,10 @@
-// Icons.tsx
+// Icons2.tsx
 
 import { React } from "@importReacts";
 import { IconButton } from "@importMuis";
 
 // -------------------------------------------------------------------------------------------------
-export const Icons = (props: any) => {
+export const Icons2 = (props: any) => {
 
   if (!props.name) {
     return null;

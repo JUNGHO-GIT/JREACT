@@ -1,5 +1,9 @@
 // extension.d.ts
 
+declare module '*.jpg' {
+  const value: string;
+  export default value;
+}
 declare module '*.png' {
   const value: string;
   export default value;
@@ -13,11 +17,36 @@ declare module '*.svg' {
   export default value;
 }
 
+declare module '*.js' {
+  const value: string;
+  export default value;
+}
+declare module '*.jsx' {
+  const value: string;
+  export default value;
+}
 declare module '*.ts' {
   const value: string;
   export default value;
 }
 declare module '*.tsx' {
+  const value: string;
+  export default value;
+}
+
+declare module '*.css' {
+  const value: string;
+  export default value;
+}
+declare module '*.scss' {
+  const value: string;
+  export default value;
+}
+declare module '*.sass' {
+  const value: string;
+  export default value;
+}
+declare module '*.less' {
   const value: string;
   export default value;
 }

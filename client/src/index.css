@@ -5,6 +5,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  letter-spacing: 1px;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
   -webkit-text-size-adjust: 100% !important;
@@ -16,41 +17,41 @@ html, body {
 /** 1. XXS (0 ~ 330px) ****************************************************************************/
 @media only screen and (min-width: 0px) and (max-width: 330px) {
   html, body {
-    font-size: 15.5px;
+    font-size: 15px;
   }
 }
 
 /** 2. XS (330px ~ 630px) *************************************************************************/
 @media only screen and (min-width: 330px) and (max-width: 630px) {
   html, body {
-    font-size: 16.0px;
+    font-size: 16px;
   }
 }
 
 /** 3. SM (630px ~ 930px) *************************************************************************/
 @media only screen and (min-width: 630px) and (max-width: 930px) {
   html, body {
-    font-size: 16.5px;
+    font-size: 17px;
   }
 }
 
 /** 4. MD (930px ~ 1200px) ***********************************************************************/
 @media only screen and (min-width: 930px) and (max-width: 1200px) {
   html, body {
-    font-size: 17.0px;
+    font-size: 18px;
   }
 }
 
 /** 5. LG (1200px ~ 1500px) **********************************************************************/
 @media only screen and (min-width: 1200px) and (max-width: 1500px) {
   html, body {
-    font-size: 17.5px;
+    font-size: 19px;
   }
 }
 
 /** 6. XL (1500px ~ 10000px) *********************************************************************/
 @media only screen and (min-width: 1500px) {
   html, body {
-    font-size: 18.0px;
+    font-size: 20px;
   }
 }

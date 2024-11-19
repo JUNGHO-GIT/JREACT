@@ -24,12 +24,7 @@ module.exports = {
     plugins: [
       ['@babel/plugin-syntax-dynamic-import'],
       ['@babel/plugin-proposal-optional-chaining'],
-      ['@babel/plugin-proposal-nullish-coalescing-operator'],
-      ['@babel/plugin-transform-react-inline-elements'],
-      ['@babel/plugin-transform-react-constant-elements'],
-      ...(process.env.NODE_ENV === 'production' ? [
-        ['babel-plugin-transform-remove-console', { exclude: ['error', 'warn'] }]
-      ] : []),
+      ['@babel/plugin-proposal-nullish-coalescing-operator']
     ],
   },
 
@@ -49,7 +44,7 @@ module.exports = {
               workerParallelJobs: 75,
               poolRespawn: false,
               poolTimeout: 2000,
-              poolParallelJobs: 75,
+              poolParallelJobs: 75
             },
           },
           {
@@ -83,7 +78,10 @@ module.exports = {
 
       // 공통 cache 설정
       webpackConfig.cache = {
-        type: 'memory',
+        type: 'filesystem',
+        buildDependencies: {
+          config: [__filename],
+        },
       };
 
       // 2. dev 설정 -------------------------------------------------------------------------------
@@ -98,7 +96,6 @@ module.exports = {
         };
         webpackConfig.plugins.push(
           new ReactRefreshWebpackPlugin(),
-          new webpack.HotModuleReplacementPlugin()
         );
       }
 
@@ -160,11 +157,6 @@ module.exports = {
                 name: 'commons',
                 chunks: 'all',
               },
-              default: {
-                minChunks: 2,
-                priority: -20,
-                reuseExistingChunk: true,
-              },
             },
           },
           runtimeChunk: 'single',
@@ -177,14 +169,7 @@ module.exports = {
             algorithm: 'brotliCompress',
             threshold: 10240,
             minRatio: 0.8,
-          }),
-          new CompressionPlugin({
-            filename: '[path][base].gz',
-            test: /\.(js|css|html|svg)$/,
-            algorithm: 'gzip',
-            threshold: 10240,
-            minRatio: 0.8,
-          }),
+          })
         );
       }
 

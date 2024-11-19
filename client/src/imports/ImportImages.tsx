@@ -39,14 +39,16 @@ import project5_4 from "@assets/images/project/project5_4.png";
 
 // -------------------------------------------------------------------------------------------------
 export {
-  logo,
-  main,
-  main2,
-  profile,
-  tab,
+  // main
+  logo, main, main2, profile, tab,
+  // project 1
   project1_1, project1_2,
+  // project 2
   project2_1, project2_2, project2_3, project2_4, project2_5,
+  // project 3
   project3_1, project3_2, project3_3, project3_4, project3_5,
+  // project 4
   project4_1, project4_2, project4_3, project4_4,
+  // project 5
   project5_1, project5_2, project5_3, project5_4,
 };

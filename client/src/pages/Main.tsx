@@ -5,12 +5,17 @@ import { Hero } from "./main/Hero";
 import { Portfolio } from "./main/Portfolio";
 import { Skills } from "./main/Skills";
 
+import { Hr } from "@importComponents";
+
 // -------------------------------------------------------------------------------------------------
 export const Main = () => (
   <>
     <Hero />
+    <Hr className={"bg-light h-5"} />
     <About />
+    <Hr className={"bg-light h-5"} />
     <Skills />
-    <Portfolio />
+    <Hr className={"bg-light h-5"} />
+    {/* <Portfolio /> */}
   </>
 );

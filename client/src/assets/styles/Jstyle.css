@@ -11365,7 +11365,7 @@
 
 /** 9-1. display **********************************************************************************/
 .d-none {
-  display: none !important;
+  display: none;
 }
 .d-fill {
   display: -webkit-fill-available !important;
@@ -11387,6 +11387,30 @@
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
+  text-align: center !important;
+}
+.d-left {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  text-align: left !important;
+}
+.d-right {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  text-align: right !important;
+}
+.d-top {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  text-align: center !important;
+}
+.d-bottom {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-end !important;
   text-align: center !important;
 }
 .d-row {
@@ -11576,6 +11600,7 @@
   flex-direction: row-reverse !important;
 }
 
+
 /** 96. shadow ************************************************************************************/
 .shadow-0 {
   box-shadow: none !important;
@@ -11702,57 +11727,57 @@
   border-radius: 0px !important;
 }
 .radius-1 {
-  border-radius: 10px !important;
+  border-radius: 5px !important;
 }
 .radius-top-1 {
-  border-top-left-radius: 10px !important;
-  border-top-right-radius: 10px !important;
+  border-top-left-radius: 5px !important;
+  border-top-right-radius: 5px !important;
   border-bottom-left-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
 }
 .radius-right-1 {
   border-top-left-radius: 0px !important;
-  border-top-right-radius: 10px !important;
+  border-top-right-radius: 5px !important;
   border-bottom-left-radius: 0px !important;
-  border-bottom-right-radius: 10px !important;
+  border-bottom-right-radius: 5px !important;
 }
 .radius-bottom-1 {
   border-top-left-radius: 0px !important;
   border-top-right-radius: 0px !important;
-  border-bottom-left-radius: 10px !important;
-  border-bottom-right-radius: 10px !important;
+  border-bottom-left-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
 }
 .radius-left-1 {
-  border-top-left-radius: 10px !important;
+  border-top-left-radius: 5px !important;
   border-top-right-radius: 0px !important;
-  border-bottom-left-radius: 10px !important;
+  border-bottom-left-radius: 5px !important;
   border-bottom-right-radius: 0px !important;
 }
 .radius-2 {
-  border-radius: 20px !important;
+  border-radius: 10px !important;
 }
 .radius-top-2 {
-  border-top-left-radius: 20px !important;
-  border-top-right-radius: 20px !important;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
   border-bottom-left-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
 }
 .radius-right-2 {
   border-top-left-radius: 0px !important;
-  border-top-right-radius: 20px !important;
+  border-top-right-radius: 10px !important;
   border-bottom-left-radius: 0px !important;
-  border-bottom-right-radius: 20px !important;
+  border-bottom-right-radius: 10px !important;
 }
 .radius-bottom-2 {
   border-top-left-radius: 0px !important;
   border-top-right-radius: 0px !important;
-  border-bottom-left-radius: 20px !important;
-  border-bottom-right-radius: 20px !important;
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
 }
 .radius-left-2 {
-  border-top-left-radius: 20px !important;
+  border-top-left-radius: 10px !important;
   border-top-right-radius: 0px !important;
-  border-bottom-left-radius: 20px !important;
+  border-bottom-left-radius: 10px !important;
   border-bottom-right-radius: 0px !important;
 }
 
@@ -11787,32 +11812,20 @@
 .border-left-0 {
   border-left: 0px solid transparent !important;
 }
-.border-dark-1 {
-  border: 1px solid #707070 !important;
-}
-.border-dark-top-1 {
-  border-top: 1px solid #707070 !important;
-}
-.border-dark-right-1 {
-  border-right: 1px solid #707070 !important;
-}
-.border-dark-bottom-1 {
-  border-bottom: 1px solid #707070 !important;
-}
 .border-1 {
-  border: 1px solid #bebebe !important;
+  border: 1px solid #dbdbdb !important;
 }
 .border-top-1 {
-  border-top: 1px solid #bebebe !important;
+  border-top: 1px solid #dbdbdb !important;
 }
 .border-right-1 {
-  border-right: 1px solid #bebebe !important;
+  border-right: 1px solid #dbdbdb !important;
 }
 .border-bottom-1 {
-  border-bottom: 1px solid #bebebe !important;
+  border-bottom: 1px solid #dbdbdb !important;
 }
 .border-left-1 {
-  border-left: 1px solid #bebebe !important;
+  border-left: 1px solid #dbdbdb !important;
 }
 .border-2 {
   border: 2px solid #bebebe !important;
@@ -11844,6 +11857,60 @@
 .border-left-3 {
   border-left: 3px solid #bebebe !important;
 }
+.border-dark-1 {
+  border: 1px solid #707070 !important;
+}
+.border-dark-top-1 {
+  border-top: 1px solid #707070 !important;
+}
+.border-dark-right-1 {
+  border-right: 1px solid #707070 !important;
+}
+.border-dark-bottom-1 {
+  border-bottom: 1px solid #707070 !important;
+}
+
+.border-1-30p {
+  border: 1px solid #dbdbdb !important;
+  width: 30% !important;
+}
+.border-top-1-30p {
+  border-top: 1px solid #dbdbdb !important;
+  width: 30% !important;
+}
+.border-right-1-30p {
+  border-right: 1px solid #dbdbdb !important;
+  width: 30% !important;
+}
+.border-bottom-1-30p {
+  border-bottom: 1px solid #dbdbdb !important;
+  width: 30% !important;
+}
+.border-left-1-30p {
+  border-left: 1px solid #dbdbdb !important;
+  width: 30% !important;
+}
+.border-1-50p {
+  border: 1px solid #dbdbdb !important;
+  width: 50% !important;
+}
+.border-top-1-50p {
+  border-top: 1px solid #dbdbdb !important;
+  width: 50% !important;
+}
+.border-right-1-50p {
+  border-right: 1px solid #dbdbdb !important;
+  width: 50% !important;
+}
+.border-bottom-1-50p {
+  border-bottom: 1px solid #dbdbdb !important;
+  width: 50% !important;
+}
+.border-left-1-50p {
+  border-left: 1px solid #dbdbdb !important;
+  width: 50% !important;
+}
+
 /** 99. color *************************************************************************************/
 .red {
   color: #ff0000 !important;
