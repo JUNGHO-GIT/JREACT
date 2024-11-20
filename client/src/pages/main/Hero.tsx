@@ -44,7 +44,7 @@ export const Hero = () => {
 
   // -----------------------------------------------------------------------------------------------
   return (
-    <Paper className={"content-wrapper p-0"}>
+    <Paper className={"main-wrapper p-0"}>
       <Grid container={true} spacing={0}>
         <Grid size={12} className={"d-center p-relative"}>
           <Img

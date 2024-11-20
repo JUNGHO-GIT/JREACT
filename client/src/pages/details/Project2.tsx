@@ -1,280 +1,285 @@
 // Project2.jsx
 
-import { React, useState } from "@importReacts";
+import { useEffect, useState } from "@importReacts";
+import { useResponsive, useStoreLoading } from "@importHooks";
 import { Swiper, SwiperSlide, Navigation, Pagination } from "@importLibs";
-import { Icons } from "@importComponents";
+import { Div, Img, Hr } from "@importComponents";
+import { Grid, Paper } from "@importMuis";
 
 // -------------------------------------------------------------------------------------------------
 export const Project2 = () => {
 
-  // 스와이프 이미지 -------------------------------------------------------------------------------
-  const ImageComponent = () => {
-    return (
-      <Swiper
-        modules={[Navigation, Pagination]}
-        spaceBetween={50}
-        slidesPerView={1}
-        navigation
-        pagination
-      >
-        {images.map((image, index) => (
-          <SwiperSlide key={index}>
-            <img src={image} alt={`${index + 1}`} className="img-fluid" />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    );
-  };
+  // 0. common -------------------------------------------------------------------------------------
+  const { setLOADING } = useStoreLoading();
+  const { xxs, xs, sm, md, lg, xl, xxl } = useResponsive();
 
-  // -----------------------------------------------------------------------------------------------
-  const itemsArray1 = {
-    items1: {
-      mainTitle: [{
-        title : "정보",
-        icon1 : ["FcSearch"]
-      }],
-      value1: [{
-        title: "프로젝트명",
-        icon1: ["FcExpand"],
-        text:  ["JLINT",],
-        icon2: ["RxDash"],
-      }],
-      value2: [{
-        title: "주제",
-        icon1: ["FcExpand"],
-        text:  ["NODEJS 및 TS를 활용한 VSCODE 언어 린팅 확장프로그램"],
-        icon2: ["RxDash"],
-      }],
-      value3: [{
-        title: "기간",
-        icon1: ["FcExpand"],
-        text:  ["2023.05.05 ~ 2023.05.24"],
-        icon2: ["RxDash"],
-      }],
-      value4: [{
-        title: "참여인원",
-        icon1: ["FcExpand"],
-        text:  ["총 1명(개인)"],
-        icon2: ["RxDash"],
-      }],
-      value5: [{
-        title: "프로젝트 주소 ",
-        icon1: ["FcExpand"],
-        text:  ["www.github.com/JUNGHO-GIT/JLINT.git"],
-        icon2: ["RxDash"],
-        isLink : [true],
-      }],
+  // 2-1. useState ---------------------------------------------------------------------------------
+  const [OBJECT, _setOBJECT] = useState<any>([
+    {
+      title: "Information",
+      section: [
+        {
+          title: "Name",
+          value: "JLINT",
+        },
+        {
+          title: "Detail",
+          value: "NodeJs & TypeScript를 활용한 Vscode 린팅 확장프로그램",
+        },
+        {
+          title: "Period",
+          value: "2023.05.05 - 2023.06.05",
+        },
+        {
+          title: "Role",
+          value: "총 1명 (개인)",
+        },
+        {
+          title: "Git",
+          value: "github.com/JUNGHO-GIT/JLINT.git",
+        },
+        {
+          title: "Url",
+          value: "marketplace.visualstudio.com/items?itemName=JUNGHO.JLINT"
+        }
+      ],
     },
-    items2: {
-      mainTitle: [{
-        title : "특징",
-        icon1 : ["FcSearch"]
-      }],
-      value1: [{
-        title: "NodeJs",
-        icon1: ["FcExpand"],
-        text:  ["NodeJs(v16)를 통한 프로젝트 생성 및 빌드, 주 언어로 Typescript 사용"],
-        icon2: ["RxDash"],
-      }],
-      value2: [{
-        title: "다양한 라이브러리 활용",
-        icon1: ["FcExpand"],
-        text:  ["NPM을 통한 'prettier, lodash, cheerio, mocha, ts-node' 등의 패키지 설치, 관리, 사용을 통한 개발 확장성 및 효율성 증대"],
-        icon2: ["RxDash"],
-      }],
-      value3: [{
-        title: "언어 다중지원 및 자동정렬",
-        icon1: ["FcExpand"],
-        text:  ["10가지 이상의 다양한 언어를 지원하며, 각 언어별로 린팅, 코딩 스타일 설정, Indent 최적화, 코드 자동 정렬 등의 기능을 제공하여 코드의 일관성 유지, 품질 향상 및 개발 생산성 증대"],
-        icon2: ["RxDash"],
-      }],
-      value4: [{
-        title: "구분선 자동 생성",
-        icon1: ["FcExpand"],
-        text:  ["클래스, 함수, 변수, 배열 등의 요소에 구분선 주석을 자동으로 삽입하여 전체적인 코드 흐름을 더욱 명확하게 파악하고 코드 가독성을 향상"],
-        icon2: ["RxDash"],
-      }],
-      value5: [{
-        title: "Vscode API",
-        icon1: ["FcExpand"],
-        text:  ["Vscode API를 통한 확장 프로그램 제작 및 빌드 후 실제 Marketplace에 배포하여 사용자에게 제공함으로써 실제 프로젝트에 적용 가능한 확장성 확보"],
-        icon2: ["RxDash"],
-      }],
+    {
+      title: "Features",
+      section: [
+        {
+          title: "React Framework",
+          value: "React(v18)를 활용, SPA방식의 종합 포트폴리오 웹사이트 제작",
+        },
+        {
+          title: "Hooks & Router",
+          value: "React Hooks와 React Router를 활용하여 효율적 상태 관리와 동적 라우팅을 구현",
+        },
+        {
+          title: "Component",
+          value: "컴포넌트 기반의 구조 설계를 통한 효율적인 상태 관리 및 코드 재사용성 확보",
+        },
+        {
+          title: "Nginx Server",
+          value: "Nginx 서버를 활용하여 정적 파일 서비스 제공 및 리버스 프록시 서버 구축",
+        },
+        {
+          title: "Cloud Instance",
+          value: "GCP 인스턴스의 CentOS7 환경에서 서버를 구축하고, DNS 설정을 통해 도메인과 서버를 연결",
+        },
+      ],
     },
-  }
+    {
+      title: "Frontend",
+      section: [
+        {
+          title: "Language",
+          value: [
+            { icon: "html", value: "Html" },
+            { icon: "css", value: "Css" },
+            { icon: "js", value: "Js" },
+            { icon: "ts", value: "Ts" },
+          ],
+        },
+        {
+          title: "Framework",
+          value: [
+            { icon: "react", value: "React" },
+            { icon: "mui", value: "MaterialUI" },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Backend",
+      section: [
+        {
+          title: "Language",
+          value: [
+            { icon: "nodejs", value: "Nodejs" },
+          ],
+        },
+        {
+          title: "Package, Build, SCM",
+          value: [
+            { icon: "npm", value: "Npm" },
+            { icon: "json", value: "Json" },
+            { icon: "github", value: "Git" },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Server",
+      section: [
+        {
+          title: "Server",
+          value: [
+            { icon: "nginx", value: "Nginx" },
+          ],
+        },
+        {
+          title: "Cloud",
+          value: [
+            { icon: "gcp", value: "Gcp" },
+          ],
+        },
+      ],
+    },
+  ]);
+  const [images, _setImages] = useState<string[]>([
+    "project1_1",
+    "project1_2",
+  ]);
+  const [componentWidth, setComponentWidth] = useState<string>("");
 
-  // -----------------------------------------------------------------------------------------------
-  const itemsArray2 = {
-    items1: {
-      mainTitle: [{
-        title : "프론트엔드",
-        icon1 : ["FcSettings"]
-      }],
-      value1: [{
-        title: "언어",
-        icon1: ["FcCursor"],
-        text:  ["HTML", "MARKDOWN"],
-        icon2: ["SiHtml5", "SiMarkdown"]
-      }]
-    },
-    items2: {
-      mainTitle: [{
-        title : "백엔드",
-        icon1 : ["FcSettings"]
-      }],
-      value1: [{
-        title: "언어",
-        icon1: ["FcCursor"],
-        text:  ["NODEJS", "JS", "TS"],
-        icon2: ["FaNodeJs", "SiJavascript", "SiTypescript"],
-      }],
-      value2: [{
-        title: "패키지관리, 빌드",
-        icon1: ["FcCursor"],
-        text:  ["NPM", "GITHUB", "JSON"],
-        icon2: ["FaNpm", "SiGithub","SiJson"],
-      }],
-    },
-    items3: {
-      mainTitle: [{
-        title : "서버",
-        icon1 : ["FcSettings"]
-      }],
-      value1: [{
-        title: "플랫폼",
-        icon1: ["FcCursor"],
-        text:  ["APACHE", "NGINX"],
-        icon2: ["SiApache", "SiNginx"],
-      }],
-    },
-    items4: {
-      mainTitle: [{
-        title : "API",
-        icon1 : ["FcSettings"]
-      }],
-      value1: [{
-        title: "플랫폼",
-        icon1: ["FcCursor"],
-        text:  ["VSCODE-API 1.78"],
-        icon2: ["TbBrandVscode"],
-      }],
-    },
-  };
+  // 2-3. useEffect --------------------------------------------------------------------------------
+  useEffect(() => {
+    setLOADING(true);
+  }, []);
+
+  // 2-3. useEffect --------------------------------------------------------------------------------
+  useEffect(() => {
+    if (xxs || xs) {
+      setComponentWidth("w-30p");
+    }
+    else if (sm || md) {
+      setComponentWidth("w-20p");
+    }
+    else if (lg || xl || xxl) {
+      setComponentWidth("w-30p");
+    }
+  }, [xxs, xs, sm, md, lg, xl, xxl]);
 
   // -----------------------------------------------------------------------------------------------
   return (
-    <section id="portfolio-details" className="portfolio-details">
-      <div className="container">
-
-        {/** main image **/}
-        <div className="row">
-          <div className="col-lg-12 col-md-12 col-sm-12 col-12">
-            <div className="portfolio-details-slider swiper">
-              <div className="swiper-wrapper align-items-center">
-                <ImageComponent />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/** main info **/}
-        <div className="row">
-
-          {/** left side **/}
-          <div className="col-lg-6 col-md-6 col-sm-12 col-12 jungho-col-left">
-            <div className="portfolio-info">
-              {Object.entries(itemsArray1).map(([key, index]) => (
-                <div key={key} className="jungho-border-top">
-                  {index.mainTitle.map((titleObj, titleIdx) => (
-                    <>
-                    <h3 key={titleIdx}>
-                      {titleObj.icon1.map((icon: any, i: number) => (
-                        <span key={i}>
-                          <Icons icon={icon} />&nbsp;
-                        </span>
+    <Paper className={"detail-wrapper"}>
+      {/** images **/}
+      <Grid container={true} spacing={0}>
+        <Grid size={12} className={"d-col-center"}>
+          <Swiper
+            spaceBetween={0}
+            slidesPerView={1}
+            slidesPerGroup={1}
+            loop={true}
+            navigation={{
+              enabled: true,
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            pagination={{
+              enabled: true,
+              clickable: true,
+              el: ".image-pagination",
+            }}
+            modules={[
+              Pagination, Navigation,
+            ]}
+          >
+            {images.map((image: string, i: number) => (
+              <SwiperSlide className={"w-100p p-relative"} key={i}>
+                <Img
+                  max={800}
+                  hover={false}
+                  shadow={false}
+                  radius={false}
+                  group={"project"}
+                  src={image}
+                />
+              </SwiperSlide>
+            ))}
+            <Div className={"swiper-button-prev"} />
+            <Div className={"swiper-button-next"} />
+          </Swiper>
+        </Grid>
+        <Grid size={12} className={"d-row-center"}>
+          <Div className={"image-pagination transform-none"} />
+        </Grid>
+      </Grid>
+      <Hr className={"mt-20 mb-20 bg-light h-5"} />
+      {/** description **/}
+      <Grid container={true} spacing={0} className={"h-100p d-top"}>
+        {/** info, features **/}
+        <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6} className={"px-20"}>
+          <Grid container={true} spacing={2}>
+            {OBJECT.filter((_: any, f: number) => f < 2).map((item: any, i: number) => (
+              <Grid size={12} className={"d-col-left"} key={i}>
+                <Div className={"fs-1-6rem fw-700 dark-navy"}>
+                  {item.title}
+                </Div>
+                <Div className={"d-row-left mb-20"}>
+                  <Hr className={"w-100 bg-primary h-3"} />
+                </Div>
+                {item.section.map((section: any, j: number) => (
+                  <Div className={"d-col-left w-100p mb-30"} key={j}>
+                    <Div className={"fs-1-0rem fw-600 dark-navy ms-n10 mb-10"}>
+                      {`🔹${section.title}`}
+                    </Div>
+                    {["Git", "Url"].includes(section.title) ? (
+                      <Div className={"d-row-left"}>
+                        <Div className={"fs-0-9rem fw-400 blue hover"}>
+                          {`- ${section.value}`}
+                        </Div>
+                      </Div>
+                    ) : (
+                      <Div className={"d-row-left"}>
+                        <Div className={"fs-0-9rem fw-400 light-black lh-2-0"}>
+                          {`- ${section.value}`}
+                        </Div>
+                      </Div>
+                    )}
+                  </Div>
+                ))}
+                <Hr className={"bg-light h-5"} />
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>
+        {/** frontend, backend, server **/}
+        <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6} className={"px-20"}>
+          <Grid container={true} spacing={2}>
+            {OBJECT.filter((_: any, f: number) => f >= 2).map((item: any, i: number) => (
+              <Grid size={12} className={"d-col-left"} key={i}>
+                <Div className={"fs-1-6rem fw-700 dark-navy"}>
+                  {item.title}
+                </Div>
+                <Div className={"d-row-left mb-20"}>
+                  <Hr className={"w-100 bg-primary h-3"} />
+                </Div>
+                {item.section.map((section: any, j: number) => (
+                  <Div className={"d-col-left w-100p mb-30"} key={j}>
+                    <Div className={"d-row w-100p"}>
+                      <Div className={"fs-1-0rem fw-600 dark-navy ms-n10 mb-10"}>
+                        {`🔹${section.title}`}
+                      </Div>
+                    </Div>
+                    <Div className={"d-row w-100p"}>
+                      {section.value.map((value: any, k: number) => (
+                        <Div className={`d-row-left ${componentWidth}`} key={k}>
+                          <Img
+                            max={25}
+                            hover={true}
+                            shadow={false}
+                            border={false}
+                            radius={false}
+                            src={value.icon}
+                            group={"icon"}
+                            className={"me-5"}
+                          />
+                          <Div className={"fs-0-9rem fw-400 light-black lh-2-0"}>
+                            {value.value}
+                          </Div>
+                        </Div>
                       ))}
-                      {titleObj.title}
-                    </h3>
-                    <div className="project-line"></div>
-                    </>
-                  ))}
-                  {Object.entries(index).filter(([key2]) => key2.startsWith("value")).map(([key2, valueArray]) => (
-                    valueArray.map((item: any, itemIdx: number) => (
-                      <div key={`${key2}-${itemIdx}`} style={{ marginBottom: "20px" }}>
-                        <h6 className="fw-8" style={{ marginTop: "30px" }}>
-                          {item.icon1 && item.icon1.map((icon: any, i: number) => (
-                            <span key={i}>
-                              <Icons icon={icon} />&nbsp;
-                            </span>
-                          ))}
-                          {item.title}&nbsp;
-                        </h6>
-                        {item.icon2.map((icon: any, i: number) => (
-                          <span key={i}>
-                            <Icons icon={icon}/>&nbsp;
-                            {item.isLink && item.isLink[i]
-                              ? <a href={`http://${item.text[i]}`} className="text-hover">
-                                  {item.text[i]}
-                                </a>
-                              : <span>
-                                  {item.text[i]}
-                                </span>
-                            }
-                          </span>
-                        ))}
-                      </div>
-                    ))
-                  ))}<br />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/** right side **/}
-          <div className="col-lg-6 col-md-6 col-sm-12 col-12 jungho-col-right">
-            <div className="portfolio-info">
-              {Object.entries(itemsArray2).map(([key, index]) => (
-                <div key={key} className="jungho-border-top">
-                  {index.mainTitle.map((titleObj, titleIdx) => (
-                    <>
-                    <h3 key={titleIdx}>
-                      {titleObj.icon1.map((icon: any, i: number) => (
-                        <span key={i}>
-                          <Icons icon={icon} />&nbsp;
-                        </span>
-                      ))}
-                      {titleObj.title}
-                    </h3>
-                    <div className="project-line"></div>
-                    </>
-                  ))}
-                  {Object.entries(index).filter(([key2]) => key2.startsWith("value")).map(([key2, valueArray]) => (
-                    valueArray.map((item: any, itemIdx: number) => (
-                      <div key={`${key2}-${itemIdx}`} style={{ marginBottom: "20px" }}>
-                        <h6 className="fw-8" style={{ marginTop: "30px" }}>
-                          {item.icon1.map((icon: any, i: number) => (
-                            <span key={i}>
-                              <Icons icon={icon} />&nbsp;
-                            </span>
-                          ))}
-                          {item.title}&nbsp;
-                        </h6>
-                        {item.icon2.map((icon: any, i: number) => (
-                          <span key={i}>
-                            <Icons icon={icon} />&nbsp;
-                            {item.text[i]}&nbsp;
-                          </span>
-                        ))}
-                      </div>
-                    ))
-                  ))}<br />
-                </div>
-              ))}
-              <div className="empty-400"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+                    </Div>
+                  </Div>
+                ))}
+                <Hr className={"bg-light h-5"} />
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>
+      </Grid>
+    </Paper>
   );
 };

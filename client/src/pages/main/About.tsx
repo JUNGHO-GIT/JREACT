@@ -33,13 +33,15 @@ export const About = () => {
 
   // -----------------------------------------------------------------------------------------------
   return (
-    <Paper className={"content-wrapper p-0"}>
+    <Paper className={"main-wrapper p-0"}>
       <Grid container={true} spacing={0}>
         <Grid size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }} className={"px-20 py-10"}>
           <Div className={"fs-2-0rem fw-700 dark-navy"}>
             {OBJECT.title}
           </Div>
-          <Hr className={"w-100 bg-primary h-3"} />
+          <Div className={"d-row-left"}>
+            <Hr className={"w-100 bg-primary h-3"} />
+          </Div>
         </Grid>
       </Grid>
       <Grid container={true} spacing={0}>

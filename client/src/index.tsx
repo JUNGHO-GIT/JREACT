@@ -1,13 +1,17 @@
 // index.tsx
 
+import "swiper/css";
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import '@assets/styles/Reset.css';
+import '@assets/styles/Core.css';
 import '@assets/styles/Mui.css';
-import '@assets/styles/Common.css';
 import '@assets/styles/Jstyle.css';
 import './index.css';
 
 import {
-  BrowserRouter, Routes, Route, createRoot, useEffect, useState
+  BrowserRouter, Routes, Route, createRoot,
+  useEffect
 } from '@importReacts';
 
 import {
@@ -15,7 +19,7 @@ import {
 } from '@importMuis';
 
 import {
-  useScrollTop, useEnhancedTouch
+  useScrollTop, useEnhancedTouch, useStoreLoading
 } from '@importHooks';
 
 import {
@@ -29,29 +33,26 @@ import {
 // -------------------------------------------------------------------------------------------------
 const App = () => {
 
-  const [loading, setLoading] = useState<boolean>(true);
+  const { LOADING, setLOADING } = useStoreLoading();
+
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 100);
-    return () => clearTimeout(timer);
+    setLOADING(true);
   }, []);
 
   useScrollTop();
   useEnhancedTouch();
 
   return (
-    !loading ? (
-      <div className={"App"}>
-        <Routes>
-          <Route path={"/*"} element={<Main />} />
-          <Route path={"/details/project1/*"} element={<Project1 />} />
-          <Route path={"/details/project2/*"} element={<Project2 />} />
-          <Route path={"/details/project3/*"} element={<Project3 />} />
-          <Route path={"/details/project4/*"} element={<Project4 />} />
-        </Routes>
-      </div>
-    ) : (
-      <Loader />
-    )
+    <div className={"App"}>
+      {LOADING && <Loader />}
+      <Routes>
+        <Route path={"/*"} element={<Main />} />
+        <Route path={"/details/project1/*"} element={<Project1 />} />
+        <Route path={"/details/project2/*"} element={<Project2 />} />
+        <Route path={"/details/project3/*"} element={<Project3 />} />
+        <Route path={"/details/project4/*"} element={<Project4 />} />
+      </Routes>
+    </div>
   );
 };
 

@@ -111,93 +111,95 @@ export const Skills = () => {
 
   // -----------------------------------------------------------------------------------------------
   return (
-    <Paper className={"content-wrapper p-0"}>
+    <Paper className={"main-wrapper p-0"}>
       <Grid container={true} spacing={0}>
         <Grid size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }} className={"px-20 py-10"}>
           <Div className={"fs-2-0rem fw-700 dark-navy"}>
             {OBJECT.title}
           </Div>
-          <Hr className={"w-100 bg-primary h-3"} />
+          <Div className={"d-row-left"}>
+            <Hr className={"w-100 bg-primary h-3"} />
+          </Div>
         </Grid>
-      </Grid>
-      {OBJECT.section.map((item: any, i: number) => (
-        <Grid container={true} spacing={0} key={i}>
-          <Grid size={12} className={"px-10"}>
-            <Accordion expanded={isExpended[i]} className={"radius-0 shadow-0"}>
-              <AccordionSummary>
-                <Grid container={true} spacing={0} className={"d-col-left"}>
-                  <Grid
-                    size={12}
-                    className={"d-row-left"}
-                    onClick={(e: any) => {
-                      e.stopPropagation();
-                      setIsExpended((prev: any) => ({
-                        ...prev,
-                        [i]: !prev[i],
-                      }));
-                    }}
-                  >
-                    <Div className={"d-center me-10"}>
-                      <Img
-                        max={35}
-                        hover={true}
-                        shadow={false}
-                        border={false}
-                        radius={false}
-                        src={item.main.img}
-                        group={"icon"}
-                      />
-                    </Div>
-                    <Div className={"fs-1-2rem fw-700 navy"}>
-                      {item.main.value}
-                    </Div>
-                    <Div className={"fs-1-2rem fw-700 navy"}>
-                      <Icons
-                        key={"ChevronDown"}
-                        name={"ChevronDown"}
-                        className={"w-18 h-18"}
-                        sx={{
-                          transform: isExpended[i] ? "rotate(180deg)" : "rotate(0deg)",
-                          transition: "transform 0.3s ease-in-out",
-                        }}
-                      />
-                    </Div>
-                  </Grid>
-                </Grid>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Grid container={true} spacing={0} className={"d-left"}>
-                  {item.sub.map((sub: any, j: number) => (
+        {OBJECT.section.map((item: any, i: number) => (
+          <Grid container={true} spacing={0} key={i}>
+            <Grid size={12} className={"px-10"}>
+              <Accordion expanded={isExpended[i]} className={"radius-0 shadow-0"}>
+                <AccordionSummary>
+                  <Grid container={true} spacing={0} className={"d-col-left"}>
                     <Grid
-                      size={xxs ? 6 : xs ? 4 : sm ? 3 : md ? 3 : lg ? 2 : xl ? 2 : xxl ? 2 : 2}
-                      className={"d-row-left mb-10"}
-                      key={j}
+                      size={12}
+                      className={"d-row-left"}
+                      onClick={(e: any) => {
+                        e.stopPropagation();
+                        setIsExpended((prev: any) => ({
+                          ...prev,
+                          [i]: !prev[i],
+                        }));
+                      }}
                     >
-                      <Div className={"d-center me-5"}>
+                      <Div className={"d-center me-10"}>
                         <Img
-                          max={25}
+                          max={35}
                           hover={true}
                           shadow={false}
                           border={false}
                           radius={false}
-                          src={sub.icon}
+                          src={item.main.img}
                           group={"icon"}
                         />
                       </Div>
-                      <Div className={"fs-0-8 fw-500 dark-navy"}>
-                        {sub.value}
+                      <Div className={"fs-1-2rem fw-700 navy"}>
+                        {item.main.value}
+                      </Div>
+                      <Div className={"fs-1-2rem fw-700 navy"}>
+                        <Icons
+                          key={"ChevronDown"}
+                          name={"ChevronDown"}
+                          className={"w-18 h-18"}
+                          sx={{
+                            transform: isExpended[i] ? "rotate(180deg)" : "rotate(0deg)",
+                            transition: "transform 0.3s ease-in-out",
+                          }}
+                        />
                       </Div>
                     </Grid>
-                  ))}
-                </Grid>
-              </AccordionDetails>
-            </Accordion>
+                  </Grid>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Grid container={true} spacing={0} className={"d-left"}>
+                    {item.sub.map((sub: any, j: number) => (
+                      <Grid
+                        size={xxs ? 6 : xs ? 4 : sm ? 3 : md ? 3 : lg ? 2 : xl ? 2 : xxl ? 2 : 2}
+                        className={"d-row-left mb-10"}
+                        key={j}
+                      >
+                        <Div className={"d-center me-5"}>
+                          <Img
+                            max={25}
+                            hover={true}
+                            shadow={false}
+                            border={false}
+                            radius={false}
+                            src={sub.icon}
+                            group={"icon"}
+                          />
+                        </Div>
+                        <Div className={"fs-0-8 fw-500 dark-navy"}>
+                          {sub.value}
+                        </Div>
+                      </Grid>
+                    ))}
+                  </Grid>
+                </AccordionDetails>
+              </Accordion>
+            </Grid>
+            <Grid size={12} className={"px-20"}>
+              <Hr className={"bg-light h-5"} />
+            </Grid>
           </Grid>
-          <Grid size={12} className={"px-20"}>
-            <Hr className={"bg-light h-2"} />
-          </Grid>
-        </Grid>
-      ))}
+        ))}
+      </Grid>
     </Paper>
   );
 };

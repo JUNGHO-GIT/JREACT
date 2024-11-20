@@ -12286,7 +12286,7 @@
 .upper {
   text-transform: uppercase !important;
 }
-.horizontal-text {
+.horizontal {
   writing-mode: horizontal-tb !important;
   text-orientation: mixed !important;
   white-space: nowrap !important;
@@ -12313,33 +12313,7 @@
   transform: scale(1.08);
 }
 
-/** 100. animation ********************************************************************************/
-.loader-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999999;
-}
-.loader {
-  width: 50px;
-  height: 50px;
-  position: relative;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  border-top: 3px solid #1976D2 !important;
-  border-right: 3px solid transparent;
-  animation: loaderAnimation 0.7s linear infinite;
-  z-index: 1000000;
-}
+/** 100. keyframes ********************************************************************************/
 @keyframes loaderAnimation {
   0% {
     transform: rotate(0deg);
@@ -12347,28 +12321,6 @@
   100% {
     transform: rotate(360deg);
   }
-}
-.sequential-loader {
-  opacity: 1;
-  animation: fadeInOut 1.5s ease-in-out forwards;
-}
-@keyframes fadeInOut {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.fadeIn {
-  animation: fadeIn 0.5s cubic-bezier(0.42, 0, 0.58, 1) !important;
-}
-.snackbar {
-  animation: fadeIn 0.1s cubic-bezier(0.42, 0, 0.58, 1) !important;
 }
 @keyframes fadeIn {
   0% {
@@ -12384,9 +12336,16 @@
     transform: translateY(0);
   }
 }
-
-.shake {
-  animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both !important;
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 @keyframes shake {
   0%, 100% {
@@ -12406,9 +12365,48 @@
   }
 }
 
+/** 100. animation ********************************************************************************/
+.loader-wrapper {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(0, 0, 0, 0.7) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  animation: fadeInOut 0.8s ease-in-out forwards !important;
+  z-index: 999999 !important;
+}
+.loader {
+  width: 50px !important;
+  height: 50px !important;
+  position: relative !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border-radius: 50% !important;
+  border-top: 3px solid #1976D2 !important;
+  border-right: 3px solid transparent !important;
+  animation: loaderAnimation 0.7s linear infinite !important;
+  z-index: 1000000 !important;
+}
+.fadeIn {
+  animation: fadeIn 0.5s cubic-bezier(0.42, 0, 0.58, 1) !important;
+}
+.snackbar {
+  animation: fadeIn 0.1s cubic-bezier(0.42, 0, 0.58, 1) !important;
+}
+.shake {
+  animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both !important;
+}
+
 /** scrollbar *************************************************************************************/
 ::-webkit-scrollbar {
-  display: flex !important;
+  /** 이 프로젝트에서는 안보이게 **/
+  display: none !important;
   width: 2px !important;
   height: 2px !important;
   background-color: transparent !important;
