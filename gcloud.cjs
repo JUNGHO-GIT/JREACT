@@ -40,7 +40,7 @@ const modifyChangelog = () => {
 
     let newVersion = `\\[ ${versionArray.join('.')} \\]`;
     let newDateTime = `- ${currentDate} (${currentTime})`;
-    let newEntry = `\n\n## ${newVersion}\n\t${newDateTime}\n`;
+    let newEntry = `\n\n## ${newVersion}\n\t${newDateTime}`;
 
     newEntry = newEntry.replace(/([.]\s*[(])/g, ' (');
     newEntry = newEntry.replace(/([.]\s*)/g, '-');
