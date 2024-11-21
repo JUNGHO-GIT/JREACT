@@ -1,12 +1,16 @@
 // Hero.jsx
 
 import { useState, useRef, useEffect } from "@importReacts";
+import { useResponsive } from "@importHooks";
 import { Typed } from "@importLibs";
 import { Div, Img } from "@importComponents";
 import { Grid, Paper } from "@importMuis";
 
 // -------------------------------------------------------------------------------------------------
 export const Hero = () => {
+
+  // 0. common -------------------------------------------------------------------------------------
+  const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
 
   // 2-1. useState ---------------------------------------------------------------------------------
   const typedRef = useRef<HTMLSpanElement | null>(null);
@@ -42,8 +46,8 @@ export const Hero = () => {
     };
   }, []);
 
-  // -----------------------------------------------------------------------------------------------
-  return (
+  // 7. hero ---------------------------------------------------------------------------------------
+  const heroNode = () => (
     <Paper className={"main-wrapper p-0"}>
       <Grid container={true} spacing={0}>
         <Grid size={12} className={"d-center p-relative"}>
@@ -51,7 +55,8 @@ export const Hero = () => {
             hover={false}
             shadow={false}
             radius={false}
-            src={"main2"}
+            src={(xxs || xs) ? "main2" : (sm|| md || lg || xl || xxl) ? "main" : "main"}
+            group={"main"}
           />
           <Div className={"p-absolute"}>
             <Div className={"fs-2-0rem fw-700 white mb-10"}>
@@ -67,5 +72,12 @@ export const Hero = () => {
         </Grid>
       </Grid>
     </Paper>
+  );
+
+  // 10. return ------------------------------------------------------------------------------------
+  return (
+    <>
+      {heroNode()}
+    </>
   );
 };

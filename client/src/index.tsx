@@ -23,7 +23,7 @@ import {
 } from '@importHooks';
 
 import {
-  Loader
+  Loader, Footer
 } from '@importLayouts';
 
 import {
@@ -52,6 +52,7 @@ const App = () => {
         <Route path={"/details/project3/*"} element={<Project3 />} />
         <Route path={"/details/project4/*"} element={<Project4 />} />
       </Routes>
+      {<Footer />}
     </div>
   );
 };

@@ -11,7 +11,7 @@ export const Project2 = () => {
 
   // 0. common -------------------------------------------------------------------------------------
   const { setLOADING } = useStoreLoading();
-  const { xxs, xs, sm, md, lg, xl, xxl } = useResponsive();
+  const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
 
   // 2-1. useState ---------------------------------------------------------------------------------
   const [OBJECT, _setOBJECT] = useState<any>([
@@ -48,24 +48,20 @@ export const Project2 = () => {
       title: "Features",
       section: [
         {
-          title: "React Framework",
-          value: "React(v18)를 활용, SPA방식의 종합 포트폴리오 웹사이트 제작",
+          title: "NodeJs & TypeScript",
+          value: "NodeJs(v16)를 통한 프로젝트 생성 및 빌드, 주 언어로 Typescript 사용",
         },
         {
-          title: "Hooks & Router",
-          value: "React Hooks와 React Router를 활용하여 효율적 상태 관리와 동적 라우팅을 구현",
+          title: "Npm Package",
+          value: "Npm을 이용해 'prettier, lodash, cheerio, mocha, ts-node' 등의 패키지를 활용하여  개발 확장성 및 효율성 확보",
         },
         {
-          title: "Component",
-          value: "컴포넌트 기반의 구조 설계를 통한 효율적인 상태 관리 및 코드 재사용성 확보",
+          title: "Linting",
+          value: "10가지 이상의 다양한 언어를 지원하며, 각 언어별로 린팅, 코딩 스타일 설정, Indent 최적화, 코드 자동 정렬 등의 기능을 제공하여 코드의 일관성 유지 및 코드 품질 향상",
         },
         {
-          title: "Nginx Server",
-          value: "Nginx 서버를 활용하여 정적 파일 서비스 제공 및 리버스 프록시 서버 구축",
-        },
-        {
-          title: "Cloud Instance",
-          value: "GCP 인스턴스의 CentOS7 환경에서 서버를 구축하고, DNS 설정을 통해 도메인과 서버를 연결",
+          title: "Vscode Api",
+          value: "Vscode Api를 통해 제작 및 빌드한 확장 프로그램을 Marketplace에 배포하여 제공함으로써 실제 프로젝트에 적용 가능한 실용적인 프로그램 제작",
         },
       ],
     },
@@ -77,17 +73,8 @@ export const Project2 = () => {
           value: [
             { icon: "html", value: "Html" },
             { icon: "css", value: "Css" },
-            { icon: "js", value: "Js" },
-            { icon: "ts", value: "Ts" },
           ],
-        },
-        {
-          title: "Framework",
-          value: [
-            { icon: "react", value: "React" },
-            { icon: "mui", value: "MaterialUI" },
-          ],
-        },
+        }
       ],
     },
     {
@@ -97,6 +84,7 @@ export const Project2 = () => {
           title: "Language",
           value: [
             { icon: "nodejs", value: "Nodejs" },
+            { icon: "ts", value: "Ts" },
           ],
         },
         {
@@ -110,26 +98,30 @@ export const Project2 = () => {
       ],
     },
     {
-      title: "Server",
+      title: "Server & Api",
       section: [
-        {
-          title: "Server",
-          value: [
-            { icon: "nginx", value: "Nginx" },
-          ],
-        },
         {
           title: "Cloud",
           value: [
             { icon: "gcp", value: "Gcp" },
+            { icon: "centos", value: "Centos7" },
+          ],
+        },
+        {
+          title: "Api",
+          value: [
+            { icon: "vscode", value: "Vscode" },
           ],
         },
       ],
     },
   ]);
   const [images, _setImages] = useState<string[]>([
-    "project1_1",
-    "project1_2",
+    "project2_1",
+    "project2_2",
+    "project2_3",
+    "project2_4",
+    "project2_5",
   ]);
   const [componentWidth, setComponentWidth] = useState<string>("");
 
@@ -151,9 +143,9 @@ export const Project2 = () => {
     }
   }, [xxs, xs, sm, md, lg, xl, xxl]);
 
-  // -----------------------------------------------------------------------------------------------
-  return (
-    <Paper className={"detail-wrapper"}>
+  // 7. project ------------------------------------------------------------------------------------
+  const projectNode = () => (
+    <Paper className={`detail-wrapper ${paperClass}`}>
       {/** images **/}
       <Grid container={true} spacing={0}>
         <Grid size={12} className={"d-col-center"}>
@@ -198,9 +190,9 @@ export const Project2 = () => {
       </Grid>
       <Hr className={"mt-20 mb-20 bg-light h-5"} />
       {/** description **/}
-      <Grid container={true} spacing={0} className={"h-100p d-top"}>
+      <Grid container={true} spacing={2} className={"h-100p d-top"}>
         {/** info, features **/}
-        <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6} className={"px-20"}>
+        <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
             {OBJECT.filter((_: any, f: number) => f < 2).map((item: any, i: number) => (
               <Grid size={12} className={"d-col-left"} key={i}>
@@ -212,8 +204,8 @@ export const Project2 = () => {
                 </Div>
                 {item.section.map((section: any, j: number) => (
                   <Div className={"d-col-left w-100p mb-30"} key={j}>
-                    <Div className={"fs-1-0rem fw-600 dark-navy ms-n10 mb-10"}>
-                      {`🔹${section.title}`}
+                    <Div className={"fs-1-0rem fw-600 dark-navy mb-10"}>
+                      {`${section.title}`}
                     </Div>
                     {["Git", "Url"].includes(section.title) ? (
                       <Div className={"d-row-left"}>
@@ -236,7 +228,7 @@ export const Project2 = () => {
           </Grid>
         </Grid>
         {/** frontend, backend, server **/}
-        <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6} className={"px-20"}>
+        <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
             {OBJECT.filter((_: any, f: number) => f >= 2).map((item: any, i: number) => (
               <Grid size={12} className={"d-col-left"} key={i}>
@@ -249,8 +241,8 @@ export const Project2 = () => {
                 {item.section.map((section: any, j: number) => (
                   <Div className={"d-col-left w-100p mb-30"} key={j}>
                     <Div className={"d-row w-100p"}>
-                      <Div className={"fs-1-0rem fw-600 dark-navy ms-n10 mb-10"}>
-                        {`🔹${section.title}`}
+                      <Div className={"fs-1-0rem fw-600 dark-navy mb-10"}>
+                        {`${section.title}`}
                       </Div>
                     </Div>
                     <Div className={"d-row w-100p"}>
@@ -281,5 +273,12 @@ export const Project2 = () => {
         </Grid>
       </Grid>
     </Paper>
+  );
+
+  // 10. return ------------------------------------------------------------------------------------
+  return (
+    <>
+      {projectNode()}
+    </>
   );
 };

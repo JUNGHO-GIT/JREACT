@@ -1,0 +1,11 @@
+{
+  "name": "JREACT-server",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "type": "module",
+  "license": "Apache-2.0",
+  "private": true,
+  "scripts": {
+    "gcloud": "node gcloud.cjs"
+  }
+}

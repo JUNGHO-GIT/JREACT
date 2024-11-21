@@ -1,6 +1,6 @@
 // Loader.tsx
 
-import { useEffect } from "react";
+import { useEffect } from "@importReacts";
 import { useStoreLoading } from "@importHooks";
 import { Div } from "@importComponents";
 

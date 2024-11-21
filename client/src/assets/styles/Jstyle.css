@@ -12108,6 +12108,20 @@
   transform: scale(1.1) !important;
 }
 
+.darkest-navy {
+  color: #11243f !important;
+}
+.bg-darkest-navy {
+  background-color: #11243f !important;
+}
+.pointer-darkest-navy:hover,
+.pointer-darkest-navy.active {
+  cursor: pointer !important;
+  color: #11243f !important;
+  transition: transform 0.1s ease-in-out !important;
+  transform: scale(1.1) !important;
+}
+
 .secondary {
   color: #6c757d !important;
 }
@@ -12376,7 +12390,7 @@
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  animation: fadeInOut 0.8s ease-in-out forwards !important;
+  animation: fadeInOut 0.5s ease-in-out forwards !important;
   z-index: 999999 !important;
 }
 .loader {
@@ -12390,7 +12404,7 @@
   border-radius: 50% !important;
   border-top: 3px solid #1976D2 !important;
   border-right: 3px solid transparent !important;
-  animation: loaderAnimation 0.7s linear infinite !important;
+  animation: loaderAnimation 0.5s linear infinite !important;
   z-index: 1000000 !important;
 }
 .fadeIn {

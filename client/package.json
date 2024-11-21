@@ -45,14 +45,13 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "npm-clean": "npm cache clean --force",
-    "npm-reset": "powershell -Command \"Remove-Item -Recurse -Force package-lock.json, node_modules; npm install --legacy-peer-deps\"",
+    "npm-reset": "powershell -Command \"Remove-Item -Recurse -Force package-lock.json, node_modules; npm install --legacy-peer-deps; npm cache clean --force\"",
     "gcloud": "node gcloud.cjs"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.3",
-    "@emotion/styled": "^11.13.0",
-    "@mui/material": "^6.1.7",
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
+    "@mui/material": "^6.1.8",
     "@react-hooks-library/core": "^0.6.2",
     "@testing-library/jest-dom": "^6.6.3",
     "ajv": "^8.17.1",
@@ -64,7 +63,6 @@
     "react-router-dom": "^6.28.0",
     "react-scripts": "^5.0.1",
     "swiper": "^11.1.15",
-    "swiper-react": "^1.0.0",
     "typed.js": "^2.1.0",
     "zustand": "^5.0.1"
   },

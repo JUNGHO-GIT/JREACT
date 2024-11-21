@@ -34,14 +34,6 @@
   z-index: 10 !important;
 }
 
-/** accordion *************************************************************************************/
-.MuiAccordionSummary-content {
-  margin: 12px 0px 12px 0px !important;
-}
-.MuiAccordionSummary-root.Mui-expanded {
-  min-height: 0px !important;
-}
-
 /** input *****************************************************************************************/
 .MuiInputBase-input.MuiOutlinedInput-input {
   text-overflow: clip !important;
@@ -136,6 +128,27 @@
   font-size: 0.7rem !important;
 }
 
+/** accordion *************************************************************************************/
+.MuiAccordion-root {
+  box-shadow: none !important;
+  margin: 0px 0px 0px 0px !important;
+  padding: 0px 0px 0px 0px !important;
+}
+.MuiAccordionSummary-root {
+  margin: 0px 0px 0px 0px !important;
+  padding: 0px 0px 0px 0px !important;
+}
+.MuiAccordionDetails-root {
+  margin: 0px 0px 0px 0px !important;
+  padding: 0px 0px 0px 0px !important;
+}
+.MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  min-height: 0px !important;
+}
+.MuiAccordionSummary-root.Mui-expanded {
+  min-height: 0px !important;
+}
+
 /** etc *******************************************************************************************/
 .MuiBadge-badge {
   min-width: 0px !important;
@@ -164,11 +177,6 @@
   color: #1976d2 !important;
 }
 .MuiAlert-action {
-  padding: 0px 0px 0px 0px !important;
-}
-.MuiAccordion-root {
-  box-shadow: none !important;
-  margin: 0px 0px 0px 0px !important;
   padding: 0px 0px 0px 0px !important;
 }
 .MuiTablePagination-actions {

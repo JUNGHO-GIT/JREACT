@@ -139,7 +139,7 @@ export const Header = () => {
   const onMobileNavToggleClick = useNavToggle(navToggleRef, sideNavRef);
   const onNavItemClick = useSmoothScroll();
 
-  // -----------------------------------------------------------------------------------------------
+  // 10. return ------------------------------------------------------------------------------------
   return (
     <>
       <i

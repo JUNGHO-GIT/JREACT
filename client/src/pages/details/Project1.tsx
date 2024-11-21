@@ -11,7 +11,7 @@ export const Project1 = () => {
 
   // 0. common -------------------------------------------------------------------------------------
   const { setLOADING } = useStoreLoading();
-  const { xxs, xs, sm, md, lg, xl, xxl } = useResponsive();
+  const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
 
   // 2-1. useState ---------------------------------------------------------------------------------
   const [OBJECT, _setOBJECT] = useState<any>([
@@ -122,6 +122,7 @@ export const Project1 = () => {
           title: "Cloud",
           value: [
             { icon: "gcp", value: "Gcp" },
+            { icon: "centos", value: "Centos7" },
           ],
         },
       ],
@@ -151,9 +152,9 @@ export const Project1 = () => {
     }
   }, [xxs, xs, sm, md, lg, xl, xxl]);
 
-  // -----------------------------------------------------------------------------------------------
-  return (
-    <Paper className={"detail-wrapper"}>
+  // 7. project ------------------------------------------------------------------------------------
+  const projectNode = () => (
+    <Paper className={`detail-wrapper ${paperClass}`}>
       {/** images **/}
       <Grid container={true} spacing={0}>
         <Grid size={12} className={"d-col-center"}>
@@ -198,22 +199,20 @@ export const Project1 = () => {
       </Grid>
       <Hr className={"mt-20 mb-20 bg-light h-5"} />
       {/** description **/}
-      <Grid container={true} spacing={0} className={"h-100p d-top"}>
+      <Grid container={true} spacing={2} className={"h-100p d-top"}>
         {/** info, features **/}
-        <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6} className={"px-20"}>
+        <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
             {OBJECT.filter((_: any, f: number) => f < 2).map((item: any, i: number) => (
               <Grid size={12} className={"d-col-left"} key={i}>
-                <Div className={"fs-1-6rem fw-700 dark-navy"}>
+                <Div className={"fs-1-6rem fw-700 dark-navy mb-20"}>
                   {item.title}
-                </Div>
-                <Div className={"d-row-left mb-20"}>
                   <Hr className={"w-100 bg-primary h-3"} />
                 </Div>
                 {item.section.map((section: any, j: number) => (
                   <Div className={"d-col-left w-100p mb-30"} key={j}>
-                    <Div className={"fs-1-0rem fw-600 dark-navy ms-n10 mb-10"}>
-                      {`🔹${section.title}`}
+                    <Div className={"fs-1-0rem fw-600 dark-navy mb-10"}>
+                      {`${section.title}`}
                     </Div>
                     {["Git", "Url"].includes(section.title) ? (
                       <Div className={"d-row-left"}>
@@ -236,7 +235,7 @@ export const Project1 = () => {
           </Grid>
         </Grid>
         {/** frontend, backend, server **/}
-        <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6} className={"px-20"}>
+        <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
             {OBJECT.filter((_: any, f: number) => f >= 2).map((item: any, i: number) => (
               <Grid size={12} className={"d-col-left"} key={i}>
@@ -249,8 +248,8 @@ export const Project1 = () => {
                 {item.section.map((section: any, j: number) => (
                   <Div className={"d-col-left w-100p mb-30"} key={j}>
                     <Div className={"d-row w-100p"}>
-                      <Div className={"fs-1-0rem fw-600 dark-navy ms-n10 mb-10"}>
-                        {`🔹${section.title}`}
+                      <Div className={"fs-1-0rem fw-600 dark-navy mb-10"}>
+                        {`${section.title}`}
                       </Div>
                     </Div>
                     <Div className={"d-row w-100p"}>
@@ -281,5 +280,12 @@ export const Project1 = () => {
         </Grid>
       </Grid>
     </Paper>
+  );
+
+  // 10. return ------------------------------------------------------------------------------------
+  return (
+    <>
+      {projectNode()}
+    </>
   );
 };

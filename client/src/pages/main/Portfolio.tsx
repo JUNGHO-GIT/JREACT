@@ -10,7 +10,7 @@ export const Portfolio = () => {
 
   // 0. common -------------------------------------------------------------------------------------
   const { navigate } = useCommonValue();
-  const { xxs, xs, sm, md, lg, xl, xxl } = useResponsive();
+  const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
 
   // 2-1. useState ---------------------------------------------------------------------------------
   const [OBJECT, _setOBJECT] = useState<any>({
@@ -85,29 +85,24 @@ export const Portfolio = () => {
     });
   }, []);
 
-  // -----------------------------------------------------------------------------------------------
-  return (
-    <Paper className={"main-wrapper p-0"}>
-      <Grid container={true} spacing={0}>
-        <Grid size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }} className={"px-20 py-10"}>
+  // 7. portfolio ----------------------------------------------------------------------------------
+  const portfolioNode = () => (
+    <Paper className={`main-wrapper ${paperClass}`}>
+      <Grid container={true} spacing={0} className={"w-100p d-left mb-20"}>
+        <Grid size={xxs ? 12 : xs ? 12 : sm ? 12 : md ? 12 : lg ? 12 : xl ? 12 : xxl ? 12 : 12}>
           <Div className={"fs-2-0rem fw-700 dark-navy"}>
             {OBJECT.title}
-          </Div>
-          <Div className={"d-row-left"}>
             <Hr className={"w-100 bg-primary h-3"} />
           </Div>
         </Grid>
       </Grid>
-      <Grid container={true} spacing={0}>
+      <Grid container={true} spacing={2} className={"w-100p d-left"}>
         {OBJECT.section.map((item: any, i: number) => (
-          <Grid
-            size={xxs ? 12 : xs ? 12 : sm ? 12 : md ? 6 : lg ? 6 : xl ? 6 : xxl ? 6 : 6}
-            className={"px-10"}
-            key={i}
-          >
+          <Grid size={(xxs || xs || sm) ? 12 : (md || lg) ? 6 : (xl || xxl) ? 4 : 4} key={i}>
             <Div className={"p-relative d-center"}>
               <Div className={"image-container"}>
                 <Img
+                  max={600}
                   hover={true}
                   shadow={false}
                   border={false}
@@ -148,5 +143,12 @@ export const Portfolio = () => {
         ))}
       </Grid>
     </Paper>
+  );
+
+  // 10. return ------------------------------------------------------------------------------------
+  return (
+    <>
+      {portfolioNode()}
+    </>
   );
 };

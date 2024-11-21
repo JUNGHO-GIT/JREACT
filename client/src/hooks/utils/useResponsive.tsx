@@ -1,9 +1,13 @@
 // useResponsive.tsx
 
+import { useState, useEffect } from "@importReacts";
 import { useMediaQuery } from "@importMuis";
 
 // -------------------------------------------------------------------------------------------------
 export const useResponsive = () => {
+
+  // 2. useState -----------------------------------------------------------------------------------
+  const [paperClass, setPaperClass] = useState("");
 
   // 2. useMediaQuery ------------------------------------------------------------------------------
   const xxs = useMediaQuery("(min-width: 0px) and (max-width: 330px)");
@@ -14,6 +18,30 @@ export const useResponsive = () => {
   const xl = useMediaQuery("(min-width: 1500px) and (max-width: 1800px)");
   const xxl = useMediaQuery("(min-width: 1800px)");
 
+  // 3. useEffect ----------------------------------------------------------------------------------
+  useEffect(() => {
+    let baseClass = "fadeIn";
+    if (xxs || xs) {
+      baseClass += " w-90p";
+    }
+    else if (sm) {
+      baseClass += " w-90p";
+    }
+    else if (md) {
+      baseClass += " w-80p";
+    }
+    else if (lg) {
+      baseClass += " w-80p";
+    }
+    else if (xl) {
+      baseClass += " w-80p";
+    }
+    else if (xxl) {
+      baseClass += " w-80p";
+    }
+    setPaperClass(baseClass);
+  }, [xxs, xs, sm, md, lg, xl, xxl]);
+
   // -----------------------------------------------------------------------------------------------
   return {
     xxs,
@@ -23,5 +51,6 @@ export const useResponsive = () => {
     lg,
     xl,
     xxl,
+    paperClass,
   };
 };

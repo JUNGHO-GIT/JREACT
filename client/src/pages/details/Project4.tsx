@@ -11,7 +11,7 @@ export const Project4 = () => {
 
   // 0. common -------------------------------------------------------------------------------------
   const { setLOADING } = useStoreLoading();
-  const { xxs, xs, sm, md, lg, xl, xxl } = useResponsive();
+  const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
 
   // 2-1. useState ---------------------------------------------------------------------------------
   const [OBJECT, _setOBJECT] = useState<any>([
@@ -20,27 +20,27 @@ export const Project4 = () => {
       section: [
         {
           title: "Name",
-          value: "Jportfolio",
+          value: "GoodNeighbor",
         },
         {
           title: "Detail",
-          value: "React를 활용한 개인 포트폴리오 웹사이트",
+          value: "Spring Framework를 활용한 자선단체 웹사이트",
         },
         {
           title: "Period",
-          value: "2023.04.26 - 2023.05.23",
+          value: "2023.02.20 ~ 2023.03.08",
         },
         {
           title: "Role",
-          value: "총 1명 (개인)",
+          value: "총 4명 (팀원)",
         },
         {
           title: "Git",
-          value: "github.com/JUNGHO-GIT/JREACT.git",
+          value: "github.com/JUNGHO-GIT/GOODNEIGHBOR.git",
         },
         {
           title: "Url",
-          value: "junghomun.com",
+          value: "junghomun.com/GOODNEIGHBOR",
         },
       ],
     },
@@ -48,20 +48,16 @@ export const Project4 = () => {
       title: "Features",
       section: [
         {
-          title: "React Framework",
-          value: "React(v18)를 활용, SPA방식의 종합 포트폴리오 웹사이트 제작",
+          title: "Spring Framework",
+          value: "Spring Framework(v4.3)를 활용한 MVC model2 방식의 웹 애플리케이션 구현",
         },
         {
-          title: "Hooks & Router",
-          value: "React Hooks와 React Router를 활용하여 효율적 상태 관리와 동적 라우팅을 구현",
+          title: "MyBatis",
+          value: "MyBatis를 활용한 데이터베이스 연동 및 SQL Mapping",
         },
         {
-          title: "Component",
-          value: "컴포넌트 기반의 구조 설계를 통한 효율적인 상태 관리 및 코드 재사용성 확보",
-        },
-        {
-          title: "Nginx Server",
-          value: "Nginx 서버를 활용하여 정적 파일 서비스 제공 및 리버스 프록시 서버 구축",
+          title: "Responsive Design",
+          value: "Bootstrap(v4)을 활용, 모바일 환경에서도 최적화된 UI/UX를 제공",
         },
         {
           title: "Cloud Instance",
@@ -78,14 +74,18 @@ export const Project4 = () => {
             { icon: "html", value: "Html" },
             { icon: "css", value: "Css" },
             { icon: "js", value: "Js" },
-            { icon: "ts", value: "Ts" },
           ],
         },
         {
           title: "Framework",
           value: [
-            { icon: "react", value: "React" },
-            { icon: "mui", value: "MaterialUI" },
+            { icon: "bootstrap", value: "Bootstrap" },
+          ],
+        },
+        {
+          title: "Template Engine",
+          value: [
+            { icon: "jsp", value: "Jsp" },
           ],
         },
       ],
@@ -96,15 +96,39 @@ export const Project4 = () => {
         {
           title: "Language",
           value: [
-            { icon: "nodejs", value: "Nodejs" },
+            { icon: "java", value: "Java" },
+          ],
+        },
+        {
+          title: "Framework",
+          value: [
+            { icon: "spring", value: "Spring" },
           ],
         },
         {
           title: "Package, Build, SCM",
           value: [
-            { icon: "npm", value: "Npm" },
+            { icon: "maven", value: "Maven" },
+            { icon: "xml", value: "Xml" },
             { icon: "json", value: "Json" },
             { icon: "github", value: "Git" },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Database",
+      section: [
+        {
+          title: "DBMS",
+          value: [
+            { icon: "mysql", value: "Mysql8" },
+          ],
+        },
+        {
+          title: "framework",
+          value: [
+            { icon: "mybatis", value: "Mybatis" },
           ],
         },
       ],
@@ -115,21 +139,24 @@ export const Project4 = () => {
         {
           title: "Server",
           value: [
-            { icon: "nginx", value: "Nginx" },
+            { icon: "tomcat", value: "Tomcat" },
           ],
         },
         {
           title: "Cloud",
           value: [
             { icon: "gcp", value: "Gcp" },
+            { icon: "centos", value: "Centos7" },
           ],
         },
       ],
     },
   ]);
   const [images, _setImages] = useState<string[]>([
-    "project1_1",
-    "project1_2",
+    "project4_1",
+    "project4_2",
+    "project4_3",
+    "project4_4",
   ]);
   const [componentWidth, setComponentWidth] = useState<string>("");
 
@@ -151,9 +178,9 @@ export const Project4 = () => {
     }
   }, [xxs, xs, sm, md, lg, xl, xxl]);
 
-  // -----------------------------------------------------------------------------------------------
-  return (
-    <Paper className={"detail-wrapper"}>
+  // 7. project ------------------------------------------------------------------------------------
+  const projectNode = () => (
+    <Paper className={`detail-wrapper ${paperClass}`}>
       {/** images **/}
       <Grid container={true} spacing={0}>
         <Grid size={12} className={"d-col-center"}>
@@ -198,9 +225,9 @@ export const Project4 = () => {
       </Grid>
       <Hr className={"mt-20 mb-20 bg-light h-5"} />
       {/** description **/}
-      <Grid container={true} spacing={0} className={"h-100p d-top"}>
+      <Grid container={true} spacing={2} className={"h-100p d-top"}>
         {/** info, features **/}
-        <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6} className={"px-20"}>
+        <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
             {OBJECT.filter((_: any, f: number) => f < 2).map((item: any, i: number) => (
               <Grid size={12} className={"d-col-left"} key={i}>
@@ -212,8 +239,8 @@ export const Project4 = () => {
                 </Div>
                 {item.section.map((section: any, j: number) => (
                   <Div className={"d-col-left w-100p mb-30"} key={j}>
-                    <Div className={"fs-1-0rem fw-600 dark-navy ms-n10 mb-10"}>
-                      {`🔹${section.title}`}
+                    <Div className={"fs-1-0rem fw-600 dark-navy mb-10"}>
+                      {`${section.title}`}
                     </Div>
                     {["Git", "Url"].includes(section.title) ? (
                       <Div className={"d-row-left"}>
@@ -236,7 +263,7 @@ export const Project4 = () => {
           </Grid>
         </Grid>
         {/** frontend, backend, server **/}
-        <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6} className={"px-20"}>
+        <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
             {OBJECT.filter((_: any, f: number) => f >= 2).map((item: any, i: number) => (
               <Grid size={12} className={"d-col-left"} key={i}>
@@ -249,8 +276,8 @@ export const Project4 = () => {
                 {item.section.map((section: any, j: number) => (
                   <Div className={"d-col-left w-100p mb-30"} key={j}>
                     <Div className={"d-row w-100p"}>
-                      <Div className={"fs-1-0rem fw-600 dark-navy ms-n10 mb-10"}>
-                        {`🔹${section.title}`}
+                      <Div className={"fs-1-0rem fw-600 dark-navy mb-10"}>
+                        {`${section.title}`}
                       </Div>
                     </Div>
                     <Div className={"d-row w-100p"}>
@@ -281,5 +308,12 @@ export const Project4 = () => {
         </Grid>
       </Grid>
     </Paper>
+  );
+
+  // 10. return ------------------------------------------------------------------------------------
+  return (
+    <>
+      {projectNode()}
+    </>
   );
 };
