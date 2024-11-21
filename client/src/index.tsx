@@ -23,7 +23,7 @@ import {
 } from '@importHooks';
 
 import {
-  Loader, Footer
+  Loader, Footer, Header, Toggle
 } from '@importLayouts';
 
 import {
