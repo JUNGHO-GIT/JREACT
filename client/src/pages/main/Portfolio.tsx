@@ -16,19 +16,34 @@ export const Portfolio = () => {
   const [OBJECT, _setOBJECT] = useState<any>({
     title: "Portfolios",
     section: [
+
       {
-        id: "1",
-        name: "JREACT",
-        desc: "Portfolio Page with React",
-        icon: "react",
-        img: "project1_1",
+        id: "7",
+        name: "LIFECHANGE",
+        desc: "Lifestyle Record Android App",
+        icon: "rn",
+        img: "project7_1",
       },
       {
-        id: "2",
+        id: "6",
+        name: "파주개성면옥",
+        desc: "Restaurant Website",
+        icon: "react",
+        img: "project6_1",
+      },
+      {
+        id: "5",
+        name: "Jportfolio",
+        desc: "Portfolio Page with React",
+        icon: "react",
+        img: "project5_1",
+      },
+      {
+        id: "4",
         name: "JLINT",
         desc: "Vscode Language Formatter Extension",
         icon: "nodejs",
-        img: "project2_1",
+        img: "project4_1",
       },
       {
         id: "3",
@@ -38,11 +53,18 @@ export const Portfolio = () => {
         img: "project3_1",
       },
       {
-        id: "4",
-        name: "GOOD-NEIGHBOR",
+        id: "2",
+        name: "GoodNeighbor",
         desc: "Charity and Donation Website",
         icon: "spring",
-        img: "project4_1",
+        img: "project2_1",
+      },
+      {
+        id: "1",
+        name: "MeatStore",
+        desc: "Online Meat Shopping Store",
+        icon: "spring",
+        img: "project1_1",
       },
     ],
   });
@@ -69,6 +91,7 @@ export const Portfolio = () => {
         backgroundColor: 'rgba(0, 0, 0, 0.7)',
         display: 'none',
       });
+      // mouse hover
       el.parentElement.addEventListener('mouseover', () => {
         Object.assign(el.style, {
           display: 'flex',
@@ -82,12 +105,21 @@ export const Portfolio = () => {
           display: 'none',
         });
       });
+      // mobile click
+      el.parentElement.addEventListener('click', () => {
+        Object.assign(el.style, {
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center'
+        });
+      });
     });
   }, []);
 
   // 7. portfolio ----------------------------------------------------------------------------------
   const portfolioNode = () => (
-    <Paper className={`main-wrapper ${paperClass}`}>
+    <Paper className={`main-wrapper ${paperClass} border-0 radius-0 shadow-0`}>
       <Grid container={true} spacing={0} className={"w-100p d-left mb-20"}>
         <Grid size={xxs ? 12 : xs ? 12 : sm ? 12 : md ? 12 : lg ? 12 : xl ? 12 : xxl ? 12 : 12}>
           <Div className={"fs-2-0rem fw-700 dark-navy"}>
@@ -108,14 +140,15 @@ export const Portfolio = () => {
                   border={false}
                   radius={false}
                   src={item.img}
-                  group={"project"}
+                  group={"projects"}
                 />
               </Div>
               <Div className={"image-overlay fadeIn"}>
                 <Div
-                  className={"d-row-center mt-40 mb-20 hover"}
-                  onClick={() => {
-                    navigate(`/details/project${item.id}`);
+                  className={"d-row-center w-100p mt-40 mb-20 hover"}
+                  onClick={(e: any) => {
+                    e.preventDefault();
+                    navigate(`/projects/project${item.id}`);
                   }}
                 >
                   <Img
@@ -125,15 +158,15 @@ export const Portfolio = () => {
                     border={false}
                     radius={false}
                     src={item.icon}
-                    group={"icon"}
-                    className={"me-10"}
+                    group={"icons"}
+                    className={"me-5"}
                   />
-                  <Div className={"fs-1-8rem fw-700 white ls-4"}>
+                  <Div className={"fs-1-6rem fw-700 white ls-4"}>
                     {item.name}
                   </Div>
                 </Div>
-                <Div className={"d-row-center mb-20"}>
-                  <Div className={"fs-1-0rem fw-400 white"}>
+                <Div className={"d-row-center w-100p mb-20"}>
+                  <Div className={"fs-0-9rem fw-400 white"}>
                     {item.desc}
                   </Div>
                 </Div>

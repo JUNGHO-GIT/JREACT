@@ -10,7 +10,7 @@ declare type ImgProps = React.HTMLAttributes<HTMLImageElement> & {
   hover?: boolean;
   shadow?: boolean;
   radius?: boolean;
-  border?: boolean
+  border?: boolean;
   max?: number;
 };
 
@@ -30,14 +30,8 @@ export const Img = (
   // 2-2. useEffect --------------------------------------------------------------------------------
   useEffect(() => {
     if (src && typeof src === "string") {
-      setFileName(
-        src.split("/").pop()?.split(".")[0] || "empty"
-      );
-      setImgSrc(
-        group !== "new"
-        ? `${GCLOUD_URL}/${group || "main"}/${src}.webp`
-        : src
-      );
+      setFileName(src.split("/").pop()?.split(".")[0] || "empty");
+      setImgSrc(group === "new" ? src : `${GCLOUD_URL}/${group || "main"}/${src}.webp`);
     }
     else {
       setFileName("empty");
@@ -56,18 +50,18 @@ export const Img = (
       newClass += " shadow-2";
     }
     if (radius) {
-      newClass += " radius-1";
+      newClass += " radius-3";
     }
     if (border) {
       newClass += " border-1";
     }
     if (max) {
-      newClass += ` w-max${max} h-max${(max * 2 / 3).toFixed(0)}`;
+      newClass += ` w-max${max} h-max${max}`;
     }
 
     setImageClass(newClass);
 
-  }, [group, src, props.className, hover, shadow, radius, max]);
+  }, [GCLOUD_URL, group, props.className, hover, shadow, radius, max, src]);
 
   // 10. return ------------------------------------------------------------------------------------
   return (
@@ -81,6 +75,7 @@ export const Img = (
       onError={(e) => {
         e.currentTarget.src = `${GCLOUD_URL}/main/empty.webp`;
         e.currentTarget.alt = "empty";
+        e.currentTarget.className = "w-20 h-20";
       }}
     />
   );

@@ -5,10 +5,10 @@ export const Hr = (props : any) => (
   <div
     className={props?.className}
     style={{
-      "backgroundColor": "#f2f2f2",
-      "width": `${props?.w || 100}%`,
-      "height": `${props?.h || 1}px`,
-      "margin": `${props?.px/2}px 0px`,
+      "background": "rgb(207 207 207)",
+      "width": `${(props?.w) || 100}%`,
+      "height": `${(props?.h) || 1.0}px`,
+      "margin": `${(props?.m / 2) || 0}px 0px`,
     }}
   />
 );

@@ -10,7 +10,7 @@ import { Grid, Paper } from "@importMuis";
 export const Hero = () => {
 
   // 0. common -------------------------------------------------------------------------------------
-  const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
+  const { xxs, xs, sm, md, lg, xl, xxl } = useResponsive();
 
   // 2-1. useState ---------------------------------------------------------------------------------
   const typedRef = useRef<HTMLSpanElement | null>(null);
@@ -48,14 +48,14 @@ export const Hero = () => {
 
   // 7. hero ---------------------------------------------------------------------------------------
   const heroNode = () => (
-    <Paper className={"main-wrapper p-0"}>
+    <Paper className={"main-wrapper border-0 radius-0 shadow-0"}>
       <Grid container={true} spacing={0}>
         <Grid size={12} className={"d-center p-relative"}>
           <Img
             hover={false}
             shadow={false}
             radius={false}
-            src={(xxs || xs) ? "main2" : (sm|| md || lg || xl || xxl) ? "main" : "main"}
+            src={(xxs || xs) ? "main2" : (sm|| md || lg || xl || xxl) ? "main1" : "main1"}
             group={"main"}
           />
           <Div className={"p-absolute"}>

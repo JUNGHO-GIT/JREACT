@@ -1,4 +1,4 @@
-// Project3.jsx
+// Project4.jsx
 
 import { useEffect, useState } from "@importReacts";
 import { useResponsive, useStoreLoading } from "@importHooks";
@@ -7,7 +7,7 @@ import { Div, Img, Hr } from "@importComponents";
 import { Grid, Paper } from "@importMuis";
 
 // -------------------------------------------------------------------------------------------------
-export const Project3 = () => {
+export const Project4 = () => {
 
   // 0. common -------------------------------------------------------------------------------------
   const { setLOADING } = useStoreLoading();
@@ -20,52 +20,48 @@ export const Project3 = () => {
       section: [
         {
           title: "Name",
-          value: "JUNGHQLO",
+          value: "JLINT",
         },
         {
           title: "Detail",
-          value: "SpringBoot를 활용한 종합 남성의류 쇼핑몰 사이트",
+          value: "NodeJs & TypeScript를 활용한 Vscode 린팅 확장프로그램",
         },
         {
           title: "Period",
-          value: "2023.03.24 - 2023.05.01",
+          value: "2023.05.05 - 2023.06.05",
         },
         {
           title: "Role",
-          value: "총 4명 (팀장)",
+          value: "총 1명 (개인)",
         },
         {
           title: "Git",
-          value: "github.com/JUNGHO-GIT/JUNGHQLO.git",
+          value: "github.com/JUNGHO-GIT/JLINT.git",
         },
         {
           title: "Url",
-          value: "junghomun.com/JUNGHQLO",
-        },
+          value: "marketplace.visualstudio.com/items?itemName=JUNGHO.JLINT"
+        }
       ],
     },
     {
       title: "Features",
       section: [
         {
-          title: "Spring Boot",
-          value: "Spring Boot(v2.7)를 활용한 MVC 아키텍쳐 위주의 개발을 통해 코드구조화 실현 및 유지보수성 향상",
+          title: "NodeJs & TypeScript",
+          value: "NodeJs(v16)를 통한 프로젝트 생성 및 빌드, 주 언어로 Typescript 사용",
         },
         {
-          title: "Template Engine",
-          value: "Thymeleaf, Jsp 등 다양한 언어템플릿을 활용함으로써 동적 데이터 처리기능 향상과 동시에 프론트엔드와 백엔드의 연동을 통한 개발의 효율성 증대 및 유지보수 유연성 확보",
+          title: "Npm Package",
+          value: "Npm을 이용해 'prettier, lodash, cheerio, mocha, ts-node' 등의 패키지를 활용하여  개발 확장성 및 효율성 확보",
         },
         {
-          title: "Stripe",
-          value: "Stripe Api를 활용하여 결제시스템을 구축, 실제 결제가 가능한 상품 구매 기능을 구현",
+          title: "Linting",
+          value: "10가지 이상의 다양한 언어를 지원하며, 각 언어별로 린팅, 코딩 스타일 설정, Indent 최적화, 코드 자동 정렬 등의 기능을 제공하여 코드의 일관성 유지 및 코드 품질 향상",
         },
         {
-          title: "Responsive Design",
-          value: "Bootstrap(v5)을 활용, 모바일 환경에서도 최적화된 UI/UX를 제공",
-        },
-        {
-          title: "Cloud Instance",
-          value: "GCP 인스턴스의 CentOS7 환경에서 서버를 구축하고, DNS 설정을 통해 도메인과 서버를 연결",
+          title: "Vscode Api",
+          value: "Vscode Api를 통해 제작 및 빌드한 확장 프로그램을 Marketplace에 배포하여 제공함으로써 실제 프로젝트에 적용 가능한 실용적인 프로그램 제작",
         },
       ],
     },
@@ -77,22 +73,9 @@ export const Project3 = () => {
           value: [
             { icon: "html", value: "Html" },
             { icon: "css", value: "Css" },
-            { icon: "js", value: "Js" },
+            { icon: "markdown", value: "Markdown" },
           ],
-        },
-        {
-          title: "Framework",
-          value: [
-            { icon: "bootstrap", value: "Bootstrap" },
-          ],
-        },
-        {
-          title: "Template Engine",
-          value: [
-            { icon: "thymeleaf", value: "Thymeleaf" },
-            { icon: "jsp", value: "Jsp" },
-          ],
-        },
+        }
       ],
     },
     {
@@ -101,20 +84,15 @@ export const Project3 = () => {
         {
           title: "Language",
           value: [
-            { icon: "java", value: "Java" },
+            { icon: "nodejs", value: "Nodejs" },
+            { icon: "js", value: "Js" },
+            { icon: "ts", value: "Ts" },
           ],
         },
         {
-          title: "Framework",
+          title: "Package, Build, Scm",
           value: [
-            { icon: "boot", value: "Boot" },
-          ],
-        },
-        {
-          title: "Package, Build, SCM",
-          value: [
-            { icon: "maven", value: "Maven" },
-            { icon: "xml", value: "Xml" },
+            { icon: "npm", value: "Npm" },
             { icon: "json", value: "Json" },
             { icon: "github", value: "Git" },
           ],
@@ -122,71 +100,33 @@ export const Project3 = () => {
       ],
     },
     {
-      title: "Database",
+      title: "Api",
       section: [
         {
-          title: "DBMS",
+          title: "Api",
           value: [
-            { icon: "mysql", value: "Mysql8" },
-          ],
-        },
-        {
-          title: "framework",
-          value: [
-            { icon: "mybatis", value: "Mybatis" },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Server",
-      section: [
-        {
-          title: "Server",
-          value: [
-            { icon: "tomcat", value: "Tomcat" },
-          ],
-        },
-        {
-          title: "Cloud",
-          value: [
-            { icon: "gcp", value: "Gcp" },
-            { icon: "centos", value: "Centos7" },
+            { icon: "vscode", value: "Vscode" },
           ],
         },
       ],
     },
   ]);
   const [images, _setImages] = useState<string[]>([
-    "project3_1",
-    "project3_2",
-    "project3_3",
-    "project3_4",
-    "project3_5",
+    "project4_1",
+    "project4_2",
+    "project4_3",
+    "project4_4",
+    "project4_5",
   ]);
-  const [componentWidth, setComponentWidth] = useState<string>("");
 
   // 2-3. useEffect --------------------------------------------------------------------------------
   useEffect(() => {
     setLOADING(true);
   }, []);
 
-  // 2-3. useEffect --------------------------------------------------------------------------------
-  useEffect(() => {
-    if (xxs || xs) {
-      setComponentWidth("w-30p");
-    }
-    else if (sm || md) {
-      setComponentWidth("w-20p");
-    }
-    else if (lg || xl || xxl) {
-      setComponentWidth("w-30p");
-    }
-  }, [xxs, xs, sm, md, lg, xl, xxl]);
-
   // 7. project ------------------------------------------------------------------------------------
   const projectNode = () => (
-    <Paper className={`detail-wrapper ${paperClass}`}>
+    <Paper className={`detail-wrapper ${paperClass} border-0 radius-0 shadow-0`}>
       {/** images **/}
       <Grid container={true} spacing={0}>
         <Grid size={12} className={"d-col-center"}>
@@ -212,11 +152,12 @@ export const Project3 = () => {
             {images.map((image: string, i: number) => (
               <SwiperSlide className={"w-100p p-relative"} key={i}>
                 <Img
-                  max={800}
+                  max={1000}
                   hover={false}
                   shadow={false}
                   radius={false}
-                  group={"project"}
+                  border={true}
+                  group={"projects"}
                   src={image}
                 />
               </SwiperSlide>
@@ -229,38 +170,42 @@ export const Project3 = () => {
           <Div className={"image-pagination transform-none"} />
         </Grid>
       </Grid>
-      <Hr className={"mt-20 mb-20 bg-light h-5"} />
-      {/** description **/}
-      <Grid container={true} spacing={2} className={"h-100p d-top"}>
+      <Hr m={40} className={"bg-light h-5"} />
+      <Grid container={true} spacing={2} columnSpacing={10} className={"h-100p d-top"}>
         {/** info, features **/}
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
             {OBJECT.filter((_: any, f: number) => f < 2).map((item: any, i: number) => (
               <Grid size={12} className={"d-col-left"} key={i}>
-                <Div className={"fs-1-6rem fw-700 dark-navy"}>
+                <Div className={"fs-1-6rem fw-700 dark-navy mb-20"}>
                   {item.title}
-                </Div>
-                <Div className={"d-row-left mb-20"}>
                   <Hr className={"w-100 bg-primary h-3"} />
                 </Div>
                 {item.section.map((section: any, j: number) => (
-                  <Div className={"d-col-left w-100p mb-30"} key={j}>
-                    <Div className={"fs-1-0rem fw-600 dark-navy mb-10"}>
-                      {`${section.title}`}
+                  <Div className={"w-100p d-col-left mb-30"} key={j}>
+                    <Div className={"d-row-center mb-10"}>
+                      <Div className={"fs-0-4rem fw-300 dark-navy me-5"}>
+                        {'●'}
+                      </Div>
+                      <Div className={"fs-1-1rem fw-600 dark-navy"}>
+                        {section.title}
+                      </Div>
                     </Div>
-                    {["Git", "Url"].includes(section.title) ? (
-                      <Div className={"d-row-left"}>
-                        <Div className={"fs-0-9rem fw-400 blue hover"}>
-                          {`- ${section.value}`}
+                    <Div className={"d-row-center ms-10"}>
+                      {["Git", "Url"].includes(section.title) ? (
+                        <Div className={"d-row-left me-0"}>
+                          <Div className={"fs-1-0rem fw-400 blue hover lh-2-0"}>
+                            {`- ${section.value}`}
+                          </Div>
                         </Div>
-                      </Div>
-                    ) : (
-                      <Div className={"d-row-left"}>
-                        <Div className={"fs-0-9rem fw-400 light-black lh-2-0"}>
-                          {`- ${section.value}`}
+                      ) : (
+                        <Div className={"d-row-left me-0"}>
+                          <Div className={"fs-1-0rem fw-400 light-black lh-2-0"}>
+                            {`- ${section.value}`}
+                          </Div>
                         </Div>
-                      </Div>
-                    )}
+                      )}
+                    </Div>
                   </Div>
                 ))}
                 <Hr className={"bg-light h-5"} />
@@ -273,33 +218,34 @@ export const Project3 = () => {
           <Grid container={true} spacing={2}>
             {OBJECT.filter((_: any, f: number) => f >= 2).map((item: any, i: number) => (
               <Grid size={12} className={"d-col-left"} key={i}>
-                <Div className={"fs-1-6rem fw-700 dark-navy"}>
+                <Div className={"fs-1-6rem fw-700 dark-navy mb-20"}>
                   {item.title}
-                </Div>
-                <Div className={"d-row-left mb-20"}>
                   <Hr className={"w-100 bg-primary h-3"} />
                 </Div>
                 {item.section.map((section: any, j: number) => (
-                  <Div className={"d-col-left w-100p mb-30"} key={j}>
-                    <Div className={"d-row w-100p"}>
-                      <Div className={"fs-1-0rem fw-600 dark-navy mb-10"}>
-                        {`${section.title}`}
+                  <Div className={"w-100p d-col-left mb-30"} key={j}>
+                    <Div className={"d-row-center mb-10"}>
+                      <Div className={"fs-0-4rem fw-300 dark-navy me-5"}>
+                        {'●'}
+                      </Div>
+                      <Div className={"fs-1-1rem fw-600 dark-navy"}>
+                        {section.title}
                       </Div>
                     </Div>
-                    <Div className={"d-row w-100p"}>
+                    <Div className={"d-row-center ms-10"}>
                       {section.value.map((value: any, k: number) => (
-                        <Div className={`d-row-left ${componentWidth}`} key={k}>
+                        <Div className={`d-row-center me-20`} key={k}>
                           <Img
-                            max={25}
+                            max={20}
                             hover={true}
                             shadow={false}
                             border={false}
                             radius={false}
                             src={value.icon}
-                            group={"icon"}
+                            group={"icons"}
                             className={"me-5"}
                           />
-                          <Div className={"fs-0-9rem fw-400 light-black lh-2-0"}>
+                          <Div className={"fs-1-0rem fw-400 light-black lh-2-0"}>
                             {value.value}
                           </Div>
                         </Div>

@@ -1,7 +1,7 @@
 {
   "short_name": "JREACT",
   "name": "JREACT",
-  "start_url": ".",
+  "start_url": "/JREACT",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"

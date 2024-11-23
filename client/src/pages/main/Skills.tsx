@@ -23,10 +23,12 @@ export const Skills = () => {
         sub: [
           { icon: "html", value: "Html" },
           { icon: "css", value: "Css" },
+          { icon: "bootstrap", value: "Bootstrap" },
           { icon: "js", value: "Js" },
           { icon: "ts", value: "Ts" },
           { icon: "react", value: "React" },
-          { icon: "bootstrap", value: "Bootstrap" },
+          { icon: "jsp", value: "Jsp" },
+          { icon: "thymeleaf", value: "Thymeleaf" },
         ],
       },
       {
@@ -36,11 +38,12 @@ export const Skills = () => {
         },
         sub: [
           { icon: "java", value: "Java" },
-          { icon: "jsp", value: "Jsp" },
           { icon: "spring", value: "Spring" },
           { icon: "boot", value: "Boot" },
           { icon: "nodejs", value: "Node" },
           { icon: "express", value: "Express" },
+          { icon: "webpack", value: "Webpack" },
+          { icon: "rn", value: "ReactNative" },
         ],
       },
       {
@@ -50,11 +53,9 @@ export const Skills = () => {
         },
         sub: [
           { icon: "github", value: "Git" },
-          { icon: "maven", value: "Maven" },
           { icon: "npm", value: "Npm" },
+          { icon: "maven", value: "Maven" },
           { icon: "gradle", value: "Gradle" },
-          { icon: "xml", value: "Xml" },
-          { icon: "json", value: "Json" },
         ],
       },
       {
@@ -71,33 +72,25 @@ export const Skills = () => {
       },
       {
         main: {
-          img: "server",
-          value: "Server",
-        },
-        sub: [
-          { icon: "tomcat", value: "Tomcat" },
-          { icon: "apache", value: "Apache" },
-          { icon: "nginx", value: "Nginx" },
-        ],
-      },
-      {
-        main: {
           img: "system",
           value: "System",
         },
         sub: [
           { icon: "windows", value: "Windows" },
           { icon: "linux", value: "Linux" },
-          { icon: "centos", value: "CentOS" },
+          { icon: "centos", value: "Cent" },
           { icon: "android", value: "Android" },
         ],
       },
       {
         main: {
           img: "cloud",
-          value: "Cloud",
+          value: "Cloud & Server",
         },
         sub: [
+          { icon: "tomcat", value: "Tomcat" },
+          { icon: "apache", value: "Apache" },
+          { icon: "nginx", value: "Nginx" },
           { icon: "gcp", value: "Gcp" },
           { icon: "azure", value: "Azure" },
         ],
@@ -110,7 +103,7 @@ export const Skills = () => {
 
   // 7. skills -------------------------------------------------------------------------------------
   const skillsNode = () => (
-    <Paper className={`main-wrapper ${paperClass}`}>
+    <Paper className={`main-wrapper ${paperClass} border-0 radius-0 shadow-0`}>
       <Grid container={true} spacing={0} className={"w-100p d-left mb-20"}>
         <Grid
           size={xxs ? 12 : xs ? 12 : sm ? 12 : md ? 12 : lg ? 12 : xl ? 12 : xxl ? 12 : 12}
@@ -122,7 +115,7 @@ export const Skills = () => {
           </Div>
         </Grid>
       </Grid>
-      <Grid container={true} spacing={2} className={"w-100p d-left"}>
+      <Grid container={true} spacing={2} className={"w-100p d-top"}>
         {OBJECT.section.map((item: any, i: number) => (
           <Grid
             size={xxs ? 12 : xs ? 12 : sm ? 12 : md ? 6 : lg ? 6 : xl ? 6 : xxl ? 6 : 6}
@@ -144,13 +137,13 @@ export const Skills = () => {
                   >
                     <Div className={"d-center me-10"}>
                       <Img
-                        max={35}
+                        max={28}
                         hover={true}
                         shadow={false}
                         border={false}
                         radius={false}
                         src={item.main.img}
-                        group={"icon"}
+                        group={"icons"}
                       />
                     </Div>
                     <Div className={"fs-1-2rem fw-700 navy"}>
@@ -174,22 +167,22 @@ export const Skills = () => {
                 <Grid container={true} spacing={0} className={"d-left"}>
                   {item.sub.map((sub: any, j: number) => (
                     <Grid
-                      size={xxs ? 6 : xs ? 4 : sm ? 3 : md ? 4 : lg ? 3 : xl ? 3 : xxl ? 3 : 3}
+                      size={xxs ? 6 : xs ? 4 : sm ? 3 : md ? 4 : lg ? 4 : xl ? 3 : xxl ? 3 : 3}
                       className={"d-row-left mb-10"}
                       key={j}
                     >
                       <Div className={"d-center me-5"}>
                         <Img
-                          max={25}
+                          max={20}
                           hover={true}
                           shadow={false}
                           border={false}
                           radius={false}
                           src={sub.icon}
-                          group={"icon"}
+                          group={"icons"}
                         />
                       </Div>
-                      <Div className={"fs-0-8 fw-500 dark-navy"}>
+                      <Div className={"fs-0-9rem fw-500 dark-navy"} max={10}>
                         {sub.value}
                       </Div>
                     </Grid>
@@ -197,7 +190,11 @@ export const Skills = () => {
                 </Grid>
               </AccordionDetails>
             </Accordion>
-            {i < OBJECT.section.length - 1 && <Hr className={"bg-light h-5"} />}
+            {(xxs || xs || sm) ? (
+              i < OBJECT.section.length - 1 && <Hr className={"bg-light h-5"} />
+            ) : (
+              i < OBJECT.section.length - 2 && <Hr className={"bg-light h-5"} />
+            )}
           </Grid>
         ))}
       </Grid>

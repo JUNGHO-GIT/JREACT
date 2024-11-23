@@ -12,17 +12,23 @@ export const Loader = () => {
 
   // 2-3. useEffect --------------------------------------------------------------------------------
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLOADING(false);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, [setLOADING]);
+    if (LOADING) {
+      const timer = setTimeout(() => {
+        setLOADING(false);
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [LOADING, setLOADING]);
 
   // 7.loader --------------------------------------------------------------------------------------
   const loaderNode = () => (
-    <Div className={LOADING ? "loader-wrapper" : "d-none"}>
-      {LOADING && <Div className="loader" />}
-    </Div>
+    (LOADING ? (
+      <Div className="loader-wrapper">
+        <Div className="loader" />
+      </Div>
+    ) : (
+      null
+    ))
   );
 
   // 10. return ------------------------------------------------------------------------------------

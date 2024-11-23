@@ -1,4 +1,4 @@
-// Project1.jsx
+// Project6.jsx
 
 import { useEffect, useState } from "@importReacts";
 import { useResponsive, useStoreLoading } from "@importHooks";
@@ -7,7 +7,7 @@ import { Div, Img, Hr } from "@importComponents";
 import { Grid, Paper } from "@importMuis";
 
 // -------------------------------------------------------------------------------------------------
-export const Project1 = () => {
+export const Project6 = () => {
 
   // 0. common -------------------------------------------------------------------------------------
   const { setLOADING } = useStoreLoading();
@@ -100,7 +100,7 @@ export const Project1 = () => {
           ],
         },
         {
-          title: "Package, Build, SCM",
+          title: "Package, Build, Scm",
           value: [
             { icon: "npm", value: "Npm" },
             { icon: "json", value: "Json" },
@@ -129,34 +129,23 @@ export const Project1 = () => {
     },
   ]);
   const [images, _setImages] = useState<string[]>([
-    "project1_1",
-    "project1_2",
+    "project6_1",
+    "project6_2",
+    "project6_3",
+    "project6_4",
+    "project6_5",
   ]);
-  const [componentWidth, setComponentWidth] = useState<string>("");
 
   // 2-3. useEffect --------------------------------------------------------------------------------
   useEffect(() => {
     setLOADING(true);
   }, []);
 
-  // 2-3. useEffect --------------------------------------------------------------------------------
-  useEffect(() => {
-    if (xxs || xs) {
-      setComponentWidth("w-30p");
-    }
-    else if (sm || md) {
-      setComponentWidth("w-20p");
-    }
-    else if (lg || xl || xxl) {
-      setComponentWidth("w-30p");
-    }
-  }, [xxs, xs, sm, md, lg, xl, xxl]);
-
   // 7. project ------------------------------------------------------------------------------------
   const projectNode = () => (
-    <Paper className={`detail-wrapper ${paperClass}`}>
+    <Paper className={`detail-wrapper ${paperClass} border-0 radius-0 shadow-0`}>
       {/** images **/}
-      <Grid container={true} spacing={0}>
+      <Grid container={true} spacing={0} className={"w-100p d-center"}>
         <Grid size={12} className={"d-col-center"}>
           <Swiper
             spaceBetween={0}
@@ -180,11 +169,12 @@ export const Project1 = () => {
             {images.map((image: string, i: number) => (
               <SwiperSlide className={"w-100p p-relative"} key={i}>
                 <Img
-                  max={800}
+                  max={1000}
                   hover={false}
                   shadow={false}
                   radius={false}
-                  group={"project"}
+                  border={true}
+                  group={"projects"}
                   src={image}
                 />
               </SwiperSlide>
@@ -197,9 +187,8 @@ export const Project1 = () => {
           <Div className={"image-pagination transform-none"} />
         </Grid>
       </Grid>
-      <Hr className={"mt-20 mb-20 bg-light h-5"} />
-      {/** description **/}
-      <Grid container={true} spacing={2} className={"h-100p d-top"}>
+      <Hr m={40} className={"bg-light h-5"} />
+      <Grid container={true} spacing={2} columnSpacing={10} className={"h-100p d-top"}>
         {/** info, features **/}
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
@@ -210,23 +199,30 @@ export const Project1 = () => {
                   <Hr className={"w-100 bg-primary h-3"} />
                 </Div>
                 {item.section.map((section: any, j: number) => (
-                  <Div className={"d-col-left w-100p mb-30"} key={j}>
-                    <Div className={"fs-1-0rem fw-600 dark-navy mb-10"}>
-                      {`${section.title}`}
+                  <Div className={"w-100p d-col-left mb-30"} key={j}>
+                    <Div className={"d-row-center mb-10"}>
+                      <Div className={"fs-0-4rem fw-300 dark-navy me-5"}>
+                        {'●'}
+                      </Div>
+                      <Div className={"fs-1-1rem fw-600 dark-navy"}>
+                        {section.title}
+                      </Div>
                     </Div>
-                    {["Git", "Url"].includes(section.title) ? (
-                      <Div className={"d-row-left"}>
-                        <Div className={"fs-0-9rem fw-400 blue hover"}>
-                          {`- ${section.value}`}
+                    <Div className={"d-row-center ms-10"}>
+                      {["Git", "Url"].includes(section.title) ? (
+                        <Div className={"d-row-left me-0"}>
+                          <Div className={"fs-1-0rem fw-400 blue hover lh-2-0"}>
+                            {`- ${section.value}`}
+                          </Div>
                         </Div>
-                      </Div>
-                    ) : (
-                      <Div className={"d-row-left"}>
-                        <Div className={"fs-0-9rem fw-400 light-black lh-2-0"}>
-                          {`- ${section.value}`}
+                      ) : (
+                        <Div className={"d-row-left me-0"}>
+                          <Div className={"fs-1-0rem fw-400 light-black lh-2-0"}>
+                            {`- ${section.value}`}
+                          </Div>
                         </Div>
-                      </Div>
-                    )}
+                      )}
+                    </Div>
                   </Div>
                 ))}
                 <Hr className={"bg-light h-5"} />
@@ -239,33 +235,34 @@ export const Project1 = () => {
           <Grid container={true} spacing={2}>
             {OBJECT.filter((_: any, f: number) => f >= 2).map((item: any, i: number) => (
               <Grid size={12} className={"d-col-left"} key={i}>
-                <Div className={"fs-1-6rem fw-700 dark-navy"}>
+                <Div className={"fs-1-6rem fw-700 dark-navy mb-20"}>
                   {item.title}
-                </Div>
-                <Div className={"d-row-left mb-20"}>
                   <Hr className={"w-100 bg-primary h-3"} />
                 </Div>
                 {item.section.map((section: any, j: number) => (
-                  <Div className={"d-col-left w-100p mb-30"} key={j}>
-                    <Div className={"d-row w-100p"}>
-                      <Div className={"fs-1-0rem fw-600 dark-navy mb-10"}>
-                        {`${section.title}`}
+                  <Div className={"w-100p d-col-left mb-30"} key={j}>
+                    <Div className={"d-row-center mb-10"}>
+                      <Div className={"fs-0-4rem fw-300 dark-navy me-5"}>
+                        {'●'}
+                      </Div>
+                      <Div className={"fs-1-1rem fw-600 dark-navy"}>
+                        {section.title}
                       </Div>
                     </Div>
-                    <Div className={"d-row w-100p"}>
+                    <Div className={"d-row-center ms-10"}>
                       {section.value.map((value: any, k: number) => (
-                        <Div className={`d-row-left ${componentWidth}`} key={k}>
+                        <Div className={`d-row-center me-20`} key={k}>
                           <Img
-                            max={25}
+                            max={20}
                             hover={true}
                             shadow={false}
                             border={false}
                             radius={false}
                             src={value.icon}
-                            group={"icon"}
+                            group={"icons"}
                             className={"me-5"}
                           />
-                          <Div className={"fs-0-9rem fw-400 light-black lh-2-0"}>
+                          <Div className={"fs-1-0rem fw-400 light-black lh-2-0"}>
                             {value.value}
                           </Div>
                         </Div>

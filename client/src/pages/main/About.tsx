@@ -12,32 +12,34 @@ export const About = () => {
   const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
 
   // 2-1. useState ---------------------------------------------------------------------------------
-  const [OBJECT, _setOBJECT] = useState<any>({
-    title: "About",
-    sub: "FullStack Developer",
-    section: [
-      {
-        title: "Name",
-        value: "문정호",
-      },
-      {
-        title: "Birth",
-        value: "1996.09.14",
-      },
-      {
-        title: "Email",
-        value: "junghomun@naver.com",
-      },
-      {
-        title: "Git",
-        value: "github.com/JUNGHO-GIT"
-      },
-    ],
-  });
+  const [OBJECT, _setOBJECT] = useState<any>(
+    {
+      title: "About",
+      sub: "FullStack Developer",
+      section: [
+        {
+          title: "Name",
+          value: "문정호",
+        },
+        {
+          title: "Birth",
+          value: "1996.09.14",
+        },
+        {
+          title: "Email",
+          value: "junghomun@naver.com",
+        },
+        {
+          title: "Git",
+          value: "github.com/JUNGHO-GIT"
+        },
+      ],
+    }
+  );
 
   // 7. about --------------------------------------------------------------------------------------
   const aboutNode = () => (
-    <Paper className={`main-wrapper ${paperClass}`}>
+    <Paper className={`main-wrapper ${paperClass} border-0 radius-0 shadow-0`}>
       <Grid container={true} spacing={0} className={"w-100p d-left mb-20"}>
         <Grid size={xxs ? 12 : xs ? 12 : sm ? 12 : md ? 12 : lg ? 12 : xl ? 12 : xxl ? 12 : 12}>
           <Div className={"fs-2-0rem fw-700 dark-navy"}>
@@ -46,7 +48,7 @@ export const About = () => {
           </Div>
         </Grid>
       </Grid>
-      <Grid container={true} spacing={4} className={"w-100p d-left"}>
+      <Grid container={true} spacing={2} columnSpacing={8}  className={"w-100p d-left"}>
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Img
             max={600}
@@ -54,7 +56,8 @@ export const About = () => {
             radius={true}
             shadow={false}
             border={false}
-            src={"profile"}
+            src={"about"}
+            group={"main"}
           />
         </Grid>
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
@@ -68,20 +71,20 @@ export const About = () => {
                 )}
               </Grid>
               <Grid size={3} className={"d-row-left mb-20"}>
-                <Div className={"fs-1-1rem fw-600 primary me-5 ls-1"}>
-                  {"-"}
+                <Div className={"fs-0-4rem fw-300 dark-navy me-5"}>
+                  {'●'}
                 </Div>
-                <Div className={"fs-1-1rem fw-600 light-black ls-1"}>
+                <Div className={"fs-1-1rem fw-600 light-black"}>
                   {item.title}
                 </Div>
               </Grid>
               <Grid size={9} className={"d-row-left mb-20"}>
                 {i === 5 ? (
-                  <Div className={"fs-1-0rem fw-500 blue ls-1"}>
+                  <Div className={"fs-1-0rem fw-500 blue"}>
                     {item.value}
                   </Div>
                 ) : (
-                  <Div className={"fs-1-0rem fw-500 dark-grey ls-1"}>
+                  <Div className={"fs-1-0rem fw-500 dark-grey"}>
                     {item.value}
                   </Div>
                 )}

@@ -5,10 +5,10 @@ export const Br = (props: any) => (
   <div
     className={props?.className || ""}
     style={{
-      "width": "100%",
       "background": "none",
-      "height": "0.1px",
-      "margin": `${props?.px/2}px 0px`,
+      "width": `${(props?.w) || 100}%`,
+      "height": `${(props?.h) || 0}px`,
+      "margin": `${(props?.m / 2) || 0}px 0px`,
     }}
   />
 );

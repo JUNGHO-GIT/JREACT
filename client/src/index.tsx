@@ -3,11 +3,9 @@
 import "swiper/css";
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import '@assets/styles/Reset.css';
-import '@assets/styles/Core.css';
-import '@assets/styles/Mui.css';
-import '@assets/styles/Jstyle.css';
-import './index.css';
+import "@assets/styles/Core.css";
+import "@assets/styles/Mui.css";
+import '@assets/styles/Components.css';
 
 import {
   BrowserRouter, Routes, Route, createRoot,
@@ -23,17 +21,17 @@ import {
 } from '@importHooks';
 
 import {
-  Loader, Footer, Header, Toggle
+  Loader, Footer, Toggle
 } from '@importLayouts';
 
 import {
-  Main, Project1, Project2, Project3, Project4
+  Main, Project1, Project2, Project3, Project4, Project5, Project6, Project7
 } from '@importPages';
 
 // -------------------------------------------------------------------------------------------------
 const App = () => {
 
-  const { LOADING, setLOADING } = useStoreLoading();
+  const { setLOADING } = useStoreLoading();
 
   useEffect(() => {
     setLOADING(true);
@@ -44,15 +42,19 @@ const App = () => {
 
   return (
     <div className={"App"}>
-      {LOADING && <Loader />}
+      <Loader />
       <Routes>
         <Route path={"/*"} element={<Main />} />
-        <Route path={"/details/project1/*"} element={<Project1 />} />
-        <Route path={"/details/project2/*"} element={<Project2 />} />
-        <Route path={"/details/project3/*"} element={<Project3 />} />
-        <Route path={"/details/project4/*"} element={<Project4 />} />
+        <Route path={"/projects/project1/*"} element={<Project1 />} />
+        <Route path={"/projects/project2/*"} element={<Project2 />} />
+        <Route path={"/projects/project3/*"} element={<Project3 />} />
+        <Route path={"/projects/project4/*"} element={<Project4 />} />
+        <Route path={"/projects/project5/*"} element={<Project5 />} />
+        <Route path={"/projects/project6/*"} element={<Project6 />} />
+        <Route path={"/projects/project7/*"} element={<Project7 />} />
       </Routes>
-      {<Footer />}
+      <Toggle />
+      <Footer />
     </div>
   );
 };
@@ -63,7 +65,7 @@ createRoot(document.getElementById('root') as HTMLElement).render(
     <ThemeProvider theme={
       createTheme({
         typography: {
-          fontFamily: "Pretendard Variable, Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, Helvetica Neue, Segoe UI, Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif"
+          fontFamily: "Pretendard Variable, Pretendard, Noto Sans KR, Roboto, sans-serif"
         }
       })
     }>

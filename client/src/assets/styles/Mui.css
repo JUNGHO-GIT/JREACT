@@ -1,110 +1,57 @@
 @charset "UTF-8";
 
-/** tab *******************************************************************************************/
+/*********************************** NOT IMPORTANT ************************************************/
+/** grid **/
+.MuiGrid2-container {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.MuiGrid2-root {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+/** card **/
+.MuiCard-root {
+  width: 100%;
+  border-radius: 0px;
+  box-shadow: none;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+/** table **/
+.MuiTableCell-root {
+  padding: 5px 5px 5px 5px;
+  z-index: 10;
+}
+/**************************************************************************************************/
+
+
+/*************************************** IMPORTANT ************************************************/
+/** tab **/
 .MuiTab-root {
   background-color: transparent !important;
   min-width: 0px !important;
-  padding: 5px 10px !important;
 }
 .MuiTab-root.Mui-selected {
   color: #1976d2 !important;
   font-weight: bold !important;
   text-decoration: none !important;
-  scale: 1.1 !important;
+  scale: 1.2 !important;
 }
 .MuiTabs-indicator {
   background-color: #1976d2 !important;
 }
-.MuiToolbar-root {
-  padding: 0px 0px 0px 0px !important;
+.MuiTabs-scroller {
+  margin: 0px 0px 5px 0px !important;
 }
 
-/** card ******************************************************************************************/
-.MuiCard-root {
-  width: 100% !important;
-  border-radius: 0px !important;
-  box-shadow: none !important;
-  margin: 0px 0px 0px 0px !important;
-  padding: 0px 0px 0px 0px !important;
-}
-
-/** table *****************************************************************************************/
-.MuiTableCell-root {
-  padding: 5px 5px 5px 5px !important;
-  z-index: 10 !important;
-}
-
-/** input *****************************************************************************************/
-.MuiInputBase-input.MuiOutlinedInput-input {
-  text-overflow: clip !important;
-}
-.MuiInputBase-input.MuiOutlinedInput-input.Mui-disabled {
-  opacity: 1;
-  -webkit-text-fill-color: rgb(0 0 0 / 65%);
-}
-.MuiOutlinedInput-root {
-  border: 1px ghostwhite solid !important;
-  border-radius: 10px !important;
-  box-shadow: 0px 0px 0px 0px !important;
-  height: 40px !important;
-}
-
-[class*="MuiInput-root"]::after {
-  border-bottom: 2px solid #dbdbdb !important;
-}
-[class*="MuiInput-root"][class*="Mui-focused"]::after {
-  border-bottom: 2px solid #1976d2 !important;
-}
-[class*="MuiInput-root"][class*="Mui-error"]::after {
-  border-bottom: 2px solid #f44336 !important;
-}
-
-.MuiInputLabel-root {
-  font-size: 0.9rem !important;
-}
-.MuiFormControlLabel-root {
-  margin-left: 0px !important;
-  margin-right: 0px !important;
-}
-[class*="MuiFormLabel-root"][class*="Mui-focused"] {
-  color: #1976d2 !important;
-}
-[class*="MuiFormLabel-root"][class*="Mui-error"] {
-  color: #f44336 !important;
-}
-
-[class*="MuiInputBase-input-MuiInput-input"][class*="Mui-disabled"] {
-  -webkit-text-fill-color: #757575 !important;
-}
-[class*="MuiInputBase-input-MuiInput-input"][class*="Mui-disabled"]::after {
-  border-bottom: 2px solid #dbdbdb !important;
-}
-
-.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-  border-color: #1976d2 !important;
-  border-width: 2px !important;
-}
-.MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
-  border-color: #f44336 !important;
-  border-width: 2px !important;
-}
-
-/** grid ******************************************************************************************/
-.MuiGrid2-container {
-  margin: 0px 0px 0px 0px !important;
-  padding: 0px 0px 0px 0px !important;
-  width: 100% !important;
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center;
-  align-items: center;
-}
-.MuiGrid2-root {
-  margin: 0px 0px 0px 0px !important;
-  padding: 0px 0px 0px 0px !important;
-}
-
-/** bottom ****************************************************************************************/
+/** bottom **/
 .MuiBottomNavigation-root {
   background-color: transparent !important;
   min-width: 0px !important;
@@ -128,58 +75,138 @@
   font-size: 0.7rem !important;
 }
 
-/** accordion *************************************************************************************/
-.MuiAccordion-root {
-  box-shadow: none !important;
-  margin: 0px 0px 0px 0px !important;
-  padding: 0px 0px 0px 0px !important;
-}
-.MuiAccordionSummary-root {
-  margin: 0px 0px 0px 0px !important;
-  padding: 0px 0px 0px 0px !important;
-}
-.MuiAccordionDetails-root {
-  margin: 0px 0px 0px 0px !important;
-  padding: 0px 0px 0px 0px !important;
-}
-.MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
-  min-height: 0px !important;
-}
-.MuiAccordionSummary-root.Mui-expanded {
-  min-height: 0px !important;
-}
-
-/** etc *******************************************************************************************/
-.MuiBadge-badge {
-  min-width: 0px !important;
-  min-height: 0px !important;
-}
-.MuiBackdrop-root {
-  background-color: rgba(0, 0, 0, 0.2) !important;
-}
-.MuiSpeedDial-actions {
-  margin-bottom: -40px !important;
-}
-.MuiSpeedDialAction-fab {
-  border-radius: 50% !important;
-}
-.MuiPopover-paper {
-  z-index: 1000000 !important;
-}
-.MuiFormControlLabel-root {
-  margin-left: 0px !important;
-  margin-right: 0px !important;
-}
+/** step **/
 .MuiStepIcon-root.Mui-completed {
   color: #1976d2 !important;
 }
 .MuiStepIcon-root.Mui-active {
   color: #1976d2 !important;
 }
-.MuiAlert-action {
+
+/** pagination **/
+.MuiTablePagination-root {
+  width: 100% !important;
+  margin: 0px 0px 0px 0px !important;
   padding: 0px 0px 0px 0px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow-y: hidden !important;
 }
 .MuiTablePagination-actions {
   margin: 0px 0px 0px 0px !important;
+  padding: 0px 0px 0px 10px !important;
+}
+.MuiTablePagination-displayedRows {
+  margin: 0px 0px 0px 0px !important;
+  padding: 0px 0px 0px 10px !important;
+}
+
+/** accordion **/
+.MuiAccordionSummary-content {
+  margin: 12px 0px 12px 0px !important;
+}
+.MuiAccordionSummary-root.Mui-expanded {
+  min-height: 0px !important;
+}
+
+/** dialog **/
+.MuiSpeedDial-actions {
+  margin-bottom: -40px !important;
+}
+.MuiSpeedDialAction-fab {
+  border-radius: 50% !important;
+}
+
+/** toolbar **/
+.MuiToolbar-root {
+  margin: -10px 0px 0px 0px !important;
+  padding: 0px 0px 0px 0px !important;
+  min-height: 0px !important;
+  height: 8vh !important;
+}
+
+/** alert, popup **/
+.MuiAlert-action {
   padding: 0px 0px 0px 0px !important;
 }
+.MuiPopover-paper {
+  z-index: 1000000 !important;
+}
+.MuiBackdrop-root {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/** button **/
+.MuiButtonBase-root {
+  min-width: 30px !important;
+}
+
+/** badge **/
+.MuiBadge-badge {
+  min-width: 0px !important;
+  min-height: 0px !important;
+}
+
+/** skeleton **/
+.MuiSkeleton-root {
+  margin: 0px 0px 0px 0px !important;
+  padding: 0px 0px 0px 0px !important;
+  height: max-content !important;
+}
+
+/** input **/
+.MuiInputBase-input.MuiOutlinedInput-input {
+  text-overflow: clip !important;
+  background-color: white !important;
+}
+.MuiInputBase-input.MuiOutlinedInput-input.Mui-disabled {
+  opacity: 1 !important;
+  -webkit-text-fill-color: rgb(0 0 0 / 65%) !important;
+}
+.MuiOutlinedInput-root {
+  border: 1px ghostwhite solid !important;
+  border-radius: 10px !important;
+  box-shadow: 0px 0px 0px 0px !important;
+}
+[class*="MuiInput-root"]::after {
+  border-bottom: 2px solid #dbdbdb !important;
+}
+[class*="MuiInput-root"][class*="Mui-focused"]::after {
+  border-bottom: 2px solid #000000 !important;
+}
+[class*="MuiInput-root"][class*="Mui-error"]::after {
+  border-bottom: 2px solid #EF4444 !important;
+}
+.MuiFormControlLabel-root {
+  margin-left: 0px  !important;
+  margin-right: 0px !important;
+}
+.MuiInputLabel-root {
+  font-size: 0.9rem !important;
+}
+.MuiFormControlLabel-root {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+[class*="MuiFormLabel-root"][class*="Mui-focused"] {
+  color: #000000 !important;
+}
+[class*="MuiFormLabel-root"][class*="Mui-error"] {
+  color: #EF4444 !important;
+}
+[class*="MuiInputBase-input-MuiInput-input"][class*="Mui-disabled"] {
+  -webkit-text-fill-color: #757575 !important;
+}
+[class*="MuiInputBase-input-MuiInput-input"][class*="Mui-disabled"]::after {
+  border-bottom: 2px solid #dbdbdb !important;
+}
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #000000 !important;
+  border-width: 2px;
+}
+.MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+  border-color: #EF4444;
+  border-width: 2px !important;
+}
+/**************************************************************************************************/

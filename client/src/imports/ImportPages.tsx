@@ -1,16 +1,30 @@
 // ImportPages.tsx
 
 import { Main } from '@pages/Main';
-import { Project1 } from '@pages/details/Project1';
-import { Project2 } from '@pages/details/Project2';
-import { Project3 } from '@pages/details/Project3';
-import { Project4 } from '@pages/details/Project4';
+import { About } from '@pages/main/About';
+import { Hero } from "@pages/main/Hero";
+import { Skills } from "@pages/main/Skills";
+import { Portfolio } from "@pages/main/Portfolio";
+import { Project1 } from '@pages/projects/Project1';
+import { Project2 } from '@pages/projects/Project2';
+import { Project3 } from '@pages/projects/Project3';
+import { Project4 } from '@pages/projects/Project4';
+import { Project5 } from '@pages/projects/Project5';
+import { Project6 } from '@pages/projects/Project6';
+import { Project7 } from '@pages/projects/Project7';
 
 // -------------------------------------------------------------------------------------------------
 export {
   Main,
+  About,
+  Hero,
+  Skills,
+  Portfolio,
   Project1,
   Project2,
   Project3,
-  Project4
+  Project4,
+  Project5,
+  Project6,
+  Project7,
 };

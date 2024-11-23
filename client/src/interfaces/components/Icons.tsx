@@ -43,16 +43,16 @@ export const Icons = (props: any) => {
         <path d="M5 12l14 0" />
       </svg>
     ),
-    ChevronDown: (
-      <svg {...commonValues}>
-        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-        <path d="M6 9l6 6l6 -6" />
-      </svg>
-    ),
     ChevronUp: (
       <svg {...commonValues}>
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M6 15l6 -6l6 6" />
+      </svg>
+    ),
+    ChevronDown: (
+      <svg {...commonValues}>
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M6 9l6 6l6 -6" />
       </svg>
     ),
     ChevronRight: (
@@ -65,6 +65,18 @@ export const Icons = (props: any) => {
       <svg {...commonValues}>
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
         <path d="M15 6l-6 6l6 6" />
+      </svg>
+    ),
+    CaretUp: (
+      <svg {...commonValues}>
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M11.293 7.293a1 1 0 0 1 1.32 -.083l.094 .083l6 6l.083 .094l.054 .077l.054 .096l.017 .036l.027 .067l.032 .108l.01 .053l.01 .06l.004 .057l.002 .059l-.002 .059l-.005 .058l-.009 .06l-.01 .052l-.032 .108l-.027 .067l-.07 .132l-.065 .09l-.073 .081l-.094 .083l-.077 .054l-.096 .054l-.036 .017l-.067 .027l-.108 .032l-.053 .01l-.06 .01l-.057 .004l-.059 .002h-12c-.852 0 -1.297 -.986 -.783 -1.623l.076 -.084l6 -6z" />
+      </svg>
+    ),
+    CaretDown: (
+      <svg {...commonValues}>
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M18 9c.852 0 1.297 .986 .783 1.623l-.076 .084l-6 6a1 1 0 0 1 -1.32 .083l-.094 -.083l-6 -6l-.083 -.094l-.054 -.077l-.054 -.096l-.017 -.036l-.027 -.067l-.032 -.108l-.01 -.053l-.01 -.06l-.004 -.057v-.118l.005 -.058l.009 -.06l.01 -.052l-.032 -.108l-.027 -.067l-.07 -.132l-.065 -.09l-.073 -.081l-.094 -.083l-.077 -.054l-.096 -.054l-.036 -.017l-.067 -.027l-.108 -.032l-.053 -.01l-.06 -.01l-.057 -.004l12.059 -.002z" />
       </svg>
     ),
     CaretLeft: (
@@ -290,7 +302,7 @@ export const Icons = (props: any) => {
     ),
     Home: (
       <svg {...commonValues}>
-        <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+        <path d="M5 12l-4 0l11 -9l11 9l-4 0" />
         <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
         <path d="M10 12h4v4h-4z" />
       </svg>
@@ -303,6 +315,12 @@ export const Icons = (props: any) => {
         <path d="M16.2 7.8l2.2 -2.2" />
         <path d="M7.8 16.2l-2.2 2.2" />
         <path d="M12 12l9 3l-4 2l-2 4l-3 -9" />
+      </svg>
+    ),
+    Undo: (
+      <svg {...commonValues} strokeWidth="3">
+        <path d="M9 14l-4 -4l4 -4" />
+        <path d="M5 10h11a4 4 0 1 1 0 8h-1" />
       </svg>
     ),
   };
