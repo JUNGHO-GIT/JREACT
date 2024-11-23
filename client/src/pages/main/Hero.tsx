@@ -55,7 +55,7 @@ export const Hero = () => {
             hover={false}
             shadow={false}
             radius={false}
-            src={(xxs || xs) ? "main2" : (sm|| md || lg || xl || xxl) ? "main1" : "main1"}
+            src={(xxs || xs) ? "main2.webp" : (sm|| md || lg || xl || xxl) ? "main1.webp" : "main1.webp"}
             group={"main"}
           />
           <Div className={"p-absolute"}>

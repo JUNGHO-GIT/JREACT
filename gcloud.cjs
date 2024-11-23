@@ -1,7 +1,6 @@
 // gcloud.js
 
 const { execSync } = require('child_process');
-const { readFileSync, writeFileSync } = require('fs');
 const os = require('os');
 const fs = require('fs');
 

@@ -31,7 +31,7 @@ export const Img = (
   useEffect(() => {
     if (src && typeof src === "string") {
       setFileName(src.split("/").pop()?.split(".")[0] || "empty");
-      setImgSrc(group === "new" ? src : `${GCLOUD_URL}/${group || "main"}/${src}.webp`);
+      setImgSrc(group === "new" ? src : `${GCLOUD_URL}/${group || "main"}/${src}`);
     }
     else {
       setFileName("empty");
@@ -73,9 +73,10 @@ export const Img = (
       loading={"lazy"}
       className={imageClass}
       onError={(e) => {
+        e.currentTarget.style.width = "100%";
+        e.currentTarget.style.height = "100%";
         e.currentTarget.src = `${GCLOUD_URL}/main/empty.webp`;
         e.currentTarget.alt = "empty";
-        e.currentTarget.className = "w-20 h-20";
       }}
     />
   );

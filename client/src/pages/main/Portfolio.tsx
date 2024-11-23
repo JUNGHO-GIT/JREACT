@@ -139,7 +139,7 @@ export const Portfolio = () => {
                   shadow={false}
                   border={false}
                   radius={false}
-                  src={item.img}
+                  src={`${item.img}.webp`}
                   group={"projects"}
                 />
               </Div>
@@ -157,7 +157,7 @@ export const Portfolio = () => {
                     shadow={false}
                     border={false}
                     radius={false}
-                    src={item.icon}
+                    src={`${item.icon}.webp`}
                     group={"icons"}
                     className={"me-5"}
                   />

@@ -194,8 +194,8 @@ export const Project7 = () => {
                   shadow={false}
                   radius={false}
                   border={true}
+                  src={`${image}.webp`}
                   group={"projects"}
-                  src={image}
                 />
               </SwiperSlide>
             ))}
@@ -278,8 +278,8 @@ export const Project7 = () => {
                             shadow={false}
                             border={false}
                             radius={false}
-                            src={value.icon}
                             group={"icons"}
+                            src={`${value.icon}.webp`}
                             className={"me-5"}
                           />
                           <Div className={"fs-1-0rem fw-400 light-black lh-2-0"}>

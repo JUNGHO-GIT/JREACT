@@ -142,7 +142,7 @@ export const Skills = () => {
                         shadow={false}
                         border={false}
                         radius={false}
-                        src={item.main.img}
+                        src={`${item.main.img}.webp`}
                         group={"icons"}
                       />
                     </Div>
@@ -178,7 +178,7 @@ export const Skills = () => {
                           shadow={false}
                           border={false}
                           radius={false}
-                          src={sub.icon}
+                          src={`${sub.icon}.webp`}
                           group={"icons"}
                         />
                       </Div>

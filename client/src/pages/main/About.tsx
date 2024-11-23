@@ -56,7 +56,7 @@ export const About = () => {
             radius={true}
             shadow={false}
             border={false}
-            src={"about"}
+            src={"about.webp"}
             group={"main"}
           />
         </Grid>

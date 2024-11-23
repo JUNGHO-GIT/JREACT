@@ -16,7 +16,7 @@ export const Toggle = () => {
 
   // 7. toggle -------------------------------------------------------------------------------------
   const toggleNode = () => (
-    <Div className={`d-row p-fixed bottom-4vh z-600 right-4vw`}>
+    <Div className={`d-row p-fixed bottom-3vh z-600 right-3vw`}>
       <Backdrop
         open={open}
         onClick={() => {

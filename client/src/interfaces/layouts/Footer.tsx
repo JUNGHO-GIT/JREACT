@@ -25,7 +25,7 @@ export const Footer = () => {
               shadow={false}
               radius={false}
               border={false}
-              src={"logo"}
+              src={"logo.webp"}
               group={"main"}
               className={"w-40 h-40 radius-50 me-15"}
             />
