@@ -64,9 +64,7 @@ createRoot(document.getElementById('root') as HTMLElement).render(
   <BrowserRouter basename={"/JREACT"}>
     <ThemeProvider theme={
       createTheme({
-        typography: {
-          fontFamily: "Pretendard Variable, Pretendard, Noto Sans KR, Roboto, sans-serif"
-        }
+        typography:{fontFamily:"Pretendard Variable, Pretendard, Noto Sans KR, Roboto, sans-serif"}
       })
     }>
       <CssBaseline />
