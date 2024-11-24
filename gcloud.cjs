@@ -109,7 +109,7 @@ const gitPush = () => {
       : 'git commit -m \"$(date +%Y-%m-%d) $(date +%H:%M:%S)\"'
     );
     const gitPush = (
-      'git push origin main'
+      'git push origin master'
     );
 
     execSync(gitAdd, { stdio: 'inherit' });
