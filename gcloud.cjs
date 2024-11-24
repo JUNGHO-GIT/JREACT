@@ -140,7 +140,7 @@ const runRemoteScript = () => {
     const ipAddr = "104.196.212.101";
     const cmdCd = 'cd /var/www/junghomun.com/JREACT/server';
     const cmdGitFetch = 'sudo git fetch --all';
-    const cmdGitReset = 'sudo git reset --hard origin/main';
+    const cmdGitReset = 'sudo git reset --hard origin/master';
     const cmdRmClient = 'sudo rm -rf client';
     const cmdCh = 'sudo chmod -R 755 /var/www/junghomun.com/JREACT/server';
     const cmdNpm = 'sudo npm install';
@@ -148,9 +148,9 @@ const runRemoteScript = () => {
     const cmdRestart = 'sudo pm2 restart all';
     const cmdSave = 'sudo pm2 save';
 
-    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} \'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdNpm} && ${cmdRestart} && ${cmdSave}\'"
+    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} \'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdNpm} && ${cmdStart} && ${cmdRestart} && ${cmdSave}\'"
     `;
-    const linuxCommand = `ssh -i ${keyPath} ${serviceId}@${ipAddr} \'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdNpm} && ${cmdRestart} && ${cmdSave}\'`;
+    const linuxCommand = `ssh -i ${keyPath} ${serviceId}@${ipAddr} \'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdNpm} && ${cmdStart} && ${cmdRestart} && ${cmdSave}\'`;
 
     const sshCommand = winOrLinux === "win" ? winCommand : linuxCommand;
 
