@@ -120,11 +120,11 @@ export const Portfolio = () => {
   // 7. portfolio ----------------------------------------------------------------------------------
   const portfolioNode = () => (
     <Paper className={`main-wrapper ${paperClass} border-0 radius-0 shadow-0`}>
-      <Grid container={true} spacing={0} className={"w-100p d-left mb-20"}>
+      <Grid container={true} spacing={0} className={"w-100p d-left mb-20px"}>
         <Grid size={xxs ? 12 : xs ? 12 : sm ? 12 : md ? 12 : lg ? 12 : xl ? 12 : xxl ? 12 : 12}>
           <Div className={"fs-2-0rem fw-700 dark-navy"}>
             {OBJECT.title}
-            <Hr className={"w-100 bg-primary h-3"} />
+            <Hr className={"w-100px bg-primary h-3px"} />
           </Div>
         </Grid>
       </Grid>
@@ -145,7 +145,7 @@ export const Portfolio = () => {
               </Div>
               <Div className={"image-overlay fadeIn"}>
                 <Div
-                  className={"d-row-center w-100p mt-40 mb-20 hover"}
+                  className={"d-row-center w-100p mt-40px mb-20px hover"}
                   onClick={(e: any) => {
                     e.preventDefault();
                     navigate(`/projects/project${item.id}`);
@@ -159,13 +159,13 @@ export const Portfolio = () => {
                     radius={false}
                     src={`${item.icon}.webp`}
                     group={"icons"}
-                    className={"me-5"}
+                    className={"mr-5px"}
                   />
                   <Div className={"fs-1-6rem fw-700 white ls-4"}>
                     {item.name}
                   </Div>
                 </Div>
-                <Div className={"d-row-center w-100p mb-20"}>
+                <Div className={"d-row-center w-100p mb-20px"}>
                   <Div className={"fs-0-9rem fw-400 white"}>
                     {item.desc}
                   </Div>

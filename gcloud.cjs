@@ -1,6 +1,7 @@
-// gcloud.js
+// gcloud.cjs
 
 const { execSync } = require('child_process');
+const { readFileSync, writeFileSync } = require('fs');
 const os = require('os');
 const fs = require('fs');
 
@@ -9,11 +10,53 @@ console.log(`Activated OS is : ${winOrLinux}`);
 
 // env 파일 및 index 파일 수정 ---------------------------------------------------------------------
 const modifyEnvAndIndex = () => {
+  try {
+    const envFile = readFileSync('.env', 'utf8');
+    const indexFile = readFileSync('index.ts', 'utf8');
+
+    // 파일을 줄 단위로 나눔
+    const linesEnv = envFile.split(/\r?\n/);
+    const linesIndex = indexFile.split(/\r?\n/);
+
+    const updatedEnv = linesEnv.map(line => {
+      if (line.startsWith('CLIENT_URL=')) {
+        return `CLIENT_URL=https://www.junghomun.com/JREACT`;
+      }
+      if (line.startsWith('GOOGLE_CALLBACK_URL=')) {
+        return `GOOGLE_CALLBACK_URL=https://www.junghomun.com/JREACT/api/auth/google/callback`;
+      }
+      // 다른 줄은 그대로 유지
+      return line;
+    });
+
+    const updatedIndex = linesIndex.map(line => {
+      if (line.startsWith(`// const db = process.env.DB_NAME`)) {
+        return `const db = process.env.DB_NAME`;
+      }
+      if (line.startsWith(`const db = process.env.DB_TEST`)) {
+        return `// const db = process.env.DB_TEST`;
+      }
+      // 다른 줄은 그대로 유지
+      return line;
+    });
+
+    // 줄을 다시 합쳐서 저장
+    const newEnvFile = updatedEnv.join(os.EOL);
+    const newIndexFile = updatedIndex.join(os.EOL);
+
+    writeFileSync('.env', newEnvFile);
+    writeFileSync('index.ts', newIndexFile);
+  }
+  catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
 };
 
 // changelog 수정 ----------------------------------------------------------------------------------
 const modifyChangelog = () => {
   try {
+
     // ex. 2024-11-03 (16:23:24)
     const currentDate = new Date().toLocaleDateString('ko-KR', {
       year: 'numeric',
@@ -29,21 +72,20 @@ const modifyChangelog = () => {
     });
 
     const changelog = fs.readFileSync('changelog.md', 'utf8');
-    const versionPattern = /\d+\.\d+\.\d+/g;
+    const versionPattern = /(\s*)(\d+[.]\d+[.]\d+)(\s*)/g;
     const matches = [...changelog.matchAll(versionPattern)];
     const lastMatch = matches[matches.length - 1];
-    const versionArray = lastMatch[0].match(/\d+/g) || [];
-
-    // 세 번째 숫자에 +1
-    versionArray[2] = (parseFloat(versionArray[2]) + 1).toString();
+    const lastVersion = lastMatch[2];
+    const versionArray = lastVersion.split('.');
+    versionArray[2] = (parseInt(versionArray[2]) + 1).toString();
 
     let newVersion = `\\[ ${versionArray.join('.')} \\]`;
     let newDateTime = `- ${currentDate} (${currentTime})`;
-    let newEntry = `\n\n## ${newVersion}\n\t${newDateTime}`;
+    newDateTime = newDateTime.replace(/([.]\s*[(])/g, ' (');
+    newDateTime = newDateTime.replace(/([.]\s*)/g, '-');
+    newDateTime = newDateTime.replace(/[(](\W*)(\s*)/g, '(');
 
-    newEntry = newEntry.replace(/([.]\s*[(])/g, ' (');
-    newEntry = newEntry.replace(/([.]\s*)/g, '-');
-    newEntry = newEntry.replace(/[(](\W*)(\s*)/g, '(');
+    let newEntry = `\n\n## ${newVersion}\n\t${newDateTime}`;
 
     const updatedChangelog = changelog + newEntry;
 
@@ -67,7 +109,7 @@ const gitPush = () => {
       : 'git commit -m \"$(date +%Y-%m-%d) $(date +%H:%M:%S)\"'
     );
     const gitPush = (
-      'git push origin master'
+      'git push origin main'
     );
 
     execSync(gitAdd, { stdio: 'inherit' });
@@ -82,10 +124,87 @@ const gitPush = () => {
 
 // 원격 서버에서 스크립트 실행 ---------------------------------------------------------------------
 const runRemoteScript = () => {
+  try {
+    const keyPath = (
+      winOrLinux === "win"
+      ? "C:\\Users\\jungh\\.ssh\\JKEY"
+      : "~/ssh/JKEY"
+    );
+
+    const serviceId = (
+      winOrLinux === "win"
+      ? 'junghomun00'
+      : 'junghomun1234'
+    );
+
+    const ipAddr = "104.196.212.101";
+    const cmdCd = 'cd /var/www/junghomun.com/JREACT/server';
+    const cmdGitFetch = 'sudo git fetch --all';
+    const cmdGitReset = 'sudo git reset --hard origin/main';
+    const cmdRmClient = 'sudo rm -rf client';
+    const cmdCh = 'sudo chmod -R 755 /var/www/junghomun.com/JREACT/server';
+    const cmdNpm = 'sudo npm install';
+    const cmdStart = 'sudo pm2 start index.ts --name JREACT';
+    const cmdRestart = 'sudo pm2 restart all';
+    const cmdSave = 'sudo pm2 save';
+
+    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} \'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdNpm} && ${cmdRestart} && ${cmdSave}\'"
+    `;
+    const linuxCommand = `ssh -i ${keyPath} ${serviceId}@${ipAddr} \'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdNpm} && ${cmdRestart} && ${cmdSave}\'`;
+
+    const sshCommand = winOrLinux === "win" ? winCommand : linuxCommand;
+
+    execSync(sshCommand, { stdio: 'inherit' });
+  }
+  catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
 };
 
 // env 파일 및 index 파일 복원 --------------------------------------------------------------------
 const restoreEnvAndIndex = () => {
+  try {
+    const envFile = readFileSync('.env', 'utf8');
+    const indexFile = readFileSync('index.ts', 'utf8');
+
+    // 파일을 줄 단위로 나눔
+    const linesEnv = envFile.split(/\r?\n/);
+    const linesIndex = indexFile.split(/\r?\n/);
+
+    const updatedEnv = linesEnv.map(line => {
+      if (line.startsWith('CLIENT_URL=')) {
+        return `CLIENT_URL=http://localhost:3000/JREACT`;
+      }
+      if (line.startsWith('GOOGLE_CALLBACK_URL=')) {
+        return `GOOGLE_CALLBACK_URL=http://localhost:4100/JREACT/api/auth/google/callback`;
+      }
+      // 다른 줄은 그대로 유지
+      return line;
+    });
+
+    const updatedIndex = linesIndex.map(line => {
+      if (line.startsWith(`const db = process.env.DB_NAME`)) {
+        return `// const db = process.env.DB_NAME`;
+      }
+      if (line.startsWith(`// const db = process.env.DB_TEST`)) {
+        return `const db = process.env.DB_TEST`;
+      }
+      // 다른 줄은 그대로 유지
+      return line;
+    });
+
+    // 줄을 다시 합쳐서 저장
+    const newEnvFile = updatedEnv.join(os.EOL);
+    const newIndexFile = updatedIndex.join(os.EOL);
+
+    writeFileSync('.env', newEnvFile);
+    writeFileSync('index.ts', newIndexFile);
+  }
+  catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
 };
 
 // -------------------------------------------------------------------------------------------------

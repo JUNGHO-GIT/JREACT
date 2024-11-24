@@ -57,7 +57,7 @@ export const Img = (
       newClass += " border-1";
     }
     if (max) {
-      newClass += ` w-max${max} h-max${max}`;
+      newClass += ` w-max-${max}px h-max-${max}px`;
     }
 
     setImageClass(newClass);

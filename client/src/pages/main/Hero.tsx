@@ -59,7 +59,7 @@ export const Hero = () => {
             group={"main"}
           />
           <Div className={"p-absolute"}>
-            <Div className={"fs-2-0rem fw-700 white mb-10"}>
+            <Div className={"fs-2-0rem fw-700 white mb-10px"}>
               {OBJECT.title}
             </Div>
             <Div className={"fs-1-6rem fw-400 white"}>

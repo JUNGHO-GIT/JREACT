@@ -45,7 +45,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "npm-reset": "powershell -Command \"Remove-Item -Recurse -Force package-lock.json, node_modules; npm install --legacy-peer-deps; npm cache clean --force\"",
+    "npm-reset": "powershell -Command \"Remove-Item -Recurse -Force package-lock.json, node_modules; npm install --legacy-peer-deps;\"",
     "gcloud": "node gcloud.cjs"
   },
   "dependencies": {

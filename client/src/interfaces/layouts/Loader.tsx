@@ -13,22 +13,21 @@ export const Loader = () => {
   // 2-3. useEffect --------------------------------------------------------------------------------
   useEffect(() => {
     if (LOADING) {
-      const timer = setTimeout(() => {
+      setTimeout(() => {
         setLOADING(false);
       }, 500);
-      return () => clearTimeout(timer);
     }
-  }, [LOADING, setLOADING]);
+  }, [LOADING]);
 
   // 7.loader --------------------------------------------------------------------------------------
   const loaderNode = () => (
-    (LOADING ? (
-      <Div className="loader-wrapper">
-        <Div className="loader" />
+    LOADING ? (
+      <Div className={"loader-wrapper"}>
+        <Div className={"loader"} />
       </Div>
     ) : (
       null
-    ))
+    )
   );
 
   // 10. return ------------------------------------------------------------------------------------

@@ -104,14 +104,14 @@ export const Skills = () => {
   // 7. skills -------------------------------------------------------------------------------------
   const skillsNode = () => (
     <Paper className={`main-wrapper ${paperClass} border-0 radius-0 shadow-0`}>
-      <Grid container={true} spacing={0} className={"w-100p d-left mb-20"}>
+      <Grid container={true} spacing={0} className={"w-100p d-left mb-20px"}>
         <Grid
           size={xxs ? 12 : xs ? 12 : sm ? 12 : md ? 12 : lg ? 12 : xl ? 12 : xxl ? 12 : 12}
           className={"d-row-left"}
         >
           <Div className={"fs-2-0rem fw-700 dark-navy"}>
             {OBJECT.title}
-            <Hr className={"w-100 bg-primary h-3"} />
+            <Hr className={"w-100px bg-primary h-3px"} />
           </Div>
         </Grid>
       </Grid>
@@ -135,7 +135,7 @@ export const Skills = () => {
                       }));
                     }}
                   >
-                    <Div className={"d-center me-10"}>
+                    <Div className={"d-center mr-10px"}>
                       <Img
                         max={28}
                         hover={true}
@@ -153,7 +153,7 @@ export const Skills = () => {
                       <Icons
                         key={"ChevronDown"}
                         name={"ChevronDown"}
-                        className={"w-18 h-18"}
+                        className={"w-18px h-18px"}
                         sx={{
                           transform: isExpended[i] ? "rotate(180deg)" : "rotate(0deg)",
                           transition: "transform 0.3s ease-in-out",
@@ -168,10 +168,10 @@ export const Skills = () => {
                   {item.sub.map((sub: any, j: number) => (
                     <Grid
                       size={xxs ? 6 : xs ? 4 : sm ? 3 : md ? 4 : lg ? 4 : xl ? 3 : xxl ? 3 : 3}
-                      className={"d-row-left mb-10"}
+                      className={"d-row-left mb-10px"}
                       key={j}
                     >
-                      <Div className={"d-center me-5"}>
+                      <Div className={"d-center mr-5px"}>
                         <Img
                           max={20}
                           hover={true}
@@ -191,9 +191,9 @@ export const Skills = () => {
               </AccordionDetails>
             </Accordion>
             {(xxs || xs || sm) ? (
-              i < OBJECT.section.length - 1 && <Hr className={"bg-light h-5"} />
+              i < OBJECT.section.length - 1 && <Hr className={"bg-light h-5px"} />
             ) : (
-              i < OBJECT.section.length - 2 && <Hr className={"bg-light h-5"} />
+              i < OBJECT.section.length - 2 && <Hr className={"bg-light h-5px"} />
             )}
           </Grid>
         ))}

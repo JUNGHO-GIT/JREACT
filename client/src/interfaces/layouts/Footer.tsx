@@ -16,7 +16,7 @@ export const Footer = () => {
 
   // 7. footer -------------------------------------------------------------------------------------
   const footerNode = () => (
-    <Paper className={`layout-wrapper bg-darkest-navy shadow-top-4 border-0 radius-0 mt-40`}>
+    <Paper className={`layout-wrapper bg-darkest-navy shadow-top-4px border-0 radius-0 mt-40px`}>
       <Grid container={true} spacing={0} className={"d-row-center"}>
         <Grid size={xxs ? 12 : xs ? 12 : sm ? 12 : md ? 12 : lg ? 12 : xl ? 12 : xxl ? 12 : 12}>
           <Div className={"d-row-center"}>
@@ -27,12 +27,12 @@ export const Footer = () => {
               border={false}
               src={"logo.webp"}
               group={"main"}
-              className={"w-40 h-40 radius-50 me-15"}
+              className={"w-40px h-40px radius-50 mr-15px"}
             />
-            <Div className={"fs-1-1rem fw-600 white me-15"}>
+            <Div className={"fs-1-1rem fw-600 white mr-15px"}>
               {`${thisYear}`}
             </Div>
-            <Div className={"fs-1-0rem fw-400 white me-15"}>
+            <Div className={"fs-1-0rem fw-400 white mr-15px"}>
               {`All rights reserved`}
             </Div>
           </Div>

@@ -170,36 +170,36 @@ export const Project4 = () => {
           <Div className={"image-pagination transform-none"} />
         </Grid>
       </Grid>
-      <Hr m={40} className={"bg-light h-5"} />
+      <Hr m={40} className={"bg-light h-5px"} />
       <Grid container={true} spacing={2} columnSpacing={10} className={"h-100p d-top"}>
         {/** info, features **/}
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
             {OBJECT.filter((_: any, f: number) => f < 2).map((item: any, i: number) => (
               <Grid size={12} className={"d-col-left"} key={i}>
-                <Div className={"fs-1-6rem fw-700 dark-navy mb-20"}>
+                <Div className={"fs-1-6rem fw-700 dark-navy mb-20px"}>
                   {item.title}
-                  <Hr className={"w-100 bg-primary h-3"} />
+                  <Hr className={"w-100px bg-primary h-3px"} />
                 </Div>
                 {item.section.map((section: any, j: number) => (
-                  <Div className={"w-100p d-col-left mb-30"} key={j}>
-                    <Div className={"d-row-center mb-10"}>
-                      <Div className={"fs-0-4rem fw-300 dark-navy me-5"}>
+                  <Div className={"w-100p d-col-left mb-30px"} key={j}>
+                    <Div className={"d-row-center mb-10px"}>
+                      <Div className={"fs-0-4rem fw-300 dark-navy mr-5px"}>
                         {'●'}
                       </Div>
                       <Div className={"fs-1-1rem fw-600 dark-navy"}>
                         {section.title}
                       </Div>
                     </Div>
-                    <Div className={"d-row-center ms-10"}>
+                    <Div className={"d-row-center ml-10px"}>
                       {["Git", "Url"].includes(section.title) ? (
-                        <Div className={"d-row-left me-0"}>
+                        <Div className={"d-row-left mr-0px"}>
                           <Div className={"fs-1-0rem fw-400 blue hover lh-2-0"}>
                             {`- ${section.value}`}
                           </Div>
                         </Div>
                       ) : (
-                        <Div className={"d-row-left me-0"}>
+                        <Div className={"d-row-left mr-0px"}>
                           <Div className={"fs-1-0rem fw-400 light-black lh-2-0"}>
                             {`- ${section.value}`}
                           </Div>
@@ -208,7 +208,7 @@ export const Project4 = () => {
                     </Div>
                   </Div>
                 ))}
-                <Hr className={"bg-light h-5"} />
+                <Hr className={"bg-light h-5px"} />
               </Grid>
             ))}
           </Grid>
@@ -218,23 +218,23 @@ export const Project4 = () => {
           <Grid container={true} spacing={2}>
             {OBJECT.filter((_: any, f: number) => f >= 2).map((item: any, i: number) => (
               <Grid size={12} className={"d-col-left"} key={i}>
-                <Div className={"fs-1-6rem fw-700 dark-navy mb-20"}>
+                <Div className={"fs-1-6rem fw-700 dark-navy mb-20px"}>
                   {item.title}
-                  <Hr className={"w-100 bg-primary h-3"} />
+                  <Hr className={"w-100px bg-primary h-3px"} />
                 </Div>
                 {item.section.map((section: any, j: number) => (
-                  <Div className={"w-100p d-col-left mb-30"} key={j}>
-                    <Div className={"d-row-center mb-10"}>
-                      <Div className={"fs-0-4rem fw-300 dark-navy me-5"}>
+                  <Div className={"w-100p d-col-left mb-30px"} key={j}>
+                    <Div className={"d-row-center mb-10px"}>
+                      <Div className={"fs-0-4rem fw-300 dark-navy mr-5px"}>
                         {'●'}
                       </Div>
                       <Div className={"fs-1-1rem fw-600 dark-navy"}>
                         {section.title}
                       </Div>
                     </Div>
-                    <Div className={"d-row-center ms-10"}>
+                    <Div className={"d-row-center ml-10px"}>
                       {section.value.map((value: any, k: number) => (
-                        <Div className={`d-row-center me-20`} key={k}>
+                        <Div className={`d-row-center mr-20px`} key={k}>
                           <Img
                             max={20}
                             hover={true}
@@ -243,7 +243,7 @@ export const Project4 = () => {
                             radius={false}
                             group={"icons"}
                             src={`${value.icon}.webp`}
-                            className={"me-5"}
+                            className={"mr-5px"}
                           />
                           <Div className={"fs-1-0rem fw-400 light-black lh-2-0"}>
                             {value.value}
@@ -253,7 +253,7 @@ export const Project4 = () => {
                     </Div>
                   </Div>
                 ))}
-                <Hr className={"bg-light h-5"} />
+                <Hr className={"bg-light h-5px"} />
               </Grid>
             ))}
           </Grid>

@@ -26,14 +26,14 @@ export const Toggle = () => {
       <SpeedDial
         ariaLabel={"speedDial"}
         open={false}
-        className={"hover me-2vw"}
+        className={"hover mr-2vw"}
         icon={
           <Icons
             key={"Undo"}
             name={"Undo"}
             fill={"none"}
             color={"#ffffff"}
-            className={"w-25 h-25"}
+            className={"w-25px h-25px"}
           />
         }
         FabProps={{
@@ -51,14 +51,14 @@ export const Toggle = () => {
       <SpeedDial
         ariaLabel={"speedDial"}
         open={false}
-        className={"hover ms-2vw"}
+        className={"hover ml-2vw"}
         icon={
           <Icons
             key={"CaretUp"}
             name={"CaretUp"}
             fill={"#ffffff"}
             color={"#ffffff"}
-            className={"w-25 h-25"}
+            className={"w-25px h-25px"}
           />
         }
         FabProps={{

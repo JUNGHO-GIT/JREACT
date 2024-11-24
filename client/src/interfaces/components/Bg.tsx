@@ -7,7 +7,7 @@ export const Bg = (props: any) => (
   <Badge
     {...props}
     showZero={props?.showZero || true}
-    className={"mt-n10 ms-5"}
+    className={"mt-n10px ml-5px"}
     sx={{
       ...props?.sx,
       '& .MuiBadge-badge': {

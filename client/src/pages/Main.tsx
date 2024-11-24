@@ -23,11 +23,11 @@ export const Main = () => {
   return (
     <>
       <Hero />
-      <Hr className={"mb-20 bg-light h-10"} />
+      <Hr className={"mb-20px bg-light h-10px"} />
       <About />
-      <Hr m={40} className={"bg-light h-10"} />
+      <Hr m={40} className={"bg-light h-10px"} />
       <Skills />
-      <Hr m={40} className={"bg-light h-10"} />
+      <Hr m={40} className={"bg-light h-10px"} />
       <Portfolio />
     </>
   );
