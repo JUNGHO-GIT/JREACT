@@ -79,15 +79,9 @@ export const About = () => {
                 </Div>
               </Grid>
               <Grid size={9} className={"d-row-left mb-20px"}>
-                {i === 5 ? (
-                  <Div className={"fs-1-0rem fw-500 blue"}>
-                    {item.value}
-                  </Div>
-                ) : (
-                  <Div className={"fs-1-0rem fw-500 dark-grey"}>
-                    {item.value}
-                  </Div>
-                )}
+                <Div className={"fs-1-0rem fw-500 dark"}>
+                  {item.value}
+                </Div>
               </Grid>
             </Grid>
           ))}

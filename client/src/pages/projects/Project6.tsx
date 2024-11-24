@@ -3,7 +3,7 @@
 import { useEffect, useState } from "@importReacts";
 import { useResponsive, useStoreLoading } from "@importHooks";
 import { Swiper, SwiperSlide, Navigation, Pagination } from "@importLibs";
-import { Div, Img, Hr } from "@importComponents";
+import { Div, Img, Hr, Br } from "@importComponents";
 import { Grid, Paper } from "@importMuis";
 
 // -------------------------------------------------------------------------------------------------
@@ -20,15 +20,15 @@ export const Project6 = () => {
       section: [
         {
           title: "Name",
-          value: "Jportfolio",
+          value: "파주개성면옥",
         },
         {
           title: "Detail",
-          value: "React를 활용한 개인 포트폴리오 웹사이트",
+          value: "React Framework를 활용한 메밀음식 전문점 홈페이지",
         },
         {
           title: "Period",
-          value: "2023.04.26 - 2023.05.23",
+          value: "2024.07.01 - 2024.09.15",
         },
         {
           title: "Role",
@@ -36,11 +36,11 @@ export const Project6 = () => {
         },
         {
           title: "Git",
-          value: "github.com/JUNGHO-GIT/JREACT.git",
+          value: "github.com/JUNGHO-GIT/PAJUKAESONG.git",
         },
         {
           title: "Url",
-          value: "junghomun.com",
+          value: "파주개성면옥.com"
         },
       ],
     },
@@ -49,19 +49,19 @@ export const Project6 = () => {
       section: [
         {
           title: "React Framework",
-          value: "React(v18)를 활용, SPA 방식의 종합 포트폴리오 웹사이트 제작",
+          value: "React(v18)를 활용, SPA 방식의 종합 메밀음식 전문점 홈페이지 제작",
         },
         {
-          title: "Hooks & Router",
-          value: "React Hooks와 React Router를 활용하여 효율적 상태 관리와 동적 라우팅을 구현",
+          title: "Order Reservation",
+          value: "특정 날짜와 시간으로 예약 주문을 할 수 있는 기능을 구현하고, 관리자 페이지에서 주문 내역을 확인할 수 있도록 구현"
         },
         {
-          title: "Component",
-          value: "컴포넌트 기반의 구조 설계를 통한 효율적인 상태 관리 및 코드 재사용성 확보",
+          title: "MaterialUI",
+          value: "MaterialUI를 활용하여 반응형 웹 디자인 및 컴포넌트 제작, 모바일 환경 최적화",
         },
         {
           title: "Nginx Server",
-          value: "Nginx 서버를 활용하여 정적 파일 서비스 제공 및 리버스 프록시 서버 구축",
+          value: "Nginx 서버를 활용하여 정적 파일 제공 및 리버스 프록시 서버 구축",
         },
         {
           title: "Cloud Instance",
@@ -110,6 +110,23 @@ export const Project6 = () => {
       ],
     },
     {
+      title: "Database",
+      section: [
+        {
+          title: "DBMS",
+          value: [
+            { icon: "mongodb", value: "MongoDB" },
+          ],
+        },
+        {
+          title: "ORM",
+          value: [
+            { icon: "mongoose", value: "Mongoose" },
+          ],
+        },
+      ],
+    },
+    {
       title: "Server",
       section: [
         {
@@ -133,7 +150,6 @@ export const Project6 = () => {
     "project6_2",
     "project6_3",
     "project6_4",
-    "project6_5",
   ]);
 
   // 2-3. useEffect --------------------------------------------------------------------------------
@@ -168,15 +184,17 @@ export const Project6 = () => {
           >
             {images.map((image: string, i: number) => (
               <SwiperSlide className={"w-100p p-relative"} key={i}>
-                <Img
-                  max={1000}
-                  hover={false}
-                  shadow={false}
-                  radius={false}
-                  border={true}
-                  src={`${image}.webp`}
-                  group={"projects"}
-                />
+                <Div className={"p-5px"}>
+                  <Img
+                    max={1000}
+                    hover={false}
+                    shadow={true}
+                    radius={true}
+                    border={true}
+                    src={`${image}.webp`}
+                    group={"projects"}
+                  />
+                </Div>
               </SwiperSlide>
             ))}
             <Div className={"swiper-button-prev"} />
@@ -187,8 +205,9 @@ export const Project6 = () => {
           <Div className={"image-pagination transform-none"} />
         </Grid>
       </Grid>
-      <Hr m={40} className={"bg-light h-5px"} />
-      <Grid container={true} spacing={2} columnSpacing={10} className={"h-100p d-top"}>
+      <Br m={40} />
+      <Grid container={true} spacing={2} columnSpacing={10}
+      className={"h-100p d-top border-light-4 radius-2 px-4vw py-4vh"}>
         {/** info, features **/}
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
@@ -225,7 +244,12 @@ export const Project6 = () => {
                     </Div>
                   </Div>
                 ))}
-                <Hr className={"bg-light h-5px"} />
+                {(xxs || xs || sm) && (
+                  <Hr className={"bg-light h-4px"} />
+                )}
+                {(md || lg || xl || xxl) && (
+                  i !== 1 && <Hr className={"bg-light h-4px"} />
+                )}
               </Grid>
             ))}
           </Grid>
@@ -270,7 +294,12 @@ export const Project6 = () => {
                     </Div>
                   </Div>
                 ))}
-                <Hr className={"bg-light h-5px"} />
+                {(xxs || xs || sm) && (
+                  i !== 3 && <Hr className={"bg-light h-4px"} />
+                )}
+                {(md || lg || xl || xxl) && (
+                  <Hr className={"bg-light h-4px"} />
+                )}
               </Grid>
             ))}
           </Grid>

@@ -44,14 +44,18 @@ const App = () => {
     <div className={"App"}>
       <Loader />
       <Routes>
-        <Route path={"/*"} element={<Main />} />
-        <Route path={"/projects/project1/*"} element={<Project1 />} />
-        <Route path={"/projects/project2/*"} element={<Project2 />} />
-        <Route path={"/projects/project3/*"} element={<Project3 />} />
-        <Route path={"/projects/project4/*"} element={<Project4 />} />
-        <Route path={"/projects/project5/*"} element={<Project5 />} />
-        <Route path={"/projects/project6/*"} element={<Project6 />} />
-        <Route path={"/projects/project7/*"} element={<Project7 />} />
+        <Route path={"/*"}>
+          <Route path={"*"} element={<Main />} />
+        </Route>
+        <Route path={"/projects/*"}>
+          <Route path={"project1"} element={<Project1 />} />
+          <Route path={"project2"} element={<Project2 />} />
+          <Route path={"project3"} element={<Project3 />} />
+          <Route path={"project4"} element={<Project4 />} />
+          <Route path={"project5"} element={<Project5 />} />
+          <Route path={"project6"} element={<Project6 />} />
+          <Route path={"project7"} element={<Project7 />} />
+        </Route>
       </Routes>
       <Toggle />
       <Footer />

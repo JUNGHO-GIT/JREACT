@@ -59,13 +59,13 @@ export const Portfolio = () => {
         icon: "spring",
         img: "project2_1",
       },
-      {
+      /*{
         id: "1",
         name: "MeatStore",
         desc: "Online Meat Shopping Store",
         icon: "spring",
         img: "project1_1",
-      },
+      }*/
     ],
   });
 
@@ -79,14 +79,13 @@ export const Portfolio = () => {
         position: 'relative',
         width: '100%',
         height: '100%',
-        overflow: 'hidden',
       });
     });
     imageOverlay.forEach((el: any) => {
       Object.assign(el.style, {
         position: 'absolute',
-        width: '100%',
-        height: '100%',
+        width: '99%',
+        height: '98%',
         top: '0',
         backgroundColor: 'rgba(0, 0, 0, 0.7)',
         display: 'none',
@@ -132,18 +131,17 @@ export const Portfolio = () => {
         {OBJECT.section.map((item: any, i: number) => (
           <Grid size={(xxs || xs || sm) ? 12 : (md || lg) ? 6 : (xl || xxl) ? 4 : 4} key={i}>
             <Div className={"p-relative d-center"}>
-              <Div className={"image-container"}>
+              <Div className={"image-container p-5px"}>
                 <Img
-                  max={600}
-                  hover={true}
-                  shadow={false}
-                  border={false}
-                  radius={false}
+                  hover={false}
+                  shadow={true}
+                  border={true}
+                  radius={true}
                   src={`${item.img}.webp`}
                   group={"projects"}
                 />
               </Div>
-              <Div className={"image-overlay fadeIn"}>
+              <Div className={"image-overlay radius-2 fadeIn"}>
                 <Div
                   className={"d-row-center w-100p mt-40px mb-20px hover"}
                   onClick={(e: any) => {

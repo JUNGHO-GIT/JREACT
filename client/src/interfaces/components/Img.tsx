@@ -41,23 +41,23 @@ export const Img = (
 
     let newClass = "w-100p h-100p object-contain";
 
-    if (props?.className) {
-      newClass += ` ${props.className}`;
-    }
     if (hover) {
       newClass += " hover";
     }
-    if (shadow) {
-      newClass += " shadow-2";
-    }
     if (radius) {
-      newClass += " radius-3";
+      newClass += " radius-2";
     }
     if (border) {
       newClass += " border-1";
     }
+    if (shadow) {
+      newClass += " shadow-1";
+    }
     if (max) {
       newClass += ` w-max-${max}px h-max-${max}px`;
+    }
+    if (props?.className) {
+      newClass += ` ${props.className}`;
     }
 
     setImageClass(newClass);

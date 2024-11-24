@@ -11,6 +11,8 @@ export const useScrollTop = () => {
 
   // 2-3. useEffect --------------------------------------------------------------------------------
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (location.pathname !== "/") {
+      window.scrollTo(0, 0);
+    }
   }, [location, navigate]);
 };

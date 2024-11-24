@@ -3,7 +3,7 @@
 import { useEffect, useState } from "@importReacts";
 import { useResponsive, useStoreLoading } from "@importHooks";
 import { Swiper, SwiperSlide, Navigation, Pagination } from "@importLibs";
-import { Div, Img, Hr } from "@importComponents";
+import { Div, Img, Hr, Br } from "@importComponents";
 import { Grid, Paper } from "@importMuis";
 
 // -------------------------------------------------------------------------------------------------
@@ -61,7 +61,7 @@ export const Project7 = () => {
         },
         {
           title: "Nginx Server",
-          value: "Nginx 서버를 활용하여 정적 파일 서비스 제공 및 리버스 프록시 서버 구축",
+          value: "Nginx 서버를 활용하여 정적 파일 제공 및 리버스 프록시 서버 구축",
         },
         {
           title: "Cloud Instance",
@@ -152,8 +152,7 @@ export const Project7 = () => {
     "project7_1",
     "project7_2",
     "project7_3",
-    "project7_4",
-    "project7_5",
+    "project7_4"
   ]);
 
   // 2-3. useEffect --------------------------------------------------------------------------------
@@ -188,15 +187,17 @@ export const Project7 = () => {
           >
             {images.map((image: string, i: number) => (
               <SwiperSlide className={"w-100p p-relative"} key={i}>
-                <Img
-                  max={1000}
-                  hover={false}
-                  shadow={false}
-                  radius={false}
-                  border={true}
-                  src={`${image}.webp`}
-                  group={"projects"}
-                />
+                <Div className={"p-5px"}>
+                  <Img
+                    max={1000}
+                    hover={false}
+                    shadow={true}
+                    radius={true}
+                    border={true}
+                    src={`${image}.webp`}
+                    group={"projects"}
+                  />
+                </Div>
               </SwiperSlide>
             ))}
             <Div className={"swiper-button-prev"} />
@@ -207,8 +208,9 @@ export const Project7 = () => {
           <Div className={"image-pagination transform-none"} />
         </Grid>
       </Grid>
-      <Hr m={40} className={"bg-light h-5px"} />
-      <Grid container={true} spacing={2} columnSpacing={10} className={"h-100p d-top"}>
+      <Br m={40} />
+      <Grid container={true} spacing={2} columnSpacing={10}
+      className={"h-100p d-top border-light-4 radius-2 px-4vw py-4vh"}>
         {/** info, features **/}
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
@@ -245,7 +247,12 @@ export const Project7 = () => {
                     </Div>
                   </Div>
                 ))}
-                <Hr className={"bg-light h-5px"} />
+                {(xxs || xs || sm) && (
+                  <Hr className={"bg-light h-4px"} />
+                )}
+                {(md || lg || xl || xxl) && (
+                  i !== 1 && <Hr className={"bg-light h-4px"} />
+                )}
               </Grid>
             ))}
           </Grid>
@@ -290,7 +297,12 @@ export const Project7 = () => {
                     </Div>
                   </Div>
                 ))}
-                <Hr className={"bg-light h-5px"} />
+                {(xxs || xs || sm) && (
+                  i !== 3 && <Hr className={"bg-light h-4px"} />
+                )}
+                {(md || lg || xl || xxl) && (
+                  <Hr className={"bg-light h-4px"} />
+                )}
               </Grid>
             ))}
           </Grid>

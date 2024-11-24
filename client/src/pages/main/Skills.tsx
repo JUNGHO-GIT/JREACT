@@ -191,9 +191,9 @@ export const Skills = () => {
               </AccordionDetails>
             </Accordion>
             {(xxs || xs || sm) ? (
-              i < OBJECT.section.length - 1 && <Hr className={"bg-light h-5px"} />
+              i < OBJECT.section.length - 1 && <Hr className={"bg-light h-4px"} />
             ) : (
-              i < OBJECT.section.length - 2 && <Hr className={"bg-light h-5px"} />
+              i < OBJECT.section.length - 2 && <Hr className={"bg-light h-4px"} />
             )}
           </Grid>
         ))}

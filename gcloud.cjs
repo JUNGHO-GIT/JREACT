@@ -144,13 +144,12 @@ const runRemoteScript = () => {
     const cmdRmClient = 'sudo rm -rf client';
     const cmdCh = 'sudo chmod -R 755 /var/www/junghomun.com/JREACT/server';
     const cmdNpm = 'sudo npm install';
-    const cmdStart = 'sudo pm2 start index.ts --name JREACT';
     const cmdRestart = 'sudo pm2 restart all';
     const cmdSave = 'sudo pm2 save';
 
-    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} \'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdNpm} && ${cmdStart} && ${cmdRestart} && ${cmdSave}\'"
+    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} \'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdNpm} && ${cmdRestart} && ${cmdSave}\'"
     `;
-    const linuxCommand = `ssh -i ${keyPath} ${serviceId}@${ipAddr} \'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdNpm} && ${cmdStart} && ${cmdRestart} && ${cmdSave}\'`;
+    const linuxCommand = `ssh -i ${keyPath} ${serviceId}@${ipAddr} \'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdNpm} && ${cmdRestart} && ${cmdSave}\'`;
 
     const sshCommand = winOrLinux === "win" ? winCommand : linuxCommand;
 

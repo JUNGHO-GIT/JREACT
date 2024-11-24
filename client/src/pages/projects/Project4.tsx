@@ -3,7 +3,7 @@
 import { useEffect, useState } from "@importReacts";
 import { useResponsive, useStoreLoading } from "@importHooks";
 import { Swiper, SwiperSlide, Navigation, Pagination } from "@importLibs";
-import { Div, Img, Hr } from "@importComponents";
+import { Div, Img, Hr, Br } from "@importComponents";
 import { Grid, Paper } from "@importMuis";
 
 // -------------------------------------------------------------------------------------------------
@@ -128,7 +128,7 @@ export const Project4 = () => {
   const projectNode = () => (
     <Paper className={`detail-wrapper ${paperClass} border-0 radius-0 shadow-0`}>
       {/** images **/}
-      <Grid container={true} spacing={0}>
+      <Grid container={true} spacing={0} className={"w-100p d-center"}>
         <Grid size={12} className={"d-col-center"}>
           <Swiper
             spaceBetween={0}
@@ -151,15 +151,17 @@ export const Project4 = () => {
           >
             {images.map((image: string, i: number) => (
               <SwiperSlide className={"w-100p p-relative"} key={i}>
-                <Img
-                  max={1000}
-                  hover={false}
-                  shadow={false}
-                  radius={false}
-                  border={true}
-                  src={`${image}.webp`}
-                  group={"projects"}
-                />
+                <Div className={"p-5px"}>
+                  <Img
+                    max={1000}
+                    hover={false}
+                    shadow={true}
+                    radius={true}
+                    border={true}
+                    src={`${image}.webp`}
+                    group={"projects"}
+                  />
+                </Div>
               </SwiperSlide>
             ))}
             <Div className={"swiper-button-prev"} />
@@ -170,8 +172,9 @@ export const Project4 = () => {
           <Div className={"image-pagination transform-none"} />
         </Grid>
       </Grid>
-      <Hr m={40} className={"bg-light h-5px"} />
-      <Grid container={true} spacing={2} columnSpacing={10} className={"h-100p d-top"}>
+      <Br m={40} />
+      <Grid container={true} spacing={2} columnSpacing={10}
+      className={"h-100p d-top border-light-4 radius-2 px-4vw py-4vh"}>
         {/** info, features **/}
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
@@ -208,7 +211,12 @@ export const Project4 = () => {
                     </Div>
                   </Div>
                 ))}
-                <Hr className={"bg-light h-5px"} />
+                {(xxs || xs || sm) && (
+                  <Hr className={"bg-light h-4px"} />
+                )}
+                {(md || lg || xl || xxl) && (
+                  i !== 1 && <Hr className={"bg-light h-4px"} />
+                )}
               </Grid>
             ))}
           </Grid>
@@ -253,7 +261,12 @@ export const Project4 = () => {
                     </Div>
                   </Div>
                 ))}
-                <Hr className={"bg-light h-5px"} />
+                {(xxs || xs || sm) && (
+                  i !== 2 && <Hr className={"bg-light h-4px"} />
+                )}
+                {(md || lg || xl || xxl) && (
+                  <Hr className={"bg-light h-4px"} />
+                )}
               </Grid>
             ))}
           </Grid>

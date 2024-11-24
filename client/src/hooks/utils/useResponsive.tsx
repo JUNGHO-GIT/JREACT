@@ -28,10 +28,10 @@ export const useResponsive = () => {
       baseClass += " w-90p";
     }
     else if (md) {
-      baseClass += " w-80p";
+      baseClass += " w-85p";
     }
     else if (lg) {
-      baseClass += " w-80p";
+      baseClass += " w-85p";
     }
     else if (xl) {
       baseClass += " w-80p";
