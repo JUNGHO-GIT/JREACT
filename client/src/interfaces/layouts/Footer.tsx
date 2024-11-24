@@ -1,24 +1,47 @@
 // Footer.tsx
 
-import { useState } from "@importReacts";
-import { useResponsive } from "@importHooks";
-import { Div, Img } from "@importComponents";
+import { useState, useEffect } from "@importReacts";
+import { useCommonValue, useResponsive } from "@importHooks";
+import { axios } from "@importLibs";
+import { Div, Img, Icons } from "@importComponents";
 import { Grid, Paper } from "@importMuis";
 
 // -------------------------------------------------------------------------------------------------
 export const Footer = () => {
 
   // 0. common -------------------------------------------------------------------------------------
+  const { URL } = useCommonValue();
   const { xxs, xs, sm, md, lg, xl, xxl } = useResponsive();
 
   // 2-1. useState ---------------------------------------------------------------------------------
-  const [thisYear, _setThisYear] = useState<number>(new Date().getFullYear());
+  const [OBJECT, setOBJECT] = useState<any>({
+    name: "JUNGHO",
+    year: new Date().getFullYear(),
+    version: "",
+  });
+
+  // 2-3. useEffect --------------------------------------------------------------------------------
+  useEffect(() => {
+    axios.get(`${URL}/api/admin/appInfo`)
+    .then((res: any) => {
+      setOBJECT((prev: any) => ({
+        ...prev,
+        version: res.data.result.date
+      }));
+    })
+    .catch((err: any) => {
+      console.error(err);
+    });
+  }, []);
 
   // 7. footer -------------------------------------------------------------------------------------
   const footerNode = () => (
     <Paper className={`layout-wrapper bg-darkest-navy shadow-top-4px border-0 radius-0 mt-40px`}>
-      <Grid container={true} spacing={0} className={"d-row-center"}>
-        <Grid size={xxs ? 12 : xs ? 12 : sm ? 12 : md ? 12 : lg ? 12 : xl ? 12 : xxl ? 12 : 12}>
+      <Grid container={true} spacing={0}>
+        <Grid
+          className={(xxs || xs || sm || md) ? "d-row-center" : (lg || xl || xxl) ? "mr-auto" : ""}
+          size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 7 : 7}
+        >
           <Div className={"d-row-center"}>
             <Img
               hover={true}
@@ -29,11 +52,28 @@ export const Footer = () => {
               group={"main"}
               className={"w-40px h-40px radius-50 mr-15px"}
             />
-            <Div className={"fs-1-1rem fw-600 white mr-15px"}>
-              {`${thisYear}`}
-            </Div>
+            {(sm || md || lg || xl || xxl) && (
+              <Div className={"fs-1-1rem fw-600 white mr-15px"}>
+                {OBJECT.year}
+              </Div>
+            )}
             <Div className={"fs-1-0rem fw-400 white mr-15px"}>
-              {`All rights reserved`}
+              {`All rights reserved by`}
+            </Div>
+            {(xs ||sm || md || lg || xl || xxl) && (
+              <Div className={"fs-1-2rem fw-700 white"}>
+                {OBJECT.name}
+              </Div>
+            )}
+          </Div>
+        </Grid>
+        <Grid
+          className={(xxs || xs || sm) ? "d-none" : (md || lg || xl || xxl) ? "d-row-center" : ""}
+          size={(xxs || xs || sm) ? 0 : (md || lg || xl || xxl) ? 3 : 3}
+        >
+          <Div className={"d-row-center"}>
+            <Div className={"fs-0-8rem fw-400 white"}>
+              {OBJECT.version}
             </Div>
           </Div>
         </Grid>

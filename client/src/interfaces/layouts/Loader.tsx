@@ -11,13 +11,13 @@ export const Loader = () => {
   const { LOADING, setLOADING } = useStoreLoading();
 
   // 2-3. useEffect --------------------------------------------------------------------------------
-  useEffect(() => {
+  /* useEffect(() => {
     if (LOADING) {
       setTimeout(() => {
         setLOADING(false);
       }, 500);
     }
-  }, [LOADING]);
+  }, [LOADING]); */
 
   // 7.loader --------------------------------------------------------------------------------------
   const loaderNode = () => (

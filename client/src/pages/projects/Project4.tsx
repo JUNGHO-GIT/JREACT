@@ -174,7 +174,7 @@ export const Project4 = () => {
       </Grid>
       <Br m={40} />
       <Grid container={true} spacing={2} columnSpacing={10}
-      className={"h-100p d-top border-light-4 radius-2 px-4vw py-4vh"}>
+      className={"h-100p d-top border-light-3 radius-2 px-4vw py-4vh"}>
         {/** info, features **/}
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
@@ -212,10 +212,10 @@ export const Project4 = () => {
                   </Div>
                 ))}
                 {(xxs || xs || sm) && (
-                  <Hr className={"bg-light h-4px"} />
+                  <Hr className={"bg-light h-3px"} />
                 )}
                 {(md || lg || xl || xxl) && (
-                  i !== 1 && <Hr className={"bg-light h-4px"} />
+                  i !== 1 && <Hr className={"bg-light h-3px"} />
                 )}
               </Grid>
             ))}
@@ -262,10 +262,10 @@ export const Project4 = () => {
                   </Div>
                 ))}
                 {(xxs || xs || sm) && (
-                  i !== 2 && <Hr className={"bg-light h-4px"} />
+                  i !== 2 && <Hr className={"bg-light h-3px"} />
                 )}
                 {(md || lg || xl || xxl) && (
-                  <Hr className={"bg-light h-4px"} />
+                  <Hr className={"bg-light h-3px"} />
                 )}
               </Grid>
             ))}

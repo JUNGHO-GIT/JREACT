@@ -1,12 +1,10 @@
 // Main.jsx
 
-import { useEffect } from "@importReacts";
-import { useStoreLoading } from "@importHooks";
-import { About } from "@importPages";
-import { Hero } from "@importPages";
-import { Portfolio } from "@importPages";
-import { Skills } from "@importPages";
-import { Hr } from "@importComponents";
+import { useState, useEffect } from "@importReacts";
+import { useCommonValue, useStoreLoading } from "@importHooks";
+import { axios } from "@importLibs";
+import { Hr, Br } from "@importComponents";
+import { About, Hero, Portfolio, Skills } from "@importPages";
 
 // -------------------------------------------------------------------------------------------------
 export const Main = () => {
@@ -17,17 +15,20 @@ export const Main = () => {
   // 2-3. useEffect --------------------------------------------------------------------------------
   useEffect(() => {
     setLOADING(true);
+    setTimeout(() => {
+      setLOADING(false);
+    }, 500);
   }, []);
 
   // 10. return ------------------------------------------------------------------------------------
   return (
     <>
       <Hero />
-      <Hr className={"mb-20px bg-light h-10px"} />
+      <Br className={"my-4vh"} />
       <About />
-      <Hr m={40} className={"bg-light h-10px"} />
+      <Br className={"my-4vh"} />
       <Skills />
-      <Hr m={40} className={"bg-light h-10px"} />
+      <Br className={"my-4vh"} />
       <Portfolio />
     </>
   );
