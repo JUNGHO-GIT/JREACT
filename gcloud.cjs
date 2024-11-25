@@ -143,7 +143,7 @@ const runRemoteScript = () => {
     const cmdGitReset = 'sudo git reset --hard origin/master';
     const cmdRmClient = 'sudo rm -rf client';
     const cmdCh = 'sudo chmod -R 755 /var/www/junghomun.com/JREACT/server';
-    const cmdStop = 'sudo pm2 stop JREACT && pm2 save --force';
+    const cmdStop = 'pm2 describe JREACT >/dev/null 2>&1 && sudo pm2 stop JREACT && pm2 save --force';
     const cmdNpm = 'sudo npm install';
     const cmdStart = 'sudo pm2 start ecosystem.config.cjs --env production && pm2 save --force';
 
