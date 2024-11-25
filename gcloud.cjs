@@ -149,9 +149,39 @@ const runRemoteScript = () => {
     const cmdStart = 'pm2 start ecosystem.config.cjs --env production';
     const cmdReSave = 'sudo pm2 save --force';
 
-    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} \'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdStop} && ${cmdSave} && ${cmdNpm} && ${cmdStart} && ${cmdReSave}\'"
+    const checkPm2Status = `pm2 list | grep JREACT`;
+
+    const winCommand = `
+      powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} \'
+        ${cmdCd} &&
+        ${cmdGitFetch} &&
+        ${cmdGitReset} &&
+        ${cmdRmClient} &&
+        ${cmdCh} &&
+        if ${checkPm2Status}; then
+          ${cmdStop} && ${cmdSave};
+        fi &&
+        ${cmdNpm} &&
+        ${cmdStart} &&
+        ${cmdReSave}
+      \'"
     `;
-    const linuxCommand = `ssh -i ${keyPath} ${serviceId}@${ipAddr} \'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdStop} && ${cmdSave} && ${cmdNpm} && ${cmdStart} && ${cmdReSave}\'`;
+
+    const linuxCommand = `
+      ssh -i ${keyPath} ${serviceId}@${ipAddr} '
+        ${cmdCd} &&
+        ${cmdGitFetch} &&
+        ${cmdGitReset} &&
+        ${cmdRmClient} &&
+        ${cmdCh} &&
+        if ${checkPm2Status}; then
+          ${cmdStop} && ${cmdSave};
+        fi &&
+        ${cmdNpm} &&
+        ${cmdStart} &&
+        ${cmdReSave}
+      '
+    `;
 
     const sshCommand = winOrLinux === "win" ? winCommand : linuxCommand;
 
