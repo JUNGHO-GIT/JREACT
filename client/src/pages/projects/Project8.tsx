@@ -36,11 +36,11 @@ export const Project8 = () => {
         },
         {
           title: "Git",
-          value: "github.com/JUNGHO-GIT/LIFECHANGE.git",
+          value: "www.github.com/JUNGHO-GIT/LIFECHANGE.git",
         },
         {
           title: "Url",
-          value: "play.google.com/store/search?q=lifechange&c=apps&hl=ko",
+          value: "play.google.com/store/apps/details?id=com.LIFECHANGE&hl=ko",
         },
       ],
     },
@@ -236,13 +236,22 @@ export const Project8 = () => {
                     <Div className={"d-row-center ml-10px"}>
                       {["Git", "Url"].includes(section.title) ? (
                         <Div className={"d-row-left mr-0px"}>
-                          <Div className={"fs-1-0rem fw-400 blue hover lh-2-0"}>
+                          <Div
+                            className={"fs-1-0rem fw-400 blue hover lh-2-0"}
+                            onClick={() => {
+                              window.open(`https://${section.value}`, "_blank");
+                            }}
+                          >
                             {`- ${section.value}`}
                           </Div>
                         </Div>
                       ) : (
                         <Div className={"d-row-left mr-0px"}>
-                          <Div className={"fs-1-0rem fw-400 light-black lh-2-0"}>
+                          <Div
+                            className={"fs-1-0rem fw-400 light-black lh-2-0"}
+                            onClick={() => {
+                            }}
+                          >
                             {`- ${section.value}`}
                           </Div>
                         </Div>
