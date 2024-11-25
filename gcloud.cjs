@@ -145,11 +145,11 @@ const runRemoteScript = () => {
     const cmdCh = 'sudo chmod -R 755 /var/www/junghomun.com/JREACT/server';
     const cmdCheckPm2 = `
       if [ -z "$(pm2 list | grep JREACT)" ]; then
-        echo "JREACT is not running. Starting process...";
+        echo 'JREACT is not running. Starting process...';
         pm2 start ecosystem.config.cjs --env production &&
         sudo pm2 save --force;
       else
-        echo "JREACT is running. Restarting process...";
+        echo 'JREACT is running. Restarting process...';
         pm2 stop JREACT &&
         sudo pm2 save --force &&
         pm2 start ecosystem.config.cjs --env production &&
@@ -159,7 +159,7 @@ const runRemoteScript = () => {
     const cmdNpm = 'sudo npm install';
 
     // Bash 명령어를 Windows PowerShell에서 실행 가능하도록 수정
-    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} bash -c \\"'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdCheckPm2} && ${cmdNpm}'\\" "`;
+    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} bash -c \\\"${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdCheckPm2} && ${cmdNpm}\\\""`;
 
     // Linux는 Bash 명령어 그대로 실행
     const linuxCommand = `ssh -i ${keyPath} ${serviceId}@${ipAddr} '${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdCheckPm2} && ${cmdNpm}'`;
@@ -174,6 +174,7 @@ const runRemoteScript = () => {
     process.exit(1);
   }
 };
+
 
 // env 파일 및 index 파일 복원 --------------------------------------------------------------------
 const restoreEnvAndIndex = () => {
