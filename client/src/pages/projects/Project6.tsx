@@ -20,27 +20,19 @@ export const Project6 = () => {
       section: [
         {
           title: "Name",
-          value: "파주개성면옥",
+          value: "WMS",
         },
         {
           title: "Detail",
-          value: "React Framework를 활용한 메밀음식 전문점 홈페이지",
+          value: "Spring Framework를 활용한 창고 관리 시스템",
         },
         {
           title: "Period",
-          value: "2024.07.01 - 2024.09.15",
+          value: "2023.10.01 - 2024.02.01",
         },
         {
           title: "Role",
-          value: "총 1명 (개인)",
-        },
-        {
-          title: "Git",
-          value: "github.com/JUNGHO-GIT/PAJUKAESONG.git",
-        },
-        {
-          title: "Url",
-          value: "파주개성면옥.com"
+          value: "총 2명 (팀원)",
         },
       ],
     },
@@ -48,24 +40,24 @@ export const Project6 = () => {
       title: "Features",
       section: [
         {
-          title: "React Framework",
-          value: "React(v18)를 활용, SPA 방식의 종합 메밀음식 전문점 홈페이지 제작",
+          title: "Spring Framework",
+          value: "Spring Framework를 활용한 종합 창고 및 재고관리 시스템 개발",
         },
         {
-          title: "Order Reservation",
-          value: "특정 날짜와 시간으로 예약 주문을 할 수 있는 기능을 구현하고, 관리자 페이지에서 주문 내역을 확인할 수 있도록 구현"
+          title: "Warehouse Management System",
+          value: "실시간 입출고 및 출하, 재고 관리, 유통 기한 관리, 재고 이력 관리 등 다양한 기능 제공",
         },
         {
-          title: "MaterialUI",
-          value: "MaterialUI를 활용하여 반응형 웹 디자인 및 컴포넌트 제작, 모바일 환경 최적화",
+          title: "MyBatis",
+          value: "MyBatis를 활용한 데이터베이스 연동 및 SQL Mapping",
         },
         {
-          title: "Nginx Server",
-          value: "Nginx 서버를 활용하여 정적 파일 제공 및 리버스 프록시 서버 구축",
+          title: "Svn",
+          value: "Svn을 활용하여 버전 통합 관리 및 협업",
         },
         {
-          title: "Cloud Instance",
-          value: "GCP 인스턴스의 CentOS7 환경에서 서버를 구축하고, DNS 설정을 통해 도메인과 서버를 연결",
+          title: "Responsive Design",
+          value: "Bootstrap(v4)을 활용, 모바일 환경에서도 최적화된 UI/UX를 제공",
         },
       ],
     },
@@ -78,14 +70,18 @@ export const Project6 = () => {
             { icon: "html", value: "Html" },
             { icon: "css", value: "Css" },
             { icon: "js", value: "Js" },
-            { icon: "ts", value: "Ts" },
           ],
         },
         {
           title: "Framework",
           value: [
-            { icon: "react", value: "React" },
-            { icon: "mui", value: "MaterialUI" },
+            { icon: "bootstrap", value: "Bootstrap" },
+          ],
+        },
+        {
+          title: "Template Engine",
+          value: [
+            { icon: "jsp", value: "Jsp" },
           ],
         },
       ],
@@ -96,15 +92,22 @@ export const Project6 = () => {
         {
           title: "Language",
           value: [
-            { icon: "nodejs", value: "Nodejs" },
+            { icon: "java", value: "Java" },
+          ],
+        },
+        {
+          title: "Framework",
+          value: [
+            { icon: "spring", value: "Spring" },
           ],
         },
         {
           title: "Package, Build, Scm",
           value: [
-            { icon: "npm", value: "Npm" },
+            { icon: "maven", value: "Maven" },
+            { icon: "xml", value: "Xml" },
             { icon: "json", value: "Json" },
-            { icon: "github", value: "Git" },
+            { icon: "svn", value: "Svn" },
           ],
         },
       ],
@@ -115,13 +118,13 @@ export const Project6 = () => {
         {
           title: "DBMS",
           value: [
-            { icon: "mongodb", value: "MongoDB" },
+            { icon: "mysql", value: "Mysql8" },
           ],
         },
         {
-          title: "ORM",
+          title: "framework",
           value: [
-            { icon: "mongoose", value: "Mongoose" },
+            { icon: "mybatis", value: "Mybatis" },
           ],
         },
       ],
@@ -132,14 +135,14 @@ export const Project6 = () => {
         {
           title: "Server",
           value: [
-            { icon: "nginx", value: "Nginx" },
+            { icon: "tomcat", value: "Tomcat" },
           ],
         },
         {
           title: "Cloud",
           value: [
-            { icon: "gcp", value: "Gcp" },
-            { icon: "centos", value: "Centos7" },
+            { icon: "gabia", value: "Gabia Cloud" },
+            { icon: "ubuntu", value: "Ubuntu" },
           ],
         },
       ],
@@ -150,11 +153,15 @@ export const Project6 = () => {
     "project6_2",
     "project6_3",
     "project6_4",
+    "project6_5",
   ]);
 
   // 2-3. useEffect --------------------------------------------------------------------------------
   useEffect(() => {
     setLOADING(true);
+    setTimeout(() => {
+      setLOADING(false);
+    }, 500);
   }, []);
 
   // 7. project ------------------------------------------------------------------------------------

@@ -18,17 +18,24 @@ export const Portfolio = () => {
     section: [
 
       {
-        id: "7",
+        id: "8",
         name: "LIFECHANGE",
         desc: "Lifestyle Record Android App",
         icon: "rn",
+        img: "project8_1",
+      },
+      {
+        id: "7",
+        name: "파주개성면옥",
+        desc: "Restaurant Website",
+        icon: "react",
         img: "project7_1",
       },
       {
         id: "6",
-        name: "파주개성면옥",
-        desc: "Restaurant Website",
-        icon: "react",
+        name: "WMS",
+        desc: "Warehouse Management System",
+        icon: "spring",
         img: "project6_1",
       },
       {

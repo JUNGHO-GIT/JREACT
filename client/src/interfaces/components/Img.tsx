@@ -11,13 +11,14 @@ declare type ImgProps = React.HTMLAttributes<HTMLImageElement> & {
   shadow?: boolean;
   radius?: boolean;
   border?: boolean;
+  min?: number;
   max?: number;
   loading?: "eager" | "lazy";
 };
 
 // -------------------------------------------------------------------------------------------------
 export const Img = (
-  { group, src, hover, shadow, radius, border, max, loading, ...props }: ImgProps
+  { group, src, hover, shadow, radius, border, min, max, loading, ...props }: ImgProps
 ) => {
 
   // 1. common -------------------------------------------------------------------------------------
@@ -52,6 +53,9 @@ export const Img = (
     }
     if (shadow) {
       newClass += " shadow-1";
+    }
+    if (min) {
+      newClass += ` w-min-${min}px h-min-${min}px`;
     }
     if (max) {
       newClass += ` w-max-${max}px h-max-${max}px`;

@@ -53,6 +53,7 @@ export const Skills = () => {
         },
         sub: [
           { icon: "github", value: "Git" },
+          { icon: "svn", value: "Svn" },
           { icon: "npm", value: "Npm" },
           { icon: "maven", value: "Maven" },
           { icon: "gradle", value: "Gradle" },
@@ -77,9 +78,9 @@ export const Skills = () => {
         },
         sub: [
           { icon: "windows", value: "Windows" },
+          { icon: "android", value: "Android" },
           { icon: "linux", value: "Linux" },
           { icon: "centos", value: "Cent" },
-          { icon: "android", value: "Android" },
         ],
       },
       {
@@ -175,6 +176,7 @@ export const Skills = () => {
                     >
                       <Div className={"d-center mr-5px"}>
                         <Img
+                          min={20}
                           max={20}
                           hover={true}
                           shadow={false}

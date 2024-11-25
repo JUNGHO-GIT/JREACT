@@ -1,4 +1,4 @@
-// Project7.jsx
+// Project8.jsx
 
 import { useEffect, useState } from "@importReacts";
 import { useResponsive, useStoreLoading } from "@importHooks";
@@ -7,7 +7,7 @@ import { Div, Img, Hr, Br } from "@importComponents";
 import { Grid, Paper } from "@importMuis";
 
 // -------------------------------------------------------------------------------------------------
-export const Project7 = () => {
+export const Project8 = () => {
 
   // 0. common -------------------------------------------------------------------------------------
   const { setLOADING } = useStoreLoading();
@@ -20,15 +20,15 @@ export const Project7 = () => {
       section: [
         {
           title: "Name",
-          value: "파주개성면옥",
+          value: "LifeChange",
         },
         {
           title: "Detail",
-          value: "React Framework를 활용한 메밀음식 전문점 홈페이지",
+          value: "ReactNative 및 React를 활용한 생활 관리 하이브리드 앱",
         },
         {
           title: "Period",
-          value: "2024.07.01 - 2024.09.15",
+          value: "2024.05.05 - 2024.07.23",
         },
         {
           title: "Role",
@@ -36,11 +36,11 @@ export const Project7 = () => {
         },
         {
           title: "Git",
-          value: "github.com/JUNGHO-GIT/PAJUKAESONG.git",
+          value: "github.com/JUNGHO-GIT/LIFECHANGE.git",
         },
         {
           title: "Url",
-          value: "파주개성면옥.com"
+          value: "play.google.com/store/search?q=lifechange&c=apps&hl=ko",
         },
       ],
     },
@@ -48,16 +48,16 @@ export const Project7 = () => {
       title: "Features",
       section: [
         {
-          title: "React Framework",
-          value: "React(v18)를 활용, SPA 방식의 종합 메밀음식 전문점 홈페이지 제작",
+          title: "React Native",
+          value: "ReactNative(v0.74)를 활용하여 iOS 및 Android 플랫폼 지원 하이브리드 앱 구현",
         },
         {
-          title: "Order Reservation",
-          value: "특정 날짜와 시간으로 예약 주문을 할 수 있는 기능을 구현하고, 관리자 페이지에서 주문 내역을 확인할 수 있도록 구현"
+          title: "Android Widget",
+          value: "네이티브 모듈을 활용하여 Android 홈 화면 위젯 제작 및 실시간 데이터 연동",
         },
         {
-          title: "MaterialUI",
-          value: "MaterialUI를 활용하여 반응형 웹 디자인 및 컴포넌트 제작, 모바일 환경 최적화",
+          title: "Admob",
+          value: "Admob를 연동하여 앱 내 광고 수익 창출 및 사용자 피드백 수집",
         },
         {
           title: "Nginx Server",
@@ -77,7 +77,6 @@ export const Project7 = () => {
           value: [
             { icon: "html", value: "Html" },
             { icon: "css", value: "Css" },
-            { icon: "js", value: "Js" },
             { icon: "ts", value: "Ts" },
           ],
         },
@@ -85,6 +84,7 @@ export const Project7 = () => {
           title: "Framework",
           value: [
             { icon: "react", value: "React" },
+            { icon: "rn", value: "ReactNative" },
             { icon: "mui", value: "MaterialUI" },
           ],
         },
@@ -96,7 +96,10 @@ export const Project7 = () => {
         {
           title: "Language",
           value: [
+            { icon: "ts", value: "Ts" },
             { icon: "nodejs", value: "Nodejs" },
+            { icon: "express", value: "Express" },
+            { icon: "webpack", value: "Webpack" },
           ],
         },
         {
@@ -146,10 +149,10 @@ export const Project7 = () => {
     },
   ]);
   const [images, _setImages] = useState<string[]>([
-    "project7_1",
-    "project7_2",
-    "project7_3",
-    "project7_4",
+    "project8_1",
+    "project8_2",
+    "project8_3",
+    "project8_4"
   ]);
 
   // 2-3. useEffect --------------------------------------------------------------------------------

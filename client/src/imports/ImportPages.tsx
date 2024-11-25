@@ -12,6 +12,7 @@ import { Project4 } from '@pages/projects/Project4';
 import { Project5 } from '@pages/projects/Project5';
 import { Project6 } from '@pages/projects/Project6';
 import { Project7 } from '@pages/projects/Project7';
+import { Project8 } from '@pages/projects/Project8';
 
 // -------------------------------------------------------------------------------------------------
 export {
@@ -27,4 +28,5 @@ export {
   Project5,
   Project6,
   Project7,
+  Project8
 };

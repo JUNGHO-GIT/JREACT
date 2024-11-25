@@ -25,7 +25,7 @@ import {
 } from '@importLayouts';
 
 import {
-  Main, Project1, Project2, Project3, Project4, Project5, Project6, Project7
+  Main, Project1, Project2, Project3, Project4, Project5, Project6, Project7, Project8
 } from '@importPages';
 
 // -------------------------------------------------------------------------------------------------
@@ -52,6 +52,7 @@ const App = () => {
         <Route path={"/projects/project5/*"} element={<Project5 />} />
         <Route path={"/projects/project6/*"} element={<Project6 />} />
         <Route path={"/projects/project7/*"} element={<Project7 />} />
+        <Route path={"/projects/project8/*"} element={<Project8 />} />
       </Routes>
       <Toggle />
       <Footer />
