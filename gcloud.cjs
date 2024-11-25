@@ -175,7 +175,7 @@ const restoreEnvAndIndex = () => {
         return `CLIENT_URL=http://localhost:3000/JREACT`;
       }
       if (line.startsWith('GOOGLE_CALLBACK_URL=')) {
-        return `GOOGLE_CALLBACK_URL=http://localhost:4100/JREACT/api/auth/google/callback`;
+        return `GOOGLE_CALLBACK_URL=http://localhost:4000/JREACT/api/auth/google/callback`;
       }
       // 다른 줄은 그대로 유지
       return line;
