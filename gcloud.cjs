@@ -150,35 +150,23 @@ const runRemoteScript = () => {
     const cmdStart = 'pm2 start ecosystem.config.cjs --env production';
     const cmdReSave = 'sudo pm2 save --force';
 
-    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} \'
-      ${cmdCd} &&
-      ${cmdGitFetch} &&
-      ${cmdGitReset} &&
-      ${cmdRmClient} &&
-      ${cmdCh} &&
-      if ${checkPm2Status}; then
-        ${cmdStop} && ${cmdSave};
-      fi &&
-      ${cmdNpm} &&
-      ${cmdStart} &&
-      ${cmdReSave}\'"
-    `;
+    // 명령어를 배열로 작성
+    const remoteCommands = [
+      cmdCd,
+      cmdGitFetch,
+      cmdGitReset,
+      cmdRmClient,
+      cmdCh,
+      `if ${checkPm2Status}; then ${cmdStop} && ${cmdSave}; fi`,
+      cmdNpm,
+      cmdStart,
+      cmdReSave,
+    ];
 
-    const linuxCommand = `ssh -i ${keyPath} ${serviceId}@${ipAddr} '
-      ${cmdCd} &&
-      ${cmdGitFetch} &&
-      ${cmdGitReset} &&
-      ${cmdRmClient} &&
-      ${cmdCh} &&
-      if ${checkPm2Status}; then
-        ${cmdStop} && ${cmdSave};
-      fi &&
-      ${cmdNpm} &&
-      ${cmdStart} &&
-      ${cmdReSave}'
-    `;
+    const remoteCommandString = remoteCommands.join(' && ');
+    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} \\"${remoteCommandString}\\" "`;
 
-    const sshCommand = winOrLinux === "win" ? winCommand : linuxCommand;
+    const sshCommand = winCommand;
 
     execSync(sshCommand, { stdio: 'inherit' });
   }
