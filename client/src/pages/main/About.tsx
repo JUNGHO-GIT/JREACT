@@ -45,7 +45,7 @@ export const About = () => {
           size={xxs ? 12 : xs ? 12 : sm ? 12 : md ? 12 : lg ? 12 : xl ? 12 : xxl ? 12 : 12}
           className={"d-row-left"}
         >
-          <Div className={"fs-2-2rem fw-700 dark-navy ml-1vw"}>
+          <Div className={"fs-2-2rem fw-700 dark-navy ml-4vw"}>
             {OBJECT.title}
             <Hr className={"w-140px bg-primary h-3px"} />
           </Div>

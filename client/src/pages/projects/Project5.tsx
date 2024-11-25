@@ -245,12 +245,7 @@ export const Project5 = () => {
                     </Div>
                   </Div>
                 ))}
-                {(xxs || xs || sm) && (
-                  <Hr className={"bg-light h-3px"} />
-                )}
-                {(md || lg || xl || xxl) && (
-                  i !== 1 && <Hr className={"bg-light h-3px"} />
-                )}
+                {i !== 1 && <Hr className={"bg-light h-3px"} />}
               </Grid>
             ))}
           </Grid>
@@ -295,12 +290,7 @@ export const Project5 = () => {
                     </Div>
                   </Div>
                 ))}
-                {(xxs || xs || sm) && (
-                  i !== 3 && <Hr className={"bg-light h-3px"} />
-                )}
-                {(md || lg || xl || xxl) && (
-                  <Hr className={"bg-light h-3px"} />
-                )}
+                {i !== 3 && <Hr className={"bg-light h-3px"} />}
               </Grid>
             ))}
           </Grid>

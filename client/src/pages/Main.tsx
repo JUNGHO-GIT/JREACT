@@ -1,10 +1,9 @@
 // Main.jsx
 
-import { useState, useEffect } from "@importReacts";
-import { useCommonValue, useStoreLoading } from "@importHooks";
-import { axios } from "@importLibs";
-import { Hr, Br } from "@importComponents";
-import { About, Hero, Portfolio, Skills } from "@importPages";
+import {useEffect} from "@importReacts";
+import {useStoreLoading} from "@importHooks";
+import {Br} from "@importComponents";
+import {About, Hero, Portfolio, Skills} from "@importPages";
 
 // -------------------------------------------------------------------------------------------------
 export const Main = () => {
@@ -24,11 +23,11 @@ export const Main = () => {
   return (
     <>
       <Hero />
-      <Br className={"my-4vh"} />
+      <Br className={"my-3vh"} />
       <About />
-      <Br className={"my-4vh"} />
+      <Br className={"my-3vh"} />
       <Skills />
-      <Br className={"my-4vh"} />
+      <Br className={"my-3vh"} />
       <Portfolio />
     </>
   );

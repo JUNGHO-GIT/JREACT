@@ -55,14 +55,31 @@ export const Hero = () => {
             hover={false}
             shadow={false}
             radius={false}
-            src={(xxs || xs) ? "main2.webp" : (sm|| md || lg || xl || xxl) ? "main1.webp" : "main1.webp"}
             group={"main"}
+            src={(xxs || xs) ? (
+                "main2.webp"
+              ) : (sm|| md || lg || xl || xxl) ? (
+                "main1.webp"
+              ) : (
+                "main1.webp"
+              )
+            }
+            className={(xxs || xs) ? (
+                "w-110p"
+              ) : (sm|| md) ? (
+                "w-200p"
+              ) : (lg || xl || xxl) ? (
+                "w-100p"
+              ) : (
+                "w-100p"
+              )
+            }
           />
           <Div className={"p-absolute"}>
-            <Div className={"fs-2-0rem fw-700 white mb-10px"}>
+            <Div className={"fs-2-2rem fw-700 white mb-10px"}>
               {OBJECT.title}
             </Div>
-            <Div className={"fs-1-6rem fw-400 white"}>
+            <Div className={"fs-1-8rem fw-400 white"}>
               <span
                 ref={typedRef}
                 data-typed-items={OBJECT.sub}
