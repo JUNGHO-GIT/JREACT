@@ -127,14 +127,14 @@ const runRemoteScript = () => {
   try {
     const keyPath = (
       winOrLinux === "win"
-      ? "C:\\Users\\jungh\\.ssh\\JKEY"
-      : "~/ssh/JKEY"
+        ? "C:\\Users\\jungh\\.ssh\\JKEY"
+        : "~/ssh/JKEY"
     );
 
     const serviceId = (
       winOrLinux === "win"
-      ? 'junghomun00'
-      : 'junghomun1234'
+        ? 'junghomun00'
+        : 'junghomun1234'
     );
 
     const ipAddr = "104.196.212.101";
@@ -143,19 +143,34 @@ const runRemoteScript = () => {
     const cmdGitReset = 'sudo git reset --hard origin/master';
     const cmdRmClient = 'sudo rm -rf client';
     const cmdCh = 'sudo chmod -R 755 /var/www/junghomun.com/JREACT/server';
-    const cmdCheckPm2 = `if [ -z "$(pm2 list | grep JREACT)" ]; then pm2 start ecosystem.config.cjs --env production && sudo pm2 save --force; else pm2 stop JREACT && sudo pm2 save --force && pm2 start ecosystem.config.cjs --env production && sudo pm2 save --force; fi`;
+    const cmdCheckPm2 = `
+      if [ -z "$(pm2 list | grep JREACT)" ]; then
+        echo "JREACT is not running. Starting process...";
+        pm2 start ecosystem.config.cjs --env production &&
+        sudo pm2 save --force;
+      else
+        echo "JREACT is running. Restarting process...";
+        pm2 stop JREACT &&
+        sudo pm2 save --force &&
+        pm2 start ecosystem.config.cjs --env production &&
+        sudo pm2 save --force;
+      fi
+    `;
     const cmdNpm = 'sudo npm install';
 
-    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} \'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdCheckPm2} && ${cmdNpm}\'"`;
+    // Bash 명령어를 Windows PowerShell에서 실행 가능하도록 수정
+    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} bash -c \\"'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdCheckPm2} && ${cmdNpm}'\\" "`;
 
-    const linuxCommand = `ssh -i ${keyPath} ${serviceId}@${ipAddr} \'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdCheckPm2} && ${cmdNpm}\'`;
+    // Linux는 Bash 명령어 그대로 실행
+    const linuxCommand = `ssh -i ${keyPath} ${serviceId}@${ipAddr} '${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdCheckPm2} && ${cmdNpm}'`;
 
     const sshCommand = winOrLinux === "win" ? winCommand : linuxCommand;
 
+    console.log("Executing remote script via SSH...");
     execSync(sshCommand, { stdio: 'inherit' });
-  }
-  catch (error) {
-    console.error(error);
+    console.log("Remote script executed successfully.");
+  } catch (error) {
+    console.error("Error executing remote script:", error);
     process.exit(1);
   }
 };
