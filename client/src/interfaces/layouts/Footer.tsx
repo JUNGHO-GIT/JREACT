@@ -36,7 +36,7 @@ export const Footer = () => {
 
   // 7. footer -------------------------------------------------------------------------------------
   const footerNode = () => (
-    <Paper className={`layout-wrapper bg-darkest-navy shadow-top-4px border-0 radius-0 mt-40px`}>
+    <Paper className={`layout-wrapper bg-darkest-navy shadow-top-4 border-0 radius-0 mt-40px`}>
       <Grid container={true} spacing={0}>
         <Grid
           className={(xxs || xs || sm || md) ? "d-row-center" : (lg || xl || xxl) ? "mr-auto" : ""}
