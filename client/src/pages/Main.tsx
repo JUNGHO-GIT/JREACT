@@ -1,9 +1,9 @@
 // Main.jsx
 
-import {useEffect} from "@importReacts";
-import {useStoreLoading} from "@importHooks";
-import {Br} from "@importComponents";
-import {About, Hero, Portfolio, Skills} from "@importPages";
+import { useEffect } from "@importReacts";
+import { useStoreLoading } from "@importHooks";
+import { About, Hero, Portfolio, Skills } from "@importPages";
+import { Br } from "@importComponents";
 
 // -------------------------------------------------------------------------------------------------
 export const Main = () => {

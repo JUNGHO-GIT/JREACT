@@ -3,8 +3,7 @@
 import { useState, useEffect } from "@importReacts";
 import { useCommonValue, useResponsive } from "@importHooks";
 import { axios } from "@importLibs";
-import { Div, Img, Icons } from "@importComponents";
-import { Grid, Paper } from "@importMuis";
+import { Div, Img, Grid, Paper } from "@importComponents";
 
 // -------------------------------------------------------------------------------------------------
 export const Footer = () => {

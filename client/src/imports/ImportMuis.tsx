@@ -19,9 +19,9 @@ import {
   FormControl, FormControlLabel, FormGroup,
 
   // g
-  Grid2 as Grid,
+  Grid2 as Grid, GlobalStyles,
 
-  // h - k
+  // h - kS
   InputAdornment, InputBase, InputLabel, IconButton,
 
   // l
@@ -35,7 +35,7 @@ import {
 
   // s
   Select, Switch, SpeedDial, SpeedDialAction, SpeedDialIcon, Stepper, Step, StepLabel,
-  Snackbar, SnackbarContent, SvgIcon,
+  Snackbar, SnackbarContent, Skeleton,
 
   // t
   Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TablePagination, TableRow, TableSortLabel, TabScrollButton,  Toolbar, Tooltip, Tabs, Tab, tabsClasses,
@@ -46,9 +46,10 @@ import {
 
 } from '@mui/material';
 
-// progress ----------------------------------------------------------------------------------------
-import LinearProgressProps from '@mui/material/LinearProgress';
-import { LinearProgress } from '@mui/material';
+// props -------------------------------------------------------------------------------------------
+import type {
+  CardProps, PaperProps, Grid2Props as GridProps
+} from '@mui/material';
 
 // popupState --------------------------------------------------------------------------------------
 import PopupState, {
@@ -79,13 +80,13 @@ export {
   FormControl, FormControlLabel, FormGroup,
 
   // g
-  Grid,
+  Grid, GlobalStyles,
 
   // h - k
   InputAdornment, InputBase, InputLabel, IconButton,
 
   // l
-  Link, List, ListItem, LinearProgress, LinearProgressProps,
+  Link, List, ListItem,
 
   // m - o
   Menu, MenuItem, MenuList, Modal,
@@ -95,11 +96,15 @@ export {
 
   // s
   Select, Switch, SpeedDial, SpeedDialAction, SpeedDialIcon, Stepper, Step, StepLabel,
-  Snackbar, SnackbarContent, SvgIcon,
+  Snackbar, SnackbarContent, Skeleton,
 
   // t
   Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TablePagination, TableRow, TableSortLabel, TabScrollButton, Toolbar, Tooltip, Tabs, Tab, tabsClasses,
   TextField, TextArea,
+
+
+  // props
+  CardProps, PaperProps, GridProps,
 
   // u
   useMediaQuery, useTheme,

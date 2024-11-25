@@ -3,8 +3,7 @@
 import { useEffect, useState } from "@importReacts";
 import { useResponsive, useStoreLoading } from "@importHooks";
 import { Swiper, SwiperSlide, Navigation, Pagination } from "@importLibs";
-import { Div, Img, Hr, Br } from "@importComponents";
-import { Grid, Paper } from "@importMuis";
+import { Div, Img, Hr, Br, Grid, Paper } from "@importComponents";
 
 // -------------------------------------------------------------------------------------------------
 export const Project1 = () => {
@@ -169,7 +168,7 @@ export const Project1 = () => {
 
   // 7. project ------------------------------------------------------------------------------------
   const projectNode = () => (
-    <Paper className={`detail-wrapper ${paperClass} border-0 radius-0 shadow-0`}>
+    <Paper className={`detail-wrapper ${paperClass} border-0 radius-0 shadow-0 px-10px`}>
       {/** images **/}
       <Grid container={true} spacing={0} className={"w-100p d-center"}>
         <Grid size={12} className={"d-col-center"}>
@@ -217,7 +216,7 @@ export const Project1 = () => {
       </Grid>
       <Br m={40} />
       <Grid container={true} spacing={2} columnSpacing={10}
-      className={"h-100p d-top border-light-3 radius-2 px-4vw py-4vh"}>
+      className={"h-100p d-top border-1 radius-2 shadow-1 px-4vw py-4vh"}>
         {/** info, features **/}
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>

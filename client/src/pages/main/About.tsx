@@ -2,8 +2,7 @@
 
 import { useState } from "@importReacts";
 import { useResponsive } from "@importHooks";
-import { Img, Div, Hr, Br } from "@importComponents";
-import { Grid, Paper } from "@importMuis";
+import { Img, Div, Hr, Br, Grid, Paper } from "@importComponents";
 
 // -------------------------------------------------------------------------------------------------
 export const About = () => {

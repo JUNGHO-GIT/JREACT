@@ -2,8 +2,8 @@
 
 import { useState } from "@importReacts";
 import { useResponsive } from "@importHooks";
-import { Div, Hr, Br, Icons, Img } from "@importComponents";
-import { Accordion, AccordionDetails, AccordionSummary, Grid, Paper } from "@importMuis";
+import { Div, Hr, Br, Icons, Img, Grid, Paper } from "@importComponents";
+import { Accordion, AccordionDetails, AccordionSummary } from "@importMuis";
 
 // -------------------------------------------------------------------------------------------------
 export const Skills = () => {

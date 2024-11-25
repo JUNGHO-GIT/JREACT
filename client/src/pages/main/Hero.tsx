@@ -3,8 +3,7 @@
 import { useState, useRef, useEffect } from "@importReacts";
 import { useResponsive } from "@importHooks";
 import { Typed } from "@importLibs";
-import { Div, Img } from "@importComponents";
-import { Grid, Paper } from "@importMuis";
+import { Div, Img, Grid, Paper } from "@importComponents";
 
 // -------------------------------------------------------------------------------------------------
 export const Hero = () => {
