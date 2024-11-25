@@ -151,21 +151,21 @@ const runRemoteScript = () => {
     const cmdReSave = 'sudo pm2 save --force';
 
     // 명령어를 배열로 작성
-    const remoteCommands = [
-      cmdCd,
-      cmdGitFetch,
-      cmdGitReset,
-      cmdRmClient,
-      cmdCh,
-      `if ${checkPm2Status}; then ${cmdStop} && ${cmdSave}; fi`,
-      cmdNpm,
-      cmdStart,
-      cmdReSave,
-    ];
-
-    const remoteCommandString = remoteCommands.join(' && ');
-    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} \\"${remoteCommandString}\\" "`;
-
+    const remoteCommandString = `
+      ${cmdCd} &&
+      ${cmdGitFetch} &&
+      ${cmdGitReset} &&
+      ${cmdRmClient} &&
+      ${cmdCh} &&
+      if pm2 list | grep JREACT > /dev/null 2>&1; then
+        ${cmdStop} &&
+        ${cmdSave};
+      fi &&
+      ${cmdNpm} &&
+      ${cmdStart} &&
+      ${cmdReSave}
+    `;
+    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} \\"bash -c '${remoteCommandString}'\\" "`;
     const sshCommand = winCommand;
 
     execSync(sshCommand, { stdio: 'inherit' });
