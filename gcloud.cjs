@@ -143,30 +143,14 @@ const runRemoteScript = () => {
     const cmdGitReset = 'sudo git reset --hard origin/master';
     const cmdRmClient = 'sudo rm -rf client';
     const cmdCh = 'sudo chmod -R 755 /var/www/junghomun.com/JREACT/server';
-    const checkPm2Status = `pm2 list | grep JREACT`;
-    const cmdStop = 'sudo pm2 stop JREACT';
-    const cmdSave = 'sudo pm2 save --force';
+    const cmdCheckPm2 = `if [ -z "$(pm2 list | grep JREACT)" ]; then pm2 start ecosystem.config.cjs --env production && sudo pm2 save --force; else pm2 stop JREACT && sudo pm2 save --force && pm2 start ecosystem.config.cjs --env production && sudo pm2 save --force; fi`;
     const cmdNpm = 'sudo npm install';
-    const cmdStart = 'pm2 start ecosystem.config.cjs --env production';
-    const cmdReSave = 'sudo pm2 save --force';
 
-    // 명령어를 배열로 작성
-    const remoteCommandString = `
-      ${cmdCd} &&
-      ${cmdGitFetch} &&
-      ${cmdGitReset} &&
-      ${cmdRmClient} &&
-      ${cmdCh} &&
-      if pm2 list | grep JREACT > /dev/null 2>&1; then
-        ${cmdStop} &&
-        ${cmdSave};
-      fi &&
-      ${cmdNpm} &&
-      ${cmdStart} &&
-      ${cmdReSave}
-    `;
-    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} \\"bash -c '${remoteCommandString}'\\" "`;
-    const sshCommand = winCommand;
+    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} \'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdCheckPm2} && ${cmdNpm}\'"`;
+
+    const linuxCommand = `ssh -i ${keyPath} ${serviceId}@${ipAddr} \'${cmdCd} && ${cmdGitFetch} && ${cmdGitReset} && ${cmdRmClient} && ${cmdCh} && ${cmdCheckPm2} && ${cmdNpm}\'`;
+
+    const sshCommand = winOrLinux === "win" ? winCommand : linuxCommand;
 
     execSync(sshCommand, { stdio: 'inherit' });
   }
