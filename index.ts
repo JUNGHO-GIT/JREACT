@@ -53,6 +53,7 @@ mongoose.connect(`mongodb://${id}:${pw}@${host}:${port}/${db}`)
   console.error(`[${envStr}] MongoDB 연결 실패 [${db}] ${err}`);
 });
 
+
 // 미들웨어 설정 -----------------------------------------------------------------------------------
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
