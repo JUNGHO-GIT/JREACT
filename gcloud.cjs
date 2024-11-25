@@ -143,44 +143,39 @@ const runRemoteScript = () => {
     const cmdGitReset = 'sudo git reset --hard origin/master';
     const cmdRmClient = 'sudo rm -rf client';
     const cmdCh = 'sudo chmod -R 755 /var/www/junghomun.com/JREACT/server';
+    const checkPm2Status = `pm2 list | grep JREACT`;
     const cmdStop = 'sudo pm2 stop JREACT';
     const cmdSave = 'sudo pm2 save --force';
     const cmdNpm = 'sudo npm install';
     const cmdStart = 'pm2 start ecosystem.config.cjs --env production';
     const cmdReSave = 'sudo pm2 save --force';
 
-    const checkPm2Status = `pm2 list | grep JREACT`;
-
-    const winCommand = `
-      powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} \'
-        ${cmdCd} &&
-        ${cmdGitFetch} &&
-        ${cmdGitReset} &&
-        ${cmdRmClient} &&
-        ${cmdCh} &&
-        if ${checkPm2Status}; then
-          ${cmdStop} && ${cmdSave};
-        fi &&
-        ${cmdNpm} &&
-        ${cmdStart} &&
-        ${cmdReSave}
-      \'"
+    const winCommand = `powershell -Command "ssh -i ${keyPath} ${serviceId}@${ipAddr} \'
+      ${cmdCd} &&
+      ${cmdGitFetch} &&
+      ${cmdGitReset} &&
+      ${cmdRmClient} &&
+      ${cmdCh} &&
+      if ${checkPm2Status}; then
+        ${cmdStop} && ${cmdSave};
+      fi &&
+      ${cmdNpm} &&
+      ${cmdStart} &&
+      ${cmdReSave}\'"
     `;
 
-    const linuxCommand = `
-      ssh -i ${keyPath} ${serviceId}@${ipAddr} '
-        ${cmdCd} &&
-        ${cmdGitFetch} &&
-        ${cmdGitReset} &&
-        ${cmdRmClient} &&
-        ${cmdCh} &&
-        if ${checkPm2Status}; then
-          ${cmdStop} && ${cmdSave};
-        fi &&
-        ${cmdNpm} &&
-        ${cmdStart} &&
-        ${cmdReSave}
-      '
+    const linuxCommand = `ssh -i ${keyPath} ${serviceId}@${ipAddr} '
+      ${cmdCd} &&
+      ${cmdGitFetch} &&
+      ${cmdGitReset} &&
+      ${cmdRmClient} &&
+      ${cmdCh} &&
+      if ${checkPm2Status}; then
+        ${cmdStop} && ${cmdSave};
+      fi &&
+      ${cmdNpm} &&
+      ${cmdStart} &&
+      ${cmdReSave}'
     `;
 
     const sshCommand = winOrLinux === "win" ? winCommand : linuxCommand;
