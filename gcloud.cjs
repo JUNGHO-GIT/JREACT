@@ -129,33 +129,31 @@ const gitPushPrivate = () => {
     const ignorePublicFile = ".gitignore.public";
     const ignorePrivateFile = ".gitignore.private";
 
-    // .gitignore -> .gitignore.public
+    // .gitignore -> .gitignore.public (백업)
     if (fs.existsSync(ignoreFile)) {
-      fs.renameSync(ignoreFile, ignorePublicFile);
+      fs.copyFileSync(ignoreFile, ignorePublicFile);
     }
 
     // .gitignore.private -> .gitignore
     if (fs.existsSync(ignorePrivateFile)) {
-      fs.renameSync(ignorePrivateFile, ignoreFile);
+      fs.copyFileSync(ignorePrivateFile, ignoreFile);
     }
 
-    const gitPush = (
-      'git push private master'
-    );
-
+    const gitPush = 'git push private master';
     execSync(gitPush, { stdio: 'inherit' });
 
-    // .gitignore.public -> .gitignore
+    // .gitignore.public -> .gitignore (복구)
     if (fs.existsSync(ignorePublicFile)) {
-      fs.renameSync(ignorePublicFile, ignoreFile);
+      fs.copyFileSync(ignorePublicFile, ignoreFile);
+      fs.unlinkSync(ignorePublicFile); // 백업 파일 제거
     }
 
-    // .gitignore -> .gitignore.private
+    // .gitignore -> .gitignore.private (원상복구)
     if (fs.existsSync(ignoreFile)) {
-      fs.renameSync(ignoreFile, ignorePrivateFile);
+      fs.copyFileSync(ignoreFile, ignorePrivateFile);
+      fs.unlinkSync(ignoreFile); // 임시 파일 제거
     }
-  }
-  catch (error) {
+  } catch (error) {
     console.error(error);
     process.exit(1);
   }
