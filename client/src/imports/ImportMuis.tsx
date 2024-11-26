@@ -102,7 +102,6 @@ export {
   Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TablePagination, TableRow, TableSortLabel, TabScrollButton, Toolbar, Tooltip, Tabs, Tab, tabsClasses,
   TextField, TextArea,
 
-
   // props
   CardProps, PaperProps, GridProps,
 

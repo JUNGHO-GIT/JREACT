@@ -1,6 +1,5 @@
 // Loader.tsx
 
-import { useEffect } from "@importReacts";
 import { useStoreLoading } from "@importHooks";
 import { Div } from "@importComponents";
 
@@ -8,16 +7,7 @@ import { Div } from "@importComponents";
 export const Loader = () => {
 
   // 1. common -------------------------------------------------------------------------------------
-  const { LOADING, setLOADING } = useStoreLoading();
-
-  // 2-3. useEffect --------------------------------------------------------------------------------
-  /* useEffect(() => {
-    if (LOADING) {
-      setTimeout(() => {
-        setLOADING(false);
-      }, 500);
-    }
-  }, [LOADING]); */
+  const { LOADING } = useStoreLoading();
 
   // 7.loader --------------------------------------------------------------------------------------
   const loaderNode = () => (
@@ -26,7 +16,7 @@ export const Loader = () => {
         <Div className={"loader"} />
       </Div>
     ) : (
-      null
+      <Div />
     )
   );
 
