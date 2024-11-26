@@ -61,13 +61,15 @@ thumbs.db
 
 # config files
 *tsconfig.json
+*tsconfig.jsonc
 *tsconfig.path.json
 *tsconfig.paths.json
-*tsconfig.jsonc
+*tsconfig.default.json
 *jsconfig.json
+*jsconfig.jsonc
 *jsconfig.path.json
 *jsconfig.paths.json
-*jsconfig.jsonc
+*jsconfig.default.json
 
 # etc
 *push.cjs
