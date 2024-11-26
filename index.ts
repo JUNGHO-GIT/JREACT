@@ -36,7 +36,6 @@ const httpsPort = Number(process.env.HTTPS_PORT);
   }
 })(httpPort, httpsPort);
 
-
 // MongoDB 설정 ------------------------------------------------------------------------------------
 const id = process.env.DB_USER;
 const pw = process.env.DB_PASS;
