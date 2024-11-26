@@ -129,9 +129,12 @@ const gitPushPrivate = () => {
     const ignorePublicFile = ".gitignore.public";
     const ignorePrivateFile = ".gitignore.private";
 
+    // .gitignore -> .gitignore.public
     if (fs.existsSync(ignoreFile)) {
       fs.renameSync(ignoreFile, ignorePublicFile);
     }
+
+    // .gitignore.private -> .gitignore
     if (fs.existsSync(ignorePrivateFile)) {
       fs.renameSync(ignorePrivateFile, ignoreFile);
     }
@@ -142,9 +145,12 @@ const gitPushPrivate = () => {
 
     execSync(gitPush, { stdio: 'inherit' });
 
+    // .gitignore.public -> .gitignore
     if (fs.existsSync(ignorePublicFile)) {
       fs.renameSync(ignorePublicFile, ignoreFile);
     }
+
+    // .gitignore -> .gitignore.private
     if (fs.existsSync(ignoreFile)) {
       fs.renameSync(ignoreFile, ignorePrivateFile);
     }

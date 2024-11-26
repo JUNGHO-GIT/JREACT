@@ -1,18 +1,79 @@
 # gitignore
 
-/node_modules/
-**/node_modules/
+# directories 1
+node_modules/
+build/
+dist/
+coverage/
+out/
+temp/
+META-INF/
+target/
+test/
 
-/build/
-**/build/
+# directories 2
+# .vscode/
+# .idea/
+.tmp/
+.cache/
+.nyc_output/
+.grunt/
+.gulp/
+.parcel-cache/
 
-/dist/
-**/dist/
+# log files
+*.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-/.cache/
-**/.cache/
+# os-specific files
+.ds_store
+thumbs.db
+*.swp
+*.swo
 
-client/.cache/
-client/.webpack_cache/
+# env files
+*.env
+*.env.*
+*.properties
+*.props
+*.classpath
+*.project
+*.settings
 
-pakcage-lock.json
+# temporary files
+*.tmp
+*.bak
+*.backup
+*.orig
+*.rej
+*.jar
+*.war
+*.ear
+*.class
+
+# package manager files
+*package-lock.json
+*yarn.lock
+*npm-debug.log
+*pnpm-debug.log
+
+# config files
+*tsconfig.json
+*tsconfig.path.json
+*tsconfig.paths.json
+*tsconfig.jsonc
+*jsconfig.json
+*jsconfig.path.json
+*jsconfig.paths.json
+*jsconfig.jsonc
+
+# etc
+*push.cjs
+*push.sh
+*gcloud.cjs
+*gcloud.sh
+*.gitignore.public
+*.gitignore.private
+*.vsix
