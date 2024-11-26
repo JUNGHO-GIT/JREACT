@@ -62,7 +62,7 @@ const App = () => {
 
 // -------------------------------------------------------------------------------------------------
 createRoot(document.getElementById('root') as HTMLElement).render(
-  <BrowserRouter basename={"/JREACT"}>
+  <BrowserRouter basename={"/JPORTFOLIO"}>
     <ThemeProvider theme={
       createTheme({
         typography:{fontFamily:"Pretendard Variable, Pretendard, Noto Sans KR, Roboto, sans-serif"}

@@ -1,6 +1,6 @@
 {
-  "name": "JREACT-client",
-  "homepage": "/JREACT",
+  "name": "JPORTFOLIO-client",
+  "homepage": "/JPORTFOLIO",
   "version": "1.0.0",
   "main": "index.tsx",
   "type": "module",

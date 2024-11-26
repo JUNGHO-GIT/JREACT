@@ -35,11 +35,11 @@ export const Project5 = () => {
         },
         {
           title: "Git",
-          value: "www.github.com/JUNGHO-GIT/JREACT.git",
+          value: "www.github.com/JUNGHO-GIT/JPORTFOLIO.git",
         },
         {
           title: "Url",
-          value: "www.junghomun.com/JREACT"
+          value: "www.junghomun.com/JPORTFOLIO"
         },
       ],
     },
