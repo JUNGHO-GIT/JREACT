@@ -1,15 +1,15 @@
 # gitignore.public
 
 # directories 1
-node_modules/
-build/
-dist/
-coverage/
-out/
-temp/
-META-INF/
-target/
-test/
+*node_modules/
+*build/
+*dist/
+*coverage/
+*out/
+*temp/
+*META-INF/
+*target/
+*test/
 
 # directories 2
 # .vscode/
