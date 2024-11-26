@@ -292,9 +292,13 @@ export const Project6 = () => {
                         {section.title}
                       </Div>
                     </Div>
-                    <Div className={"d-row-center ml-10px"}>
+                    <Grid container={true} spacing={0} className={"d-left ml-1vw"}>
                       {section.value.map((value: any, k: number) => (
-                        <Div className={`d-row-center mr-20px`} key={k}>
+                        <Grid
+                          size={xxs ? 6 : xs ? 4 : sm ? 3 : md ? 4 : lg ? 4 : xl ? 3 : xxl ? 3 : 3}
+                          className={"d-row-left"}
+                          key={k}
+                        >
                           <Img
                             max={20}
                             hover={true}
@@ -308,9 +312,9 @@ export const Project6 = () => {
                           <Div className={"fs-1-0rem fw-400 light-black lh-2-0"}>
                             {value.value}
                           </Div>
-                        </Div>
+                        </Grid>
                       ))}
-                    </Div>
+                    </Grid>
                   </Div>
                 ))}
                 {i !== 3 && <Hr className={"bg-light h-3px"} />}

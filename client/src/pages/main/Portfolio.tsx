@@ -144,7 +144,7 @@ export const Portfolio = () => {
       <Grid
         container={true}
         spacing={2}
-        className={"h-100p d-top"}
+        className={"h-100p d-left"}
       >
         {OBJECT.section.map((item: any, i: number) => (
           <Grid size={(xxs || xs || sm) ? 12 : (md || lg) ? 6 : (xl || xxl) ? 4 : 4} key={i}>
