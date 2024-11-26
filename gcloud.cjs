@@ -129,14 +129,14 @@ const gitPushPrivate = () => {
     const ignorePublicFile = ".gitignore.public";
     const ignorePrivateFile = ".gitignore.private";
 
-    // .gitignore -> .gitignore.public (백업)
+    // .gitignore -> .gitignore.public
     if (fs.existsSync(ignoreFile)) {
-      fs.copyFileSync(ignoreFile, ignorePublicFile);
+      fs.renameSync(ignoreFile, ignorePublicFile);
     }
 
     // .gitignore.private -> .gitignore
     if (fs.existsSync(ignorePrivateFile)) {
-      fs.copyFileSync(ignorePrivateFile, ignoreFile);
+      fs.renameSync(ignorePrivateFile, ignoreFile);
     }
 
     const gitPush = (
@@ -145,9 +145,9 @@ const gitPushPrivate = () => {
 
     execSync(gitPush, { stdio: 'inherit' });
 
-    // .gitignore.public -> .gitignore (복구)
+    // .gitignore.public -> .gitignore
     if (fs.existsSync(ignorePublicFile)) {
-      fs.copyFileSync(ignorePublicFile, ignoreFile);
+      fs.renameSync(ignorePublicFile, ignoreFile);
     }
   }
   catch (error) {
