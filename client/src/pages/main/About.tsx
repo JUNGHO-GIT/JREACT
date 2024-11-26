@@ -39,20 +39,28 @@ export const About = () => {
   // 7. about --------------------------------------------------------------------------------------
   const aboutNode = () => (
     <Paper className={`main-wrapper ${paperClass} border-0 radius-0 shadow-0`}>
-      <Grid container={true} spacing={0} className={"w-100p d-left"}>
+      <Grid
+        container={true}
+        spacing={0}
+        className={"w-100p d-left"}
+      >
         <Grid
           size={xxs ? 12 : xs ? 12 : sm ? 12 : md ? 12 : lg ? 12 : xl ? 12 : xxl ? 12 : 12}
           className={"d-row-left"}
         >
-          <Div className={"fs-2-2rem fw-700 dark-navy ml-4vw"}>
+          <Div className={"fs-2-2rem fw-700 dark-navy ml-2vw"}>
             {OBJECT.title}
             <Hr className={"w-140px bg-primary h-3px"} />
           </Div>
         </Grid>
       </Grid>
       <Br m={20} />
-      <Grid container={true} spacing={2} columnSpacing={10}
-      className={"h-100p d-top border-light-3 radius-2 px-2vw py-4vh"}>
+      <Grid
+        container={true}
+        spacing={2}
+        columnSpacing={10}
+        className={"h-100p d-top border-1 radius-2 shadow-1 px-4vw py-4vh mb-1vh"}
+      >
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Img
             max={600}

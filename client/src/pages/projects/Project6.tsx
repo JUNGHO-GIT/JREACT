@@ -165,9 +165,13 @@ export const Project6 = () => {
 
   // 7. project ------------------------------------------------------------------------------------
   const projectNode = () => (
-    <Paper className={`detail-wrapper ${paperClass} border-0 radius-0 shadow-0 px-10px`}>
+    <Paper className={`detail-wrapper ${paperClass} border-0 radius-0 shadow-0`}>
       {/** images **/}
-      <Grid container={true} spacing={0} className={"w-100p d-center"}>
+      <Grid
+        container={true}
+        spacing={0}
+        className={"w-100p d-center"}
+      >
         <Grid size={12} className={"d-col-center"}>
           <Swiper
             spaceBetween={0}
@@ -212,8 +216,12 @@ export const Project6 = () => {
         </Grid>
       </Grid>
       <Br m={40} />
-      <Grid container={true} spacing={2} columnSpacing={10}
-      className={"h-100p d-top border-1 radius-2 shadow-1 px-4vw py-4vh"}>
+      <Grid
+        container={true}
+        spacing={2}
+        columnSpacing={10}
+        className={"h-100p d-top border-1 radius-2 shadow-1 px-4vw py-4vh"}
+      >
         {/** info, features **/}
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
@@ -258,8 +266,9 @@ export const Project6 = () => {
                       )}
                     </Div>
                   </Div>
-                ))}
-                {i !== 1 && <Hr className={"bg-light h-3px"} />}
+               ))}
+                {(xxs || xs || sm) && (<Hr className={"bg-light h-3px"} />)}
+                {(md || lg || xl || xxl) && (i !== 1 && <Hr className={"bg-light h-3px"} />)}
               </Grid>
             ))}
           </Grid>

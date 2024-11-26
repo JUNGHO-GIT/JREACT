@@ -20,26 +20,26 @@ export const useResponsive = () => {
 
   // 3. useEffect ----------------------------------------------------------------------------------
   useEffect(() => {
-    let baseClass = "fadeIn";
+    let paperClassStr = "px-10px fadeIn";
     if (xxs || xs) {
-      baseClass += " w-90p";
+      paperClassStr += " w-90p";
     }
     else if (sm) {
-      baseClass += " w-90p";
+      paperClassStr += " w-90p";
     }
     else if (md) {
-      baseClass += " w-85p";
+      paperClassStr += " w-85p";
     }
     else if (lg) {
-      baseClass += " w-85p";
+      paperClassStr += " w-85p";
     }
     else if (xl) {
-      baseClass += " w-80p";
+      paperClassStr += " w-80p";
     }
     else if (xxl) {
-      baseClass += " w-80p";
+      paperClassStr += " w-80p";
     }
-    setPaperClass(baseClass);
+    setPaperClass(paperClassStr);
   }, [xxs, xs, sm, md, lg, xl, xxl]);
 
   // -----------------------------------------------------------------------------------------------
