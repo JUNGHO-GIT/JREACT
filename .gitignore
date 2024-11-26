@@ -1,4 +1,4 @@
-# gitignore.private
+# gitignore.public
 
 # directories 1
 *node_modules/
@@ -7,13 +7,21 @@
 *coverage/
 *out/
 *temp/
-*META-INF/
 *target/
 *test/
+*META-INF/
+*admin/
+*admin*
+*public/
+*public*
+*private/
+*private*
+*auth/
+*auth*
 
 # directories 2
-# .vscode/
-# .idea/
+.vscode/
+.idea/
 .tmp/
 .cache/
 .nyc_output/
@@ -34,17 +42,17 @@ thumbs.db
 *.swo
 
 # env files
-# *.env
-# *.env.*
-# *.properties
-# *.props
-# *.classpath
-# *.project
-# *.settings
+*.env
+*.env.*
+*.properties
+*.props
+*.classpath
+*.project
+*.settings
 
 # temporary files
 *.tmp
-*.bakv
+*.bak
 *.backup
 *.orig
 *.rej
@@ -60,54 +68,60 @@ thumbs.db
 *pnpm-debug.log
 
 # config files
-# *tsconfig.json
-# *tsconfig.jsonc
-# *tsconfig.path.json
-# *tsconfig.paths.json
-# *tsconfig.default.json
-# *jsconfig.json
-# *jsconfig.jsonc
-# *jsconfig.path.json
-# *jsconfig.paths.json
-# *jsconfig.default.json
+*tsconfig.json
+*tsconfig.jsonc
+*tsconfig.path.json
+*tsconfig.paths.json
+*tsconfig.default.json
+*jsconfig.json
+*jsconfig.jsonc
+*jsconfig.path.json
+*jsconfig.paths.json
+*jsconfig.default.json
 
 # etc
-# *push.cjs
-# *push.sh
-# *gcloud.cjs
-# *gcloud.sh
-# *.gitignore.public
-# *.gitignore.private
+*push.cjs
+*push.sh
+*fetch.cjs
+*fetch.sh
+*pull.cjs
+*pull.sh
+*merge.cjs
+*merge.sh
+*gcloud.cjs
+*gcloud.sh
+*.gitignore.public
+*.gitignore.private
 *.vsix
 
 # react native
-# *build/
-# *ios/
-# *.bundle/
-# *.DB_Store
-# *.idea
-# *.gradle
-# *local.properties
-# *.iml
-# *.hprof
-# *.cxx/
-# *.keystore
-# *!debug.keystore
-# *.jsbundle
-# */vendor/bundle/
-# */vendor/cache/
-# *metro.config.js
-# *jest.config.js
-# *app.json
-# *Gemfile
-# *Gemfile.lock
-# *babel.config.js
-# *Podfile
-# *Podfile.lock
-# *.watchmanconfig
-# *.prettierrc
-# *.prettierignore
-# *.prettierrc.js
-# *.eslintrc
-# *.eslintignore
-# *.eslintrc.js
+*build/
+*ios/
+*.bundle/
+*.DB_Store
+*.idea
+*.gradle
+*local.properties
+*.iml
+*.hprof
+*.cxx/
+*.keystore
+*!debug.keystore
+*.jsbundle
+*/vendor/bundle/
+*/vendor/cache/
+*metro.config.js
+*jest.config.js
+*app.json
+*Gemfile
+*Gemfile.lock
+*babel.config.js
+*Podfile
+*Podfile.lock
+*.watchmanconfig
+*.prettierrc
+*.prettierignore
+*.prettierrc.js
+*.eslintrc
+*.eslintignore
+*.eslintrc.js
