@@ -1,0 +1,12 @@
+{
+  "name": "oauth-signature",
+  "main": "dist/oauth-signature.js",
+  "ignore": [
+    ".jshintrc",
+    ".gitignore",
+    ".travis.yml",
+    "Gruntfile.js",
+    "package.json",
+    "src/"
+  ]
+}

@@ -1,9 +1,8 @@
 // gcloud.cjs
 
-const { execSync } = require('child_process');
-const { readFileSync, writeFileSync } = require('fs');
 const os = require('os');
 const fs = require('fs');
+const { execSync } = require('child_process');
 
 const winOrLinux = os.platform() === 'win32' ? "win" : "linux";
 console.log(`Activated OS is : ${winOrLinux}`);
@@ -11,8 +10,8 @@ console.log(`Activated OS is : ${winOrLinux}`);
 // env 파일 및 index 파일 수정 ---------------------------------------------------------------------
 const modifyEnvAndIndex = () => {
   try {
-    const envFile = readFileSync('.env', 'utf8');
-    const indexFile = readFileSync('index.ts', 'utf8');
+    const envFile = fs.readFileSync('.env', 'utf8');
+    const indexFile = fs.readFileSync('index.ts', 'utf8');
 
     // 파일을 줄 단위로 나눔
     const linesEnv = envFile.split(/\r?\n/);
@@ -44,8 +43,8 @@ const modifyEnvAndIndex = () => {
     const newEnvFile = updatedEnv.join(os.EOL);
     const newIndexFile = updatedIndex.join(os.EOL);
 
-    writeFileSync('.env', newEnvFile);
-    writeFileSync('index.ts', newIndexFile);
+    fs.writeFileSync('.env', newEnvFile);
+    fs.writeFileSync('index.ts', newIndexFile);
   }
   catch (error) {
     console.error(error);
@@ -97,9 +96,13 @@ const modifyChangelog = () => {
   }
 };
 
-// git push (public) -------------------------------------------------------------------------------
-const gitPushPublic = () => {
+// git push ----------------------------------------------------------------------------------------
+const gitPush = () => {
   try {
+    const ignoreFile = ".gitignore";
+    const ignorePublicFile = fs.readFileSync(".gitignore.public", "utf8");
+    const ignorePrivateFile =  fs.readFileSync(".gitignore.private", "utf8");
+
     const gitAdd = (
       'git add .'
     );
@@ -108,47 +111,26 @@ const gitPushPublic = () => {
       ? 'git commit -m \"%date% %time:~0,8%\"'
       : 'git commit -m \"$(date +%Y-%m-%d) $(date +%H:%M:%S)\"'
     );
-    const gitPush = (
+    const gitPushPublic = (
       'git push origin master'
+    );
+    const gitPushPrivate = (
+      'git push private master'
     );
 
     execSync(gitAdd, { stdio: 'inherit' });
     execSync(gitCommit, { stdio: 'inherit' });
-    execSync(gitPush, { stdio: 'inherit' });
-  }
-  catch (error) {
-    console.error(error);
-    process.exit(1);
-  }
-};
 
-// git push (private) ------------------------------------------------------------------------------
-const gitPushPrivate = () => {
-  try {
-    const ignoreFile = ".gitignore";
-    const ignorePublicFile = ".gitignore.public";
-    const ignorePrivateFile = ".gitignore.private";
+    // 1. public 푸쉬
+    fs.writeFileSync(ignoreFile, ignorePublicFile, "utf8");
+    execSync(gitPushPublic, { stdio: 'inherit' });
 
-    // .gitignore -> .gitignore.public
-    if (fs.existsSync(ignoreFile)) {
-      fs.renameSync(ignoreFile, ignorePublicFile);
-    }
+    // 2. private 푸쉬
+    fs.writeFileSync(ignoreFile, ignorePrivateFile, "utf8");
+    execSync(gitPushPrivate, { stdio: 'inherit' });
 
-    // .gitignore.private -> .gitignore
-    if (fs.existsSync(ignorePrivateFile)) {
-      fs.renameSync(ignorePrivateFile, ignoreFile);
-    }
-
-    const gitPush = (
-      'git push private master'
-    );
-
-    execSync(gitPush, { stdio: 'inherit' });
-
-    // .gitignore.public -> .gitignore
-    if (fs.existsSync(ignorePublicFile)) {
-      fs.renameSync(ignorePublicFile, ignoreFile);
-    }
+    // 3. .gitignore 복원
+    fs.writeFileSync(ignoreFile, ignorePublicFile, "utf8");
   }
   catch (error) {
     console.error(error);
@@ -198,8 +180,8 @@ const runRemoteScript = () => {
 // env 파일 및 index 파일 복원 --------------------------------------------------------------------
 const restoreEnvAndIndex = () => {
   try {
-    const envFile = readFileSync('.env', 'utf8');
-    const indexFile = readFileSync('index.ts', 'utf8');
+    const envFile = fs.readFileSync('.env', 'utf8');
+    const indexFile = fs.readFileSync('index.ts', 'utf8');
 
     // 파일을 줄 단위로 나눔
     const linesEnv = envFile.split(/\r?\n/);
@@ -231,8 +213,8 @@ const restoreEnvAndIndex = () => {
     const newEnvFile = updatedEnv.join(os.EOL);
     const newIndexFile = updatedIndex.join(os.EOL);
 
-    writeFileSync('.env', newEnvFile);
-    writeFileSync('index.ts', newIndexFile);
+    fs.writeFileSync('.env', newEnvFile);
+    fs.writeFileSync('index.ts', newIndexFile);
   }
   catch (error) {
     console.error(error);
@@ -243,8 +225,7 @@ const restoreEnvAndIndex = () => {
 // -------------------------------------------------------------------------------------------------
 /* modifyEnvAndIndex();
 modifyChangelog(); */
-gitPushPublic();
-gitPushPrivate();
+gitPush();
 /* runRemoteScript();
 restoreEnvAndIndex(); */
 process.exit(0);
