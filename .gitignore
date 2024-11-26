@@ -1,4 +1,4 @@
-# gitignore.private
+# gitignore.public
 
 # directories 1
 *node_modules/
@@ -12,8 +12,8 @@
 *test/
 
 # directories 2
-.vscode/
-.idea/
+# .vscode/
+# .idea/
 .tmp/
 .cache/
 .nyc_output/
@@ -34,17 +34,17 @@ thumbs.db
 *.swo
 
 # env files
-# *.env
-# *.env.*
-# *.properties
-# *.props
-# *.classpath
-# *.project
-# *.settings
+*.env
+*.env.*
+*.properties
+*.props
+*.classpath
+*.project
+*.settings
 
 # temporary files
 *.tmp
-*.bakv
+*.bak
 *.backup
 *.orig
 *.rej
@@ -60,20 +60,20 @@ thumbs.db
 *pnpm-debug.log
 
 # config files
-# *tsconfig.json
-# *tsconfig.path.json
-# *tsconfig.paths.json
-# *tsconfig.jsonc
-# *jsconfig.json
-# *jsconfig.path.json
-# *jsconfig.paths.json
-# *jsconfig.jsonc
+*tsconfig.json
+*tsconfig.path.json
+*tsconfig.paths.json
+*tsconfig.jsonc
+*jsconfig.json
+*jsconfig.path.json
+*jsconfig.paths.json
+*jsconfig.jsonc
 
 # etc
-# *push.cjs
-# *push.sh
-# *gcloud.cjs
-# *gcloud.sh
+*push.cjs
+*push.sh
+*gcloud.cjs
+*gcloud.sh
 *.gitignore.public
 *.gitignore.private
 *.vsix
