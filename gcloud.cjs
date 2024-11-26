@@ -139,21 +139,18 @@ const gitPushPrivate = () => {
       fs.copyFileSync(ignorePrivateFile, ignoreFile);
     }
 
-    const gitPush = 'git push private master';
+    const gitPush = (
+      'git push private master'
+    );
+
     execSync(gitPush, { stdio: 'inherit' });
 
     // .gitignore.public -> .gitignore (복구)
     if (fs.existsSync(ignorePublicFile)) {
       fs.copyFileSync(ignorePublicFile, ignoreFile);
-      fs.unlinkSync(ignorePublicFile); // 백업 파일 제거
     }
-
-    // .gitignore -> .gitignore.private (원상복구)
-    if (fs.existsSync(ignoreFile)) {
-      fs.copyFileSync(ignoreFile, ignorePrivateFile);
-      fs.unlinkSync(ignoreFile); // 임시 파일 제거
-    }
-  } catch (error) {
+  }
+  catch (error) {
     console.error(error);
     process.exit(1);
   }
