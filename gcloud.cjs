@@ -97,8 +97,8 @@ const modifyChangelog = () => {
   }
 };
 
-// git push ----------------------------------------------------------------------------------------
-const gitPush = () => {
+// git push (public) -------------------------------------------------------------------------------
+const gitPushPublic = () => {
   try {
     const gitAdd = (
       'git add .'
@@ -115,6 +115,39 @@ const gitPush = () => {
     execSync(gitAdd, { stdio: 'inherit' });
     execSync(gitCommit, { stdio: 'inherit' });
     execSync(gitPush, { stdio: 'inherit' });
+  }
+  catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
+};
+
+// git push (private) ------------------------------------------------------------------------------
+const gitPushPrivate = () => {
+  try {
+    const ignoreFile = ".gitignore";
+    const ignorePublicFile = ".gitignore.public";
+    const ignorePrivateFile = ".gitignore.private";
+
+    if (fs.existsSync(ignoreFile)) {
+      fs.renameSync(ignoreFile, ignorePublicFile);
+    }
+    if (fs.existsSync(ignorePrivateFile)) {
+      fs.renameSync(ignorePrivateFile, ignoreFile);
+    }
+
+    const gitPush = (
+      'git push private master'
+    );
+
+    execSync(gitPush, { stdio: 'inherit' });
+
+    if (fs.existsSync(ignorePublicFile)) {
+      fs.renameSync(ignorePublicFile, ignoreFile);
+    }
+    if (fs.existsSync(ignoreFile)) {
+      fs.renameSync(ignoreFile, ignorePrivateFile);
+    }
   }
   catch (error) {
     console.error(error);
@@ -207,9 +240,10 @@ const restoreEnvAndIndex = () => {
 };
 
 // -------------------------------------------------------------------------------------------------
-modifyEnvAndIndex();
-modifyChangelog();
-gitPush();
-runRemoteScript();
-restoreEnvAndIndex();
+/* modifyEnvAndIndex();
+modifyChangelog(); */
+gitPushPublic();
+gitPushPrivate();
+/* runRemoteScript();
+restoreEnvAndIndex(); */
 process.exit(0);
