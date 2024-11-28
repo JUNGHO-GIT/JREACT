@@ -1,7 +1,7 @@
 // Main.jsx
 
 import { useEffect } from "@importReacts";
-import { useStoreLoading } from "@importHooks";
+import { useStoreLoading } from "@importStores";
 import { About, Hero, Portfolio, Skills } from "@importPages";
 import { Br } from "@importComponents";
 

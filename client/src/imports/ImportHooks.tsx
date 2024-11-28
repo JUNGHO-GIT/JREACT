@@ -1,16 +1,18 @@
 // ImportHooks.tsx
 
+// common
 import { useCommonValue } from "@hooks/common/useCommonValue";
-import { useEnhancedTouch } from "@hooks/utils/useEnhancedTouch";
+
+// utils
 import { useScrollTop } from "@hooks/utils/useScrollTop";
 import { useResponsive } from "@hooks/utils/useResponsive";
-import { useStoreLoading } from "@hooks/store/useStoreLoading";
 
 // -------------------------------------------------------------------------------------------------
 export {
+  // common
   useCommonValue,
-  useEnhancedTouch,
+
+  // utils
   useScrollTop,
   useResponsive,
-  useStoreLoading,
 };

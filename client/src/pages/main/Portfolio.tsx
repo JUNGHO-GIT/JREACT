@@ -12,7 +12,7 @@ export const Portfolio = () => {
   const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
 
   // 2-1. useState ---------------------------------------------------------------------------------
-  const [OBJECT, _setOBJECT] = useState<any>({
+  const [OBJECT, setOBJECT] = useState<any>({
     title: "Portfolios",
     section: [
 
@@ -58,13 +58,13 @@ export const Portfolio = () => {
         icon: "boot",
         img: "project3_1",
       },
-      {
+      /* {
         id: "2",
         name: "GoodNeighbor",
         desc: "Charity and Donation Website",
         icon: "spring",
         img: "project2_1",
-      },
+      }, */
       /*{
         id: "1",
         name: "MeatStore",

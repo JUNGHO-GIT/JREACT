@@ -5,7 +5,9 @@ import mongoose from "mongoose";
 import express from "express";
 import dotenv from "dotenv";
 import { Request, Response } from "express";
+
 import { router as adminRouter } from "@routers/adminRouter";
+import { router as projectRouter } from "@routers/projectRouter";
 
 // -------------------------------------------------------------------------------------------------
 dotenv.config();
@@ -71,6 +73,7 @@ app.use(cors({
 
 // 라우터 설정 -------------------------------------------------------------------------------------
 app.use(`${preFix}/admin`, adminRouter);
+app.use(`${preFix}/project`, projectRouter);
 
 // 에러 처리 미들웨어 ------------------------------------------------------------------------------
 app.use((err: Error, req: Request, res: Response, next: Function) => {

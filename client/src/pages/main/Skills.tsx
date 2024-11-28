@@ -12,7 +12,7 @@ export const Skills = () => {
   const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
 
   // 2-1. useState ---------------------------------------------------------------------------------
-  const [OBJECT, _setOBJECT] = useState<any>({
+  const [OBJECT, setOBJECT] = useState<any>({
     title: "Skills",
     section: [
       {

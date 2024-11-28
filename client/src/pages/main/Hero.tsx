@@ -14,7 +14,7 @@ export const Hero = () => {
   // 2-1. useState ---------------------------------------------------------------------------------
   const typedRef = useRef<HTMLSpanElement | null>(null);
   const typedInstance = useRef<Typed | null>(null);
-  const [OBJECT, _setOBJECT] = useState<any>({
+  const [OBJECT, setOBJECT] = useState<any>({
     title: "JUNGHO MUN",
     sub: [
       "Java, Spring, React, TypeScript, JavaScript, HTML, CSS",

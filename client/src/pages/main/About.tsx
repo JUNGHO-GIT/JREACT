@@ -11,7 +11,7 @@ export const About = () => {
   const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
 
   // 2-1. useState ---------------------------------------------------------------------------------
-  const [OBJECT, _setOBJECT] = useState<any>(
+  const [OBJECT, setOBJECT] = useState<any>(
     {
       title: "About",
       sub: "FullStack Developer",

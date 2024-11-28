@@ -1,19 +1,22 @@
 // Project8.jsx
 
 import { useEffect, useState } from "@importReacts";
-import { useResponsive, useStoreLoading } from "@importHooks";
-import { Swiper, SwiperSlide, Navigation, Pagination } from "@importLibs";
+import { useResponsive, useCommonValue } from "@importHooks";
+import { useStoreAlert, useStoreLoading } from "@importStores";
+import { Swiper, SwiperSlide, Navigation, Pagination, axios } from "@importLibs";
 import { Div, Img, Hr, Br, Grid, Paper } from "@importComponents";
 
 // -------------------------------------------------------------------------------------------------
 export const Project8 = () => {
 
   // 0. common -------------------------------------------------------------------------------------
-  const { setLOADING } = useStoreLoading();
+  const { location_id, URL, SUBFIX } = useCommonValue();
   const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
+  const { setALERT } = useStoreAlert();
+  const { setLOADING } = useStoreLoading();
 
   // 2-1. useState ---------------------------------------------------------------------------------
-  const [OBJECT, _setOBJECT] = useState<any>([
+  const [OBJECT, setOBJECT] = useState<any>([
     {
       title: "Information",
       section: [
@@ -36,10 +39,17 @@ export const Project8 = () => {
         {
           title: "Git",
           value: "www.github.com/JUNGHO-GIT/LIFECHANGE.git",
+          alt: "LIFECHANGE.git",
+        },
+        {
+          title: "Git",
+          value: "www.github.com/JUNGHO-GIT/LIFECHANGE_RN.git",
+          alt: "LIFECHANGE_RN.git",
         },
         {
           title: "Url",
           value: "play.google.com/store/apps/details?id=com.LIFECHANGE&hl=ko",
+          alt: "Google Play",
         },
       ],
     },
@@ -244,12 +254,12 @@ export const Project8 = () => {
                       {["Git", "Url"].includes(section.title) ? (
                         <Div className={"d-row-left mr-0px"}>
                           <Div
-                            className={"fs-1-0rem fw-400 blue hover lh-2-0"}
+                            className={"fs-1-0rem fw-600 primary pointer-blue lh-2-0"}
                             onClick={() => {
                               window.open(`https://${section.value}`, "_blank");
                             }}
                           >
-                            {`- ${section.value}`}
+                            {section.alt}
                           </Div>
                         </Div>
                       ) : (
@@ -259,7 +269,7 @@ export const Project8 = () => {
                             onClick={() => {
                             }}
                           >
-                            {`- ${section.value}`}
+                            {section.value}
                           </Div>
                         </Div>
                       )}

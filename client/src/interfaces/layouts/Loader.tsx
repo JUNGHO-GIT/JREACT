@@ -1,6 +1,6 @@
 // Loader.tsx
 
-import { useStoreLoading } from "@importHooks";
+import { useStoreLoading } from "@importStores";
 import { Div } from "@importComponents";
 
 // -------------------------------------------------------------------------------------------------

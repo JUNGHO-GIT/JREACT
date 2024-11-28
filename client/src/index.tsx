@@ -17,8 +17,12 @@ import {
 } from '@importMuis';
 
 import {
-  useScrollTop, useEnhancedTouch, useStoreLoading
+  useScrollTop
 } from '@importHooks';
+
+import {
+  useStoreLoading
+} from '@importStores';
 
 import {
   Loader, Footer, Toggle
@@ -35,10 +39,12 @@ const App = () => {
 
   useEffect(() => {
     setLOADING(true);
+    setTimeout(() => {
+      setLOADING(false);
+    }, 500);
   }, []);
 
   useScrollTop();
-  useEnhancedTouch();
 
   return (
     <div className={"App"}>
@@ -65,7 +71,9 @@ createRoot(document.getElementById('root') as HTMLElement).render(
   <BrowserRouter basename={"/JPORTFOLIO"}>
     <ThemeProvider theme={
       createTheme({
-        typography:{fontFamily:"Pretendard Variable, Pretendard, Noto Sans KR, Roboto, sans-serif"}
+        typography:{
+          fontFamily:"Pretendard Variable, Pretendard, Noto Sans KR, Roboto, sans-serif"
+        }
       })
     }>
       <CssBaseline />

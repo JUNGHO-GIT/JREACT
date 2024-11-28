@@ -1,7 +1,8 @@
 // Project4.jsx
 
 import { useEffect, useState } from "@importReacts";
-import { useResponsive, useStoreLoading } from "@importHooks";
+import { useResponsive } from "@importHooks";
+import { useStoreLoading } from "@importStores";
 import { Swiper, SwiperSlide, Navigation, Pagination } from "@importLibs";
 import { Div, Img, Hr, Br, Grid, Paper } from "@importComponents";
 
@@ -13,7 +14,7 @@ export const Project4 = () => {
   const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
 
   // 2-1. useState ---------------------------------------------------------------------------------
-  const [OBJECT, _setOBJECT] = useState<any>([
+  const [OBJECT, setOBJECT] = useState<any>([
     {
       title: "Information",
       section: [
@@ -36,10 +37,12 @@ export const Project4 = () => {
         {
           title: "Git",
           value: "www.github.com/JUNGHO-GIT/JLINT.git",
+          alt: "JLINT.git",
         },
         {
           title: "Url",
-          value: "marketplace.visualstudio.com/items?itemName=JUNGHO.JLINT"
+          value: "marketplace.visualstudio.com/items?itemName=JUNGHO.JLINT",
+          alt: "Vscode Marketplace",
         }
       ],
     },
@@ -208,12 +211,12 @@ export const Project4 = () => {
                       {["Git", "Url"].includes(section.title) ? (
                         <Div className={"d-row-left mr-0px"}>
                           <Div
-                            className={"fs-1-0rem fw-400 blue hover lh-2-0"}
+                            className={"fs-1-0rem fw-600 primary pointer-blue lh-2-0"}
                             onClick={() => {
                               window.open(`https://${section.value}`, "_blank");
                             }}
                           >
-                            {`- ${section.value}`}
+                            {section.alt}
                           </Div>
                         </Div>
                       ) : (
@@ -223,7 +226,7 @@ export const Project4 = () => {
                             onClick={() => {
                             }}
                           >
-                            {`- ${section.value}`}
+                            {section.value}
                           </Div>
                         </Div>
                       )}
