@@ -1,164 +1,22 @@
 // Project3.jsx
 
 import { useEffect, useState } from "@importReacts";
-import { useResponsive } from "@importHooks";
-import { useStoreLoading } from "@importStores";
-import { Swiper, SwiperSlide, Navigation, Pagination } from "@importLibs";
+import { useResponsive, useCommonValue } from "@importHooks";
+import { useStoreAlert, useStoreLoading } from "@importStores";
+import { Swiper, SwiperSlide, Navigation, Pagination, axios } from "@importLibs";
 import { Div, Img, Hr, Br, Grid, Paper } from "@importComponents";
 
 // -------------------------------------------------------------------------------------------------
 export const Project3 = () => {
 
   // 0. common -------------------------------------------------------------------------------------
-  const { setLOADING } = useStoreLoading();
+  const { URL, PROJECT_URL } = useCommonValue();
   const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
+  const { setALERT } = useStoreAlert();
+  const { setLOADING } = useStoreLoading();
 
   // 2-1. useState ---------------------------------------------------------------------------------
-  const [OBJECT, setOBJECT] = useState<any>([
-    {
-      title: "Information",
-      section: [
-        {
-          title: "Name",
-          value: "JUNGHQLO",
-        },
-        {
-          title: "Detail",
-          value: "SpringBoot를 활용한 종합 남성의류 쇼핑몰 사이트",
-        },
-        {
-          title: "Period",
-          value: "2023.03.24 - 2023.05.01",
-        },
-        {
-          title: "Role",
-          value: "총 4명 (팀장)",
-        },
-        {
-          title: "Git",
-          value: "www.github.com/JUNGHO-GIT/JUNGHQLO.git",
-          alt: "JUNGHQLO.git",
-        },
-        {
-          title: "Url",
-          value: "www.junghomun.com/JUNGHQLO",
-          alt: "JUNGHQLO",
-        },
-      ],
-    },
-    {
-      title: "Features",
-      section: [
-        {
-          title: "Spring Boot",
-          value: "Spring Boot(v2.7)를 활용한 MVC 아키텍쳐 위주의 개발을 통해 코드구조화 실현 및 유지보수성 향상",
-        },
-        {
-          title: "Template Engine",
-          value: "Thymeleaf, Jsp 등 다양한 언어템플릿을 활용함으로써 동적 데이터 처리기능 향상과 동시에 프론트엔드와 백엔드의 연동을 통한 개발의 효율성 증대 및 유지보수 유연성 확보",
-        },
-        {
-          title: "Stripe",
-          value: "Stripe Api를 활용하여 결제시스템을 구축, 실제 결제가 가능한 상품 구매 기능을 구현",
-        },
-        {
-          title: "Responsive Design",
-          value: "Bootstrap(v5)을 활용, 모바일 환경에서도 최적화된 UI/UX를 제공",
-        },
-        {
-          title: "Cloud Instance",
-          value: "GCP 인스턴스의 CentOS7 환경에서 서버를 구축하고, DNS 설정을 통해 도메인과 서버를 연결",
-        },
-      ],
-    },
-    {
-      title: "Frontend",
-      section: [
-        {
-          title: "Language",
-          value: [
-            { icon: "html", value: "Html" },
-            { icon: "css", value: "Css" },
-            { icon: "js", value: "Js" },
-          ],
-        },
-        {
-          title: "Framework",
-          value: [
-            { icon: "bootstrap", value: "Bootstrap" },
-          ],
-        },
-        {
-          title: "Template Engine",
-          value: [
-            { icon: "thymeleaf", value: "Thymeleaf" },
-            { icon: "jsp", value: "Jsp" },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Backend",
-      section: [
-        {
-          title: "Language",
-          value: [
-            { icon: "java", value: "Java" },
-          ],
-        },
-        {
-          title: "Framework",
-          value: [
-            { icon: "boot", value: "Boot" },
-          ],
-        },
-        {
-          title: "Package, Build, Scm",
-          value: [
-            { icon: "maven", value: "Maven" },
-            { icon: "xml", value: "Xml" },
-            { icon: "json", value: "Json" },
-            { icon: "github", value: "Git" },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Database",
-      section: [
-        {
-          title: "DBMS",
-          value: [
-            { icon: "mysql", value: "Mysql8" },
-          ],
-        },
-        {
-          title: "framework",
-          value: [
-            { icon: "mybatis", value: "Mybatis" },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Server",
-      section: [
-        {
-          title: "Server",
-          value: [
-            { icon: "tomcat", value: "Tomcat" },
-          ],
-        },
-        {
-          title: "Cloud",
-          value: [
-            { icon: "gcp", value: "Gcp" },
-            { icon: "centos", value: "Centos7" },
-          ],
-        },
-      ],
-    },
-  ]);
+  const [OBJECT, setOBJECT] = useState<any>();
   const [images, _setImages] = useState<string[]>([
     "project3_1",
     "project3_2",
@@ -169,10 +27,28 @@ export const Project3 = () => {
   // 2-3. useEffect --------------------------------------------------------------------------------
   useEffect(() => {
     setLOADING(true);
-    setTimeout(() => {
+    axios.get(`${URL}${PROJECT_URL}/detail`, {
+      params: {
+        project_id: "Project3",
+      }
+    })
+    .then((res: any) => {
       setLOADING(false);
-    }, 500);
-  }, []);
+      setOBJECT(res.data.result);
+    })
+    .catch((err: any) => {
+      setLOADING(false);
+      setALERT({
+        open: true,
+        severity: "error",
+        msg: err.response.data.msg,
+      });
+      console.error(err);
+    })
+    .finally(() => {
+      setLOADING(false);
+    });
+  }, [URL, PROJECT_URL]);
 
   // 7. project ------------------------------------------------------------------------------------
   const projectNode = () => (
@@ -236,48 +112,55 @@ export const Project3 = () => {
         {/** info, features **/}
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
-            {OBJECT.filter((_: any, f: number) => f < 2).map((item: any, i: number) => (
+            {OBJECT?.project_section?.filter((_: any, f: number) => f < 2)?.map((section: any, i: number) => (
               <Grid size={12} className={"d-col-left"} key={i}>
                 <Div className={"fs-1-6rem fw-700 dark-navy mb-20px"}>
-                  {item.title}
+                  {section.project_section_title}
                   <Hr className={"w-100px bg-primary h-3px"} />
                 </Div>
-                {item.section.map((section: any, j: number) => (
+                {section.project_section_contents.map((contents: any, j: number) => (
                   <Div className={"w-100p d-col-left mb-30px"} key={j}>
                     <Div className={"d-row-center mb-10px"}>
                       <Div className={"fs-0-4rem fw-300 dark-navy mr-5px"}>
                         {'●'}
                       </Div>
                       <Div className={"fs-1-1rem fw-600 dark-navy"}>
-                        {section.title}
+                        {contents.project_contents_title}
                       </Div>
                     </Div>
                     <Div className={"d-row-center ml-10px"}>
-                      {["Git", "Url"].includes(section.title) ? (
-                        <Div className={"d-row-left mr-0px"}>
-                          <Div
-                            className={"fs-1-0rem fw-600 primary pointer-blue lh-2-0"}
-                            onClick={() => {
-                              window.open(`https://${section.value}`, "_blank");
-                            }}
-                          >
-                            {section.alt}
+                      {contents.project_contents_detail.map((detail: any, k: number) => (
+                        (
+                          contents.project_contents_title === "Url" ||
+                          contents.project_contents_title === "Git1" ||
+                          contents.project_contents_title === "Git2"
+                        ) ? (
+                          <Div className={"d-row-left mr-0px"} key={k}>
+                            <Div
+                              className={"fs-1-0rem fw-600 primary pointer-blue lh-2-0"}
+                              onClick={() => {
+                                window.open(`https://${detail.project_detail_value}`, "_blank");
+                              }}
+                            >
+                              {detail.project_detail_alt}
+                            </Div>
                           </Div>
-                        </Div>
-                      ) : (
-                        <Div className={"d-row-left mr-0px"}>
-                          <Div
-                            className={"fs-1-0rem fw-400 light-black lh-2-0"}
-                            onClick={() => {
-                            }}
-                          >
-                            {section.value}
+                        ) : (
+                          <Div className={"d-row-left mr-0px"} key={k}>
+                            <Div
+                              key={k}
+                              className={"fs-1-0rem fw-400 light-black lh-2-0"}
+                              onClick={() => {
+                              }}
+                            >
+                              {detail.project_detail_value}
+                            </Div>
                           </Div>
-                        </Div>
-                      )}
+                        )
+                      ))}
                     </Div>
                   </Div>
-               ))}
+                ))}
                 {(xxs || xs || sm) && (<Hr className={"bg-light h-3px"} />)}
                 {(md || lg || xl || xxl) && (i !== 1 && <Hr className={"bg-light h-3px"} />)}
               </Grid>
@@ -287,24 +170,24 @@ export const Project3 = () => {
         {/** frontend, backend, server **/}
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
-            {OBJECT.filter((_: any, f: number) => f >= 2).map((item: any, i: number) => (
+            {OBJECT?.project_section?.filter((_: any, f: number) => f >= 2)?.map((section: any, i: number) => (
               <Grid size={12} className={"d-col-left"} key={i}>
                 <Div className={"fs-1-6rem fw-700 dark-navy mb-20px"}>
-                  {item.title}
+                  {section.project_section_title}
                   <Hr className={"w-100px bg-primary h-3px"} />
                 </Div>
-                {item.section.map((section: any, j: number) => (
+                {section.project_section_contents.map((contents: any, j: number) => (
                   <Div className={"w-100p d-col-left mb-30px"} key={j}>
                     <Div className={"d-row-center mb-10px"}>
                       <Div className={"fs-0-4rem fw-300 dark-navy mr-5px"}>
                         {'●'}
                       </Div>
                       <Div className={"fs-1-1rem fw-600 dark-navy"}>
-                        {section.title}
+                        {contents.project_contents_title}
                       </Div>
                     </Div>
                     <Grid container={true} spacing={0} className={"d-left ml-1vw"}>
-                      {section.value.map((value: any, k: number) => (
+                      {contents.project_contents_detail.map((detail: any, k: number) => (
                         <Grid
                           size={xxs ? 6 : xs ? 4 : sm ? 3 : md ? 4 : lg ? 4 : xl ? 3 : xxl ? 3 : 3}
                           className={"d-row-left"}
@@ -317,11 +200,11 @@ export const Project3 = () => {
                             border={false}
                             radius={false}
                             group={"icons"}
-                            src={`${value.icon}.webp`}
+                            src={`${detail.project_detail_icon}.webp`}
                             className={"mr-5px"}
                           />
                           <Div className={"fs-1-0rem fw-400 light-black lh-2-0"}>
-                            {value.value}
+                            {detail.project_detail_value}
                           </Div>
                         </Grid>
                       ))}

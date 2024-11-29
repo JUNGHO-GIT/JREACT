@@ -1,159 +1,22 @@
 // Project1.jsx
 
 import { useEffect, useState } from "@importReacts";
-import { useResponsive } from "@importHooks";
-import { useStoreLoading } from "@importStores";
-import { Swiper, SwiperSlide, Navigation, Pagination } from "@importLibs";
+import { useResponsive, useCommonValue } from "@importHooks";
+import { useStoreAlert, useStoreLoading } from "@importStores";
+import { Swiper, SwiperSlide, Navigation, Pagination, axios } from "@importLibs";
 import { Div, Img, Hr, Br, Grid, Paper } from "@importComponents";
 
 // -------------------------------------------------------------------------------------------------
 export const Project1 = () => {
 
   // 0. common -------------------------------------------------------------------------------------
-  const { setLOADING } = useStoreLoading();
+  const { URL, PROJECT_URL } = useCommonValue();
   const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
+  const { setALERT } = useStoreAlert();
+  const { setLOADING } = useStoreLoading();
 
   // 2-1. useState ---------------------------------------------------------------------------------
-  const [OBJECT, setOBJECT] = useState<any>([
-    {
-      title: "Information",
-      section: [
-        {
-          title: "Name",
-          value: "MeatStore",
-        },
-        {
-          title: "Detail",
-          value: "Mvc 모델2 방식을 활용한 종합 육류 판매 사이트",
-        },
-        {
-          title: "Period",
-          value: "2023.01.18 ~ 2023.02.03",
-        },
-        {
-          title: "Role",
-          value: "총 4명 (팀원)",
-        },
-        {
-          title: "Git",
-          value: "www.github.com/JUNGHO-GIT/MEATSTORE.git",
-          alt: "MEATSTORE.git",
-        },
-        {
-          title: "Url",
-          value: "www.junghomun.com/MEATSTORE",
-          alt: "MEATSTORE",
-        },
-      ],
-    },
-    {
-      title: "Features",
-      section: [
-        {
-          title: "Java & Mvc",
-          value: "Java와 Mvc2 패턴을 기반으로, Controller, Model 및 View를 분리하여 개발",
-        },
-        {
-          title: "Jsp",
-          value: "EL(Expression Language)와 JSTL(JSP Standard Tag Library)를 사용하여 코드의 가독성 및 확장성 증대",
-        },
-        {
-          title: "MySql",
-          value: "MySQL을 활용하여 데이터베이스의 무결성을 유지하고, 정규화를 진행하여 데이터의 중복을 최소화",
-        },
-        {
-          title: "Servlet Container",
-          value: "GCP 인스턴스의 CentOS7 환경에서 서버를 구축하고, Tomcat을 사용하여 웹 애플리케이션을 배포",
-        },
-      ],
-    },
-    {
-      title: "Frontend",
-      section: [
-        {
-          title: "Language",
-          value: [
-            { icon: "html", value: "Html" },
-            { icon: "css", value: "Css" },
-            { icon: "js", value: "Js" },
-          ],
-        },
-        {
-          title: "Framework",
-          value: [
-            { icon: "bootstrap", value: "Bootstrap" },
-          ],
-        },
-        {
-          title: "Template Engine",
-          value: [
-            { icon: "jsp", value: "Jsp" },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Backend",
-      section: [
-        {
-          title: "Language",
-          value: [
-            { icon: "java", value: "Java" },
-          ],
-        },
-        {
-          title: "Framework",
-          value: [
-            { icon: "spring", value: "Spring" },
-          ],
-        },
-        {
-          title: "Package, Build, Scm",
-          value: [
-            { icon: "maven", value: "Maven" },
-            { icon: "xml", value: "Xml" },
-            { icon: "json", value: "Json" },
-            { icon: "github", value: "Git" },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Database",
-      section: [
-        {
-          title: "DBMS",
-          value: [
-            { icon: "mysql", value: "Mysql8" },
-          ],
-        },
-        {
-          title: "framework",
-          value: [
-            { icon: "mybatis", value: "Mybatis" },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Server",
-      section: [
-        {
-          title: "Server",
-          value: [
-            { icon: "tomcat", value: "Tomcat" },
-          ],
-        },
-        {
-          title: "Cloud",
-          value: [
-            { icon: "gcp", value: "Gcp" },
-            { icon: "centos", value: "Centos7" },
-          ],
-        },
-      ],
-    },
-  ]);
+  const [OBJECT, setOBJECT] = useState<any>();
   const [images, _setImages] = useState<string[]>([
     "project1_1",
     "project1_2",
@@ -164,10 +27,28 @@ export const Project1 = () => {
   // 2-3. useEffect --------------------------------------------------------------------------------
   useEffect(() => {
     setLOADING(true);
-    setTimeout(() => {
+    axios.get(`${URL}${PROJECT_URL}/detail`, {
+      params: {
+        project_id: "Project1",
+      }
+    })
+    .then((res: any) => {
       setLOADING(false);
-    }, 500);
-  }, []);
+      setOBJECT(res.data.result);
+    })
+    .catch((err: any) => {
+      setLOADING(false);
+      setALERT({
+        open: true,
+        severity: "error",
+        msg: err.response.data.msg,
+      });
+      console.error(err);
+    })
+    .finally(() => {
+      setLOADING(false);
+    });
+  }, [URL, PROJECT_URL]);
 
   // 7. project ------------------------------------------------------------------------------------
   const projectNode = () => (
@@ -231,48 +112,55 @@ export const Project1 = () => {
         {/** info, features **/}
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
-            {OBJECT.filter((_: any, f: number) => f < 2).map((item: any, i: number) => (
+            {OBJECT?.project_section?.filter((_: any, f: number) => f < 2)?.map((section: any, i: number) => (
               <Grid size={12} className={"d-col-left"} key={i}>
                 <Div className={"fs-1-6rem fw-700 dark-navy mb-20px"}>
-                  {item.title}
+                  {section.project_section_title}
                   <Hr className={"w-100px bg-primary h-3px"} />
                 </Div>
-                {item.section.map((section: any, j: number) => (
+                {section.project_section_contents.map((contents: any, j: number) => (
                   <Div className={"w-100p d-col-left mb-30px"} key={j}>
                     <Div className={"d-row-center mb-10px"}>
                       <Div className={"fs-0-4rem fw-300 dark-navy mr-5px"}>
                         {'●'}
                       </Div>
                       <Div className={"fs-1-1rem fw-600 dark-navy"}>
-                        {section.title}
+                        {contents.project_contents_title}
                       </Div>
                     </Div>
                     <Div className={"d-row-center ml-10px"}>
-                      {["Git", "Url"].includes(section.title) ? (
-                        <Div className={"d-row-left mr-0px"}>
-                          <Div
-                            className={"fs-1-0rem fw-600 primary pointer-blue lh-2-0"}
-                            onClick={() => {
-                              window.open(`https://${section.value}`, "_blank");
-                            }}
-                          >
-                            {section.alt}
+                      {contents.project_contents_detail.map((detail: any, k: number) => (
+                        (
+                          contents.project_contents_title === "Url" ||
+                          contents.project_contents_title === "Git1" ||
+                          contents.project_contents_title === "Git2"
+                        ) ? (
+                          <Div className={"d-row-left mr-0px"} key={k}>
+                            <Div
+                              className={"fs-1-0rem fw-600 primary pointer-blue lh-2-0"}
+                              onClick={() => {
+                                window.open(`https://${detail.project_detail_value}`, "_blank");
+                              }}
+                            >
+                              {detail.project_detail_alt}
+                            </Div>
                           </Div>
-                        </Div>
-                      ) : (
-                        <Div className={"d-row-left mr-0px"}>
-                          <Div
-                            className={"fs-1-0rem fw-400 light-black lh-2-0"}
-                            onClick={() => {
-                            }}
-                          >
-                            {section.value}
+                        ) : (
+                          <Div className={"d-row-left mr-0px"} key={k}>
+                            <Div
+                              key={k}
+                              className={"fs-1-0rem fw-400 light-black lh-2-0"}
+                              onClick={() => {
+                              }}
+                            >
+                              {detail.project_detail_value}
+                            </Div>
                           </Div>
-                        </Div>
-                      )}
+                        )
+                      ))}
                     </Div>
                   </Div>
-               ))}
+                ))}
                 {(xxs || xs || sm) && (<Hr className={"bg-light h-3px"} />)}
                 {(md || lg || xl || xxl) && (i !== 1 && <Hr className={"bg-light h-3px"} />)}
               </Grid>
@@ -282,24 +170,24 @@ export const Project1 = () => {
         {/** frontend, backend, server **/}
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
           <Grid container={true} spacing={2}>
-            {OBJECT.filter((_: any, f: number) => f >= 2).map((item: any, i: number) => (
+            {OBJECT?.project_section?.filter((_: any, f: number) => f >= 2)?.map((section: any, i: number) => (
               <Grid size={12} className={"d-col-left"} key={i}>
                 <Div className={"fs-1-6rem fw-700 dark-navy mb-20px"}>
-                  {item.title}
+                  {section.project_section_title}
                   <Hr className={"w-100px bg-primary h-3px"} />
                 </Div>
-                {item.section.map((section: any, j: number) => (
+                {section.project_section_contents.map((contents: any, j: number) => (
                   <Div className={"w-100p d-col-left mb-30px"} key={j}>
                     <Div className={"d-row-center mb-10px"}>
                       <Div className={"fs-0-4rem fw-300 dark-navy mr-5px"}>
                         {'●'}
                       </Div>
                       <Div className={"fs-1-1rem fw-600 dark-navy"}>
-                        {section.title}
+                        {contents.project_contents_title}
                       </Div>
                     </Div>
                     <Grid container={true} spacing={0} className={"d-left ml-1vw"}>
-                      {section.value.map((value: any, k: number) => (
+                      {contents.project_contents_detail.map((detail: any, k: number) => (
                         <Grid
                           size={xxs ? 6 : xs ? 4 : sm ? 3 : md ? 4 : lg ? 4 : xl ? 3 : xxl ? 3 : 3}
                           className={"d-row-left"}
@@ -312,11 +200,11 @@ export const Project1 = () => {
                             border={false}
                             radius={false}
                             group={"icons"}
-                            src={`${value.icon}.webp`}
+                            src={`${detail.project_detail_icon}.webp`}
                             className={"mr-5px"}
                           />
                           <Div className={"fs-1-0rem fw-400 light-black lh-2-0"}>
-                            {value.value}
+                            {detail.project_detail_value}
                           </Div>
                         </Grid>
                       ))}
