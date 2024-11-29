@@ -20,6 +20,7 @@ export const useCommonValue = () => {
   const URL = process.env.REACT_APP_SERVER_URL || "";
   const SUBFIX = process.env[`REACT_APP_${firstStr.toUpperCase()}_URL`] || "";
   const GCLOUD_URL = process.env.REACT_APP_GCLOUD_URL || "";
+  const PROJECT_URL = process.env.REACT_APP_PROJECT_URL || "";
 
   // -----------------------------------------------------------------------------------------------
   return {
@@ -35,5 +36,6 @@ export const useCommonValue = () => {
     URL,
     SUBFIX,
     GCLOUD_URL,
+    PROJECT_URL,
   };
 };

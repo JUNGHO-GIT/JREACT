@@ -34,8 +34,6 @@ export const detail = async (
   };
 };
 
-
-
 // 3. save -----------------------------------------------------------------------------------------
 export const save = async (
   OBJECT_param: any,

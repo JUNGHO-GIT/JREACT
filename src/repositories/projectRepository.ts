@@ -6,31 +6,14 @@ import { Project } from "@schemas/Project";
 export const detail = async (
   project_id_param: string,
 ) => {
-
-  // result 변수 선언
-  let findResult: any = null;
-  let finalResult: any = null;
-  let statusResult: string = "fail";
-
-  findResult = await Project.findOne(
+  const finalResult = await Project.findOne(
     {
       project_id: project_id_param
     }
-  );
+  )
+  .lean();
 
-  if (!findResult) {
-    statusResult = "fail";
-    finalResult = null;
-  }
-  else {
-    statusResult = "success";
-    finalResult = findResult;
-  }
-
-  return {
-    status: statusResult,
-    result: finalResult,
-  };
+  return finalResult;
 };
 
 // 3. save -----------------------------------------------------------------------------------------

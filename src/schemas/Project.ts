@@ -43,7 +43,12 @@ const schema = new mongoose.Schema(
                   type: String,
                   default: "",
                   required: false
-                }
+                },
+                project_detail_alt: {
+                  type: String,
+                  default: "",
+                  required: false
+                },
               }
             ]
           }
