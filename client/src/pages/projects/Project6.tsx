@@ -10,146 +10,13 @@ import { Div, Img, Hr, Br, Grid, Paper } from "@importComponents";
 export const Project6 = () => {
 
   // 0. common -------------------------------------------------------------------------------------
-  const { URL, PROJECT_URL } = useCommonValue();
+  const { URL, PROJECTS_URL } = useCommonValue();
   const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
   const { setALERT } = useStoreAlert();
   const { setLOADING } = useStoreLoading();
 
   // 2-1. useState ---------------------------------------------------------------------------------
-  const [OBJECT, setOBJECT] = useState<any>([
-    {
-      title: "Information",
-      section: [
-        {
-          title: "Name",
-          value: "WMS",
-        },
-        {
-          title: "Detail",
-          value: "Spring Framework를 활용한 창고 관리 시스템",
-        },
-        {
-          title: "Period",
-          value: "2023.10.01 - 2024.02.01",
-        },
-        {
-          title: "Role",
-          value: "총 2명 (팀원)",
-        },
-      ],
-    },
-    {
-      title: "Features",
-      section: [
-        {
-          title: "Spring Framework",
-          value: "Spring Framework를 활용한 종합 창고 및 재고관리 시스템 개발",
-        },
-        {
-          title: "Warehouse Management System",
-          value: "실시간 입출고 및 출하, 재고 관리, 유통 기한 관리, 재고 이력 관리 등 다양한 기능 제공",
-        },
-        {
-          title: "MyBatis",
-          value: "MyBatis를 활용한 데이터베이스 연동 및 SQL Mapping",
-        },
-        {
-          title: "Svn",
-          value: "Svn을 활용하여 버전 통합 관리 및 협업",
-        },
-        {
-          title: "Responsive Design",
-          value: "Bootstrap(v4)을 활용, 모바일 환경에서도 최적화된 UI/UX를 제공",
-        },
-      ],
-    },
-    {
-      title: "Frontend",
-      section: [
-        {
-          title: "Language",
-          value: [
-            { icon: "html", value: "Html" },
-            { icon: "css", value: "Css" },
-            { icon: "js", value: "Js" },
-          ],
-        },
-        {
-          title: "Framework",
-          value: [
-            { icon: "bootstrap", value: "Bootstrap" },
-          ],
-        },
-        {
-          title: "Template Engine",
-          value: [
-            { icon: "jsp", value: "Jsp" },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Backend",
-      section: [
-        {
-          title: "Language",
-          value: [
-            { icon: "java", value: "Java" },
-          ],
-        },
-        {
-          title: "Framework",
-          value: [
-            { icon: "spring", value: "Spring" },
-          ],
-        },
-        {
-          title: "Package, Build, Scm",
-          value: [
-            { icon: "maven", value: "Maven" },
-            { icon: "xml", value: "Xml" },
-            { icon: "json", value: "Json" },
-            { icon: "svn", value: "Svn" },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Database",
-      section: [
-        {
-          title: "DBMS",
-          value: [
-            { icon: "mysql", value: "Mysql8" },
-          ],
-        },
-        {
-          title: "framework",
-          value: [
-            { icon: "mybatis", value: "Mybatis" },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Server",
-      section: [
-        {
-          title: "Server",
-          value: [
-            { icon: "tomcat", value: "Tomcat" },
-          ],
-        },
-        {
-          title: "Cloud",
-          value: [
-            { icon: "gabia", value: "Gabia Cloud" },
-            { icon: "ubuntu", value: "Ubuntu" },
-          ],
-        },
-      ],
-    },
-  ]);
+  const [OBJECT, setOBJECT] = useState<any>();
   const [images, _setImages] = useState<string[]>([
     "project6_1",
     "project6_2",
@@ -161,7 +28,7 @@ export const Project6 = () => {
   // 2-3. useEffect --------------------------------------------------------------------------------
   useEffect(() => {
     setLOADING(true);
-    axios.get(`${URL}${PROJECT_URL}/detail`, {
+    axios.get(`${URL}${PROJECTS_URL}/detail`, {
       params: {
         project_id: "Project6",
       }
@@ -182,9 +49,9 @@ export const Project6 = () => {
     .finally(() => {
       setLOADING(false);
     });
-  }, [URL, PROJECT_URL]);
+  }, [URL, PROJECTS_URL]);
 
-  // 7. project ------------------------------------------------------------------------------------
+  // 7. projects ------------------------------------------------------------------------------------
   const projectNode = () => (
     <Paper className={`detail-wrapper ${paperClass} border-0 radius-0 shadow-0`}>
       {/** images **/}

@@ -1,40 +1,37 @@
 // About.jsx
 
-import { useState } from "@importReacts";
-import { useResponsive } from "@importHooks";
-import { Img, Div, Hr, Br, Grid, Paper } from "@importComponents";
+import { useEffect, useState } from "@importReacts";
+import { useResponsive, useCommonValue } from "@importHooks";
+import { useStoreAlert } from "@importStores";
+import { axios } from "@importLibs";
+import { Div, Img, Hr, Br, Grid, Paper } from "@importComponents";
 
 // -------------------------------------------------------------------------------------------------
 export const About = () => {
 
   // 0. common -------------------------------------------------------------------------------------
+  const { URL, ABOUT_URL } = useCommonValue();
   const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
+  const { setALERT } = useStoreAlert();
 
   // 2-1. useState ---------------------------------------------------------------------------------
-  const [OBJECT, setOBJECT] = useState<any>(
-    {
-      title: "About",
-      sub: "FullStack Developer",
-      section: [
-        {
-          title: "Name",
-          value: "문정호",
-        },
-        {
-          title: "Birth",
-          value: "1996.09.14",
-        },
-        {
-          title: "Email",
-          value: "junghomun@naver.com",
-        },
-        {
-          title: "Git",
-          value: "github.com/JUNGHO-GIT"
-        },
-      ],
-    }
-  );
+  const [OBJECT, setOBJECT] = useState<any>({});
+
+  // 2-3. useEffect --------------------------------------------------------------------------------
+  useEffect(() => {
+    axios.get(`${URL}${ABOUT_URL}/detail`)
+    .then((res: any) => {
+      setOBJECT(res.data.result);
+    })
+    .catch((err: any) => {
+      setALERT({
+        open: true,
+        severity: "error",
+        msg: err.response.data.msg,
+      });
+      console.error(err);
+    });
+  }, [URL, ABOUT_URL]);
 
   // 7. about --------------------------------------------------------------------------------------
   const aboutNode = () => (
@@ -49,7 +46,7 @@ export const About = () => {
           className={"d-row-left"}
         >
           <Div className={"fs-2-2rem fw-700 dark-navy ml-2vw"}>
-            {OBJECT.title}
+            {OBJECT?.about_title}
             <Hr className={"w-140px bg-primary h-3px"} />
           </Div>
         </Grid>
@@ -73,12 +70,12 @@ export const About = () => {
           />
         </Grid>
         <Grid size={(xxs || xs || sm) ? 12 : (md || lg || xl || xxl) ? 6 : 6}>
-          {OBJECT.section.map((item: any, i: number) => (
+          {OBJECT?.about_section?.map((item: any, i: number) => (
             <Grid container={true} spacing={0} key={i} className={"px-15px"}>
               <Grid size={12} className={"d-left"}>
                 {i === 0 && (
                   <Div className={"fs-1-8rem fw-600 navy mb-20px"}>
-                    {OBJECT.sub}
+                    {OBJECT?.about_sub}
                   </Div>
                 )}
               </Grid>
@@ -87,12 +84,12 @@ export const About = () => {
                   {'●'}
                 </Div>
                 <Div className={"fs-1-1rem fw-600 light-black"}>
-                  {item.title}
+                  {item.about_section_title}
                 </Div>
               </Grid>
               <Grid size={9} className={"d-row-left mb-20px"}>
                 <Div className={"fs-1-0rem fw-500 dark"}>
-                  {item.value}
+                  {item.about_section_value}
                 </Div>
               </Grid>
             </Grid>

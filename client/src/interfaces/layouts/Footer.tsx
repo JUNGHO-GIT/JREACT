@@ -53,7 +53,7 @@ export const Footer = () => {
             />
             {(sm || md || lg || xl || xxl) && (
               <Div className={"fs-1-1rem fw-600 white mr-15px"}>
-                {OBJECT.year}
+                {OBJECT?.year}
               </Div>
             )}
             <Div className={"fs-1-0rem fw-400 white mr-15px"}>
@@ -61,7 +61,7 @@ export const Footer = () => {
             </Div>
             {(xs ||sm || md || lg || xl || xxl) && (
               <Div className={"fs-1-2rem fw-700 white"}>
-                {OBJECT.name}
+                {OBJECT?.name}
               </Div>
             )}
           </Div>
@@ -72,7 +72,7 @@ export const Footer = () => {
         >
           <Div className={"d-row-center"}>
             <Div className={"fs-0-8rem fw-400 white"}>
-              {OBJECT.version}
+              {OBJECT?.version}
             </Div>
           </Div>
         </Grid>

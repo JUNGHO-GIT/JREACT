@@ -1,82 +1,47 @@
-// Portfolio.jsx
+// Portfolios.jsx
 
-import { useState, useEffect } from "@importReacts";
+import { useEffect, useState } from "@importReacts";
 import { useResponsive, useCommonValue } from "@importHooks";
-import { Img, Hr, Br, Div, Grid, Paper } from "@importComponents";
+import { useStoreAlert } from "@importStores";
+import { axios } from "@importLibs";
+import { Div, Img, Hr, Br, Grid, Paper } from "@importComponents";
 
 // -------------------------------------------------------------------------------------------------
-export const Portfolio = () => {
+export const Portfolios = () => {
 
   // 0. common -------------------------------------------------------------------------------------
-  const { navigate } = useCommonValue();
+  const { URL, PORTFOLIOS_URL, navigate } = useCommonValue();
   const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
+  const { setALERT } = useStoreAlert();
 
   // 2-1. useState ---------------------------------------------------------------------------------
-  const [OBJECT, setOBJECT] = useState<any>({
-    title: "Portfolios",
-    section: [
-
-      {
-        id: "8",
-        name: "LIFECHANGE",
-        desc: "Lifestyle Record Android App",
-        icon: "rn",
-        img: "project8_1",
-      },
-      {
-        id: "7",
-        name: "파주개성면옥",
-        desc: "Restaurant Website",
-        icon: "react",
-        img: "project7_1",
-      },
-      {
-        id: "6",
-        name: "WMS",
-        desc: "Warehouse Management System",
-        icon: "spring",
-        img: "project6_1",
-      },
-      {
-        id: "5",
-        name: "Jportfolio",
-        desc: "Portfolio Page with React",
-        icon: "react",
-        img: "project5_1",
-      },
-      {
-        id: "4",
-        name: "JLINT",
-        desc: "Vscode Language Formatter Extension",
-        icon: "nodejs",
-        img: "project4_1",
-      },
-      {
-        id: "3",
-        name: "JUNGHQLO",
-        desc: "Online Clothing Shopping Store",
-        icon: "boot",
-        img: "project3_1",
-      },
-      /* {
-        id: "2",
-        name: "GoodNeighbor",
-        desc: "Charity and Donation Website",
-        icon: "spring",
-        img: "project2_1",
-      }, */
-      /*{
-        id: "1",
-        name: "MeatStore",
-        desc: "Online Meat Shopping Store",
-        icon: "spring",
-        img: "project1_1",
-      }*/
-    ],
-  });
+  const [OBJECT, setOBJECT] = useState<any>({});
+  const [isRendered, setIsRendered] = useState(false);
 
   // 2-3. useEffect --------------------------------------------------------------------------------
   useEffect(() => {
+    axios.get(`${URL}${PORTFOLIOS_URL}/detail`)
+    .then((res: any) => {
+      setOBJECT(res.data.result);
+    })
+    .catch((err: any) => {
+      setALERT({
+        open: true,
+        severity: "error",
+        msg: err.response.data.msg,
+      });
+      console.error(err);
+    })
+    .finally(() => {
+      setIsRendered(true);
+    });
+  }, [URL, PORTFOLIOS_URL]);
+
+  // 2-3. useEffect --------------------------------------------------------------------------------
+  useEffect(() => {
+    if (!isRendered) {
+      return;
+    }
     const imageContainer = document.querySelectorAll(".image-container");
     const imageOverlay = document.querySelectorAll(".image-overlay");
 
@@ -120,10 +85,10 @@ export const Portfolio = () => {
         });
       });
     });
-  }, []);
+  }, [isRendered]);
 
-  // 7. portfolio ----------------------------------------------------------------------------------
-  const portfolioNode = () => (
+  // 7. portfolios ---------------------------------------------------------------------------------
+  const portfoliosNode = () => (
     <Paper className={`main-wrapper ${paperClass} border-0 radius-0 shadow-0`}>
       <Grid
         container={true}
@@ -135,7 +100,7 @@ export const Portfolio = () => {
           className={"d-row-left"}
         >
           <Div className={"fs-2-2rem fw-700 dark-navy ml-2vw"}>
-            {OBJECT.title}
+            {OBJECT?.portfolios_title}
             <Hr className={"w-140px bg-primary h-3px"} />
           </Div>
         </Grid>
@@ -146,7 +111,7 @@ export const Portfolio = () => {
         spacing={2}
         className={"h-100p d-left"}
       >
-        {OBJECT.section.map((item: any, i: number) => (
+        {OBJECT?.portfolios_section?.filter((_:any, f:number) => f < 6).map((item: any, i: number) => (
           <Grid size={(xxs || xs || sm) ? 12 : (md || lg) ? 6 : (xl || xxl) ? 4 : 4} key={i}>
             <Div className={"p-relative d-center"}>
               <Div className={"image-container p-5px"}>
@@ -155,7 +120,7 @@ export const Portfolio = () => {
                   shadow={true}
                   border={true}
                   radius={true}
-                  src={`${item.img}.webp`}
+                  src={`${item?.portfolios_section_img}.webp`}
                   group={"projects"}
                 />
               </Div>
@@ -164,7 +129,7 @@ export const Portfolio = () => {
                   className={"d-row-center w-100p mt-40px mb-20px hover"}
                   onClick={(e: any) => {
                     e.preventDefault();
-                    navigate(`/projects/project${item.id}`);
+                    navigate(`/projects/project${item?.portfolios_section_id}`);
                   }}
                 >
                   <Img
@@ -173,17 +138,17 @@ export const Portfolio = () => {
                     shadow={false}
                     border={false}
                     radius={false}
-                    src={`${item.icon}.webp`}
+                    src={`${item?.portfolios_section_icon}.webp`}
                     group={"icons"}
                     className={"mr-5px"}
                   />
                   <Div className={"fs-1-6rem fw-700 white ls-4"}>
-                    {item.name}
+                    {item?.portfolios_section_name}
                   </Div>
                 </Div>
                 <Div className={"d-row-center w-100p mb-20px"}>
                   <Div className={"fs-0-9rem fw-400 white"}>
-                    {item.desc}
+                    {item?.portfolios_section_desc}
                   </Div>
                 </Div>
               </Div>
@@ -197,7 +162,7 @@ export const Portfolio = () => {
   // 10. return ------------------------------------------------------------------------------------
   return (
     <>
-      {portfolioNode()}
+      {portfoliosNode()}
     </>
   );
 };

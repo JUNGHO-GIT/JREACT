@@ -52,7 +52,7 @@ export const uploadMemory = (fieldName: string, type: string, limit: number) => 
 // 2. gcloud ---------------------------------------------------------------------------------------
 export const uploadCloud = (groupName:string, fileList: any[]) => {
 
-  const projectId = process.env.GCLOUD_PROJECT_ID;
+  const projectId = process.env.GCLOUD_PROJECTS_ID;
   const bucketName = process.env.GCLOUD_BUCKET_NAME;
   const destination = process.env.GCLOUD_DESTINATION;
 
@@ -82,7 +82,7 @@ export const uploadCloud = (groupName:string, fileList: any[]) => {
 // 3. gcloud ---------------------------------------------------------------------------------------
 export const getUploadedFiles = async (groupName: string) => {
 
-  const projectId = process.env.GCLOUD_PROJECT_ID;
+  const projectId = process.env.GCLOUD_PROJECTS_ID;
   const bucketName = process.env.GCLOUD_BUCKET_NAME;
   const destination = process.env.GCLOUD_DESTINATION;
 

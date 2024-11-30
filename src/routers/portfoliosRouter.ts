@@ -1,15 +1,13 @@
-// projectRouter.ts
+// portfoliosRouter.ts
 
 import express, { Request, Response } from "express";
-import * as service from "@services/projectService";
+import * as service from "@services/portfoliosService";
 export const router = express.Router();
 
 // 2. detail ---------------------------------------------------------------------------------------
 router.get("/detail", async (req: Request, res: Response) => {
   try {
-    let finalResult = await service.detail(
-      req.query.project_id as string,
-    );
+    let finalResult = await service.detail();
     if (finalResult.status === "success") {
       res.json({
         msg: "조회 성공",

@@ -10,7 +10,7 @@ import { Div, Img, Hr, Br, Grid, Paper } from "@importComponents";
 export const Project4 = () => {
 
   // 0. common -------------------------------------------------------------------------------------
-  const { URL, PROJECT_URL } = useCommonValue();
+  const { URL, PROJECTS_URL } = useCommonValue();
   const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
   const { setALERT } = useStoreAlert();
   const { setLOADING } = useStoreLoading();
@@ -28,7 +28,7 @@ export const Project4 = () => {
   // 2-3. useEffect --------------------------------------------------------------------------------
   useEffect(() => {
     setLOADING(true);
-    axios.get(`${URL}${PROJECT_URL}/detail`, {
+    axios.get(`${URL}${PROJECTS_URL}/detail`, {
       params: {
         project_id: "Project4",
       }
@@ -49,9 +49,9 @@ export const Project4 = () => {
     .finally(() => {
       setLOADING(false);
     });
-  }, [URL, PROJECT_URL]);
+  }, [URL, PROJECTS_URL]);
 
-  // 7. project ------------------------------------------------------------------------------------
+  // 7. projects ------------------------------------------------------------------------------------
   const projectNode = () => (
     <Paper className={`detail-wrapper ${paperClass} border-0 radius-0 shadow-0`}>
       {/** images **/}

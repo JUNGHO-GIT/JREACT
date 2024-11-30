@@ -1,4 +1,4 @@
-// Admin.ts
+// Portfolios.ts
 
 import mongoose from "mongoose";
 import { incrementSeq } from "@schemas/Counter";
@@ -6,43 +6,64 @@ import { incrementSeq } from "@schemas/Counter";
 // -------------------------------------------------------------------------------------------------
 const schema = new mongoose.Schema(
   {
-    admin_number : {
+    portfolios_number : {
       type : Number,
       default: 1,
       unique : true
     },
 
-    admin_date: {
+    // portfolios
+    portfolios_title: {
       type: String,
       default: "",
       required: false
     },
-    adminSection: [
+    portfolios_section: [
       {
-        _id: false,
-        admin_visit_ip: {
+        portfolios_section_id: {
           type: String,
           default: "",
           required: false
         },
+        portfolios_section_name: {
+          type: String,
+          default: "",
+          required: false
+        },
+        portfolios_section_desc: {
+          type: String,
+          default: "",
+          required: false
+        },
+        portfolios_section_icon: {
+          type: String,
+          default: "",
+          required: false
+        },
+        portfolios_section_img: {
+          type: String,
+          default: "",
+          required: false
+        }
       }
     ],
-    admin_regDt: {
+
+    portfolios_regDt: {
       type: Date,
       default: Date.now,
       required: false
     },
-    admin_updateDt: {
+    portfolios_updateDt: {
       type: Date,
       default: Date.now,
       required: false
     }
   },
   {
-    collection: "Admin",
+    collection: "Portfolios",
     timestamps: {
-      createdAt: "admin_regDt",
-      updatedAt: "admin_updateDt"
+      createdAt: "portfolios_regDt",
+      updatedAt: "portfolios_updateDt"
     },
   }
 );
@@ -50,12 +71,12 @@ const schema = new mongoose.Schema(
 // 3. counter --------------------------------------------------------------------------------------
 schema.pre("save", async function(next) {
   if (this.isNew) {
-    this.admin_number = await incrementSeq("admin_number", "Admin");
+    this.portfolios_number = await incrementSeq("portfolios_number", "Portfolios");
   }
   next();
 });
 
 // 5. model ----------------------------------------------------------------------------------------
-export const Admin = mongoose.model(
-  "Admin", schema
+export const Portfolios = mongoose.model(
+  "Portfolios", schema
 );

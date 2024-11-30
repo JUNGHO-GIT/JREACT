@@ -1,4 +1,4 @@
-// Project.ts
+// Projects.ts
 
 import mongoose from "mongoose";
 import { incrementSeq } from "@schemas/Counter";
@@ -68,7 +68,7 @@ const schema = new mongoose.Schema(
     }
   },
   {
-    collection: "Project",
+    collection: "Projects",
     timestamps: {
       createdAt: "project_regDt",
       updatedAt: "project_updateDt"
@@ -79,12 +79,12 @@ const schema = new mongoose.Schema(
 // 3. counter --------------------------------------------------------------------------------------
 schema.pre("save", async function(next) {
   if (this.isNew) {
-    this.project_number = await incrementSeq("project_number", "Project");
+    this.project_number = await incrementSeq("project_number", "Projects");
   }
   next();
 });
 
 // 5. model ----------------------------------------------------------------------------------------
-export const Project = mongoose.model(
-  "Project", schema
+export const Projects = mongoose.model(
+  "Projects", schema
 );

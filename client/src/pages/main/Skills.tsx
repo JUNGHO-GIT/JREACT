@@ -1,106 +1,40 @@
 // Skills.jsx
 
-import { useState } from "@importReacts";
-import { useResponsive } from "@importHooks";
-import { Div, Hr, Br, Icons, Img, Grid, Paper } from "@importComponents";
-import { Accordion, AccordionDetails, AccordionSummary } from "@importMuis";
+import { useEffect, useState } from "@importReacts";
+import { useResponsive, useCommonValue } from "@importHooks";
+import { useStoreAlert } from "@importStores";
+import { axios } from "@importLibs";
+import { Div, Img, Hr, Br, Grid, Paper, Icons } from "@importComponents";
+import { Accordion, AccordionSummary, AccordionDetails } from "@importMuis";
 
 // -------------------------------------------------------------------------------------------------
 export const Skills = () => {
 
   // 0. common -------------------------------------------------------------------------------------
+  const { URL, SKILLS_URL } = useCommonValue();
   const { xxs, xs, sm, md, lg, xl, xxl, paperClass } = useResponsive();
+  const { setALERT } = useStoreAlert();
 
   // 2-1. useState ---------------------------------------------------------------------------------
-  const [OBJECT, setOBJECT] = useState<any>({
-    title: "Skills",
-    section: [
-      {
-        main: {
-          img: "front",
-          value: "Front",
-        },
-        sub: [
-          { icon: "html", value: "Html" },
-          { icon: "css", value: "Css" },
-          { icon: "bootstrap", value: "Bootstrap" },
-          { icon: "js", value: "Js" },
-          { icon: "ts", value: "Ts" },
-          { icon: "react", value: "React" },
-          { icon: "jsp", value: "Jsp" },
-          { icon: "thymeleaf", value: "Thymeleaf" },
-        ],
-      },
-      {
-        main: {
-          img: "back",
-          value: "Back",
-        },
-        sub: [
-          { icon: "java", value: "Java" },
-          { icon: "spring", value: "Spring" },
-          { icon: "boot", value: "Boot" },
-          { icon: "nodejs", value: "Node" },
-          { icon: "express", value: "Express" },
-          { icon: "webpack", value: "Webpack" },
-          { icon: "rn", value: "ReactNative" },
-        ],
-      },
-      {
-        main: {
-          img: "data",
-          value: "Data",
-        },
-        sub: [
-          { icon: "github", value: "Git" },
-          { icon: "svn", value: "Svn" },
-          { icon: "npm", value: "Npm" },
-          { icon: "maven", value: "Maven" },
-          { icon: "gradle", value: "Gradle" },
-        ],
-      },
-      {
-        main: {
-          img: "db",
-          value: "DB",
-        },
-        sub: [
-          { icon: "mongodb", value: "Mongo" },
-          { icon: "mysql", value: "MySQL" },
-          { icon: "mariadb", value: "Maria" },
-          { icon: "oracle", value: "Oracle" },
-        ],
-      },
-      {
-        main: {
-          img: "system",
-          value: "System",
-        },
-        sub: [
-          { icon: "windows", value: "Windows" },
-          { icon: "android", value: "Android" },
-          { icon: "linux", value: "Linux" },
-          { icon: "centos", value: "Cent" },
-        ],
-      },
-      {
-        main: {
-          img: "cloud",
-          value: "Cloud & Server",
-        },
-        sub: [
-          { icon: "tomcat", value: "Tomcat" },
-          { icon: "apache", value: "Apache" },
-          { icon: "nginx", value: "Nginx" },
-          { icon: "gcp", value: "Gcp" },
-          { icon: "azure", value: "Azure" },
-        ],
-      },
-    ],
-  });
-  const [isExpended, setIsExpended] = useState<boolean[]>(
-    OBJECT.section.map(() => true)
-  );
+  const [OBJECT, setOBJECT] = useState<any>({});
+  const [isExpended, setIsExpended] = useState<any>({});
+
+  // 2-3. useEffect --------------------------------------------------------------------------------
+  useEffect(() => {
+    axios.get(`${URL}${SKILLS_URL}/detail`)
+    .then((res: any) => {
+      setOBJECT(res.data.result);
+      setIsExpended(res.data.result.skills_section.map(() => true));
+    })
+    .catch((err: any) => {
+      setALERT({
+        open: true,
+        severity: "error",
+        msg: err.response.data.msg,
+      });
+      console.error(err);
+    });
+  }, [URL, SKILLS_URL]);
 
   // 7. skills -------------------------------------------------------------------------------------
   const skillsNode = () => (
@@ -115,7 +49,7 @@ export const Skills = () => {
           className={"d-row-left"}
         >
           <Div className={"fs-2-2rem fw-700 dark-navy ml-2vw"}>
-            {OBJECT.title}
+            {OBJECT?.skills_title}
             <Hr className={"w-140px bg-primary h-3px"} />
           </Div>
         </Grid>
@@ -127,7 +61,7 @@ export const Skills = () => {
         columnSpacing={10}
         className={"h-100p d-top border-1 radius-2 shadow-1 px-4vw py-4vh mb-1vh"}
       >
-        {OBJECT.section.map((item: any, i: number) => (
+        {OBJECT?.skills_section?.map((item: any, i: number) => (
           <Grid
             size={xxs ? 12 : xs ? 12 : sm ? 12 : md ? 6 : lg ? 6 : xl ? 6 : xxl ? 6 : 6}
             key={i}
@@ -153,12 +87,12 @@ export const Skills = () => {
                         shadow={false}
                         border={false}
                         radius={false}
-                        src={`${item.main.img}.webp`}
+                        src={`${item.skills_section_img}.webp`}
                         group={"icons"}
                       />
                     </Div>
                     <Div className={"fs-1-2rem fw-700 navy"}>
-                      {item.main.value}
+                      {item.skills_section_value}
                     </Div>
                     <Div className={"fs-1-2rem fw-700 navy"}>
                       <Icons
@@ -176,7 +110,7 @@ export const Skills = () => {
               </AccordionSummary>
               <AccordionDetails>
                 <Grid container={true} spacing={0} className={"d-left"}>
-                  {item.sub.map((sub: any, j: number) => (
+                  {item.skills_section_sub.map((sub: any, j: number) => (
                     <Grid
                       size={xxs ? 6 : xs ? 4 : sm ? 3 : md ? 4 : lg ? 4 : xl ? 3 : xxl ? 3 : 3}
                       className={"d-row-left mb-10px"}
@@ -190,12 +124,12 @@ export const Skills = () => {
                           shadow={false}
                           border={false}
                           radius={false}
-                          src={`${sub.icon}.webp`}
+                          src={`${sub.skills_section_sub_icon}.webp`}
                           group={"icons"}
                         />
                       </Div>
                       <Div className={"fs-0-9rem fw-500 dark-navy"} max={10}>
-                        {sub.value}
+                        {sub.skills_section_sub_value}
                       </Div>
                     </Grid>
                   ))}
@@ -203,9 +137,9 @@ export const Skills = () => {
               </AccordionDetails>
             </Accordion>
             {(xxs || xs || sm) ? (
-              i < OBJECT.section.length - 1 && <Hr className={"bg-light h-3px"} />
+              i < OBJECT?.skills_section?.length - 1 && <Hr className={"bg-light h-3px"} />
             ) : (
-              i < OBJECT.section.length - 2 && <Hr className={"bg-light h-3px"} />
+              i < OBJECT?.skills_section?.length - 2 && <Hr className={"bg-light h-3px"} />
             )}
           </Grid>
         ))}

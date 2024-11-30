@@ -4,7 +4,7 @@ import { Main } from '@pages/Main';
 import { About } from '@pages/main/About';
 import { Hero } from "@pages/main/Hero";
 import { Skills } from "@pages/main/Skills";
-import { Portfolio } from "@pages/main/Portfolio";
+import { Portfolios } from "@pages/main/Portfolios";
 import { Project1 } from '@pages/projects/Project1';
 import { Project2 } from '@pages/projects/Project2';
 import { Project3 } from '@pages/projects/Project3';
@@ -20,7 +20,7 @@ export {
   About,
   Hero,
   Skills,
-  Portfolio,
+  Portfolios,
   Project1,
   Project2,
   Project3,

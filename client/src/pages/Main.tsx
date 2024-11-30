@@ -2,7 +2,7 @@
 
 import { useEffect } from "@importReacts";
 import { useStoreLoading } from "@importStores";
-import { About, Hero, Portfolio, Skills } from "@importPages";
+import { About, Hero, Portfolios, Skills } from "@importPages";
 import { Br } from "@importComponents";
 
 // -------------------------------------------------------------------------------------------------
@@ -28,7 +28,7 @@ export const Main = () => {
       <Br className={"my-3vh"} />
       <Skills />
       <Br className={"my-3vh"} />
-      <Portfolio />
+      <Portfolios />
     </>
   );
 };

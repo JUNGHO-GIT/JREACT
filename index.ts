@@ -7,7 +7,10 @@ import dotenv from "dotenv";
 import { Request, Response } from "express";
 
 import { router as adminRouter } from "@routers/adminRouter";
-import { router as projectRouter } from "@routers/projectRouter";
+import { router as aboutRouter } from "@routers/aboutRouter";
+import { router as skillsRouter } from "@routers/skillsRouter";
+import { router as portfoliosRouter } from "@routers/portfoliosRouter";
+import { router as projectsRouter } from "@routers/projectsRouter";
 
 // -------------------------------------------------------------------------------------------------
 dotenv.config();
@@ -72,7 +75,10 @@ app.use(cors({
 
 // 라우터 설정 -------------------------------------------------------------------------------------
 app.use(`${preFix}/admin`, adminRouter);
-app.use(`${preFix}/project`, projectRouter);
+app.use(`${preFix}/about`, aboutRouter);
+app.use(`${preFix}/skills`, skillsRouter);
+app.use(`${preFix}/portfolios`, portfoliosRouter);
+app.use(`${preFix}/projects`, projectsRouter);
 
 // 에러 처리 미들웨어 ------------------------------------------------------------------------------
 app.use((err: Error, req: Request, res: Response, next: Function) => {

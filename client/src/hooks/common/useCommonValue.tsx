@@ -20,7 +20,10 @@ export const useCommonValue = () => {
   const URL = process.env.REACT_APP_SERVER_URL || "";
   const SUBFIX = process.env[`REACT_APP_${firstStr.toUpperCase()}_URL`] || "";
   const GCLOUD_URL = process.env.REACT_APP_GCLOUD_URL || "";
-  const PROJECT_URL = process.env.REACT_APP_PROJECT_URL || "";
+  const PROJECTS_URL = process.env.REACT_APP_PROJECTS_URL || "";
+  const ABOUT_URL = process.env.REACT_APP_ABOUT_URL || "";
+  const SKILLS_URL = process.env.REACT_APP_SKILLS_URL || "";
+  const PORTFOLIOS_URL = process.env.REACT_APP_PORTFOLIOS_URL || "";
 
   // -----------------------------------------------------------------------------------------------
   return {
@@ -36,6 +39,9 @@ export const useCommonValue = () => {
     URL,
     SUBFIX,
     GCLOUD_URL,
-    PROJECT_URL,
+    PROJECTS_URL,
+    ABOUT_URL,
+    SKILLS_URL,
+    PORTFOLIOS_URL,
   };
 };

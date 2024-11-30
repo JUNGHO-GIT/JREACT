@@ -14,7 +14,7 @@ export const Hero = () => {
   // 2-1. useState ---------------------------------------------------------------------------------
   const typedRef = useRef<HTMLSpanElement | null>(null);
   const typedInstance = useRef<Typed | null>(null);
-  const [OBJECT, setOBJECT] = useState<any>({
+  const [OBJECT, _setOBJECT] = useState<any>({
     title: "JUNGHO MUN",
     sub: [
       "Java, Spring, React, TypeScript, JavaScript, HTML, CSS",
@@ -76,12 +76,12 @@ export const Hero = () => {
           />
           <Div className={"p-absolute"}>
             <Div className={"fs-2-2rem fw-700 white mb-10px"}>
-              {OBJECT.title}
+              {OBJECT?.title}
             </Div>
             <Div className={"fs-1-8rem fw-400 white"}>
               <span
                 ref={typedRef}
-                data-typed-items={OBJECT.sub}
+                data-typed-items={OBJECT?.sub}
               />
             </Div>
           </Div>
