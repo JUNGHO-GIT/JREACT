@@ -17,10 +17,6 @@ import {
 } from '@importMuis';
 
 import {
-  useScrollTop
-} from '@importHooks';
-
-import {
   useStoreLoading
 } from '@importStores';
 
@@ -43,8 +39,6 @@ const App = () => {
       setLOADING(false);
     }, 500);
   }, []);
-
-  useScrollTop();
 
   return (
     <div className={"App"}>
