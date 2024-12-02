@@ -10,7 +10,7 @@
 *out/
 *temp/
 *target/
-# *META-INF/
+*META-INF/
 
 # 2. dependency directories
 *node_modules/
@@ -19,18 +19,18 @@
 *vendor/bundle/
 
 # 3. project directories
-# *admin/
-# *admin*/
-# *public/
-# *public*/
-# *private/
-# *private*/
-# *auth/
-# *auth*/
+*admin/
+*admin*/
+*public/
+*public*/
+*private/
+*private*/
+*auth/
+*auth*/
 
 # 4. ide & temp directories
-# .vscode/
-# .idea/
+.vscode/
+.idea/
 .tmp/
 .cache/
 .nyc_output/
@@ -61,23 +61,23 @@
 *.swo
 
 # 4. env files
-# *.env
-# *.env.*
-# *.properties
-# *.props
-# *.classpath
-# *.project
-# *.settings
-# *.keystore
-# *app.json
-# *local.properties
-# *gradle.properties
-# *gradle-wrapper.properties
-# *gradlew
-# *gradlew.bat
-# *settings.gradle
-# *gitignore.*
-# *!debug.keystore
+*.env
+*.env.*
+*.properties
+*.props
+*.classpath
+*.project
+*.settings
+*.keystore
+*app.json
+*local.properties
+*gradle.properties
+*gradle-wrapper.properties
+*gradlew
+*gradlew.bat
+*settings.gradle
+*gitignore.*
+*!debug.keystore
 
 # 5. temporary files
 *.tmp
@@ -91,38 +91,38 @@
 *yarn.lock
 
 # 7. config files
-# *tsconfig.json
-# *tsconfig.jsonc
-# *tsconfig.path.json
-# *tsconfig.paths.json
-# *tsconfig.default.json
-# *jsconfig.json
-# *jsconfig.jsonc
-# *jsconfig.path.json
-# *jsconfig.paths.json
-# *jsconfig.default.json
-# *metro.config.js
-# *jest.config.js
-# *babel.config.js
-# *.watchmanconfig
-# *.prettierrc
-# *.prettierignore
-# *.prettierrc.js
-# *.eslintrc
-# *.eslintignore
-# *.eslintrc.js
+*tsconfig.json
+*tsconfig.jsonc
+*tsconfig.path.json
+*tsconfig.paths.json
+*tsconfig.default.json
+*jsconfig.json
+*jsconfig.jsonc
+*jsconfig.path.json
+*jsconfig.paths.json
+*jsconfig.default.json
+*metro.config.js
+*jest.config.js
+*babel.config.js
+*.watchmanconfig
+*.prettierrc
+*.prettierignore
+*.prettierrc.js
+*.eslintrc
+*.eslintignore
+*.eslintrc.js
 
 # 8. etc files
-# *push.cjs
-# *push.sh
-# *fetch.cjs
-# *fetch.sh
-# *pull.cjs
-# *pull.sh
-# *merge.cjs
-# *merge.sh
-# *gcloud.cjs
-# *gcloud.sh
-# *.gitignore.public
-# *.gitignore.private
-# *.vsix
+*push.cjs
+*push.sh
+*fetch.cjs
+*fetch.sh
+*pull.cjs
+*pull.sh
+*merge.cjs
+*merge.sh
+*gcloud.cjs
+*gcloud.sh
+*.gitignore.public
+*.gitignore.private
+*.vsix
