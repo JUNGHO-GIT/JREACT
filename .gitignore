@@ -1,27 +1,36 @@
-# gitignore.private
+# ==================================================================================================
+# ==== Directories =================================================================================
+# ==================================================================================================
 
-# directories 1
-*node_modules/
+# 1. build directories
 *build/
+*bundle/
 *dist/
 *coverage/
 *out/
 *temp/
 *target/
-*test/
-# *META-INF/
-# *admin/
-# *admin*
-# *public/
-# *public*
-# *private/
-# *private*
-# *auth/
-# *auth*
+*META-INF/
 
-# directories 2
-# .vscode/
-# .idea/
+# 2. dependency directories
+*node_modules/
+*vendor/
+*vendor/cache/
+*vendor/bundle/
+
+# 3. project directories
+*admin/
+*admin*/
+*public/
+*public*/
+*private/
+*private*/
+*auth/
+*auth*/
+
+# 4. ide & temp directories
+.vscode/
+.idea/
 .tmp/
 .cache/
 .nyc_output/
@@ -29,93 +38,91 @@
 .gulp/
 .parcel-cache/
 
-# log files
-*.log*
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# ==================================================================================================
+# ==== Files =======================================================================================
+# ==================================================================================================
 
-# os-specific files
-.ds_store
-thumbs.db
-*.swp
-*.swo
-
-# env files
-# *.env
-# *.env.*
-# *.properties
-# *.props
-# *.classpath
-# *.project
-# *.settings
-
-# temporary files
-*.tmp
-*.bakv
-*.backup
-*.orig
-*.rej
+# 1. compiled files
+*.class
 *.jar
 *.war
 *.ear
-*.class
 
-# package manager files
+# 2. log files
+*.log*
+*npm-debug.log*
+*yarn-debug.log*
+*yarn-error.log*
+
+# 3. os-specific files
+*.DS_Store
+*Thumbs.db
+*.swp
+*.swo
+
+# 4. env files
+*.env
+*.env.*
+*.properties
+*.props
+*.classpath
+*.project
+*.settings
+*.keystore
+*app.json
+*local.properties
+*gradle.properties
+*gradle-wrapper.properties
+*gradlew
+*gradlew.bat
+*settings.gradle
+*gitignore.*
+*!debug.keystore
+
+# 5. temporary files
+*.tmp
+*.bak
+*.backup
+*.orig
+*.rej
+
+# 6. package manager lock files
 *package-lock.json
 *yarn.lock
-*npm-debug.log
-*pnpm-debug.log
 
-# config files
-# *tsconfig.json
-# *tsconfig.jsonc
-# *tsconfig.path.json
-# *tsconfig.paths.json
-# *tsconfig.default.json
-# *jsconfig.json
-# *jsconfig.jsonc
-# *jsconfig.path.json
-# *jsconfig.paths.json
-# *jsconfig.default.json
+# 7. config files
+*tsconfig.json
+*tsconfig.jsonc
+*tsconfig.path.json
+*tsconfig.paths.json
+*tsconfig.default.json
+*jsconfig.json
+*jsconfig.jsonc
+*jsconfig.path.json
+*jsconfig.paths.json
+*jsconfig.default.json
+*metro.config.js
+*jest.config.js
+*babel.config.js
+*.watchmanconfig
+*.prettierrc
+*.prettierignore
+*.prettierrc.js
+*.eslintrc
+*.eslintignore
+*.eslintrc.js
 
-# etc
-# *push.cjs
-# *push.sh
-# *gcloud.cjs
-# *gcloud.sh
-# *.gitignore.public
-# *.gitignore.private
+# 8. etc files
+*push.cjs
+*push.sh
+*fetch.cjs
+*fetch.sh
+*pull.cjs
+*pull.sh
+*merge.cjs
+*merge.sh
+*gcloud.cjs
+*gcloud.sh
+*.gitignore.public
+*.gitignore.private
 *.vsix
-
-# react native
-# *build/
-# *ios/
-# *.bundle/
-# *.DB_Store
-# *.idea
-# *.gradle
-# *local.properties
-# *.iml
-# *.hprof
-# *.cxx/
-# *.keystore
-# *!debug.keystore
-# *.jsbundle
-# */vendor/bundle/
-# */vendor/cache/
-# *metro.config.js
-# *jest.config.js
-# *app.json
-# *Gemfile
-# *Gemfile.lock
-# *babel.config.js
-# *Podfile
-# *Podfile.lock
-# *.watchmanconfig
-# *.prettierrc
-# *.prettierignore
-# *.prettierrc.js
-# *.eslintrc
-# *.eslintignore
-# *.eslintrc.js

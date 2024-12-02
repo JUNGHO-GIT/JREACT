@@ -3,6 +3,7 @@
 import { useEffect, useState } from "@importReacts";
 import { useResponsive, useCommonValue } from "@importHooks";
 import { useStoreAlert } from "@importStores";
+import { setSession } from "@importScripts";
 import { axios } from "@importLibs";
 import { Div, Img, Hr, Br, Grid, Paper } from "@importComponents";
 
@@ -87,6 +88,12 @@ export const Portfolios = () => {
     });
   }, [isRendered]);
 
+  // 3. handle -------------------------------------------------------------------------------------
+  const handleClick = (e: any, id: string) => {
+    e.preventDefault();
+    navigate(`/projects/project${id}`);
+  };
+
   // 7. portfolios ---------------------------------------------------------------------------------
   const portfoliosNode = () => (
     <Paper className={`main-wrapper ${paperClass} border-0 radius-0 shadow-0`}>
@@ -128,8 +135,7 @@ export const Portfolios = () => {
                 <Div
                   className={"d-row-center w-100p mt-40px mb-20px hover"}
                   onClick={(e: any) => {
-                    e.preventDefault();
-                    navigate(`/projects/project${item?.portfolios_section_id}`);
+                    handleClick(e, item?.portfolios_section_id);
                   }}
                 >
                   <Img
